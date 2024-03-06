@@ -1,0 +1,54 @@
+{
+  "name": "@siren/vue-inbox",
+  "version": "1.0.0",
+  "description": "Vue SDK for in-app notification inbox",
+  "main": "dist/index.js",
+  "types": "dist.type.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "rm -rf dist && rollup -c",
+    "prepare": "husky",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeyValueSoftwareSystems/siren-vue-inbox.git"
+  },
+  "keywords": [
+    "vue",
+    "siren",
+    "notifications",
+    "sdk"
+  ],
+  "author": "KeyValue Software Systems",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KeyValueSoftwareSystems/siren-vue-inbox/issues"
+  },
+  "homepage": "https://github.com/KeyValueSoftwareSystems/siren-vue-inbox#readme",
+  "dependencies": {
+    "@vue/eslint-config-airbnb": "^8.0.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.22.0",
+    "husky": "^9.0.11",
+    "test_notification": "^1.0.5",
+    "typescript": "^5.3.3",
+    "vue-tsc": "^2.0.5"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@vue/tsconfig": "^0.5.1",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "rollup-plugin-vue": "^6.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.15"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ]
+}
