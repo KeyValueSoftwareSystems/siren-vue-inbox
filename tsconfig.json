@@ -1,0 +1,17 @@
+{
+    "extends": "@vue/tsconfig/tsconfig.dom.json",
+    "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "declaration": true,
+    "rootDir": ".",
+    "target": "es5",
+    "module": "esnext",
+    "outDir": "dist",
+    "declarationDir": "dist",
+    },
+    "include": ["./"],
+    "exclude": ["node_modules"]
+}
