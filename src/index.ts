@@ -1,3 +1,3 @@
-import SirenInbox from "./components/SirenInbox.vue";
+import SirenInbox from './components/SirenInbox.vue';
 
 export { SirenInbox };

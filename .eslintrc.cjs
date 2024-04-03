@@ -63,7 +63,6 @@ module.exports = {
     'vue/html-indent': 'off',
     'vue/max-attributes-per-line': 'off',
     'no-spaced-func': 'off',
-    '@typescript-eslint/consistent-type-imports': 'error',
     'vuejs-accessibility/form-control-has-label': 'off',
     'vue/first-attribute-linebreak': 'off',
     indent: ['off'],
