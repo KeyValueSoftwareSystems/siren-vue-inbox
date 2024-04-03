@@ -1,0 +1,3 @@
+<template>
+    Siren
+</template>
