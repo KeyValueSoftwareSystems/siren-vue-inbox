@@ -11,7 +11,7 @@
     "build": "vite build && vue-tsc",
     "types": "vue-tsc ",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint": "eslint src/"
   },
   "repository": {
     "type": "git",
@@ -44,11 +44,12 @@
     "vue-tsc": "^2.0.5"
   },
   "peerDependencies": {
-    "vue": "^3.4.21"
+    "vue": ">=3.0.0"
   },
   "files": [
     "dist",
     "package.json",
-    "README.md"
+    "README.md",
+    "license"
   ]
 }
