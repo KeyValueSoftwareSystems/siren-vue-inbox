@@ -2,10 +2,9 @@
   "name": "@siren/vue-inbox",
   "version": "1.0.0",
   "description": "Vue SDK for in-app notification inbox",
-  "main": "./dist/@siren/vue-inbox.umd.cjs",
   "types": "./dist/@siren/index.d.ts",
   "type": "module",
-  "module": "./dist/@siren/vue-inbox.js",
+  "module": "./dist/siren-vue-inbox.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build && vue-tsc",
