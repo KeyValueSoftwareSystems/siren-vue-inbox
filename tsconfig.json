@@ -1,17 +1,24 @@
 {
-    "extends": "@vue/tsconfig/tsconfig.dom.json",
     "compilerOptions": {
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "declaration": true,
-    "rootDir": ".",
-    "target": "es5",
-    "module": "esnext",
-    "outDir": "dist",
-    "declarationDir": "dist",
+      "target": "ES2020",
+      "useDefineForClassFields": true,
+      "module": "ESNext",
+      "lib": ["ES2020", "DOM", "DOM.Iterable"],
+      "skipLibCheck": true,
+      "moduleResolution": "bundler",
+      "allowImportingTsExtensions": true,
+      "noEmit": true,
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "jsx": "preserve",
+      "declaration": true,
+      "strict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noFallthroughCasesInSwitch": true
     },
-    "include": ["./"],
-    "exclude": ["node_modules"]
-}
+    "include": ["src"],
+    "exclude": ["node_modules"],
+    "references": [{ "path": "./tsconfig.node.json" }]
+  }
+  
