@@ -1,0 +1,32 @@
+<template>
+    <div :style="{
+        ...(!windowViewOnly && styles.windowTopBorder),
+        ...styles.headerContainer,
+    }" class="siren-sdk-header-container">
+        <p :style="styles.headerTitle" class="siren-sdk-text-break">{{ title }}</p>
+        <div v-if="!hideClearAll" @click="handleClearAllNotification" :style="{
+        opacity: !enableClearAll ? 0.5 : 1, cursor: enableClearAll ? 'pointer' : 'default'
+    }" class="siren-sdk-header-right-container">
+            <ClearIcon :fill="styles.clearIcon?.color" :size="String(styles.clearIcon?.size)" />
+            <p class="siren-sdk-header-clear-all-text" :style="styles.headerAction">
+                {{ CLEAR_ALL_LABEL }}
+            </p>
+        </div>
+    </div>
+</template>
+
+<script setup lang="ts">
+
+import { withDefaults, defineProps } from 'vue';
+
+import { HeaderProps } from '../types';
+import { CLEAR_ALL_LABEL } from '../utils/constants';
+import ClearIcon from '../components/ClearAllIcon.vue';
+
+import '../styles/header.css';
+
+withDefaults(defineProps<HeaderProps>(), {
+    enableClearAll: true
+})
+
+</script>
