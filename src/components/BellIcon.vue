@@ -17,9 +17,10 @@ withDefaults(
         stroke?: string;
     }>(),
     {
+        className: '',
         fill: 'none',
         size: '24',
         stroke: '#232326'
     }
-)
+);
 </script>

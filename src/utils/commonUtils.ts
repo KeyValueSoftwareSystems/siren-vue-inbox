@@ -1,18 +1,16 @@
-import { Ref } from "vue";
+import type { Ref } from 'vue';
 
-import {
+import type {
   CustomStyle,
   DimensionValue,
   SirenStyleProps,
-  ThemeProps,
-} from "../types";
-import { ThemeMode, defaultBadgeStyle } from "./constants";
-import defaultStyles from "./defaultStyles";
-import defaultTheme from "./defaultTheme";
+  ThemeProps
+} from '../types';
+import { ThemeMode, defaultBadgeStyle } from './constants';
+import defaultStyles from './defaultStyles';
+import defaultTheme from './defaultTheme';
 
-export const isEmptyArray = (array: Array<any> = []) => {
-  return array && array?.length === 0;
-};
+export const isEmptyArray = (array: Array<any> = []) => array && array?.length === 0;
 
 export const generateElapsedTimeText = (timeString: string) => {
   const currentTime = new Date().getTime();
@@ -26,14 +24,15 @@ export const generateElapsedTimeText = (timeString: string) => {
   const months = Math.floor(days / 30);
   const years = Math.floor(days / 365);
 
-  if (millisecondsDiff < 60000) return "Just now";
-  else if (minutes < 60)
-    return minutes === 1 ? "1 minute ago" : `${minutes} minutes ago`;
-  else if (hours < 24) return hours === 1 ? "1 hour ago" : `${hours} hours ago`;
-  else if (days < 30) return days === 1 ? "1 day ago" : `${days} days ago`;
-  else if (months < 12)
-    return months === 1 ? "1 month ago" : `${months} months ago`;
-  else return years === 1 ? "1 year ago" : `${years} years ago`;
+  if (millisecondsDiff < 60000) return 'Just now';
+  if (minutes < 60)
+    return minutes === 1 ? '1 minute ago' : `${minutes} minutes ago`;
+  if (hours < 24) return hours === 1 ? '1 hour ago' : `${hours} hours ago`;
+  if (days < 30) return days === 1 ? '1 day ago' : `${days} days ago`;
+  if (months < 12)
+    return months === 1 ? '1 month ago' : `${months} months ago`;
+
+  return years === 1 ? '1 year ago' : `${years} years ago`;
 };
 
 export const applyTheme = (
@@ -47,20 +46,20 @@ export const applyTheme = (
   return {
     container: {
       width: customStyle.window?.width || defaultStyles.window.width,
-      maxWidth: customStyle.window?.width || "100",
+      maxWidth: customStyle.window?.width || '100'
     },
     windowShadow: {
       boxShadow: `${
         theme.colors?.windowShadowColor || defaultTheme[mode].window.shadowColor
-      } 0px 8px 24px`,
+      } 0px 8px 24px`
     },
     windowTopBorder: {
       borderTopLeftRadius: windowBorderRadius,
-      borderTopRightRadius: windowBorderRadius,
+      borderTopRightRadius: windowBorderRadius
     },
     windowBottomBorder: {
       borderBottomLeftRadius: windowBorderRadius,
-      borderBottomRightRadius: windowBorderRadius,
+      borderBottomRightRadius: windowBorderRadius
     },
     contentContainer: {
       backgroundColor:
@@ -74,11 +73,11 @@ export const applyTheme = (
         customStyle.window?.borderRadius || defaultStyles.window.borderRadius
       } ${
         customStyle.window?.borderRadius || defaultStyles.window.borderRadius
-      }`,
+      }`
     },
     body: {
-      overflow: "auto",
-      height: customStyle.windowContainer?.contentHeight || "700px",
+      overflow: 'auto',
+      height: customStyle.windowContainer?.contentHeight || '700px'
     },
     headerContainer: {
       backgroundColor:
@@ -89,13 +88,13 @@ export const applyTheme = (
         theme.colors?.borderColor || defaultTheme[mode].colors.borderColor
       }`,
       height:
-        customStyle.windowHeader?.height || defaultStyles.windowHeader.height,
+        customStyle.windowHeader?.height || defaultStyles.windowHeader.height
     },
     headerTitle: {
-      alignItems: "center",
-      display: "flex",
+      alignItems: 'center',
+      display: 'flex',
       margin: 0,
-      lineHeight: "28px",
+      lineHeight: '28px',
       color:
         theme.windowHeader?.titleColor ||
         theme.colors?.textColor ||
@@ -108,13 +107,13 @@ export const applyTheme = (
         defaultStyles.windowHeader.titleFontWeight,
       paddingLeft:
         customStyle.windowHeader?.titlePadding ||
-        defaultStyles.windowHeader.titlePadding,
+        defaultStyles.windowHeader.titlePadding
     },
     headerAction: {
       color:
         theme.windowHeader?.headerActionColor ||
         theme.colors?.textColor ||
-        defaultTheme[mode].windowHeader.headerActionColor,
+        defaultTheme[mode].windowHeader.headerActionColor
     },
     defaultCardContainer: {
       backgroundColor:
@@ -130,7 +129,7 @@ export const applyTheme = (
       borderColor:
         theme.notificationCard?.borderColor ||
         theme.colors?.borderColor ||
-        defaultTheme[mode].notificationCard.borderColor,
+        defaultTheme[mode].notificationCard.borderColor
     },
     cardIconRound: {
       width: `${
@@ -145,9 +144,9 @@ export const applyTheme = (
         (parseInt(String(customStyle.notificationCard?.avatarSize), 10) ||
           defaultStyles.notificationCard.avatarSize) / 2
       }px`,
-      overflow: "hidden",
+      overflow: 'hidden',
       backgroundColor:
-        theme.colors?.borderColor || defaultTheme[mode].colors.borderColor,
+        theme.colors?.borderColor || defaultTheme[mode].colors.borderColor
     },
     cardTitle: {
       color:
@@ -159,14 +158,14 @@ export const applyTheme = (
         defaultStyles.notificationCard.titleSize,
       fontWeight:
         customStyle.notificationCard?.titleFontWeight ||
-        defaultStyles.notificationCard.titleFontWeight,
+        defaultStyles.notificationCard.titleFontWeight
     },
     activeCardMarker: {
       backgroundColor:
         theme.colors?.highlightedCardColor ||
         defaultTheme[mode].colors?.highlightedCardColor,
       border:
-        theme.colors?.primaryColor || defaultTheme[mode].colors?.primaryColor,
+        theme.colors?.primaryColor || defaultTheme[mode].colors?.primaryColor
     },
     cardDescription: {
       color:
@@ -176,37 +175,37 @@ export const applyTheme = (
       fontSize:
         customStyle.notificationCard?.descriptionSize ||
         defaultStyles.notificationCard.descriptionSize,
-      fontWeight: "400",
+      fontWeight: '400'
     },
     dateStyle: {
       color: theme.colors?.dateColor || defaultTheme[mode].colors.dateColor,
       fontSize:
         customStyle.notificationCard?.dateSize ||
         defaultStyles.notificationCard.dateSize,
-      lineHeight: "16px",
+      lineHeight: '16px'
     },
     emptyText: {
-      color: theme.colors?.textColor || defaultTheme[mode].colors.textColor,
+      color: theme.colors?.textColor || defaultTheme[mode].colors.textColor
     },
     errorText: {
-      color: theme.colors?.textColor || defaultTheme[mode].colors.textColor,
+      color: theme.colors?.textColor || defaultTheme[mode].colors.textColor
     },
     clearIcon: {
       color: theme.colors?.clearAllIcon || defaultTheme[mode].clearIcon.color,
-      size: customStyle.clearAllIcon?.size || defaultStyles.clearAllIcon.size,
+      size: customStyle.clearAllIcon?.size || defaultStyles.clearAllIcon.size
     },
     timerIcon: {
       color: theme.colors?.timerIcon || defaultTheme[mode].timerIcon.color,
-      size: customStyle.timerIcon?.size || defaultStyles.timerIcon.size,
+      size: customStyle.timerIcon?.size || defaultStyles.timerIcon.size
     },
     notificationIcon: {
       size:
         customStyle?.notificationIcon?.size ||
-        defaultStyles?.notificationIcon?.size,
+        defaultStyles?.notificationIcon?.size
     },
     deleteIcon: {
       color: theme.colors?.deleteIcon || defaultTheme[mode].colors.deleteIcon,
-      size: customStyle.deleteIcon?.size || defaultStyles.deleteIcon.size,
+      size: customStyle.deleteIcon?.size || defaultStyles.deleteIcon.size
     },
     loadMoreButton: {
       color:
@@ -221,12 +220,12 @@ export const applyTheme = (
         defaultStyles?.loadMoreButton?.fontSize,
       fontWeight:
         customStyle.loadMoreButton?.fontWeight ||
-        defaultStyles.loadMoreButton.fontWeight,
+        defaultStyles.loadMoreButton.fontWeight
     },
     loader: {
       backgroundImage: defaultTheme[mode].loader.backgroundImage,
       borderColor:
-        theme.colors?.primaryColor || defaultTheme[mode].colors.primaryColor,
+        theme.colors?.primaryColor || defaultTheme[mode].colors.primaryColor
     },
     badgeStyle: {
       borderRadius: customStyle.badgeStyle?.size || defaultBadgeStyle.size,
@@ -234,19 +233,19 @@ export const applyTheme = (
       height: customStyle.badgeStyle?.size || defaultBadgeStyle.size,
       backgroundColor: theme.badgeStyle?.color || defaultBadgeStyle.color,
       top: `${customStyle.badgeStyle?.top}px` || defaultBadgeStyle.top,
-      left: `${customStyle.badgeStyle?.left}px` || defaultBadgeStyle.left,
+      left: `${customStyle.badgeStyle?.left}px` || defaultBadgeStyle.left
     },
     badgeTextStyle: {
       color: theme.badgeStyle?.textColor || defaultBadgeStyle.textColor,
-      fontSize: customStyle.badgeStyle?.textSize || defaultBadgeStyle.textSize,
+      fontSize: customStyle.badgeStyle?.textSize || defaultBadgeStyle.textSize
     },
     infiniteLoader: {
       border: `3px solid ${
         theme.colors?.infiniteLoader ||
         theme.colors?.primaryColor ||
         defaultTheme[mode].colors.primaryColor
-      }`,
-    },
+      }`
+    }
   };
 };
 
@@ -262,9 +261,9 @@ export const calculateModalPosition = (
     const spaceLeft = iconRect.x;
     let modalWidth = 400;
 
-    if (typeof containerWidth === "string")
-      modalWidth = parseInt(containerWidth.slice(0, -2));
-    else if (typeof containerWidth === "number") modalWidth = containerWidth;
+    if (typeof containerWidth === 'string')
+      modalWidth = parseInt(containerWidth.slice(0, -2), 10);
+    else if (typeof containerWidth === 'number') modalWidth = containerWidth;
 
     const topPosition = iconRect.bottom;
     const leftPosition = screenWidth / 2 - modalWidth / 2;
@@ -273,17 +272,16 @@ export const calculateModalPosition = (
       spaceLeft < modalWidth &&
       spaceRight < modalWidth &&
       screenWidth > modalWidth
-    ) {
+    )
       return { top: `${topPosition}px`, left: `-${leftPosition}px` };
-    } else {
-      const rightPosition = spaceRight < modalWidth + 30 ? "30px" : null;
+
+      const rightPosition = spaceRight < modalWidth + 30 ? '30px' : null;
 
       return {
         top: `${topPosition}px`,
-        ...(rightPosition && { right: rightPosition }),
+        ...(rightPosition && { right: rightPosition })
       };
-    }
   }
 
-  return { top: "0" };
+  return { top: '0' };
 };

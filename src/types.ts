@@ -1,138 +1,4 @@
-import { CSSProperties } from "vue";
-
-// TODO: update prop type from any
-export type SirenInboxProps = {
-  theme?: Theme;
-  customStyle?: CustomStyle;
-  title?: string;
-  loadMoreLabel?: string;
-  hideHeader?: boolean;
-  hideClearAll?: boolean;
-  darkMode?: boolean;
-  cardProps?: CardProps;
-  noOfNotificationsPerFetch?: number;
-  onNotificationCardClick?: (notification: any) => void;
-  onError?: (error: any) => void;
-};
-
-// TODO: update prop type from any
-export type SirenNotificationIconProps = {
-  theme?: Theme;
-  realTimeUnViewedCountEnabled?: boolean;
-  onError?: (error: any) => void;
-  darkMode?: boolean;
-};
-
-export type SirenProps = SirenInboxProps &
-  SirenNotificationIconProps & {
-    windowViewOnly?: boolean;
-  };
-
-export type CardProps = {
-  hideAvatar?: boolean;
-  showMedia?: boolean;
-};
-
-// TODO: update prop type from any
-export type SirenPanelProps = {
-  hideHeader: boolean;
-  title: string;
-  onNotificationCardClick?: (notification: any) => void;
-  darkMode: boolean;
-  styles: SirenStyleProps;
-  windowViewOnly: boolean;
-  showNotifications: boolean;
-  onError?: (error: any) => void;
-  noOfNotificationsPerFetch: number;
-  hideClearAll: boolean;
-};
-
-export type Theme = {
-  dark: ThemeProps;
-  light: ThemeProps;
-};
-
-export type ThemeProps = {
-  colors?: {
-    primaryColor?: string;
-    textColor?: string;
-    neutralColor?: string;
-    borderColor?: string;
-    highlightedCardColor?: string;
-    dateColor?: string;
-    deleteIcon?: string;
-    timerIcon?: string;
-    clearAllIcon?: string;
-    infiniteLoader?: string;
-    windowShadowColor?: string;
-  };
-  window?: WindowProps;
-  windowHeader?: WindowHeaderProps;
-  windowContainer?: WindowContainerProps;
-  notificationCard?: NotificationCardThemeProps;
-  loadMoreButton?: LoadMoreButtonProps;
-  badgeStyle?: {
-    color?: string;
-    textColor?: string;
-  };
-};
-
-// TODO: update prop type from any
-export type NotificationCardProps = {
-  notification: any;
-  cardProps: CardProps;
-  onNotificationCardClick?: (notification: any) => void;
-  styles: SirenStyleProps;
-  deleteNotificationById: (id: string) => void;
-};
-
-export type CustomStyle = {
-  notificationIcon?: {
-    size?: number;
-  };
-  window?: {
-    width?: DimensionValue;
-    borderRadius?: number;
-  };
-  windowHeader?: {
-    height?: DimensionValue;
-    titleFontWeight?: TextStyle["fontWeight"];
-    titleSize?: number;
-    titlePadding?: number;
-  };
-  windowContainer?: {
-    padding?: number;
-    contentHeight?: DimensionValue;
-  };
-  notificationCard?: {
-    padding?: number;
-    borderWidth?: number;
-    avatarSize?: number;
-    titleFontWeight?: TextStyle["fontWeight"];
-    titleSize?: number;
-    descriptionSize?: number;
-    dateSize?: number;
-  };
-  loadMoreButton?: {
-    fontSize?: number;
-    fontWeight?: TextStyle["fontWeight"];
-  };
-  badgeStyle?: {
-    size?: number;
-    textSize?: number;
-    top?: number;
-    left?: number;
-  };
-  deleteIcon?: {
-    size?: number;
-  };
-  timerIcon?: {
-    size?: number;
-  };
-  clearAllIcon?: {
-    size?: number;
-  };
-};
+import type { CSSProperties } from 'vue';
 
 type WindowProps = {
   borderColor?: string;
@@ -149,22 +15,11 @@ type WindowContainerProps = {
   background?: string;
 };
 
-export type DimensionValue = number | string;
-
-type TextStyle = {
-  fontWeight?: CSSProperties["fontWeight"];
-};
-
 type NotificationCardThemeProps = {
   borderColor?: string;
   background?: string;
   titleColor?: string;
   descriptionColor?: string;
-};
-
-type LoadMoreButtonProps = {
-  color?: string;
-  background?: string;
 };
 
 export type SirenStyleProps = {
@@ -196,9 +51,160 @@ export type SirenStyleProps = {
   windowShadow: CSSProperties;
 };
 
+export type DimensionValue = number | string;
+
+type TextStyle = {
+  fontWeight?: CSSProperties['fontWeight'];
+};
+
 export type EmptyListProps = {
   styles: SirenStyleProps;
   darkMode: boolean;
+};
+
+export type LoadMoreProps = {
+  onLoadMore: () => void;
+  paginationLoading: boolean;
+  styles: SirenStyleProps;
+};
+
+type LoadMoreButtonProps = {
+  color?: string;
+  background?: string;
+};
+
+export type ThemeProps = {
+  colors?: {
+    primaryColor?: string;
+    textColor?: string;
+    neutralColor?: string;
+    borderColor?: string;
+    highlightedCardColor?: string;
+    dateColor?: string;
+    deleteIcon?: string;
+    timerIcon?: string;
+    clearAllIcon?: string;
+    infiniteLoader?: string;
+    windowShadowColor?: string;
+  };
+  window?: WindowProps;
+  windowHeader?: WindowHeaderProps;
+  windowContainer?: WindowContainerProps;
+  notificationCard?: NotificationCardThemeProps;
+  loadMoreButton?: LoadMoreButtonProps;
+  badgeStyle?: {
+    color?: string;
+    textColor?: string;
+  };
+};
+
+export type Theme = {
+  dark: ThemeProps;
+  light: ThemeProps;
+};
+
+export type CustomStyle = {
+  notificationIcon?: {
+    size?: number;
+  };
+  window?: {
+    width?: DimensionValue;
+    borderRadius?: number;
+  };
+  windowHeader?: {
+    height?: DimensionValue;
+    titleFontWeight?: TextStyle['fontWeight'];
+    titleSize?: number;
+    titlePadding?: number;
+  };
+  windowContainer?: {
+    padding?: number;
+    contentHeight?: DimensionValue;
+  };
+  notificationCard?: {
+    padding?: number;
+    borderWidth?: number;
+    avatarSize?: number;
+    titleFontWeight?: TextStyle['fontWeight'];
+    titleSize?: number;
+    descriptionSize?: number;
+    dateSize?: number;
+  };
+  loadMoreButton?: {
+    fontSize?: number;
+    fontWeight?: TextStyle['fontWeight'];
+  };
+  badgeStyle?: {
+    size?: number;
+    textSize?: number;
+    top?: number;
+    left?: number;
+  };
+  deleteIcon?: {
+    size?: number;
+  };
+  timerIcon?: {
+    size?: number;
+  };
+  clearAllIcon?: {
+    size?: number;
+  };
+};
+
+export type CardProps = {
+  hideAvatar?: boolean;
+  showMedia?: boolean;
+};
+
+// TODO: update prop type from any
+export type SirenInboxProps = {
+  theme?: Theme;
+  customStyle?: CustomStyle;
+  title?: string;
+  loadMoreLabel?: string;
+  hideHeader?: boolean;
+  hideClearAll?: boolean;
+  darkMode?: boolean;
+  cardProps?: CardProps;
+  noOfNotificationsPerFetch?: number;
+  onNotificationCardClick?: (notification: any) => void;
+  onError?: (error: any) => void;
+};
+
+// TODO: update prop type from any
+export type SirenNotificationIconProps = {
+  theme?: Theme;
+  realTimeUnViewedCountEnabled?: boolean;
+  onError?: (error: any) => void;
+  darkMode?: boolean;
+};
+
+export type SirenProps = SirenInboxProps &
+  SirenNotificationIconProps & {
+    windowViewOnly?: boolean;
+  };
+
+// TODO: update prop type from any
+export type SirenPanelProps = {
+  hideHeader: boolean;
+  title: string;
+  onNotificationCardClick?: (notification: any) => void;
+  darkMode: boolean;
+  styles: SirenStyleProps;
+  windowViewOnly: boolean;
+  showNotifications: boolean;
+  onError?: (error: any) => void;
+  noOfNotificationsPerFetch: number;
+  hideClearAll: boolean;
+};
+
+// TODO: update prop type from any
+export type NotificationCardProps = {
+  notification: any;
+  cardProps: CardProps;
+  onNotificationCardClick?: (notification: any) => void;
+  styles: SirenStyleProps;
+  deleteNotificationById: (id: string) => void;
 };
 
 export type ErrorWindowProps = {
@@ -214,10 +220,4 @@ export type HeaderProps = {
   styles: SirenStyleProps;
   windowViewOnly: boolean;
   hideClearAll: boolean;
-};
-
-export type LoadMoreProps = {
-  onLoadMore: () => void;
-  paginationLoading: boolean;
-  styles: SirenStyleProps;
 };

@@ -21,6 +21,7 @@ withDefaults(
     {
         fill: '#667185',
         size: '14',
+        className: ''
     }
-)
+);
 </script>

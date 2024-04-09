@@ -17,9 +17,9 @@
 <script setup lang="ts">
 import { defineProps, ref } from 'vue';
 
-import { SirenStyleProps } from '../types';
+import type { SirenStyleProps } from '../types';
 import { BadgeType } from '../utils/constants';
-import BellIcon from '../components/BellIcon.vue';
+import BellIcon from './BellIcon.vue';
 
 import '../styles/icon.css';
 
@@ -28,8 +28,7 @@ defineProps<{
     badgeType: BadgeType;
     darkMode: boolean;
     styles: SirenStyleProps
-}>()
-
+}>();
 
 const unViewedCount = ref<number>(0);
 

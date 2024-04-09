@@ -1,4 +1,4 @@
-import { COLORS, ThemeMode } from "./constants";
+import { COLORS, ThemeMode } from './constants';
 
 const defaultTheme = {
   light: {
@@ -24,31 +24,31 @@ const defaultTheme = {
       borderColor: COLORS[ThemeMode.LIGHT].borderColor
     },
     windowContainer: {
-      background: COLORS[ThemeMode.LIGHT].neutralColor,
+      background: COLORS[ThemeMode.LIGHT].neutralColor
     },
     notificationCard: {
       borderColor: COLORS[ThemeMode.LIGHT].borderColor,
       titleColor: COLORS[ThemeMode.LIGHT].textColor,
-      background: "transparent",
-      descriptionColor: COLORS[ThemeMode.LIGHT].textColor,
+      background: 'transparent',
+      descriptionColor: COLORS[ThemeMode.LIGHT].textColor
     },
     loadMoreButton: {
       color: COLORS[ThemeMode.LIGHT].primaryColor,
-      background: COLORS[ThemeMode.LIGHT].neutralColor,
+      background: COLORS[ThemeMode.LIGHT].neutralColor
     },
     deleteIcon: {
-      color: COLORS[ThemeMode.LIGHT].deleteIcon,
+      color: COLORS[ThemeMode.LIGHT].deleteIcon
     },
     clearIcon: {
-      color: COLORS[ThemeMode.LIGHT].clearAllIcon,
+      color: COLORS[ThemeMode.LIGHT].clearAllIcon
     },
     timerIcon: {
-      color: COLORS[ThemeMode.LIGHT].timerIcon,
+      color: COLORS[ThemeMode.LIGHT].timerIcon
     },
     loader: {
       backgroundImage:
-        "linear-gradient(to right, #F0f0f0 0%, #E0E0E0 50%, #F0F0F0 100%)",
-    },
+        'linear-gradient(to right, #F0f0f0 0%, #E0E0E0 50%, #F0F0F0 100%)'
+    }
   },
   dark: {
     colors: {
@@ -64,44 +64,44 @@ const defaultTheme = {
     },
     window: {
       borderColor: COLORS[ThemeMode.DARK].borderColor,
-      shadowColor: COLORS[ThemeMode.DARK].windowShadowColor,
+      shadowColor: COLORS[ThemeMode.DARK].windowShadowColor
     },
     windowHeader: {
       background: COLORS[ThemeMode.DARK].neutralColor,
       titleColor: COLORS[ThemeMode.DARK].textColor,
       headerActionColor: COLORS[ThemeMode.DARK].textColor,
-      borderColor: COLORS[ThemeMode.DARK].borderColor,
+      borderColor: COLORS[ThemeMode.DARK].borderColor
     },
     windowContainer: {
-      background: COLORS[ThemeMode.DARK].neutralColor,
+      background: COLORS[ThemeMode.DARK].neutralColor
     },
     notificationCard: {
       borderColor: COLORS[ThemeMode.DARK].borderColor,
-      background: "transparent",
+      background: 'transparent',
       titleColor: COLORS[ThemeMode.DARK].textColor,
-      descriptionColor: COLORS[ThemeMode.DARK].textColor,
+      descriptionColor: COLORS[ThemeMode.DARK].textColor
     },
     loadMoreButton: {
       color: COLORS[ThemeMode.LIGHT].primaryColor,
-      background: COLORS[ThemeMode.DARK].neutralColor,
+      background: COLORS[ThemeMode.DARK].neutralColor
     },
     deleteIcon: {
-      color: COLORS[ThemeMode.DARK].deleteIcon,
+      color: COLORS[ThemeMode.DARK].deleteIcon
     },
     clearIcon: {
-      color: COLORS[ThemeMode.DARK].clearAllIcon,
+      color: COLORS[ThemeMode.DARK].clearAllIcon
     },
     notificationIcon: {
-      color: COLORS[ThemeMode.DARK].notificationIcon,
+      color: COLORS[ThemeMode.DARK].notificationIcon
     },
     timerIcon: {
-      color: COLORS[ThemeMode.DARK].timerIcon,
+      color: COLORS[ThemeMode.DARK].timerIcon
     },
     loader: {
       backgroundImage:
-        "linear-gradient(to right, #49494A 0%, #535354 50%, #49494A 100%)",
-    },
-  },
+        'linear-gradient(to right, #49494A 0%, #535354 50%, #49494A 100%)'
+    }
+  }
 };
 
 export default defaultTheme;

@@ -16,8 +16,9 @@ withDefaults(
         size?: string;
     }>(),
     {
+        className: '',
         fill: '#667185',
-        size: '24',
+        size: '24'
     }
-)
+);
 </script>

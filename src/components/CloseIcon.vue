@@ -19,7 +19,8 @@ withDefaults(
     {
         fill: 'none',
         size: '20',
-        stroke: '#98A2B3'
+        stroke: '#98A2B3',
+        className: ''
     }
-)
+);
 </script>

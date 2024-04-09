@@ -18,11 +18,11 @@
 
 <script setup lang="ts">
 
-import { SirenStyleProps } from '../types';
+import type { SirenStyleProps } from '../types';
 
 import '../styles/loader.css';
 
 defineProps<{
     styles: SirenStyleProps
-}>()
+}>();
 </script>
