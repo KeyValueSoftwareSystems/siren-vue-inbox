@@ -56,8 +56,6 @@ const initialize = (): void => {
   const dataParams: InitConfigType = getDataParams();
   const sirenValue = new Siren(dataParams);
 
-  console.log(sirenValue, 'siren value');
-
   siren.value = (sirenValue);
 };
 
