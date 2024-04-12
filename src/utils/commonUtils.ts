@@ -1,16 +1,70 @@
 import type { Ref } from 'vue';
 
 import type {
+  ActionResponse,
+  NotificationDataType,
+  NotificationsApiResponse
+} from 'test_notification/dist/esm/types';
+import type {
   CustomStyle,
   DimensionValue,
   SirenStyleProps,
   ThemeProps
 } from '../types';
-import { ThemeMode, defaultBadgeStyle } from './constants';
+import {
+  LogLevel,
+  ThemeMode,
+  defaultBadgeStyle,
+  eventTypes
+} from './constants';
 import defaultStyles from './defaultStyles';
 import defaultTheme from './defaultTheme';
 
-export const isEmptyArray = (array: Array<any> = []) => array && array?.length === 0;
+type FetchParams = {
+  size: number;
+  start?: string;
+  end?: string;
+  sort?: 'createdAt' | 'updatedAt';
+};
+
+export const isEmptyArray = (array: Array<NotificationDataType> = []) =>
+  array && array?.length === 0;
+
+export const mergeArrays = (
+  array1: Array<NotificationDataType> = [],
+  array2: Array<NotificationDataType> = []
+) => {
+  if (array1 && array2) return [...array1, ...array2];
+  if (array1) return array1;
+
+  return array2;
+};
+
+export const filterDataProperty = (
+  response: NotificationsApiResponse
+): NotificationDataType[] | null => {
+  if (!response.data) return null;
+
+  return response.data;
+};
+
+export const generateFilterParams = (
+  data: NotificationDataType[],
+  fromStart: boolean,
+  itemsPerPage: number
+): FetchParams => {
+  let params: FetchParams = { size: itemsPerPage, sort: 'createdAt' };
+
+  if (data.length > 0)
+    if (fromStart) params = { ...params, start: data[0].createdAt };
+    else params = { ...params, end: data[data.length - 1].createdAt };
+
+  return params;
+};
+
+export const isValidResponse = (
+  response: NotificationsApiResponse | ActionResponse
+): boolean => !!response?.data;
 
 export const generateElapsedTimeText = (timeString: string) => {
   const currentTime = new Date().getTime();
@@ -29,8 +83,7 @@ export const generateElapsedTimeText = (timeString: string) => {
     return minutes === 1 ? '1 minute ago' : `${minutes} minutes ago`;
   if (hours < 24) return hours === 1 ? '1 hour ago' : `${hours} hours ago`;
   if (days < 30) return days === 1 ? '1 day ago' : `${days} days ago`;
-  if (months < 12)
-    return months === 1 ? '1 month ago' : `${months} months ago`;
+  if (months < 12) return months === 1 ? '1 month ago' : `${months} months ago`;
 
   return years === 1 ? '1 year ago' : `${years} years ago`;
 };
@@ -284,4 +337,82 @@ export const calculateModalPosition = (
   }
 
   return { top: '0' };
+};
+
+export const updateNotifications = (
+  eventData: {
+    id?: string;
+    action: string;
+    newNotifications?: NotificationDataType[];
+    unreadCount?: number;
+  },
+  notifications: NotificationDataType[]
+): NotificationDataType[] => {
+  let updatedNotifications: NotificationDataType[] = [];
+
+  switch (eventData.action) {
+    case eventTypes.MARK_ITEM_AS_READ:
+      updatedNotifications = notifications.map((item) =>
+        item.id === eventData.id ? { ...item, isRead: true } : item
+      );
+      break;
+    case eventTypes.MARK_ALL_AS_READ:
+      updatedNotifications = notifications.map((item) => ({
+        ...item,
+        isRead: true
+      }));
+      break;
+    case eventTypes.DELETE_ITEM:
+      updatedNotifications = notifications.filter(
+        (item) => item.id !== eventData.id
+      );
+      break;
+    case eventTypes.DELETE_ALL_ITEM:
+      updatedNotifications = [];
+      break;
+    case eventTypes.NEW_NOTIFICATIONS: {
+      const newNotifications: NotificationDataType[] =
+        eventData?.newNotifications || [];
+
+      updatedNotifications = [...newNotifications, ...notifications];
+      break;
+    }
+    case eventTypes.RESET_NOTIFICATIONS: {
+      updatedNotifications = [];
+      break;
+    }
+    default:
+      break;
+  }
+
+  return updatedNotifications;
+};
+
+export const logger = {
+  log: async (level: LogLevel.INFO | LogLevel.ERROR, message: string) => {
+    const timestamp = new Date().toISOString();
+    const levelString = LogLevel[level].toUpperCase();
+
+    console.log(`[${timestamp}] [${levelString}] ${message}`);
+  },
+  error(error: string) {
+    this.log(LogLevel.ERROR, error);
+  },
+  info(message: string) {
+    this.log(LogLevel.INFO, message);
+  }
+};
+
+export const debounce = <F extends (...args: any[]) => void>(
+  func: F,
+  delay: number
+) => {
+  let timerId: ReturnType<typeof setTimeout>;
+
+  return (...args: Parameters<F>): void => {
+    clearTimeout(timerId);
+    timerId = setTimeout(() => {
+      func(...args);
+    }, delay);
+  };
 };

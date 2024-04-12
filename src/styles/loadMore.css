@@ -3,6 +3,7 @@
   justify-content: center;
   height: 44px;
   align-items: center;
+  padding: 10px;
 }
 .siren-sdk-load-more-text {
   cursor: pointer;
@@ -18,7 +19,7 @@
   color: inherit;
   vertical-align: middle;
   pointer-events: none;
-  border: 3px solid #EB5017;
+  border: 3px solid #eb5017;
   border-bottom-color: transparent;
   border-radius: 50%;
   animation: 1s loader-03 linear infinite;
