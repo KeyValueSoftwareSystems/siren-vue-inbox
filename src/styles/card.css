@@ -1,0 +1,43 @@
+.siren-sdk-card-container {
+  display: grid;
+  grid-template-columns: max-content auto max-content;
+  gap: 15px;
+}
+.siren-sdk-hide-avatar-card-container {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: auto max-content;
+}
+.siren-sdk-card-time-icon{
+  width: 13px;
+  height: 13px;
+}
+.siren-sdk-card-transparent {
+  background-color: transparent;
+}
+.siren-sdk-delete-button {
+  cursor: pointer;
+  padding-right: 10px;
+}
+.siren-sdk-card-text-break {
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.siren-sdk-card-date-container {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 5px;
+  align-items: center;
+}
+.siren-sdk-card-content-wrapper {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 8px;
+}
+.siren-sdk-card-msg-body{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

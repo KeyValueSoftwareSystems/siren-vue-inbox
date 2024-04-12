@@ -17,7 +17,7 @@
       "noUnusedParameters": true,
       "noFallthroughCasesInSwitch": true
     },
-    "include": ["src"],
+    "include": ["src", "custom.d.ts"],
     "exclude": ["node_modules"],
     "references": [{ "path": "./tsconfig.node.json" }]
   }

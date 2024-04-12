@@ -1,0 +1,14 @@
+.siren-sdk-notification-icon-container {
+  position: relative;
+  border: none;
+  background-color: initial;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 4px;
+}
+.siren-sdk-notificationIcon-badge-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

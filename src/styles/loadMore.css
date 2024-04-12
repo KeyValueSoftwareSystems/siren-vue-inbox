@@ -1,0 +1,34 @@
+.siren-sdk-load-more-container {
+  display: flex;
+  justify-content: center;
+  height: 44px;
+  align-items: center;
+}
+.siren-sdk-load-more-text {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20.3px;
+  color: #eb5017;
+}
+.siren-sdk-pagination-loader {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  color: inherit;
+  vertical-align: middle;
+  pointer-events: none;
+  border: 3px solid #EB5017;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: 1s loader-03 linear infinite;
+  position: relative;
+}
+@keyframes loader-03 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
