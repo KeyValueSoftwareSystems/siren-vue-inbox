@@ -1,4 +1,8 @@
 import type { CSSProperties } from 'vue';
+import type {
+  NotificationDataType,
+  SirenErrorType
+} from 'test_notification/dist/esm/types';
 
 type WindowProps = {
   borderColor?: string;
@@ -156,7 +160,6 @@ export type CardProps = {
   showMedia?: boolean;
 };
 
-// TODO: update prop type from any
 export type SirenInboxProps = {
   theme?: Theme;
   customStyle?: CustomStyle;
@@ -167,16 +170,20 @@ export type SirenInboxProps = {
   darkMode?: boolean;
   cardProps?: CardProps;
   noOfNotificationsPerFetch?: number;
-  onNotificationCardClick?: (notification: any) => void;
-  onError?: (error: any) => void;
+  onNotificationCardClick?: (notification: NotificationDataType) => void;
+  onError?: (error: SirenErrorType) => void;
 };
 
-// TODO: update prop type from any
 export type SirenNotificationIconProps = {
   theme?: Theme;
   realTimeUnViewedCountEnabled?: boolean;
-  onError?: (error: any) => void;
+  onError?: (error: SirenErrorType) => void;
   darkMode?: boolean;
+};
+
+export type SirenProviderConfigProps = {
+  userToken: string;
+  recipientId: string;
 };
 
 export type SirenProps = SirenInboxProps &
@@ -184,25 +191,33 @@ export type SirenProps = SirenInboxProps &
     windowViewOnly?: boolean;
   };
 
-// TODO: update prop type from any
+type BadgeType = 'none' | 'dot' | 'default';
+
+export type SirenNotificationButtonProps = {
+  styles: SirenStyleProps;
+  badgeType: BadgeType;
+  darkMode: boolean;
+  hideBadge: boolean;
+  onIconClick: () => void;
+};
+
 export type SirenPanelProps = {
   hideHeader: boolean;
   title: string;
-  onNotificationCardClick?: (notification: any) => void;
+  onNotificationCardClick?: (notification: NotificationDataType) => void;
   darkMode: boolean;
   styles: SirenStyleProps;
   windowViewOnly: boolean;
   showNotifications: boolean;
-  onError?: (error: any) => void;
+  onError?: (error: SirenErrorType) => void;
   noOfNotificationsPerFetch: number;
   hideClearAll: boolean;
 };
 
-// TODO: update prop type from any
 export type NotificationCardProps = {
-  notification: any;
+  notification: NotificationDataType;
   cardProps: CardProps;
-  onNotificationCardClick?: (notification: any) => void;
+  onNotificationCardClick?: (notification: NotificationDataType) => void;
   styles: SirenStyleProps;
   deleteNotificationById: (id: string) => void;
 };

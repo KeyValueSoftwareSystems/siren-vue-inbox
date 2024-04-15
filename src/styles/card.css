@@ -8,7 +8,7 @@
   gap: 15px;
   grid-template-columns: auto max-content;
 }
-.siren-sdk-card-time-icon{
+.siren-sdk-card-time-icon {
   width: 13px;
   height: 13px;
 }
@@ -37,7 +37,7 @@
   grid-template-rows: auto;
   gap: 8px;
 }
-.siren-sdk-card-msg-body{
+.siren-sdk-card-msg-body {
   margin-top: 5px;
   margin-bottom: 5px;
 }

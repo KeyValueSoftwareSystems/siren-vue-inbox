@@ -43,7 +43,7 @@ const defaultStyles = {
     size: 14
   },
   clearAllIcon: {
-    size: 14
+    size: 20
   }
 };
 
