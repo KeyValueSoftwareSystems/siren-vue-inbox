@@ -2,16 +2,15 @@
   "name": "@siren/vue-inbox",
   "version": "1.0.0",
   "description": "Vue SDK for in-app notification inbox",
-  "main": "./dist/@siren/vue-inbox.umd.cjs",
   "types": "./dist/@siren/index.d.ts",
   "type": "module",
-  "module": "./dist/@siren/vue-inbox.js",
+  "module": "./dist/siren-vue-inbox.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build && vue-tsc",
     "types": "vue-tsc ",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "lint": "eslint src/",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -41,6 +40,7 @@
     "@storybook/vue3": "^8.0.5",
     "@storybook/vue3-vite": "^8.0.5",
     "@types/node": "^20.2.5",
+    "@types/pubsub-js": "^1.8.6",
     "@typescript-eslint/parser": "^7.5.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/eslint-config-airbnb": "^8.0.0",
@@ -50,17 +50,22 @@
     "eslint-plugin-vue": "^9.24.0",
     "path": "^0.12.7",
     "storybook": "^8.0.5",
+    "pubsub-js": "^1.9.4",
     "typescript": "^5.3.3",
     "vite": "^5.1.6",
     "vite-plugin-css-injected-by-js": "^3.4.0",
     "vue-tsc": "^2.0.5"
   },
   "peerDependencies": {
-    "vue": "^3.4.21"
+    "vue": ">=3.0.0"
   },
   "files": [
     "dist",
     "package.json",
-    "README.md"
-  ]
+    "README.md",
+    "license"
+  ],
+  "dependencies": {
+    "test_notification": "1.0.20"
+  }
 }

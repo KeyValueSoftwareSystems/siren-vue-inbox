@@ -9,15 +9,17 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'Siren',
-      fileName: '@siren/vue-inbox'
+      fileName: 'siren-vue-inbox',
+      formats: ['es']
     },
     rollupOptions: {
       external: ['vue'],
       output: {
         globals: {
           vue: 'Vue'
-        }
-      }
+        },
+        format: 'esm'
+      },
     }
   }
 });

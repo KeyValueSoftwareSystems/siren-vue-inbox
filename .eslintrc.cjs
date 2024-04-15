@@ -2,11 +2,13 @@ module.exports = {
   root: true,
   extends: ['plugin:vue/vue3-essential', 'eslint:recommended', '@vue/eslint-config-typescript', '@vue/eslint-config-prettier/skip-formatting', '@vue/airbnb', 'plugin:storybook/recommended'],
   parserOptions: {
-    ecmaVersion: 'latest'
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 'latest',
+    project: ['./tsconfig.json']
   },
   overrides: [
     {
-      files: ['*.vue'],
+      files: ['*.vue', '*.ts'],
       rules: {
         'vue/multi-word-component-names': 'off'
       }
@@ -58,6 +60,7 @@ module.exports = {
     'vue/max-attributes-per-line': 'off',
     'no-spaced-func': 'off',
     'vuejs-accessibility/form-control-has-label': 'off',
+    '@typescript-eslint/consistent-type-imports': 'error',
     'vue/first-attribute-linebreak': 'off',
     indent: ['off'],
     curly: ['error', 'multi', 'consistent'],

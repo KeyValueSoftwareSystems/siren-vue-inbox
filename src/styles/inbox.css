@@ -1,0 +1,9 @@
+.siren-sdk-inbox-container {
+  width: fit-content;
+}
+.siren-sdk-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

@@ -1,0 +1,22 @@
+.siren-sdk-header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px;
+  flex-direction: row;
+  border-radius: 12px 12px 0 0;
+}
+.siren-sdk-header-right-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 80px;
+}
+.siren-sdk-header-clear-all-text {
+  margin-left: 2px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+.siren-sdk-text-break {
+  word-break: break-word;
+}

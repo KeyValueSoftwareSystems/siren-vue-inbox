@@ -1,0 +1,27 @@
+.siren-sdk-error-window-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.siren-sdk-error-icon-container{
+  border-radius: 50%;
+}
+.siren-sdk-error-icon{
+  width: 160px;
+  height: 160px;
+}
+.siren-sdk-error-text {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  margin-top: 10px;
+}
+.siren-sdk-error-sub-text {
+  font-size: 12px;
+  font-weight: 400;
+  padding-top: 4px;
+  line-height: 16px;
+  opacity: 0.6;
+}
