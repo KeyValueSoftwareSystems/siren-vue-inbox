@@ -34,6 +34,7 @@
           :showNotifications="showNotifications"
           :noOfNotificationsPerFetch="noOfNotificationsPerFetch"
           :hideClearAll="hideClearAll"
+          :cardProps="cardProps ?? { hideAvatar: false, showMedia: false }"
           >
           <template #loadMoreComponent>
             <slot name="loadMoreComponent" />

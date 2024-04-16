@@ -1,7 +1,7 @@
 .siren-sdk-header-container {
   display: flex;
   justify-content: space-between;
-  padding: 0px 15px;
+  padding: 24px 18px;
   flex-direction: row;
   border-radius: 12px 12px 0 0;
 }
@@ -19,4 +19,8 @@
 }
 .siren-sdk-text-break {
   word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

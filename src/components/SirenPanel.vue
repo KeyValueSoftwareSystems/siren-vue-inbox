@@ -36,7 +36,7 @@
             <div v-for="notification in notificationsContent" :key="notification?.id">
               <slot name="customNotificationCard">
                 <NotificationCard :notification="notification"
-                  :cardProps="{ hideAvatar: false, showMedia: true }"
+                  :cardProps="cardProps"
                   :onNotificationCardClick="onNotificationCardClick"
                   :deleteNotificationById="deleteNotificationById"
                   :styles="styles" :darkMode="darkMode" />

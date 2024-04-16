@@ -133,6 +133,10 @@ export const applyTheme = (
       height: customStyle.windowContainer?.contentHeight || '700px'
     },
     headerContainer: {
+      alignItems: 'center',
+      display: 'flex',
+      margin: 0,
+      lineHeight: '28px',
       backgroundColor:
         theme.windowHeader?.background ||
         theme.colors?.neutralColor ||
@@ -144,10 +148,6 @@ export const applyTheme = (
         customStyle.windowHeader?.height || defaultStyles.windowHeader.height
     },
     headerTitle: {
-      alignItems: 'center',
-      display: 'flex',
-      margin: 0,
-      lineHeight: '28px',
       color:
         theme.windowHeader?.titleColor ||
         theme.colors?.textColor ||
@@ -297,7 +297,8 @@ export const applyTheme = (
         theme.colors?.infiniteLoader ||
         theme.colors?.primaryColor ||
         defaultTheme[mode].colors.primaryColor
-      }`
+      }`,
+      borderBottomColor: 'transparent'
     }
   };
 };
