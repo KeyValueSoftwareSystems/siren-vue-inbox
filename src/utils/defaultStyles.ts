@@ -20,11 +20,11 @@ const defaultStyles = {
     height: '700px'
   },
   notificationCard: {
-    padding: '12px 24px',
+    padding: '10px',
     borderWidth: '0.5',
     avatarSize: 40,
     titleFontWeight: '600',
-    titleSize: '14px',
+    titleSize: '16px',
     descriptionSize: '14px',
     dateSize: '12px'
   },
@@ -37,13 +37,13 @@ const defaultStyles = {
     textSize: '10px'
   },
   deleteIcon: {
-    size: 20
+    size: 14
   },
   timerIcon: {
     size: 14
   },
   clearAllIcon: {
-    size: 24
+    size: 20
   }
 };
 

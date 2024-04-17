@@ -12,8 +12,8 @@
       @click="handleClearAllNotification"
       @keydown="handleClearAllNotification"
       :style="{
-        opacity: !enableClearAll ? 0.4 : 1,
-        cursor: enableClearAll ? 'pointer' : 'not-allowed',
+        opacity: !enableClearAll ? 0.5 : 1,
+        cursor: enableClearAll ? 'pointer' : 'default',
       }"
       class="siren-sdk-header-right-container"
     >

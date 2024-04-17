@@ -1,7 +1,7 @@
 .siren-sdk-card-container {
   display: grid;
   grid-template-columns: max-content auto max-content;
-  gap: 16px;
+  gap: 15px;
 }
 .siren-sdk-hide-avatar-card-container {
   display: grid;
@@ -17,6 +17,7 @@
 }
 .siren-sdk-delete-button {
   cursor: pointer;
+  padding-right: 10px;
 }
 .siren-sdk-card-text-break {
   word-break: break-word;
