@@ -39,4 +39,12 @@
 .siren-sdk-card-msg-body {
   margin-top: 5px;
   margin-bottom: 5px;
+  font-weight: 400;
+}
+.siren-sdk-card-avatar{
+  overflow: 'hidden',
+}
+
+.siren-sdk-card-date-style{
+  line-height: 16px;
 }
