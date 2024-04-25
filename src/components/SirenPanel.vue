@@ -20,14 +20,14 @@
       !error && { overflow: 'hidden' }),
   }" :class="containerClassNames">
         <slot name="customLoader" v-if="isLoading && isEmptyArray(notificationsContent) && !error">
-          <LoaderComponent :styles="styles" />
+          <LoaderComponent :styles="styles" :hideAvatar="true" />
         </slot>
 
         <slot name="customErrorWindow" v-if="error && error.length > 0 && !isLoading">
           <ErrorWindow :styles="styles" :darkMode="darkMode" :error="error" />
         </slot>
 
-        <slot name="listEmptyComponent" v-if="isEmptyArray(notificationsContent) && !isLoading && !error">
+        <slot name="listEmptyComponent" v-if="isEmptyArray(notificationsContent) && !isLoading && !error && reachedEnd">
           <EmptyList :styles="styles" :darkMode="darkMode" />
         </slot>
 
@@ -126,11 +126,7 @@ const reachedEnd = ref<boolean>(false);
 const paginationLoading = ref<boolean>(false);
 const eventListenerData = ref<EventListenerDataType | null>(null);
 
-const panelStyle = {
-  ...(!props.windowViewOnly && props.styles.windowTopBorder),
-  ...(!props.windowViewOnly && props.styles.windowBottomBorder),
-  ...props.styles.container
-};
+let panelStyle = {};
 
 const containerClassNames = `${(!notificationsContent.value?.length || error) && isLoading.value && 'siren-sdk-content-container'}`;
 const triggerOnError = computed(
@@ -328,6 +324,15 @@ onBeforeUnmount(() => {
   restartNotificationCountFetch();
   handleMarkNotificationsAsViewed(new Date().toISOString());
 });
+
+watch(() => props.modalWidth, () => {
+   panelStyle = {
+  ...(!props.windowViewOnly && props.styles.windowTopBorder),
+  ...(!props.windowViewOnly && { width: `${props.modalWidth}` }),
+  ...(!props.windowViewOnly && props.styles.windowBottomBorder),
+  ...props.styles.container
+};
+}, { immediate: true });
 
 watch(
   () => eventListenerData.value,

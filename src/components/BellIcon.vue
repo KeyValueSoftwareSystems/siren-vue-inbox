@@ -1,5 +1,4 @@
 <template>
-  <div :class="className" :style="{ width: size, height: size }">
     <svg
       :width="size"
       :height="size"
@@ -15,7 +14,6 @@
         stroke-linejoin="round"
       />
     </svg>
-  </div>
 </template>
 
 <script setup lang="ts">

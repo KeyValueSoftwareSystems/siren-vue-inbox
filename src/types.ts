@@ -224,6 +224,7 @@ export type SirenPanelProps = {
   headerProps: { title?: string; hideHeader?: boolean; hideClearAll?: boolean };
   loadMoreLabel: string;
   cardProps: CardProps;
+  modalWidth: DimensionValue;
 };
 
 export type NotificationCardProps = {

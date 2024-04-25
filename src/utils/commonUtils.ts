@@ -98,7 +98,7 @@ export const applyTheme = (
 
   return {
     container: {
-      width: customStyle.window?.width || defaultStyles.window.width
+      maxWidth: customStyle.window?.width || '100'
     },
     windowShadow: {
       boxShadow: `${
@@ -304,6 +304,16 @@ export const applyTheme = (
   };
 };
 
+export const calculateModalWidth = (containerWidth: DimensionValue): number => {
+  let modalWidth = 500;
+
+  if (typeof containerWidth === 'string')
+    modalWidth = parseInt(containerWidth.slice(0, -2), 10) + 40;
+  else if (typeof containerWidth === 'number') modalWidth = containerWidth + 40;
+
+  return modalWidth;
+};
+
 export const calculateModalPosition = (
   iconRef: Ref<HTMLElement | null>,
   window: Window,
@@ -314,28 +324,33 @@ export const calculateModalPosition = (
     const screenWidth = window.innerWidth;
     const spaceRight = screenWidth - iconRect.x;
     const spaceLeft = iconRect.x;
-    let modalWidth = 400;
 
-    if (typeof containerWidth === 'string')
-      modalWidth = parseInt(containerWidth.slice(0, -2), 10);
-    else if (typeof containerWidth === 'number') modalWidth = containerWidth;
+    let modalWidth = calculateModalWidth(containerWidth);
 
-    const topPosition = iconRect.bottom;
-    const leftPosition = screenWidth / 2 - modalWidth / 2;
+    const centerPosition =
+      Math.min(spaceLeft, spaceRight) + Math.abs(spaceLeft - spaceRight) / 2;
 
-    if (
-      spaceLeft < modalWidth &&
-      spaceRight < modalWidth &&
-      screenWidth > modalWidth
-    )
-      return { top: `${topPosition}px`, left: `-${leftPosition}px` };
+    if (window.innerWidth <= modalWidth) modalWidth = window.innerWidth - 40;
 
-      const rightPosition = spaceRight < modalWidth + 30 ? '30px' : null;
+    if (spaceRight > modalWidth)
+      return {
+        left: '0px'
+      };
+     if (spaceLeft > modalWidth) {
+      const rightPosition = spaceRight < modalWidth ? '30px' : null;
 
       return {
-        top: `${topPosition}px`,
         ...(rightPosition && { right: rightPosition })
       };
+  }
+  if (
+    spaceLeft < modalWidth &&
+    spaceRight < modalWidth &&
+    spaceLeft > spaceRight
+  )
+    return { right: '30px' };
+
+    return { left: `-${centerPosition - 40}px` };
   }
 
   return { top: '0' };

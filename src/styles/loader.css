@@ -26,7 +26,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 80%;
 }
 .siren-sdk-card-loader-header {
   width: 100%;

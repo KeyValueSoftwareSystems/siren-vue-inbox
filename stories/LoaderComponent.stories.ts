@@ -12,6 +12,9 @@ const meta = {
     styles: {
       description: 'Custom styles to apply to the Loader component'
     }
+  },
+  args: {
+    hideAvatar: false
   }
 } satisfies Meta<typeof LoaderComponent>;
 
