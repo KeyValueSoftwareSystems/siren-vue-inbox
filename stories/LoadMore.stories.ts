@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import { applyTheme } from '../utils/commonUtils';
-import { ThemeMode } from '../utils/constants';
-import LoadMore from '../components/LoadMore.vue';
+import { applyTheme } from '../src/utils/commonUtils';
+import { ThemeMode } from '../src/utils/constants';
+import LoadMore from '../src/components/LoadMore.vue';
 
 const meta = {
   title: 'Example/LoadMore',

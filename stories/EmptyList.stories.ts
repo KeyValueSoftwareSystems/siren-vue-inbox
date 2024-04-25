@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import { applyTheme } from '../utils/commonUtils';
-import { ThemeMode } from '../utils/constants';
-import EmptyList from '../components/EmptyList.vue';
+import { applyTheme } from '../src/utils/commonUtils';
+import { ThemeMode } from '../src/utils/constants';
+import EmptyList from '../src/components/EmptyList.vue';
 
 const meta = {
   title: 'Example/EmptyList',

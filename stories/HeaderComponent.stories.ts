@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import { applyTheme } from '../utils/commonUtils';
-import { ThemeMode } from '../utils/constants';
-import HeaderComponent from '../components/HeaderComponent.vue';
+import { applyTheme } from '../src/utils/commonUtils';
+import { ThemeMode } from '../src/utils/constants';
+import HeaderComponent from '../src/components/HeaderComponent.vue';
 
 const meta = {
   title: 'Example/Header',
