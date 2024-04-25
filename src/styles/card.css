@@ -1,7 +1,7 @@
 .siren-sdk-card-container {
   display: grid;
   grid-template-columns: max-content auto max-content;
-  gap: 15px;
+  gap: 16px;
 }
 .siren-sdk-hide-avatar-card-container {
   display: grid;
@@ -17,7 +17,6 @@
 }
 .siren-sdk-delete-button {
   cursor: pointer;
-  padding-right: 10px;
 }
 .siren-sdk-card-text-break {
   word-break: break-word;
@@ -40,4 +39,12 @@
 .siren-sdk-card-msg-body {
   margin-top: 5px;
   margin-bottom: 5px;
+  font-weight: 400;
+}
+.siren-sdk-card-avatar{
+  overflow: 'hidden',
+}
+
+.siren-sdk-card-date-style{
+  line-height: 16px;
 }

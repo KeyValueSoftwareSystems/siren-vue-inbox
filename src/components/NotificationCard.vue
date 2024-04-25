@@ -12,6 +12,7 @@
     <img
       :src="notification?.message?.avatar?.imageUrl ?? defaultAvatar"
       alt="avatar"
+      class="siren-sdk-card-avatar"
       :style="styles.cardIconRound"
       v-if="!cardProps?.hideAvatar"
     />
@@ -33,7 +34,7 @@
           :fill="styles?.timerIcon?.color"
           :size="String(styles?.timerIcon?.size)"
         />
-        <div :style="styles.dateStyle">
+        <div :style="styles.dateStyle" class="siren-sdk-card-date-style">
           {{ generateElapsedTimeText(notification?.createdAt) }}
         </div>
       </div>

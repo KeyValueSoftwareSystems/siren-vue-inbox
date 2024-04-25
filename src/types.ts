@@ -212,6 +212,7 @@ export type SirenPanelProps = {
   onError?: (error: SirenErrorType) => void;
   noOfNotificationsPerFetch: number;
   hideClearAll: boolean;
+  cardProps: CardProps;
 };
 
 export type NotificationCardProps = {

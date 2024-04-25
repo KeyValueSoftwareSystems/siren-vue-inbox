@@ -24,6 +24,7 @@
   border-radius: 50%;
   animation: 1s loader-03 linear infinite;
   position: relative;
+  border-bottom-color: transparent;
 }
 @keyframes loader-03 {
   0% {
