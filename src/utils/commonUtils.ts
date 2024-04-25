@@ -98,8 +98,7 @@ export const applyTheme = (
 
   return {
     container: {
-      width: customStyle.window?.width || defaultStyles.window.width,
-      maxWidth: customStyle.window?.width || '100'
+      width: customStyle.window?.width || defaultStyles.window.width
     },
     windowShadow: {
       boxShadow: `${
@@ -129,7 +128,6 @@ export const applyTheme = (
       }`
     },
     body: {
-      overflow: 'auto',
       height: customStyle.windowContainer?.contentHeight || '700px'
     },
     headerContainer: {
@@ -144,10 +142,6 @@ export const applyTheme = (
         customStyle.windowHeader?.height || defaultStyles.windowHeader.height
     },
     headerTitle: {
-      alignItems: 'center',
-      display: 'flex',
-      margin: 0,
-      lineHeight: '28px',
       color:
         theme.windowHeader?.titleColor ||
         theme.colors?.textColor ||
@@ -197,7 +191,6 @@ export const applyTheme = (
         (parseInt(String(customStyle.customCard?.avatarSize), 10) ||
           defaultStyles.customCard.avatarSize) / 2
       }px`,
-      overflow: 'hidden',
       backgroundColor:
         theme.colors?.borderColor || defaultTheme[mode].colors.borderColor
     },
@@ -238,15 +231,13 @@ export const applyTheme = (
         defaultTheme[mode].customCard.descriptionColor,
       fontSize:
         customStyle.customCard?.descriptionSize ||
-        defaultStyles.customCard.descriptionSize,
-      fontWeight: '400'
+        defaultStyles.customCard.descriptionSize
     },
     dateStyle: {
       color: theme.colors?.dateColor || defaultTheme[mode].colors.dateColor,
       fontSize:
         customStyle.customCard?.dateSize ||
-        defaultStyles.customCard.dateSize,
-      lineHeight: '16px'
+        defaultStyles.customCard.dateSize
     },
     emptyText: {
       color: theme.colors?.textColor || defaultTheme[mode].colors.textColor
@@ -404,6 +395,7 @@ export const logger = {
     const timestamp = new Date().toISOString();
     const levelString = LogLevel[level].toUpperCase();
 
+    // eslint-disable-next-line no-console
     console.log(`[${timestamp}] [${levelString}] ${message}`);
   },
   error(error: string) {

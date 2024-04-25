@@ -10,9 +10,7 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     badgeType: {
-      description: 'To select the badge type',
-      control: { type: 'select' },
-      options: BadgeType
+      description: 'To select the badge type'
     },
     darkMode: {
       description: 'Sets the theme mode for the icon component'

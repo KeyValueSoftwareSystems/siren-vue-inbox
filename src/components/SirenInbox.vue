@@ -36,6 +36,7 @@
           :showNotifications="showNotifications"
           :hideClearAll="headerProps?.hideClearAll ?? false"
           :loadMoreLabel="loadMoreLabel"
+          :cardProps="cardProps ?? defaultCardProps"
           >
           <template #loadMoreComponent>
             <slot name="loadMoreComponent" />
@@ -106,6 +107,8 @@ const defaultHeaderProps = {
   hideHeader: false,
   hideClearAll: false
 };
+
+const defaultCardProps = { hideAvatar: false, showMedia: false };
 
 const notificationRef = ref<HTMLElement | null>(null);
 const iconRef = ref<HTMLElement | null>(null);

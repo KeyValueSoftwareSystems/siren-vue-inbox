@@ -1,11 +1,11 @@
 export const COLORS = {
   light: {
-    primaryColor: '#F56630',
+    primaryColor: '#FA9874',
     highlightedCardColor: '#FFECE5',
     textColor: '#344054',
     neutralColor: '#FFFFFF',
     borderColor: '#D0D5DD',
-    dateColor: '#34405499',
+    dateColor: '#667185',
     deleteIcon: '#34405499',
     timerIcon: '#667185',
     clearAllIcon: '#667185',
@@ -16,7 +16,7 @@ export const COLORS = {
     subTextColor: '#667185'
   },
   dark: {
-    primaryColor: '#F56630',
+    primaryColor: '#FA9874',
     highlightedCardColor: '#2E2D30',
     textColor: '#FFFFFF',
     neutralColor: '#232326',

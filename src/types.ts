@@ -221,9 +221,9 @@ export type SirenPanelProps = {
   onError?: (error: SirenErrorType) => void;
   itemsPerFetch: number;
   hideBadge: boolean;
-  cardProps?: CardProps;
   headerProps: { title?: string; hideHeader?: boolean; hideClearAll?: boolean };
   loadMoreLabel: string;
+  cardProps: CardProps;
 };
 
 export type NotificationCardProps = {
