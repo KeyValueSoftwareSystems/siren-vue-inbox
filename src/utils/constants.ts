@@ -43,6 +43,30 @@ export enum LogLevel {
   ERROR,
 }
 
+export enum BadgeType {
+  NONE = 'none',
+  DOT = 'dot',
+  DEFAULT = 'default',
+}
+
+export const levelLogFns = {
+  // eslint-disable-next-line no-console
+  [LogLevel.INFO]: console.log,
+  // eslint-disable-next-line no-console
+  [LogLevel.ERROR]: console.error
+};
+
+export const defaultBadgeStyle = {
+  size: 15,
+  color: '#FF0000',
+  textColor: '#FFFFFF',
+  textSize: 10,
+  linHeight: '14px',
+  top: 'inherit',
+  right: 'inherit',
+  left: 'inherit'
+};
+
 export enum eventTypes {
   MARK_ITEM_AS_VIEWED = 'MARK_ITEM_AS_VIEWED',
   MARK_ITEM_AS_READ = 'MARK_ITEM_AS_READ',
@@ -60,42 +84,45 @@ export enum events {
   NOTIFICATION_COUNT_EVENT = 'NOTIFICATION_COUNT_EVENT',
 }
 
-export const defaultBadgeStyle = {
-  size: '15px',
-  color: '#FF0000',
-  textColor: '#FFFFFF',
-  textSize: '10px',
-  linHeight: '14px',
-  top: 'inherit',
-  left: 'inherit'
-};
-
-export const TOKEN_VERIFICATION_FAILED = 'TOKEN_VERIFICATION_FAILED';
-
-export const errorMap = {
-  SIREN_OBJECT_NOT_FOUND: {
-    Type: 'ERROR',
-    Code: 'SIREN_OBJECT_NOT_FOUND',
-    Message: 'Siren Object Not found'
-  },
-  MISSING_PARAMETER: {
-    Type: 'ERROR',
-    Code: 'MISSING_PARAMETER',
-    Message: 'Missing Parameter'
-  }
-};
-
-export enum BadgeType {
-  NONE = 'none',
-  DOT = 'dot',
-  DEFAULT = 'default',
-}
-
 export const LIST_EMPTY_TEXT = 'No new notifications';
 export const LIST_EMPTY_SUB_TEXT = 'Check back later for updates and alerts.';
 export const ERROR_TEXT = 'Oops! Something went wrong';
 export const ERROR_SUB_TEXT =
   'Could not load the notifications. Please refresh the page.';
-export const CLEAR_ALL_LABEL = 'Clear All';
 export const DEFAULT_WINDOW_TITLE = 'Notifications';
+export const RETRY_BUTTON_LABEL = 'Retry';
+export const CLEAR_ALL_LABEL = 'Clear All';
+export const AUTHENTICATION_FAILED = 'AUTHENTICATION_FAILED';
+export const TOKEN_VERIFICATION_PENDING = 'TOKEN_VERIFICATION_PENDING';
+export const MAXIMUM_RETRY_COUNT = 3;
+export const MAXIMUM_ITEMS_PER_FETCH = 50;
 export const DEFAULT_NOTIFICATION_FETCH_COUNT = 10;
+
+export const errorMap = {
+  SIREN_OBJECT_NOT_FOUND: {
+    Type: 'ERROR',
+    Code: 'OUTSIDE_SIREN_CONTEXT',
+    Message: 'Trying to invoke function outside the siren context'
+  },
+  MISSING_PARAMETER: {
+    Type: 'ERROR',
+    Code: 'MISSING_PARAMETER',
+    Message: 'Missing Parameter'
+  },
+  INVALID_CREDENTIALS: {
+    Type: 'ERROR',
+    Code: 'INVALID_CREDENTIALS',
+    Message: 'Invalid credentials found. Please check your token and recipient ID.'
+  }
+};
+
+export enum VerificationStatus {
+  PENDING = 'PENDING',
+  SUCCESS = 'SUCCESS',
+  FAILED = 'FAILED'
+}
+
+export enum EventType {
+  NOTIFICATION = 'NOTIFICATIONS',
+  UNVIEWED_COUNT = 'UNVIEWED_COUNT',
+}

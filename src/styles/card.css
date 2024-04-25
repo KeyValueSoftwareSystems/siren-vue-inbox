@@ -1,7 +1,10 @@
-.siren-sdk-card-container {
+.siren-sdk-card-common-container{
   display: grid;
+  gap: 16px;
+}
+
+.siren-sdk-card-container {
   grid-template-columns: max-content auto max-content;
-  gap: 15px;
 }
 .siren-sdk-hide-avatar-card-container {
   display: grid;

@@ -170,32 +170,32 @@ export const applyTheme = (
     },
     defaultCardContainer: {
       backgroundColor:
-        theme.notificationCard?.background ||
-        defaultTheme[mode].notificationCard.background,
+        theme.customCard?.background ||
+        defaultTheme[mode].customCard.background,
       padding:
-        customStyle.notificationCard?.padding ||
-        defaultStyles.notificationCard.padding,
+        customStyle.customCard?.padding ||
+        defaultStyles.customCard.padding,
       borderBottom: `${
-        customStyle.notificationCard?.borderWidth ||
-        defaultStyles.notificationCard.borderWidth
+        customStyle.customCard?.borderWidth ||
+        defaultStyles.customCard.borderWidth
       }px solid`,
       borderColor:
-        theme.notificationCard?.borderColor ||
+        theme.customCard?.borderColor ||
         theme.colors?.borderColor ||
-        defaultTheme[mode].notificationCard.borderColor
+        defaultTheme[mode].customCard.borderColor
     },
     cardIconRound: {
       width: `${
-        customStyle.notificationCard?.avatarSize ||
-        defaultStyles.notificationCard.avatarSize
+        customStyle.customCard?.avatarSize ||
+        defaultStyles.customCard.avatarSize
       }px`,
       height: `${
-        customStyle.notificationCard?.avatarSize ||
-        defaultStyles.notificationCard.avatarSize
+        customStyle.customCard?.avatarSize ||
+        defaultStyles.customCard.avatarSize
       }px`,
       borderRadius: `${
-        (parseInt(String(customStyle.notificationCard?.avatarSize), 10) ||
-          defaultStyles.notificationCard.avatarSize) / 2
+        (parseInt(String(customStyle.customCard?.avatarSize), 10) ||
+          defaultStyles.customCard.avatarSize) / 2
       }px`,
       overflow: 'hidden',
       backgroundColor:
@@ -203,15 +203,26 @@ export const applyTheme = (
     },
     cardTitle: {
       color:
-        theme.notificationCard?.titleColor ||
+        theme.customCard?.titleColor ||
         theme.colors?.textColor ||
-        defaultTheme[mode].notificationCard.titleColor,
+        defaultTheme[mode].customCard.titleColor,
       fontSize:
-        customStyle.notificationCard?.titleSize ||
-        defaultStyles.notificationCard.titleSize,
+        customStyle.customCard?.titleSize ||
+        defaultStyles.customCard.titleSize,
       fontWeight:
-        customStyle.notificationCard?.titleFontWeight ||
-        defaultStyles.notificationCard.titleFontWeight
+        customStyle.customCard?.titleFontWeight ||
+        defaultStyles.customCard.titleFontWeight
+    },
+    cardSubTitle: {
+      color:
+        theme.customCard?.subtitleColor ||
+        theme.colors?.textColor ||
+        defaultTheme[mode].customCard.subtitleColor,
+      fontSize:
+        customStyle.customCard?.subtitleSize || defaultStyles.customCard.subtitleSize,
+      fontWeight:
+        customStyle.customCard?.subtitleFontWeight ||
+        defaultStyles.customCard.subtitleFontWeight
     },
     activeCardMarker: {
       backgroundColor:
@@ -222,19 +233,19 @@ export const applyTheme = (
     },
     cardDescription: {
       color:
-        theme.notificationCard?.descriptionColor ||
+        theme.customCard?.descriptionColor ||
         theme.colors?.textColor ||
-        defaultTheme[mode].notificationCard.descriptionColor,
+        defaultTheme[mode].customCard.descriptionColor,
       fontSize:
-        customStyle.notificationCard?.descriptionSize ||
-        defaultStyles.notificationCard.descriptionSize,
+        customStyle.customCard?.descriptionSize ||
+        defaultStyles.customCard.descriptionSize,
       fontWeight: '400'
     },
     dateStyle: {
       color: theme.colors?.dateColor || defaultTheme[mode].colors.dateColor,
       fontSize:
-        customStyle.notificationCard?.dateSize ||
-        defaultStyles.notificationCard.dateSize,
+        customStyle.customCard?.dateSize ||
+        defaultStyles.customCard.dateSize,
       lineHeight: '16px'
     },
     emptyText: {

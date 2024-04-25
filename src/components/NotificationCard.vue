@@ -1,25 +1,25 @@
 <template>
   <div
     :style="cardContainerStyle"
-    :class="
-      cardProps?.hideAvatar
+    :class="`${cardProps?.hideAvatar
         ? 'siren-sdk-hide-avatar-card-container'
-        : 'siren-sdk-card-container'
-    "
-    @click="onNotificationCardClick && onNotificationCardClick(notification)"
-    @keydown="onNotificationCardClick && onNotificationCardClick(notification)"
+        : 'siren-sdk-card-container'} siren-sdk-card-common-container` "
+    @click="handleNotificationCardClick"
+    @keydown="handleNotificationCardClick"
   >
     <img
-      :src="notification?.message?.avatar?.imageUrl ?? defaultAvatar"
+      :src="defaultAvatar"
       alt="avatar"
       :style="styles.cardIconRound"
+      @click="handleAvatarClick"
+      @keydown="handleAvatarClick"
       v-if="!cardProps?.hideAvatar"
     />
     <div class="siren-sdk-card-content-wrapper">
       <div :style="styles.cardTitle" class="siren-sdk-card-text-break">
         {{ props.notification?.message?.header }}
       </div>
-      <div :style="styles.cardDescription" class="siren-sdk-card-text-break">
+      <div :style="styles.cardSubTitle" class="siren-sdk-card-text-break">
         {{ props.notification?.message?.subHeader }}
       </div>
       <div
@@ -59,11 +59,19 @@ import type { NotificationCardProps } from '../types';
 import { generateElapsedTimeText } from '../utils/commonUtils';
 import CloseIcon from './CloseIcon.vue';
 import TimerIcon from './TimerIcon.vue';
-import defaultAvatar from '../assets/defaultAvatar.svg';
+import defaultAvatarDark from '../assets/dark/defaultAvatarDark.png';
+import defaultAvatarLight from '../assets/light/defaultAvatarLight.png';
 
 import '../styles/card.css';
+import useSiren from '../composables/useSiren';
 
 const props = defineProps<NotificationCardProps>();
+
+const {
+    markAsReadById
+  } = useSiren();
+
+const defaultAvatar = props?.darkMode ? defaultAvatarDark : defaultAvatarLight;
 
 const cardContainerStyle: CSSProperties = props?.notification?.isRead
   ? {
@@ -76,7 +84,27 @@ const cardContainerStyle: CSSProperties = props?.notification?.isRead
       backgroundColor: props.styles.activeCardMarker?.backgroundColor
     };
 
-const handleDelete = () => {
-  props.deleteNotificationById(props.notification.id);
+const handleDelete = (event: MouseEvent | KeyboardEvent) => {
+  const cardElement = document.querySelector('.siren-sdk-card-common-container');
+
+  cardElement?.classList.add('siren-sdk-delete-animation');
+
+  setTimeout(() => {
+    props.deleteById(props.notification.id);
+    }, 200);
+
+  event.stopPropagation();
 };
+
+const handleNotificationCardClick = () => {
+    if (props?.onCardClick) props.onCardClick(props.notification);
+    if (!props?.cardProps?.disableAutoMarkAsRead) markAsReadById(props.notification.id);
+  };
+
+const handleAvatarClick = (event: MouseEvent | KeyboardEvent) => {
+  if (props?.cardProps?.onAvatarClick)
+    props?.cardProps?.onAvatarClick(props?.notification);
+  event.stopPropagation();
+};
+
 </script>

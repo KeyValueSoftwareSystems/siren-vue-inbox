@@ -54,6 +54,6 @@
     "license"
   ],
   "dependencies": {
-    "test_notification": "1.0.20"
+    "test_notification": "1.1.0"
   }
 }

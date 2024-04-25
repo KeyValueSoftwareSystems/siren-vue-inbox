@@ -1,16 +1,17 @@
 import type { Siren } from 'test_notification';
+import type { Ref } from 'vue';
 import { inject } from 'vue';
 import PubSub from 'pubsub-js';
 
 import { errorMap, eventTypes, events } from '../utils/constants';
 
 const useSiren = () => {
-  const siren: Siren | undefined = inject('siren');
+  const siren: Ref<Siren> = inject('siren') as Ref<Siren>;
 
-  const markAsRead = async (id: string) => {
-    if (siren)
+  const markAsReadById = async (id: string) => {
+    if (siren.value)
       if (id?.length > 0) {
-        const response = await siren?.markNotificationAsReadById(id);
+        const response = await siren.value?.markAsReadById(id);
 
         if (response && response.data) {
           const payload = { id, action: eventTypes.MARK_ITEM_AS_READ };
@@ -29,9 +30,9 @@ const useSiren = () => {
     return { error: errorMap.SIREN_OBJECT_NOT_FOUND };
   };
 
-  const markNotificationsAsReadByDate = async (untilDate: string) => {
-    if (siren && untilDate) {
-      const response = await siren?.markNotificationsAsReadByDate(untilDate);
+  const markAsReadByDate = async (untilDate: string) => {
+    if (siren.value && untilDate) {
+      const response = await siren.value?.markAsReadByDate(untilDate);
 
       if (response && response.data) {
         const payload = { action: eventTypes.MARK_ALL_AS_READ };
@@ -45,10 +46,10 @@ const useSiren = () => {
     return { error: errorMap.SIREN_OBJECT_NOT_FOUND };
   };
 
-  const deleteNotification = async (id: string) => {
-    if (siren)
+  const deleteById = async (id: string) => {
+    if (siren.value)
       if (id?.length > 0) {
-        const response = await siren?.deleteNotificationById(id);
+        const response = await siren.value?.deleteById(id);
 
         if (response && response.data) {
           const payload = { id, action: eventTypes.DELETE_ITEM };
@@ -67,9 +68,9 @@ const useSiren = () => {
     return { error: errorMap.SIREN_OBJECT_NOT_FOUND };
   };
 
-  const deleteNotificationsByDate = async (untilDate: string) => {
-    if (siren && untilDate) {
-      const response = await siren.deleteNotificationsByDate(untilDate);
+  const deleteByDate = async (untilDate: string) => {
+    if (siren.value && untilDate) {
+      const response = await siren.value?.deleteByDate(untilDate);
 
       if (response && response.data) {
         const payload = { action: eventTypes.DELETE_ALL_ITEM };
@@ -83,9 +84,9 @@ const useSiren = () => {
     return { error: errorMap.SIREN_OBJECT_NOT_FOUND };
   };
 
-  const markNotificationsAsViewed = async (untilDate: string) => {
-    if (siren && untilDate) {
-      const response = await siren?.markNotificationsAsViewed(untilDate);
+  const markAllAsViewed = async (untilDate: string) => {
+    if (siren.value && untilDate) {
+      const response = await siren.value?.markAllAsViewed(untilDate);
 
       if (response && response.data) {
         const payload = {
@@ -106,11 +107,11 @@ const useSiren = () => {
   };
 
   return {
-    markNotificationsAsReadByDate,
-    markAsRead,
-    deleteNotification,
-    deleteNotificationsByDate,
-    markNotificationsAsViewed
+    markAsReadByDate,
+    markAsReadById,
+    deleteById,
+    deleteByDate,
+    markAllAsViewed
   };
 };
 

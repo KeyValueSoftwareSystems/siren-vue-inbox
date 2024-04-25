@@ -25,15 +25,17 @@
   }"
   >
         <SirenPanel
-          :hideHeader="hideHeader"
-          :title="title"
-          :onNotificationCardClick="onNotificationCardClick"
-          :darkMode="darkMode"
           :styles="styles"
+          :itemsPerFetch="itemsPerFetch"
+          :hideBadge="hideBadge"
+          :headerProps="headerProps ?? defaultHeaderProps"
+          :onCardClick="onCardClick"
+          :onError="onError"
+          :darkMode="darkMode"
           :windowViewOnly="windowViewOnly"
           :showNotifications="showNotifications"
-          :noOfNotificationsPerFetch="noOfNotificationsPerFetch"
-          :hideClearAll="hideClearAll"
+          :hideClearAll="headerProps?.hideClearAll ?? false"
+          :loadMoreLabel="loadMoreLabel"
           >
           <template #loadMoreComponent>
             <slot name="loadMoreComponent" />
@@ -50,8 +52,8 @@
           <template #emptyList>
             <slot name="listEmptyComponent" />
           </template>
-          <template>
-            <slot name="customNotificationCard" />
+          <template #customCard="{ item }">
+            <slot name="customCard" :item="item" />
           </template>
           <template #footer>
             <slot name="customFooter" />
@@ -62,6 +64,9 @@
 </template>
 
 <script setup lang="ts">
+import type {
+Ref
+} from 'vue';
 import {
   ref,
   watch,
@@ -80,7 +85,8 @@ import {
   ThemeMode,
   BadgeType,
   DEFAULT_WINDOW_TITLE,
-  DEFAULT_NOTIFICATION_FETCH_COUNT
+  DEFAULT_NOTIFICATION_FETCH_COUNT,
+EventType
 } from '../utils/constants';
 import SirenPanel from './SirenPanel.vue';
 import NotificationIcon from './NotificationIcon.vue';
@@ -88,13 +94,18 @@ import NotificationIcon from './NotificationIcon.vue';
 import '../styles/inbox.css';
 
 const props = withDefaults(defineProps<SirenProps>(), {
-  title: DEFAULT_WINDOW_TITLE,
   windowViewOnly: false,
-  hideHeader: false,
-  hideClearAll: false,
-  noOfNotificationsPerFetch: DEFAULT_NOTIFICATION_FETCH_COUNT,
-  darkMode: false
+  itemsPerFetch: DEFAULT_NOTIFICATION_FETCH_COUNT,
+  darkMode: false,
+  hideBadge: false,
+  loadMoreLabel: 'Load more'
 });
+
+const defaultHeaderProps = {
+  title: DEFAULT_WINDOW_TITLE,
+  hideHeader: false,
+  hideClearAll: false
+};
 
 const notificationRef = ref<HTMLElement | null>(null);
 const iconRef = ref<HTMLElement | null>(null);
@@ -106,7 +117,7 @@ const modalPosition = ref<{
   top: '0px'
 });
 
-const siren: Siren | undefined = inject('siren');
+const siren: Ref<Siren> = inject('siren') as Ref<Siren>;
 
 const styles = computed(() =>
   applyTheme(
@@ -156,7 +167,7 @@ watch(showNotifications, () => {
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleOutsideClick);
   window?.removeEventListener('resize', updateModalPosition);
-  siren?.stopRealTimeNotificationFetch();
-  siren?.stopRealTimeUnviewedCountFetch();
+  siren.value?.stopRealTimeFetch(EventType.NOTIFICATION);
+  siren.value?.stopRealTimeFetch(EventType.UNVIEWED_COUNT);
 });
 </script>
