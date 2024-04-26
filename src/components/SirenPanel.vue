@@ -20,7 +20,7 @@
       !error && { overflow: 'hidden' }),
   }" :class="containerClassNames">
         <slot name="customLoader" v-if="isLoading && isEmptyArray(notificationsContent) && !error">
-          <LoaderComponent :styles="styles" :hideAvatar="true" />
+          <LoaderComponent :styles="styles" :hideAvatar="cardProps.hideAvatar ?? false" />
         </slot>
 
         <slot name="customErrorWindow" v-if="error && error.length > 0 && !isLoading">
