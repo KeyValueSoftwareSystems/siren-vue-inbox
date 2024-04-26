@@ -98,6 +98,7 @@ watch(() => props?.config, () => {
     sendResetDataEvents();
     initialize();
   }
+  if (retryCount > MAXIMUM_RETRY_COUNT) stopRealTimeFetch();
 }, { immediate: true });
 
 provide<Ref<Siren>>('siren', siren as Ref<Siren>);

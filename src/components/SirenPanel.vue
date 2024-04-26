@@ -43,7 +43,7 @@
             </div>
           </div>
           <LoadMore :onLoadMore="onLoadMore" :paginationLoading="paginationLoading"
-            v-if="!reachedEnd && !isEmptyArray(notificationsContent) && !isLoading"
+            v-if="!reachedEnd && !isLoading"
             :styles="styles">
             <template #loadMoreComponent>
               <slot name="loadMoreComponent" />
@@ -258,14 +258,12 @@ const fetchNotifications = async (isRefresh = false) => {
       resetRealTimeFetch(isRefresh, data);
     } else {
       reachedEnd.value = true;
-      if (response && 'error' in response)
-        error.value = response.error?.Message ?? '';
-      else error.value = ERROR_TEXT;
+      error.value = ERROR_TEXT;
     }
   } catch (error: any) {
     paginationLoading.value = false;
     isLoading.value = false;
-    if ('Message' in error) error.value = error?.Message;
+    if (typeof error === 'object' && error !== null && 'Message' in error) error.value = error?.Message;
     else error.value = ERROR_TEXT;
   }
 
@@ -343,7 +341,7 @@ watch(
         notificationsContent.value
       );
 
-      if (!isEmptyArray(updatedNotifications))
+      if (!isEmptyArray(eventListenerData.value?.newNotifications))
         handleMarkNotificationsAsViewed(updatedNotifications[0]?.createdAt);
 
       notificationsContent.value = updatedNotifications;

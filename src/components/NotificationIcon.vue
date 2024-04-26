@@ -4,7 +4,9 @@
     :onClick="handleNotification"
   >
     <slot name="notification-icon">
-      <BellIcon :stroke="styles.notificationIcon?.color" />
+      <BellIcon :stroke=" darkMode
+              ? COLORS.dark.notificationIcon
+              : COLORS.light.notificationIcon" />
     </slot>
     <div
       class="siren-sdk-notificationIcon-badge-container"
@@ -14,6 +16,7 @@
           : {
               width: 0,
               height: 0,
+              overflow: 'hidden'
             }
       "
     >
@@ -39,7 +42,7 @@ import PubSub from 'pubsub-js';
 import type { Siren } from 'test_notification';
 
 import type { SirenStyleProps } from '../types';
-import { BadgeType, EventType, eventTypes, events } from '../utils/constants';
+import { BadgeType, EventType, eventTypes, events, COLORS } from '../utils/constants';
 import BellIcon from './BellIcon.vue';
 
 import '../styles/icon.css';
