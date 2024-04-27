@@ -11,10 +11,10 @@
     ...(props?.cardProps?.onAvatarClick && { cursor: 'pointer' }),
   }" @click="handleAvatarClick" @keydown="handleAvatarClick" v-if="!cardProps?.hideAvatar" />
     <div class="siren-sdk-card-content-wrapper">
-      <div :style="styles.cardTitle" class="siren-sdk-card-text-break">
+      <div :style="styles.cardTitle" class="siren-sdk-card-title">
         {{ props.notification?.message?.header }}
       </div>
-      <div :style="styles.cardSubTitle" class="siren-sdk-card-text-break">
+      <div :style="styles.cardSubTitle" class="siren-sdk-card-subtitle">
         {{ props.notification?.message?.subHeader }}
       </div>
       <div :style="styles.cardDescription" class="siren-sdk-card-text-break siren-sdk-card-msg-body">
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <div class="siren-sdk-delete-button" @click="handleDelete" @keydown="handleDelete">
+    <div class="siren-sdk-delete-button" @click="handleDelete" @keydown="handleDelete" v-if="!cardProps?.hideDelete">
       <CloseIcon :fill="styles?.deleteIcon?.color" :size="String(styles?.deleteIcon?.size)" />
     </div>
   </div>
