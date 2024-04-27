@@ -19,14 +19,16 @@ const defaultStyles = {
     padding: '0px',
     height: '700px'
   },
-  notificationCard: {
+  customCard: {
     padding: '12px 24px',
     borderWidth: '0.5',
     avatarSize: 40,
     titleFontWeight: '600',
     titleSize: '14px',
     descriptionSize: '14px',
-    dateSize: '12px'
+    dateSize: '12px',
+    subtitleSize: '14px',
+    subtitleFontWeight: '500'
   },
   loadMoreButton: {
     fontSize: '14px',

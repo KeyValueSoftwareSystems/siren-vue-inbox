@@ -1,5 +1,4 @@
 <template>
-  <div :class="className" :style="{ width: size, height: size }">
     <svg
       :width="size"
       :height="size"
@@ -12,18 +11,15 @@
         :fill="fill"
       />
     </svg>
-  </div>
 </template>
 
 <script setup lang="ts">
 withDefaults(
   defineProps<{
     fill?: string;
-    className?: string;
     size?: string;
   }>(),
   {
-    className: '',
     fill: '#667185',
     size: '24'
   }

@@ -98,7 +98,7 @@ export const applyTheme = (
 
   return {
     container: {
-      width: customStyle.window?.width || defaultStyles.window.width
+      maxWidth: customStyle.window?.width || '100'
     },
     windowShadow: {
       boxShadow: `${
@@ -164,47 +164,58 @@ export const applyTheme = (
     },
     defaultCardContainer: {
       backgroundColor:
-        theme.notificationCard?.background ||
-        defaultTheme[mode].notificationCard.background,
+        theme.customCard?.background ||
+        defaultTheme[mode].customCard.background,
       padding:
-        customStyle.notificationCard?.padding ||
-        defaultStyles.notificationCard.padding,
+        customStyle.customCard?.padding ||
+        defaultStyles.customCard.padding,
       borderBottom: `${
-        customStyle.notificationCard?.borderWidth ||
-        defaultStyles.notificationCard.borderWidth
+        customStyle.customCard?.borderWidth ||
+        defaultStyles.customCard.borderWidth
       }px solid`,
       borderColor:
-        theme.notificationCard?.borderColor ||
+        theme.customCard?.borderColor ||
         theme.colors?.borderColor ||
-        defaultTheme[mode].notificationCard.borderColor
+        defaultTheme[mode].customCard.borderColor
     },
     cardIconRound: {
       width: `${
-        customStyle.notificationCard?.avatarSize ||
-        defaultStyles.notificationCard.avatarSize
+        customStyle.customCard?.avatarSize ||
+        defaultStyles.customCard.avatarSize
       }px`,
       height: `${
-        customStyle.notificationCard?.avatarSize ||
-        defaultStyles.notificationCard.avatarSize
+        customStyle.customCard?.avatarSize ||
+        defaultStyles.customCard.avatarSize
       }px`,
       borderRadius: `${
-        (parseInt(String(customStyle.notificationCard?.avatarSize), 10) ||
-          defaultStyles.notificationCard.avatarSize) / 2
+        (parseInt(String(customStyle.customCard?.avatarSize), 10) ||
+          defaultStyles.customCard.avatarSize) / 2
       }px`,
       backgroundColor:
         theme.colors?.borderColor || defaultTheme[mode].colors.borderColor
     },
     cardTitle: {
       color:
-        theme.notificationCard?.titleColor ||
+        theme.customCard?.titleColor ||
         theme.colors?.textColor ||
-        defaultTheme[mode].notificationCard.titleColor,
+        defaultTheme[mode].customCard.titleColor,
       fontSize:
-        customStyle.notificationCard?.titleSize ||
-        defaultStyles.notificationCard.titleSize,
+        customStyle.customCard?.titleSize ||
+        defaultStyles.customCard.titleSize,
       fontWeight:
-        customStyle.notificationCard?.titleFontWeight ||
-        defaultStyles.notificationCard.titleFontWeight
+        customStyle.customCard?.titleFontWeight ||
+        defaultStyles.customCard.titleFontWeight
+    },
+    cardSubTitle: {
+      color:
+        theme.customCard?.subtitleColor ||
+        theme.colors?.textColor ||
+        defaultTheme[mode].customCard.subtitleColor,
+      fontSize:
+        customStyle.customCard?.subtitleSize || defaultStyles.customCard.subtitleSize,
+      fontWeight:
+        customStyle.customCard?.subtitleFontWeight ||
+        defaultStyles.customCard.subtitleFontWeight
     },
     activeCardMarker: {
       backgroundColor:
@@ -215,18 +226,18 @@ export const applyTheme = (
     },
     cardDescription: {
       color:
-        theme.notificationCard?.descriptionColor ||
+        theme.customCard?.descriptionColor ||
         theme.colors?.textColor ||
-        defaultTheme[mode].notificationCard.descriptionColor,
+        defaultTheme[mode].customCard.descriptionColor,
       fontSize:
-        customStyle.notificationCard?.descriptionSize ||
-        defaultStyles.notificationCard.descriptionSize
+        customStyle.customCard?.descriptionSize ||
+        defaultStyles.customCard.descriptionSize
     },
     dateStyle: {
       color: theme.colors?.dateColor || defaultTheme[mode].colors.dateColor,
       fontSize:
-        customStyle.notificationCard?.dateSize ||
-        defaultStyles.notificationCard.dateSize
+        customStyle.customCard?.dateSize ||
+        defaultStyles.customCard.dateSize
     },
     emptyText: {
       color: theme.colors?.textColor || defaultTheme[mode].colors.textColor
@@ -293,6 +304,16 @@ export const applyTheme = (
   };
 };
 
+export const calculateModalWidth = (containerWidth: DimensionValue): number => {
+  let modalWidth = 500;
+
+  if (typeof containerWidth === 'string')
+    modalWidth = parseInt(containerWidth.slice(0, -2), 10) + 40;
+  else if (typeof containerWidth === 'number') modalWidth = containerWidth + 40;
+
+  return modalWidth;
+};
+
 export const calculateModalPosition = (
   iconRef: Ref<HTMLElement | null>,
   window: Window,
@@ -303,28 +324,33 @@ export const calculateModalPosition = (
     const screenWidth = window.innerWidth;
     const spaceRight = screenWidth - iconRect.x;
     const spaceLeft = iconRect.x;
-    let modalWidth = 400;
 
-    if (typeof containerWidth === 'string')
-      modalWidth = parseInt(containerWidth.slice(0, -2), 10);
-    else if (typeof containerWidth === 'number') modalWidth = containerWidth;
+    let modalWidth = calculateModalWidth(containerWidth);
 
-    const topPosition = iconRect.bottom;
-    const leftPosition = screenWidth / 2 - modalWidth / 2;
+    const centerPosition =
+      Math.min(spaceLeft, spaceRight) + Math.abs(spaceLeft - spaceRight) / 2;
 
-    if (
-      spaceLeft < modalWidth &&
-      spaceRight < modalWidth &&
-      screenWidth > modalWidth
-    )
-      return { top: `${topPosition}px`, left: `-${leftPosition}px` };
+    if (window.innerWidth <= modalWidth) modalWidth = window.innerWidth - 40;
 
-      const rightPosition = spaceRight < modalWidth + 30 ? '30px' : null;
+    if (spaceRight > modalWidth)
+      return {
+        left: '0px'
+      };
+     if (spaceLeft > modalWidth) {
+      const rightPosition = spaceRight < modalWidth ? '30px' : null;
 
       return {
-        top: `${topPosition}px`,
         ...(rightPosition && { right: rightPosition })
       };
+  }
+  if (
+    spaceLeft < modalWidth &&
+    spaceRight < modalWidth &&
+    spaceLeft > spaceRight
+  )
+    return { right: '30px' };
+
+    return { left: `-${centerPosition - 40}px` };
   }
 
   return { top: '0' };

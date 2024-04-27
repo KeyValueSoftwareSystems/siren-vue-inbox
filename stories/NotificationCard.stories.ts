@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import { applyTheme } from '../utils/commonUtils';
-import { ThemeMode } from '../utils/constants';
-import NotificationCard from '../components/NotificationCard.vue';
+import { applyTheme } from '../src/utils/commonUtils';
+import { ThemeMode } from '../src/utils/constants';
+import NotificationCard from '../src/components/NotificationCard.vue';
 
 const meta = {
   title: 'Example/NotificationCard',
@@ -12,8 +12,11 @@ const meta = {
     cardProps: {
       description: 'Object containing card properties'
     },
-    deleteNotificationById: {
+    deleteById: {
       description: 'Function triggered when a notification card is deleted'
+    },
+    onCardClick: {
+      description: 'Function triggered when a notification card is clicked'
     },
     notification: {
       description: 'Object containing notification card details'
@@ -27,8 +30,10 @@ const meta = {
       hideAvatar: false,
       showMedia: false
      },
-     deleteNotificationById: () => {},
-     styles: applyTheme({}, ThemeMode.LIGHT, {})
+     deleteById: () => {},
+     onCardClick: () => {},
+     styles: applyTheme({}, ThemeMode.LIGHT, {}),
+     darkMode: false
   }
 } satisfies Meta<typeof NotificationCard>;
 

@@ -1,12 +1,12 @@
 <template>
   <div :class="windowViewOnly ? 'siren-sdk-panel-container' : 'siren-sdk-panel-modal'
     " :style="panelStyle">
-    <slot name="customHeader" v-if="!hideHeader">
-      <HeaderComponent :title="title"
+    <slot name="customHeader" v-if="!headerProps.hideHeader">
+      <HeaderComponent :title="headerProps.title ?? DEFAULT_WINDOW_TITLE"
         :enableClearAll="!isEmptyArray(notificationsContent) && !isLoading"
         :handleClearAllNotification="handleClearAllNotification"
         :styles="styles" :windowViewOnly="windowViewOnly"
-        :hideClearAll="hideClearAll" />
+        :hideClearAll="headerProps.hideClearAll ?? false" />
     </slot>
     <div :style="{
     ...(!windowViewOnly && styles.windowBottomBorder),
@@ -20,31 +20,30 @@
       !error && { overflow: 'hidden' }),
   }" :class="containerClassNames">
         <slot name="customLoader" v-if="isLoading && isEmptyArray(notificationsContent) && !error">
-          <LoaderComponent :styles="styles" />
+          <LoaderComponent :styles="styles" :hideAvatar="cardProps.hideAvatar ?? false" />
         </slot>
 
-        <slot name="customErrorWindow" v-if="error && error.length > 0">
+        <slot name="customErrorWindow" v-if="error && error.length > 0 && !isLoading">
           <ErrorWindow :styles="styles" :darkMode="darkMode" :error="error" />
         </slot>
 
-        <slot name="listEmptyComponent" v-if="isEmptyArray(notificationsContent) && !isLoading && !error">
+        <slot name="listEmptyComponent" v-if="isEmptyArray(notificationsContent) && !isLoading && !error && reachedEnd">
           <EmptyList :styles="styles" :darkMode="darkMode" />
         </slot>
 
         <div v-if="!isEmptyArray(notificationsContent) && !isLoading && !error" class="siren-sdk-panel-list-container">
           <div class="siren-sdk-panel-list">
             <div v-for="notification in notificationsContent" :key="notification?.id">
-              <slot name="customNotificationCard">
+              <slot name="customCard" :item="notification">
                 <NotificationCard :notification="notification"
                   :cardProps="cardProps"
-                  :onNotificationCardClick="onNotificationCardClick"
-                  :deleteNotificationById="deleteNotificationById"
+                  :onCardClick="onCardClick" :deleteById="deleteNotificationById"
                   :styles="styles" :darkMode="darkMode" />
               </slot>
             </div>
           </div>
           <LoadMore :onLoadMore="onLoadMore" :paginationLoading="paginationLoading"
-            v-if="!reachedEnd && !isEmptyArray(notificationsContent) && !isLoading"
+            v-if="!reachedEnd && !isLoading"
             :styles="styles">
             <template #loadMoreComponent>
               <slot name="loadMoreComponent" />
@@ -62,6 +61,8 @@
 </template>
 
 <script setup lang="ts">
+import type {
+Ref } from 'vue';
 import {
   computed,
   defineProps,
@@ -89,7 +90,7 @@ import {
   updateNotifications
 } from '../utils/commonUtils';
 import type { SirenPanelProps } from '../types';
-import { ERROR_TEXT, eventTypes, events } from '../utils/constants';
+import { VerificationStatus, ERROR_TEXT, EventType, errorMap, eventTypes, events, DEFAULT_WINDOW_TITLE } from '../utils/constants';
 import HeaderComponent from './HeaderComponent.vue';
 import NotificationCard from './NotificationCard.vue';
 import EmptyList from './EmptyList.vue';
@@ -109,12 +110,13 @@ type EventListenerDataType = {
   unreadCount?: number;
 };
 
-const siren: Siren | undefined = inject('siren');
+const siren: Ref<Siren> = inject('siren') as Ref<Siren>;
+const verificationStatus: Ref<VerificationStatus> = inject('verificationStatus') as Ref<VerificationStatus>;
 
 const {
-  markNotificationsAsViewed,
-  deleteNotificationsByDate,
-  deleteNotification
+  markAllAsViewed,
+  deleteByDate,
+  deleteById
 } = useSiren();
 
 const notificationsContent = ref<NotificationDataType[]>([]);
@@ -124,11 +126,7 @@ const reachedEnd = ref<boolean>(false);
 const paginationLoading = ref<boolean>(false);
 const eventListenerData = ref<EventListenerDataType | null>(null);
 
-const panelStyle = {
-  ...(!props.windowViewOnly && props.styles.windowTopBorder),
-  ...(!props.windowViewOnly && props.styles.windowBottomBorder),
-  ...props.styles.container
-};
+let panelStyle = {};
 
 const containerClassNames = `${(!notificationsContent.value?.length || error) && isLoading.value && 'siren-sdk-content-container'}`;
 const triggerOnError = computed(
@@ -145,7 +143,7 @@ const triggerOnError = computed(
 
 const deleteNotificationById = computed(() => async (id: string) => {
   try {
-    const response = await deleteNotification(id);
+    const response = await deleteById(id);
 
     if (response) triggerOnError.value(response);
   } catch (err) {
@@ -161,14 +159,14 @@ const notificationSubscriber = async (_type: string, dataString: string) => {
 
 const restartNotificationCountFetch = () => {
   try {
-    siren?.startRealTimeUnviewedCountFetch();
+    siren.value?.startRealTimeFetch({ eventType: EventType.UNVIEWED_COUNT });
   } catch (er) {
     //  handle error if needed
   }
 };
 
 const cleanUp = () => {
-  siren?.stopRealTimeNotificationFetch();
+  siren.value?.stopRealTimeFetch(EventType.NOTIFICATION);
 };
 
 const handleMarkNotificationsAsViewed = async (
@@ -182,7 +180,7 @@ const handleMarkNotificationsAsViewed = async (
 
     PubSub.publish(events.NOTIFICATION_COUNT_EVENT, JSON.stringify(payload));
     if (createdAt) {
-      const response = await markNotificationsAsViewed(createdAt);
+      const response = await markAllAsViewed(createdAt);
 
       if (response) triggerOnError.value(response);
     }
@@ -212,8 +210,11 @@ const resetRealTimeFetch = (
   if (!refresh) return;
 
   try {
-    siren?.startRealTimeNotificationFetch(
-      generateFilterParams(newList ?? [], true, props.noOfNotificationsPerFetch)
+    siren.value?.startRealTimeFetch(
+      {
+        eventType: EventType.NOTIFICATION,
+        params: generateFilterParams(newList ?? [], true, props.itemsPerFetch)
+      }
     );
   } catch (er) {
     //  handle error if needed
@@ -228,14 +229,14 @@ const fetchNotifications = async (isRefresh = false) => {
   else
     isLoading.value = true;
 
-  if (!siren) return;
+  if (!siren.value) return;
 
   try {
-    const response = await siren.fetchAllNotifications(
+    const response = await siren.value?.fetchAllNotifications(
       generateFilterParams(
         isRefresh ? [] : notificationsContent.value,
         false,
-        props.noOfNotificationsPerFetch
+        props.itemsPerFetch
       )
     );
 
@@ -257,14 +258,12 @@ const fetchNotifications = async (isRefresh = false) => {
       resetRealTimeFetch(isRefresh, data);
     } else {
       reachedEnd.value = true;
-      if (response && 'error' in response)
-        error.value = response.error?.Message ?? '';
-      else error.value = ERROR_TEXT;
+      error.value = ERROR_TEXT;
     }
   } catch (error: any) {
     paginationLoading.value = false;
     isLoading.value = false;
-    if ('Message' in error) error.value = error?.Message;
+    if (typeof error === 'object' && error !== null && 'Message' in error) error.value = error?.Message;
     else error.value = ERROR_TEXT;
   }
 
@@ -296,7 +295,7 @@ const resetValues = () => {
 const handleClearAllNotification = async (): Promise<void> => {
   try {
     if (!isEmptyArray(notificationsContent.value)) {
-      const response = await deleteNotificationsByDate(
+      const response = await deleteByDate(
         notificationsContent.value?.[0].createdAt
       );
 
@@ -324,6 +323,15 @@ onBeforeUnmount(() => {
   handleMarkNotificationsAsViewed(new Date().toISOString());
 });
 
+watch(() => props.modalWidth, () => {
+   panelStyle = {
+  ...(!props.windowViewOnly && props.styles.windowTopBorder),
+  ...(!props.windowViewOnly && { width: `${props.modalWidth}` }),
+  ...(!props.windowViewOnly && props.styles.windowBottomBorder),
+  ...props.styles.container
+};
+}, { immediate: true });
+
 watch(
   () => eventListenerData.value,
   () => {
@@ -333,7 +341,7 @@ watch(
         notificationsContent.value
       );
 
-      if (!isEmptyArray(updatedNotifications))
+      if (!isEmptyArray(eventListenerData.value?.newNotifications))
         handleMarkNotificationsAsViewed(updatedNotifications[0]?.createdAt);
 
       notificationsContent.value = updatedNotifications;
@@ -344,13 +352,21 @@ watch(
 );
 
 watch(
-  () => siren,
+  [() => siren.value, () => verificationStatus.value],
   () => {
-    if (siren) {
-      siren?.stopRealTimeUnviewedCountFetch();
+    if (siren.value && verificationStatus.value !== VerificationStatus.PENDING) {
+      siren.value?.stopRealTimeFetch(EventType.UNVIEWED_COUNT);
       fetchNotifications(true);
+    }
+    if (!siren.value && isLoading.value) {
+      isLoading.value = false;
+      if (props.onError)
+        props.onError(errorMap.INVALID_CREDENTIALS);
+
+      error.value = ERROR_TEXT;
     }
   },
   { immediate: true }
 );
+
 </script>

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import { applyTheme } from '../utils/commonUtils';
-import { ThemeMode } from '../utils/constants';
-import LoaderComponent from '../components/LoaderComponent.vue';
+import { applyTheme } from '../src/utils/commonUtils';
+import { ThemeMode } from '../src/utils/constants';
+import LoaderComponent from '../src/components/LoaderComponent.vue';
 
 const meta = {
   title: 'Example/Loader',
@@ -12,6 +12,9 @@ const meta = {
     styles: {
       description: 'Custom styles to apply to the Loader component'
     }
+  },
+  args: {
+    hideAvatar: false
   }
 } satisfies Meta<typeof LoaderComponent>;
 

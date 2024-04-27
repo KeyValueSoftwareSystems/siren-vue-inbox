@@ -1,5 +1,4 @@
 <template>
-  <div :class="className" :style="{ width: size, height: size }">
     <svg
       :width="size"
       :height="size"
@@ -15,22 +14,19 @@
         stroke-linejoin="round"
       />
     </svg>
-  </div>
 </template>
 
 <script setup lang="ts">
 withDefaults(
   defineProps<{
     fill?: string;
-    className?: string;
     size?: string;
     stroke?: string;
   }>(),
   {
     fill: 'none',
     size: '20',
-    stroke: '#98A2B3',
-    className: ''
+    stroke: '#98A2B3'
   }
 );
 </script>

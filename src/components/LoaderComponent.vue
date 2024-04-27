@@ -5,8 +5,8 @@
       :key="number"
       class="siren-sdk-card-loader-container"
     >
-      <div :style="styles.loader" class="siren-sdk-card-loader-avatar" />
-      <div class="siren-sdk-card-loader-details">
+      <div v-if="!hideAvatar" :style="styles.loader" class="siren-sdk-card-loader-avatar" />
+      <div class="siren-sdk-card-loader-details" :class="hideAvatar ? 'siren-sdk-card-hide-avatar' : 'siren-sdk-card-show-avatar'">
         <div :style="styles.loader" class="siren-sdk-card-loader-header" />
         <div :style="styles.loader" class="siren-sdk-card-loader-header" />
         <div :style="styles.loader" class="siren-sdk-card-loader-body" />
@@ -27,5 +27,6 @@ import '../styles/loader.css';
 
 defineProps<{
   styles: SirenStyleProps;
+  hideAvatar: boolean;
 }>();
 </script>

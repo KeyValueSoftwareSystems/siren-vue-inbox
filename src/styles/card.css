@@ -1,7 +1,10 @@
-.siren-sdk-card-container {
+.siren-sdk-card-common-container{
   display: grid;
-  grid-template-columns: max-content auto max-content;
   gap: 16px;
+}
+
+.siren-sdk-card-container {
+  grid-template-columns: max-content auto max-content;
 }
 .siren-sdk-hide-avatar-card-container {
   display: grid;
@@ -47,4 +50,17 @@
 
 .siren-sdk-card-date-style{
   line-height: 16px;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.siren-sdk-delete-animation {
+  animation: fadeOut 0.5s ease forwards;
 }

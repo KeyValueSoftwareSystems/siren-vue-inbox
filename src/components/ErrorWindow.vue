@@ -9,7 +9,7 @@
       />
     </div>
     <div :style="styles.errorText" class="siren-sdk-error-text">
-      {{ ERROR_TEXT }}
+      {{ error || ERROR_TEXT }}
     </div>
     <div :style="styles.errorText" class="siren-sdk-error-sub-text">
       {{ ERROR_SUB_TEXT }}

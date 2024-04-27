@@ -23,6 +23,7 @@ type NotificationCardThemeProps = {
   borderColor?: string;
   background?: string;
   titleColor?: string;
+  subtitleColor?: string;
   descriptionColor?: string;
 };
 
@@ -35,6 +36,7 @@ export type SirenStyleProps = {
   defaultCardContainer: CSSProperties;
   cardIconRound: CSSProperties;
   cardTitle: CSSProperties;
+  cardSubTitle: CSSProperties;
   activeCardMarker: CSSProperties;
   cardDescription: CSSProperties;
   dateStyle: CSSProperties;
@@ -94,7 +96,7 @@ export type ThemeProps = {
   window?: WindowProps;
   windowHeader?: WindowHeaderProps;
   windowContainer?: WindowContainerProps;
-  notificationCard?: NotificationCardThemeProps;
+  customCard?: NotificationCardThemeProps;
   loadMoreButton?: LoadMoreButtonProps;
   badgeStyle?: {
     color?: string;
@@ -125,12 +127,15 @@ export type CustomStyle = {
     padding?: number;
     contentHeight?: DimensionValue;
   };
-  notificationCard?: {
+  customCard?: {
     padding?: number;
     borderWidth?: number;
     avatarSize?: number;
     titleFontWeight?: TextStyle['fontWeight'];
     titleSize?: number;
+    subtitleFontWeight?: TextStyle['fontWeight'];
+    subtitleSize?: number;
+    descriptionFontWeight?: TextStyle['fontWeight'];
     descriptionSize?: number;
     dateSize?: number;
   };
@@ -158,19 +163,25 @@ export type CustomStyle = {
 export type CardProps = {
   hideAvatar?: boolean;
   showMedia?: boolean;
+  hideDelete?: boolean;
+  disableAutoMarkAsRead?: boolean;
+  onAvatarClick?: (notification: NotificationDataType) => void;
 };
 
 export type SirenInboxProps = {
   theme?: Theme;
   customStyle?: CustomStyle;
-  title?: string;
   loadMoreLabel?: string;
-  hideHeader?: boolean;
-  hideClearAll?: boolean;
+  headerProps?: {
+    title?: string;
+    hideHeader?: boolean;
+    hideClearAll?: boolean;
+  };
+  hideBadge?: boolean;
   darkMode?: boolean;
+  itemsPerFetch?: number;
   cardProps?: CardProps;
-  noOfNotificationsPerFetch?: number;
-  onNotificationCardClick?: (notification: NotificationDataType) => void;
+  onCardClick?: (notification: NotificationDataType) => void;
   onError?: (error: SirenErrorType) => void;
 };
 
@@ -202,25 +213,27 @@ export type SirenNotificationButtonProps = {
 };
 
 export type SirenPanelProps = {
-  hideHeader: boolean;
-  title: string;
-  onNotificationCardClick?: (notification: NotificationDataType) => void;
+  onCardClick?: SirenInboxProps['onCardClick'];
   darkMode: boolean;
   styles: SirenStyleProps;
   windowViewOnly: boolean;
   showNotifications: boolean;
   onError?: (error: SirenErrorType) => void;
-  noOfNotificationsPerFetch: number;
-  hideClearAll: boolean;
+  itemsPerFetch: number;
+  hideBadge: boolean;
+  headerProps: { title?: string; hideHeader?: boolean; hideClearAll?: boolean };
+  loadMoreLabel: string;
   cardProps: CardProps;
+  modalWidth: DimensionValue;
 };
 
 export type NotificationCardProps = {
   notification: NotificationDataType;
-  cardProps: CardProps;
-  onNotificationCardClick?: (notification: NotificationDataType) => void;
+  cardProps: SirenInboxProps['cardProps'];
+  onCardClick?: SirenInboxProps['onCardClick'];
   styles: SirenStyleProps;
-  deleteNotificationById: (id: string) => void;
+  deleteById: (id: string) => void;
+  darkMode: boolean;
 };
 
 export type ErrorWindowProps = {

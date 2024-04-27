@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import { applyTheme } from '../utils/commonUtils';
-import { BadgeType, ThemeMode } from '../utils/constants';
-import NotificationIcon from '../components/NotificationIcon.vue';
+import { applyTheme } from '../src/utils/commonUtils';
+import { BadgeType, ThemeMode } from '../src/utils/constants';
+import NotificationIcon from '../src/components/NotificationIcon.vue';
 
 const meta = {
   title: 'Example/NotificationIcon',

@@ -4,7 +4,9 @@
     :onClick="handleNotification"
   >
     <slot name="notification-icon">
-      <BellIcon :stroke="styles.notificationIcon?.color" />
+      <BellIcon :stroke=" darkMode
+              ? COLORS.dark.notificationIcon
+              : COLORS.light.notificationIcon" />
     </slot>
     <div
       class="siren-sdk-notificationIcon-badge-container"
@@ -14,6 +16,7 @@
           : {
               width: 0,
               height: 0,
+              overflow: 'hidden'
             }
       "
     >
@@ -25,6 +28,8 @@
 </template>
 
 <script setup lang="ts">
+import type {
+Ref } from 'vue';
 import {
   defineProps,
   inject,
@@ -37,7 +42,7 @@ import PubSub from 'pubsub-js';
 import type { Siren } from 'test_notification';
 
 import type { SirenStyleProps } from '../types';
-import { BadgeType, eventTypes, events } from '../utils/constants';
+import { BadgeType, EventType, eventTypes, events, COLORS } from '../utils/constants';
 import BellIcon from './BellIcon.vue';
 
 import '../styles/icon.css';
@@ -49,7 +54,7 @@ defineProps<{
   styles: SirenStyleProps;
 }>();
 
-const siren: Siren | undefined = inject('siren');
+const siren: Ref<Siren> = inject('siren') as Ref<Siren>;
 
 const unViewedCount = ref<number>(0);
 
@@ -64,18 +69,18 @@ const notificationCountSubscriber = async (
 };
 
 const cleanUp = () => {
-  siren?.stopRealTimeUnviewedCountFetch();
+  siren.value?.stopRealTimeFetch(EventType.UNVIEWED_COUNT);
 };
 
 const startRealTimeDataFetch = () => {
   cleanUp();
-  siren?.startRealTimeUnviewedCountFetch();
+  siren.value?.startRealTimeFetch({ eventType: EventType.UNVIEWED_COUNT });
 };
 
 const getUnViewedCount = async (): Promise<void> => {
-  if (!siren) return;
+  if (!siren.value) return;
   try {
-    const response = await siren.fetchUnviewedNotificationsCount();
+    const response = await siren.value?.fetchUnviewedNotificationsCount();
 
     startRealTimeDataFetch();
     if (response && response.error) return;
@@ -98,7 +103,7 @@ onMounted(() => {
 });
 
 watch(
-  () => siren,
+  () => siren.value,
   () => {
     getUnViewedCount();
   },
