@@ -6,7 +6,7 @@
       class="siren-sdk-card-loader-container"
     >
       <div v-if="!hideAvatar" :style="styles.loader" class="siren-sdk-card-loader-avatar" />
-      <div :style="hideAvatar ? { width: '90%' } : { width: '80%' }" class="siren-sdk-card-loader-details">
+      <div class="siren-sdk-card-loader-details" :class="hideAvatar ? 'siren-sdk-card-hide-avatar' : 'siren-sdk-card-show-avatar'">
         <div :style="styles.loader" class="siren-sdk-card-loader-header" />
         <div :style="styles.loader" class="siren-sdk-card-loader-header" />
         <div :style="styles.loader" class="siren-sdk-card-loader-body" />

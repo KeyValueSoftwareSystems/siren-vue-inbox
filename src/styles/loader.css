@@ -27,6 +27,12 @@
   flex-direction: column;
   gap: 10px;
 }
+.siren-sdk-card-show-avatar {
+  width: 80%;
+}
+.siren-sdk-card-hide-avatar {
+  width: 90%;
+}
 .siren-sdk-card-loader-header {
   width: 100%;
   height: 19px;
