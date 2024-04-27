@@ -1,10 +1,15 @@
 <template>
   <div :style="cardContainerStyle" :class="`${cardProps?.hideAvatar
     ? 'siren-sdk-hide-avatar-card-container'
-    : 'siren-sdk-card-container'} siren-sdk-card-common-container ${deleteAnimation}` " @click="handleNotificationCardClick"
-    @keydown="handleNotificationCardClick">
-    <img :src="props?.notification?.message?.avatar?.imageUrl ?? defaultAvatar" alt="avatar" class="siren-sdk-card-avatar" :style="styles.cardIconRound"
-      @click="handleAvatarClick" @keydown="handleAvatarClick" v-if="!cardProps?.hideAvatar" />
+    : 'siren-sdk-card-container'} siren-sdk-card-common-container ${deleteAnimation}`"
+    @click="handleNotificationCardClick" @keydown="handleNotificationCardClick">
+    <div :style="{
+    ...styles.cardIconRound,
+    backgroundImage: `url(${props?.notification?.message?.avatar?.imageUrl || defaultAvatar})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    ...(props?.cardProps?.onAvatarClick && { cursor: 'pointer' }),
+  }" @click="handleAvatarClick" @keydown="handleAvatarClick" v-if="!cardProps?.hideAvatar" />
     <div class="siren-sdk-card-content-wrapper">
       <div :style="styles.cardTitle" class="siren-sdk-card-text-break">
         {{ props.notification?.message?.header }}
