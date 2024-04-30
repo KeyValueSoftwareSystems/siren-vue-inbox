@@ -52,6 +52,16 @@
   line-height: 16px;
 }
 
+.siren-sdk-card-title{
+  line-height: 20px;
+  margin-bottom: 4px;
+}
+.siren-sdk-card-subtitle{
+  line-height: 20px;
+  margin-bottom: 6px;
+}
+
+
 @keyframes fadeOut {
   0% {
     opacity: 1;
