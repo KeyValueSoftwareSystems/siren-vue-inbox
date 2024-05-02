@@ -24,13 +24,13 @@ VueWrapper {
           class="siren-sdk-card-content-wrapper"
         >
           <div
-            class="siren-sdk-card-text-break"
+            class="siren-sdk-card-title"
             style="color: #FFFFFF; font-size: 14px; font-weight: 600;"
           >
             New Message
           </div>
           <div
-            class="siren-sdk-card-text-break"
+            class="siren-sdk-card-subtitle"
             style="color: #FFFFFF; font-size: 14px; font-weight: 500;"
           >
             New post
@@ -569,7 +569,7 @@ VueWrapper {
               "_value": "",
               "dep": Map {
                 ReactiveEffect {
-                  "_depsLength": 43,
+                  "_depsLength": 44,
                   "_dirtyLevel": 0,
                   "_runnings": 0,
                   "_shouldSchedule": false,
@@ -625,6 +625,9 @@ VueWrapper {
                         "scheduler": [Function],
                         "trigger": [Function],
                       } => 1,
+                      [Circular] => 1,
+                    },
+                    Map {
                       [Circular] => 1,
                     },
                     Map {
@@ -883,7 +886,7 @@ VueWrapper {
           "directives": null,
           "ec": null,
           "effect": ReactiveEffect {
-            "_depsLength": 43,
+            "_depsLength": 44,
             "_dirtyLevel": 0,
             "_runnings": 0,
             "_shouldSchedule": false,
@@ -941,6 +944,9 @@ VueWrapper {
                   "scheduler": [Function],
                   "trigger": [Function],
                 } => 1,
+                [Circular] => 1,
+              },
+              Map {
                 [Circular] => 1,
               },
               Map {
@@ -1409,7 +1415,7 @@ VueWrapper {
                   Map {
                     [Circular] => 1,
                     ReactiveEffect {
-                      "_depsLength": 43,
+                      "_depsLength": 44,
                       "_dirtyLevel": 0,
                       "_runnings": 0,
                       "_shouldSchedule": false,
@@ -1544,6 +1550,9 @@ VueWrapper {
                         Map {
                           [Circular] => 1,
                         },
+                        Map {
+                          [Circular] => 1,
+                        },
                       ],
                       "fn": [Function],
                       "onTrack": undefined,
@@ -1563,7 +1572,7 @@ VueWrapper {
                 "trigger": [Function],
               },
               ReactiveEffect {
-                "_depsLength": 43,
+                "_depsLength": 44,
                 "_dirtyLevel": 0,
                 "_runnings": 0,
                 "_shouldSchedule": false,
@@ -1621,6 +1630,9 @@ VueWrapper {
                       "scheduler": [Function],
                       "trigger": [Function],
                     } => 1,
+                    [Circular] => 1,
+                  },
+                  Map {
                     [Circular] => 1,
                   },
                   Map {
@@ -2006,7 +2018,7 @@ VueWrapper {
                     "dynamicChildren": null,
                     "dynamicProps": null,
                     "el": <div
-                      class="siren-sdk-card-text-break"
+                      class="siren-sdk-card-title"
                       style="color: #FFFFFF; font-size: 14px; font-weight: 600;"
                     >
                       New Message
@@ -2014,7 +2026,7 @@ VueWrapper {
                     "key": null,
                     "patchFlag": 5,
                     "props": {
-                      "class": "siren-sdk-card-text-break",
+                      "class": "siren-sdk-card-title",
                       "style": {
                         "color": "#FFFFFF",
                         "fontSize": "14px",
@@ -2046,7 +2058,7 @@ VueWrapper {
                     "dynamicChildren": null,
                     "dynamicProps": null,
                     "el": <div
-                      class="siren-sdk-card-text-break"
+                      class="siren-sdk-card-subtitle"
                       style="color: #FFFFFF; font-size: 14px; font-weight: 500;"
                     >
                       New post
@@ -2054,7 +2066,7 @@ VueWrapper {
                     "key": null,
                     "patchFlag": 5,
                     "props": {
-                      "class": "siren-sdk-card-text-break",
+                      "class": "siren-sdk-card-subtitle",
                       "style": {
                         "color": "#FFFFFF",
                         "fontSize": "14px",
@@ -2675,13 +2687,13 @@ VueWrapper {
                   class="siren-sdk-card-content-wrapper"
                 >
                   <div
-                    class="siren-sdk-card-text-break"
+                    class="siren-sdk-card-title"
                     style="color: #FFFFFF; font-size: 14px; font-weight: 600;"
                   >
                     New Message
                   </div>
                   <div
-                    class="siren-sdk-card-text-break"
+                    class="siren-sdk-card-subtitle"
                     style="color: #FFFFFF; font-size: 14px; font-weight: 500;"
                   >
                     New post
@@ -3170,7 +3182,443 @@ VueWrapper {
                 "component": null,
                 "ctx": [Circular],
                 "dirs": null,
-                "dynamicChildren": null,
+                "dynamicChildren": [
+                  {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": null,
+                    "component": {
+                      "a": null,
+                      "accessCache": {
+                        "@@__IMMUTABLE_ITERABLE__@@": 0,
+                        "@@__IMMUTABLE_RECORD__@@": 0,
+                        "_isMockFunction": 0,
+                        "fill": 3,
+                        "hasAttribute": 0,
+                        "nodeType": 0,
+                        "size": 3,
+                        "stroke": 3,
+                        "tagName": 0,
+                        "toJSON": 0,
+                        Symbol(Symbol.toStringTag): 0,
+                      },
+                      "appContext": {
+                        "app": [Circular],
+                        "components": {
+                          "transition": {
+                            "name": "transition",
+                          },
+                          "transition-group": {
+                            "name": "transition-group",
+                          },
+                        },
+                        "config": {
+                          "compilerOptions": {},
+                          "errorHandler": undefined,
+                          "globalProperties": {},
+                          "isNativeTag": [Function],
+                          "optionMergeStrategies": {},
+                          "performance": false,
+                          "warnHandler": undefined,
+                        },
+                        "directives": {},
+                        "emitsCache": WeakMap {},
+                        "mixins": [
+                          {
+                            "beforeCreate": [Function],
+                          },
+                        ],
+                        "optionsCache": WeakMap {},
+                        "propsCache": WeakMap {},
+                        "provides": {
+                          "siren": [MockFunction spy],
+                        },
+                        "reload": [Function],
+                      },
+                      "asyncDep": null,
+                      "asyncResolved": false,
+                      "attrs": {},
+                      "attrsProxy": {},
+                      "bc": null,
+                      "bm": null,
+                      "bu": null,
+                      "bum": null,
+                      "c": null,
+                      "components": null,
+                      "ctx": {
+                        "fill": "#D0D5DD",
+                        "size": "20",
+                        "stroke": "#98A2B3",
+                      },
+                      "da": null,
+                      "data": {},
+                      "devtoolsRawSetupState": {},
+                      "directives": null,
+                      "ec": null,
+                      "effect": ReactiveEffect {
+                        "_depsLength": 3,
+                        "_dirtyLevel": 0,
+                        "_runnings": 0,
+                        "_shouldSchedule": false,
+                        "_trackId": 1,
+                        "active": true,
+                        "allowRecurse": true,
+                        "deps": [
+                          Map {
+                            [Circular] => 1,
+                          },
+                          Map {
+                            [Circular] => 1,
+                          },
+                          Map {
+                            [Circular] => 1,
+                          },
+                        ],
+                        "fn": [Function],
+                        "onTrack": undefined,
+                        "onTrigger": undefined,
+                        "scheduler": [Function],
+                        "trigger": [Function],
+                      },
+                      "emit": [Function],
+                      "emitsOptions": null,
+                      "emitted": null,
+                      "exposeProxy": null,
+                      "exposed": {},
+                      "inheritAttrs": undefined,
+                      "isDeactivated": false,
+                      "isMounted": true,
+                      "isUnmounted": false,
+                      "m": null,
+                      "next": null,
+                      "parent": [Circular],
+                      "props": {
+                        "fill": "#D0D5DD",
+                        "size": "20",
+                        "stroke": "#98A2B3",
+                      },
+                      "propsDefaults": {},
+                      "propsOptions": [
+                        {
+                          "fill": {
+                            "0": false,
+                            "1": true,
+                            "default": "none",
+                            "required": false,
+                            "type": [Function],
+                          },
+                          "size": {
+                            "0": false,
+                            "1": true,
+                            "default": "20",
+                            "required": false,
+                            "type": [Function],
+                          },
+                          "stroke": {
+                            "0": false,
+                            "1": true,
+                            "default": "#98A2B3",
+                            "required": false,
+                            "type": [Function],
+                          },
+                        },
+                        [
+                          "fill",
+                          "size",
+                          "stroke",
+                        ],
+                      ],
+                      "provides": {},
+                      "proxy": {
+                        "fill": "#D0D5DD",
+                        "size": "20",
+                        "stroke": "#98A2B3",
+                      },
+                      "refs": {},
+                      "render": [Function],
+                      "renderCache": [],
+                      "root": [Circular],
+                      "rtc": null,
+                      "rtg": null,
+                      "scope": EffectScope {
+                        "_active": true,
+                        "cleanups": [],
+                        "detached": true,
+                        "effects": [
+                          ReactiveEffect {
+                            "_depsLength": 3,
+                            "_dirtyLevel": 0,
+                            "_runnings": 0,
+                            "_shouldSchedule": false,
+                            "_trackId": 1,
+                            "active": true,
+                            "allowRecurse": true,
+                            "deps": [
+                              Map {
+                                [Circular] => 1,
+                              },
+                              Map {
+                                [Circular] => 1,
+                              },
+                              Map {
+                                [Circular] => 1,
+                              },
+                            ],
+                            "fn": [Function],
+                            "onTrack": undefined,
+                            "onTrigger": undefined,
+                            "scheduler": [Function],
+                            "trigger": [Function],
+                          },
+                        ],
+                        "parent": undefined,
+                      },
+                      "setupContext": {
+                        "attrs": {},
+                        "emit": [Function],
+                        "expose": [Function],
+                        "slots": {},
+                      },
+                      "setupState": {},
+                      "slots": {},
+                      "slotsProxy": {},
+                      "sp": null,
+                      "subTree": {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": [
+                          {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": null,
+                            "component": null,
+                            "ctx": [Circular],
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": [
+                              "stroke",
+                            ],
+                            "el": <path
+                              d="M5 15L15 5M5 5L15 15"
+                              stroke="#98A2B3"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                            />,
+                            "key": null,
+                            "patchFlag": 8,
+                            "props": {
+                              "d": "M5 15L15 5M5 5L15 15",
+                              "stroke": "#98A2B3",
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round",
+                              "stroke-width": "2",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 1,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "path",
+                          },
+                        ],
+                        "component": null,
+                        "ctx": [Circular],
+                        "dirs": null,
+                        "dynamicChildren": [
+                          {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": null,
+                            "component": null,
+                            "ctx": [Circular],
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": [
+                              "stroke",
+                            ],
+                            "el": <path
+                              d="M5 15L15 5M5 5L15 15"
+                              stroke="#98A2B3"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                            />,
+                            "key": null,
+                            "patchFlag": 8,
+                            "props": {
+                              "d": "M5 15L15 5M5 5L15 15",
+                              "stroke": "#98A2B3",
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round",
+                              "stroke-width": "2",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 1,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "path",
+                          },
+                        ],
+                        "dynamicProps": [
+                          "width",
+                          "height",
+                          "fill",
+                        ],
+                        "el": <svg
+                          fill="#D0D5DD"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          width="20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5 15L15 5M5 5L15 15"
+                            stroke="#98A2B3"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                          />
+                        </svg>,
+                        "key": null,
+                        "patchFlag": 8,
+                        "props": {
+                          "fill": "#D0D5DD",
+                          "height": "20",
+                          "viewBox": "0 0 20 20",
+                          "width": "20",
+                          "xmlns": "http://www.w3.org/2000/svg",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "svg",
+                      },
+                      "suspense": null,
+                      "suspenseId": 0,
+                      "type": {
+                        "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/CloseIcon.vue",
+                        "__name": "CloseIcon",
+                        "props": {
+                          "fill": {
+                            "default": "none",
+                            "required": false,
+                            "type": [Function],
+                          },
+                          "size": {
+                            "default": "20",
+                            "required": false,
+                            "type": [Function],
+                          },
+                          "stroke": {
+                            "default": "#98A2B3",
+                            "required": false,
+                            "type": [Function],
+                          },
+                        },
+                        "render": [Function],
+                        "setup": [Function],
+                      },
+                      "u": null,
+                      "uid": 3,
+                      "um": null,
+                      "update": [Function],
+                      "vnode": [Circular],
+                      "withProxy": null,
+                    },
+                    "ctx": [Circular],
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": [
+                      "fill",
+                      "size",
+                    ],
+                    "el": <svg
+                      fill="#D0D5DD"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      width="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 15L15 5M5 5L15 15"
+                        stroke="#98A2B3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </svg>,
+                    "key": null,
+                    "patchFlag": 8,
+                    "props": {
+                      "fill": "#D0D5DD",
+                      "size": "20",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 4,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": {
+                      "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/CloseIcon.vue",
+                      "__name": "CloseIcon",
+                      "props": {
+                        "fill": {
+                          "default": "none",
+                          "required": false,
+                          "type": [Function],
+                        },
+                        "size": {
+                          "default": "20",
+                          "required": false,
+                          "type": [Function],
+                        },
+                        "stroke": {
+                          "default": "#98A2B3",
+                          "required": false,
+                          "type": [Function],
+                        },
+                      },
+                      "render": [Function],
+                      "setup": [Function],
+                    },
+                  },
+                ],
                 "dynamicProps": null,
                 "el": <div
                   class="siren-sdk-delete-button"
@@ -3192,11 +3640,12 @@ VueWrapper {
                     />
                   </svg>
                 </div>,
-                "key": null,
+                "key": 1,
                 "patchFlag": 32,
                 "props": {
                   "class": "siren-sdk-delete-button",
                   "data-testid": "delete-notification-button",
+                  "key": 1,
                   "onClick": [Function],
                   "onKeydown": [Function],
                 },
@@ -3275,7 +3724,7 @@ VueWrapper {
                 "dynamicChildren": null,
                 "dynamicProps": null,
                 "el": <div
-                  class="siren-sdk-card-text-break"
+                  class="siren-sdk-card-title"
                   style="color: #FFFFFF; font-size: 14px; font-weight: 600;"
                 >
                   New Message
@@ -3283,7 +3732,7 @@ VueWrapper {
                 "key": null,
                 "patchFlag": 5,
                 "props": {
-                  "class": "siren-sdk-card-text-break",
+                  "class": "siren-sdk-card-title",
                   "style": {
                     "color": "#FFFFFF",
                     "fontSize": "14px",
@@ -3315,7 +3764,7 @@ VueWrapper {
                 "dynamicChildren": null,
                 "dynamicProps": null,
                 "el": <div
-                  class="siren-sdk-card-text-break"
+                  class="siren-sdk-card-subtitle"
                   style="color: #FFFFFF; font-size: 14px; font-weight: 500;"
                 >
                   New post
@@ -3323,7 +3772,7 @@ VueWrapper {
                 "key": null,
                 "patchFlag": 5,
                 "props": {
-                  "class": "siren-sdk-card-text-break",
+                  "class": "siren-sdk-card-subtitle",
                   "style": {
                     "color": "#FFFFFF",
                     "fontSize": "14px",
@@ -3894,166 +4343,82 @@ VueWrapper {
                 "__v_skip": true,
                 "anchor": null,
                 "appContext": null,
-                "children": null,
-                "component": {
-                  "a": null,
-                  "accessCache": {
-                    "@@__IMMUTABLE_ITERABLE__@@": 0,
-                    "@@__IMMUTABLE_RECORD__@@": 0,
-                    "_isMockFunction": 0,
-                    "fill": 3,
-                    "hasAttribute": 0,
-                    "nodeType": 0,
-                    "size": 3,
-                    "stroke": 3,
-                    "tagName": 0,
-                    "toJSON": 0,
-                    Symbol(Symbol.toStringTag): 0,
-                  },
-                  "appContext": {
-                    "app": [Circular],
-                    "components": {
-                      "transition": {
-                        "name": "transition",
+                "children": [
+                  {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": null,
+                    "component": {
+                      "a": null,
+                      "accessCache": {
+                        "@@__IMMUTABLE_ITERABLE__@@": 0,
+                        "@@__IMMUTABLE_RECORD__@@": 0,
+                        "_isMockFunction": 0,
+                        "fill": 3,
+                        "hasAttribute": 0,
+                        "nodeType": 0,
+                        "size": 3,
+                        "stroke": 3,
+                        "tagName": 0,
+                        "toJSON": 0,
+                        Symbol(Symbol.toStringTag): 0,
                       },
-                      "transition-group": {
-                        "name": "transition-group",
+                      "appContext": {
+                        "app": [Circular],
+                        "components": {
+                          "transition": {
+                            "name": "transition",
+                          },
+                          "transition-group": {
+                            "name": "transition-group",
+                          },
+                        },
+                        "config": {
+                          "compilerOptions": {},
+                          "errorHandler": undefined,
+                          "globalProperties": {},
+                          "isNativeTag": [Function],
+                          "optionMergeStrategies": {},
+                          "performance": false,
+                          "warnHandler": undefined,
+                        },
+                        "directives": {},
+                        "emitsCache": WeakMap {},
+                        "mixins": [
+                          {
+                            "beforeCreate": [Function],
+                          },
+                        ],
+                        "optionsCache": WeakMap {},
+                        "propsCache": WeakMap {},
+                        "provides": {
+                          "siren": [MockFunction spy],
+                        },
+                        "reload": [Function],
                       },
-                    },
-                    "config": {
-                      "compilerOptions": {},
-                      "errorHandler": undefined,
-                      "globalProperties": {},
-                      "isNativeTag": [Function],
-                      "optionMergeStrategies": {},
-                      "performance": false,
-                      "warnHandler": undefined,
-                    },
-                    "directives": {},
-                    "emitsCache": WeakMap {},
-                    "mixins": [
-                      {
-                        "beforeCreate": [Function],
+                      "asyncDep": null,
+                      "asyncResolved": false,
+                      "attrs": {},
+                      "attrsProxy": {},
+                      "bc": null,
+                      "bm": null,
+                      "bu": null,
+                      "bum": null,
+                      "c": null,
+                      "components": null,
+                      "ctx": {
+                        "fill": "#D0D5DD",
+                        "size": "20",
+                        "stroke": "#98A2B3",
                       },
-                    ],
-                    "optionsCache": WeakMap {},
-                    "propsCache": WeakMap {},
-                    "provides": {
-                      "siren": [MockFunction spy],
-                    },
-                    "reload": [Function],
-                  },
-                  "asyncDep": null,
-                  "asyncResolved": false,
-                  "attrs": {},
-                  "attrsProxy": {},
-                  "bc": null,
-                  "bm": null,
-                  "bu": null,
-                  "bum": null,
-                  "c": null,
-                  "components": null,
-                  "ctx": {
-                    "fill": "#D0D5DD",
-                    "size": "20",
-                    "stroke": "#98A2B3",
-                  },
-                  "da": null,
-                  "data": {},
-                  "devtoolsRawSetupState": {},
-                  "directives": null,
-                  "ec": null,
-                  "effect": ReactiveEffect {
-                    "_depsLength": 3,
-                    "_dirtyLevel": 0,
-                    "_runnings": 0,
-                    "_shouldSchedule": false,
-                    "_trackId": 1,
-                    "active": true,
-                    "allowRecurse": true,
-                    "deps": [
-                      Map {
-                        [Circular] => 1,
-                      },
-                      Map {
-                        [Circular] => 1,
-                      },
-                      Map {
-                        [Circular] => 1,
-                      },
-                    ],
-                    "fn": [Function],
-                    "onTrack": undefined,
-                    "onTrigger": undefined,
-                    "scheduler": [Function],
-                    "trigger": [Function],
-                  },
-                  "emit": [Function],
-                  "emitsOptions": null,
-                  "emitted": null,
-                  "exposeProxy": null,
-                  "exposed": {},
-                  "inheritAttrs": undefined,
-                  "isDeactivated": false,
-                  "isMounted": true,
-                  "isUnmounted": false,
-                  "m": null,
-                  "next": null,
-                  "parent": [Circular],
-                  "props": {
-                    "fill": "#D0D5DD",
-                    "size": "20",
-                    "stroke": "#98A2B3",
-                  },
-                  "propsDefaults": {},
-                  "propsOptions": [
-                    {
-                      "fill": {
-                        "0": false,
-                        "1": true,
-                        "default": "none",
-                        "required": false,
-                        "type": [Function],
-                      },
-                      "size": {
-                        "0": false,
-                        "1": true,
-                        "default": "20",
-                        "required": false,
-                        "type": [Function],
-                      },
-                      "stroke": {
-                        "0": false,
-                        "1": true,
-                        "default": "#98A2B3",
-                        "required": false,
-                        "type": [Function],
-                      },
-                    },
-                    [
-                      "fill",
-                      "size",
-                      "stroke",
-                    ],
-                  ],
-                  "provides": {},
-                  "proxy": {
-                    "fill": "#D0D5DD",
-                    "size": "20",
-                    "stroke": "#98A2B3",
-                  },
-                  "refs": {},
-                  "render": [Function],
-                  "renderCache": [],
-                  "root": [Circular],
-                  "rtc": null,
-                  "rtg": null,
-                  "scope": EffectScope {
-                    "_active": true,
-                    "cleanups": [],
-                    "detached": true,
-                    "effects": [
-                      ReactiveEffect {
+                      "da": null,
+                      "data": {},
+                      "devtoolsRawSetupState": {},
+                      "directives": null,
+                      "ec": null,
+                      "effect": ReactiveEffect {
                         "_depsLength": 3,
                         "_dirtyLevel": 0,
                         "_runnings": 0,
@@ -4078,57 +4443,237 @@ VueWrapper {
                         "scheduler": [Function],
                         "trigger": [Function],
                       },
-                    ],
-                    "parent": undefined,
-                  },
-                  "setupContext": {
-                    "attrs": {},
-                    "emit": [Function],
-                    "expose": [Function],
-                    "slots": {},
-                  },
-                  "setupState": {},
-                  "slots": {},
-                  "slotsProxy": {},
-                  "sp": null,
-                  "subTree": {
-                    "__v_isVNode": true,
-                    "__v_skip": true,
-                    "anchor": null,
-                    "appContext": null,
-                    "children": [
-                      {
+                      "emit": [Function],
+                      "emitsOptions": null,
+                      "emitted": null,
+                      "exposeProxy": null,
+                      "exposed": {},
+                      "inheritAttrs": undefined,
+                      "isDeactivated": false,
+                      "isMounted": true,
+                      "isUnmounted": false,
+                      "m": null,
+                      "next": null,
+                      "parent": [Circular],
+                      "props": {
+                        "fill": "#D0D5DD",
+                        "size": "20",
+                        "stroke": "#98A2B3",
+                      },
+                      "propsDefaults": {},
+                      "propsOptions": [
+                        {
+                          "fill": {
+                            "0": false,
+                            "1": true,
+                            "default": "none",
+                            "required": false,
+                            "type": [Function],
+                          },
+                          "size": {
+                            "0": false,
+                            "1": true,
+                            "default": "20",
+                            "required": false,
+                            "type": [Function],
+                          },
+                          "stroke": {
+                            "0": false,
+                            "1": true,
+                            "default": "#98A2B3",
+                            "required": false,
+                            "type": [Function],
+                          },
+                        },
+                        [
+                          "fill",
+                          "size",
+                          "stroke",
+                        ],
+                      ],
+                      "provides": {},
+                      "proxy": {
+                        "fill": "#D0D5DD",
+                        "size": "20",
+                        "stroke": "#98A2B3",
+                      },
+                      "refs": {},
+                      "render": [Function],
+                      "renderCache": [],
+                      "root": [Circular],
+                      "rtc": null,
+                      "rtg": null,
+                      "scope": EffectScope {
+                        "_active": true,
+                        "cleanups": [],
+                        "detached": true,
+                        "effects": [
+                          ReactiveEffect {
+                            "_depsLength": 3,
+                            "_dirtyLevel": 0,
+                            "_runnings": 0,
+                            "_shouldSchedule": false,
+                            "_trackId": 1,
+                            "active": true,
+                            "allowRecurse": true,
+                            "deps": [
+                              Map {
+                                [Circular] => 1,
+                              },
+                              Map {
+                                [Circular] => 1,
+                              },
+                              Map {
+                                [Circular] => 1,
+                              },
+                            ],
+                            "fn": [Function],
+                            "onTrack": undefined,
+                            "onTrigger": undefined,
+                            "scheduler": [Function],
+                            "trigger": [Function],
+                          },
+                        ],
+                        "parent": undefined,
+                      },
+                      "setupContext": {
+                        "attrs": {},
+                        "emit": [Function],
+                        "expose": [Function],
+                        "slots": {},
+                      },
+                      "setupState": {},
+                      "slots": {},
+                      "slotsProxy": {},
+                      "sp": null,
+                      "subTree": {
                         "__v_isVNode": true,
                         "__v_skip": true,
                         "anchor": null,
                         "appContext": null,
-                        "children": null,
+                        "children": [
+                          {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": null,
+                            "component": null,
+                            "ctx": [Circular],
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": [
+                              "stroke",
+                            ],
+                            "el": <path
+                              d="M5 15L15 5M5 5L15 15"
+                              stroke="#98A2B3"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                            />,
+                            "key": null,
+                            "patchFlag": 8,
+                            "props": {
+                              "d": "M5 15L15 5M5 5L15 15",
+                              "stroke": "#98A2B3",
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round",
+                              "stroke-width": "2",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 1,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "path",
+                          },
+                        ],
                         "component": null,
                         "ctx": [Circular],
                         "dirs": null,
-                        "dynamicChildren": null,
-                        "dynamicProps": [
-                          "stroke",
+                        "dynamicChildren": [
+                          {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": null,
+                            "component": null,
+                            "ctx": [Circular],
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": [
+                              "stroke",
+                            ],
+                            "el": <path
+                              d="M5 15L15 5M5 5L15 15"
+                              stroke="#98A2B3"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                            />,
+                            "key": null,
+                            "patchFlag": 8,
+                            "props": {
+                              "d": "M5 15L15 5M5 5L15 15",
+                              "stroke": "#98A2B3",
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round",
+                              "stroke-width": "2",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 1,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "path",
+                          },
                         ],
-                        "el": <path
-                          d="M5 15L15 5M5 5L15 15"
-                          stroke="#98A2B3"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                        />,
+                        "dynamicProps": [
+                          "width",
+                          "height",
+                          "fill",
+                        ],
+                        "el": <svg
+                          fill="#D0D5DD"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          width="20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5 15L15 5M5 5L15 15"
+                            stroke="#98A2B3"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                          />
+                        </svg>,
                         "key": null,
                         "patchFlag": 8,
                         "props": {
-                          "d": "M5 15L15 5M5 5L15 15",
-                          "stroke": "#98A2B3",
-                          "stroke-linecap": "round",
-                          "stroke-linejoin": "round",
-                          "stroke-width": "2",
+                          "fill": "#D0D5DD",
+                          "height": "20",
+                          "viewBox": "0 0 20 20",
+                          "width": "20",
+                          "xmlns": "http://www.w3.org/2000/svg",
                         },
                         "ref": null,
                         "scopeId": null,
-                        "shapeFlag": 1,
+                        "shapeFlag": 17,
                         "slotScopeIds": null,
                         "ssContent": null,
                         "ssFallback": null,
@@ -4137,60 +4682,46 @@ VueWrapper {
                         "target": null,
                         "targetAnchor": null,
                         "transition": null,
-                        "type": "path",
+                        "type": "svg",
                       },
-                    ],
-                    "component": null,
+                      "suspense": null,
+                      "suspenseId": 0,
+                      "type": {
+                        "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/CloseIcon.vue",
+                        "__name": "CloseIcon",
+                        "props": {
+                          "fill": {
+                            "default": "none",
+                            "required": false,
+                            "type": [Function],
+                          },
+                          "size": {
+                            "default": "20",
+                            "required": false,
+                            "type": [Function],
+                          },
+                          "stroke": {
+                            "default": "#98A2B3",
+                            "required": false,
+                            "type": [Function],
+                          },
+                        },
+                        "render": [Function],
+                        "setup": [Function],
+                      },
+                      "u": null,
+                      "uid": 3,
+                      "um": null,
+                      "update": [Function],
+                      "vnode": [Circular],
+                      "withProxy": null,
+                    },
                     "ctx": [Circular],
                     "dirs": null,
-                    "dynamicChildren": [
-                      {
-                        "__v_isVNode": true,
-                        "__v_skip": true,
-                        "anchor": null,
-                        "appContext": null,
-                        "children": null,
-                        "component": null,
-                        "ctx": [Circular],
-                        "dirs": null,
-                        "dynamicChildren": null,
-                        "dynamicProps": [
-                          "stroke",
-                        ],
-                        "el": <path
-                          d="M5 15L15 5M5 5L15 15"
-                          stroke="#98A2B3"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                        />,
-                        "key": null,
-                        "patchFlag": 8,
-                        "props": {
-                          "d": "M5 15L15 5M5 5L15 15",
-                          "stroke": "#98A2B3",
-                          "stroke-linecap": "round",
-                          "stroke-linejoin": "round",
-                          "stroke-width": "2",
-                        },
-                        "ref": null,
-                        "scopeId": null,
-                        "shapeFlag": 1,
-                        "slotScopeIds": null,
-                        "ssContent": null,
-                        "ssFallback": null,
-                        "staticCount": 0,
-                        "suspense": null,
-                        "target": null,
-                        "targetAnchor": null,
-                        "transition": null,
-                        "type": "path",
-                      },
-                    ],
+                    "dynamicChildren": null,
                     "dynamicProps": [
-                      "width",
-                      "height",
                       "fill",
+                      "size",
                     ],
                     "el": <svg
                       fill="#D0D5DD"
@@ -4211,14 +4742,11 @@ VueWrapper {
                     "patchFlag": 8,
                     "props": {
                       "fill": "#D0D5DD",
-                      "height": "20",
-                      "viewBox": "0 0 20 20",
-                      "width": "20",
-                      "xmlns": "http://www.w3.org/2000/svg",
+                      "size": "20",
                     },
                     "ref": null,
                     "scopeId": null,
-                    "shapeFlag": 17,
+                    "shapeFlag": 4,
                     "slotScopeIds": null,
                     "ssContent": null,
                     "ssFallback": null,
@@ -4227,71 +4755,504 @@ VueWrapper {
                     "target": null,
                     "targetAnchor": null,
                     "transition": null,
-                    "type": "svg",
-                  },
-                  "suspense": null,
-                  "suspenseId": 0,
-                  "type": {
-                    "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/CloseIcon.vue",
-                    "__name": "CloseIcon",
-                    "props": {
-                      "fill": {
-                        "default": "none",
-                        "required": false,
-                        "type": [Function],
+                    "type": {
+                      "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/CloseIcon.vue",
+                      "__name": "CloseIcon",
+                      "props": {
+                        "fill": {
+                          "default": "none",
+                          "required": false,
+                          "type": [Function],
+                        },
+                        "size": {
+                          "default": "20",
+                          "required": false,
+                          "type": [Function],
+                        },
+                        "stroke": {
+                          "default": "#98A2B3",
+                          "required": false,
+                          "type": [Function],
+                        },
                       },
-                      "size": {
-                        "default": "20",
-                        "required": false,
-                        "type": [Function],
-                      },
-                      "stroke": {
-                        "default": "#98A2B3",
-                        "required": false,
-                        "type": [Function],
-                      },
+                      "render": [Function],
+                      "setup": [Function],
                     },
-                    "render": [Function],
-                    "setup": [Function],
                   },
-                  "u": null,
-                  "uid": 3,
-                  "um": null,
-                  "update": [Function],
-                  "vnode": [Circular],
-                  "withProxy": null,
-                },
+                ],
+                "component": null,
                 "ctx": [Circular],
                 "dirs": null,
-                "dynamicChildren": null,
-                "dynamicProps": [
-                  "fill",
-                  "size",
+                "dynamicChildren": [
+                  {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": null,
+                    "component": {
+                      "a": null,
+                      "accessCache": {
+                        "@@__IMMUTABLE_ITERABLE__@@": 0,
+                        "@@__IMMUTABLE_RECORD__@@": 0,
+                        "_isMockFunction": 0,
+                        "fill": 3,
+                        "hasAttribute": 0,
+                        "nodeType": 0,
+                        "size": 3,
+                        "stroke": 3,
+                        "tagName": 0,
+                        "toJSON": 0,
+                        Symbol(Symbol.toStringTag): 0,
+                      },
+                      "appContext": {
+                        "app": [Circular],
+                        "components": {
+                          "transition": {
+                            "name": "transition",
+                          },
+                          "transition-group": {
+                            "name": "transition-group",
+                          },
+                        },
+                        "config": {
+                          "compilerOptions": {},
+                          "errorHandler": undefined,
+                          "globalProperties": {},
+                          "isNativeTag": [Function],
+                          "optionMergeStrategies": {},
+                          "performance": false,
+                          "warnHandler": undefined,
+                        },
+                        "directives": {},
+                        "emitsCache": WeakMap {},
+                        "mixins": [
+                          {
+                            "beforeCreate": [Function],
+                          },
+                        ],
+                        "optionsCache": WeakMap {},
+                        "propsCache": WeakMap {},
+                        "provides": {
+                          "siren": [MockFunction spy],
+                        },
+                        "reload": [Function],
+                      },
+                      "asyncDep": null,
+                      "asyncResolved": false,
+                      "attrs": {},
+                      "attrsProxy": {},
+                      "bc": null,
+                      "bm": null,
+                      "bu": null,
+                      "bum": null,
+                      "c": null,
+                      "components": null,
+                      "ctx": {
+                        "fill": "#D0D5DD",
+                        "size": "20",
+                        "stroke": "#98A2B3",
+                      },
+                      "da": null,
+                      "data": {},
+                      "devtoolsRawSetupState": {},
+                      "directives": null,
+                      "ec": null,
+                      "effect": ReactiveEffect {
+                        "_depsLength": 3,
+                        "_dirtyLevel": 0,
+                        "_runnings": 0,
+                        "_shouldSchedule": false,
+                        "_trackId": 1,
+                        "active": true,
+                        "allowRecurse": true,
+                        "deps": [
+                          Map {
+                            [Circular] => 1,
+                          },
+                          Map {
+                            [Circular] => 1,
+                          },
+                          Map {
+                            [Circular] => 1,
+                          },
+                        ],
+                        "fn": [Function],
+                        "onTrack": undefined,
+                        "onTrigger": undefined,
+                        "scheduler": [Function],
+                        "trigger": [Function],
+                      },
+                      "emit": [Function],
+                      "emitsOptions": null,
+                      "emitted": null,
+                      "exposeProxy": null,
+                      "exposed": {},
+                      "inheritAttrs": undefined,
+                      "isDeactivated": false,
+                      "isMounted": true,
+                      "isUnmounted": false,
+                      "m": null,
+                      "next": null,
+                      "parent": [Circular],
+                      "props": {
+                        "fill": "#D0D5DD",
+                        "size": "20",
+                        "stroke": "#98A2B3",
+                      },
+                      "propsDefaults": {},
+                      "propsOptions": [
+                        {
+                          "fill": {
+                            "0": false,
+                            "1": true,
+                            "default": "none",
+                            "required": false,
+                            "type": [Function],
+                          },
+                          "size": {
+                            "0": false,
+                            "1": true,
+                            "default": "20",
+                            "required": false,
+                            "type": [Function],
+                          },
+                          "stroke": {
+                            "0": false,
+                            "1": true,
+                            "default": "#98A2B3",
+                            "required": false,
+                            "type": [Function],
+                          },
+                        },
+                        [
+                          "fill",
+                          "size",
+                          "stroke",
+                        ],
+                      ],
+                      "provides": {},
+                      "proxy": {
+                        "fill": "#D0D5DD",
+                        "size": "20",
+                        "stroke": "#98A2B3",
+                      },
+                      "refs": {},
+                      "render": [Function],
+                      "renderCache": [],
+                      "root": [Circular],
+                      "rtc": null,
+                      "rtg": null,
+                      "scope": EffectScope {
+                        "_active": true,
+                        "cleanups": [],
+                        "detached": true,
+                        "effects": [
+                          ReactiveEffect {
+                            "_depsLength": 3,
+                            "_dirtyLevel": 0,
+                            "_runnings": 0,
+                            "_shouldSchedule": false,
+                            "_trackId": 1,
+                            "active": true,
+                            "allowRecurse": true,
+                            "deps": [
+                              Map {
+                                [Circular] => 1,
+                              },
+                              Map {
+                                [Circular] => 1,
+                              },
+                              Map {
+                                [Circular] => 1,
+                              },
+                            ],
+                            "fn": [Function],
+                            "onTrack": undefined,
+                            "onTrigger": undefined,
+                            "scheduler": [Function],
+                            "trigger": [Function],
+                          },
+                        ],
+                        "parent": undefined,
+                      },
+                      "setupContext": {
+                        "attrs": {},
+                        "emit": [Function],
+                        "expose": [Function],
+                        "slots": {},
+                      },
+                      "setupState": {},
+                      "slots": {},
+                      "slotsProxy": {},
+                      "sp": null,
+                      "subTree": {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": [
+                          {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": null,
+                            "component": null,
+                            "ctx": [Circular],
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": [
+                              "stroke",
+                            ],
+                            "el": <path
+                              d="M5 15L15 5M5 5L15 15"
+                              stroke="#98A2B3"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                            />,
+                            "key": null,
+                            "patchFlag": 8,
+                            "props": {
+                              "d": "M5 15L15 5M5 5L15 15",
+                              "stroke": "#98A2B3",
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round",
+                              "stroke-width": "2",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 1,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "path",
+                          },
+                        ],
+                        "component": null,
+                        "ctx": [Circular],
+                        "dirs": null,
+                        "dynamicChildren": [
+                          {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": null,
+                            "component": null,
+                            "ctx": [Circular],
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": [
+                              "stroke",
+                            ],
+                            "el": <path
+                              d="M5 15L15 5M5 5L15 15"
+                              stroke="#98A2B3"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                            />,
+                            "key": null,
+                            "patchFlag": 8,
+                            "props": {
+                              "d": "M5 15L15 5M5 5L15 15",
+                              "stroke": "#98A2B3",
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round",
+                              "stroke-width": "2",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 1,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "path",
+                          },
+                        ],
+                        "dynamicProps": [
+                          "width",
+                          "height",
+                          "fill",
+                        ],
+                        "el": <svg
+                          fill="#D0D5DD"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          width="20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5 15L15 5M5 5L15 15"
+                            stroke="#98A2B3"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                          />
+                        </svg>,
+                        "key": null,
+                        "patchFlag": 8,
+                        "props": {
+                          "fill": "#D0D5DD",
+                          "height": "20",
+                          "viewBox": "0 0 20 20",
+                          "width": "20",
+                          "xmlns": "http://www.w3.org/2000/svg",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "svg",
+                      },
+                      "suspense": null,
+                      "suspenseId": 0,
+                      "type": {
+                        "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/CloseIcon.vue",
+                        "__name": "CloseIcon",
+                        "props": {
+                          "fill": {
+                            "default": "none",
+                            "required": false,
+                            "type": [Function],
+                          },
+                          "size": {
+                            "default": "20",
+                            "required": false,
+                            "type": [Function],
+                          },
+                          "stroke": {
+                            "default": "#98A2B3",
+                            "required": false,
+                            "type": [Function],
+                          },
+                        },
+                        "render": [Function],
+                        "setup": [Function],
+                      },
+                      "u": null,
+                      "uid": 3,
+                      "um": null,
+                      "update": [Function],
+                      "vnode": [Circular],
+                      "withProxy": null,
+                    },
+                    "ctx": [Circular],
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": [
+                      "fill",
+                      "size",
+                    ],
+                    "el": <svg
+                      fill="#D0D5DD"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      width="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 15L15 5M5 5L15 15"
+                        stroke="#98A2B3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </svg>,
+                    "key": null,
+                    "patchFlag": 8,
+                    "props": {
+                      "fill": "#D0D5DD",
+                      "size": "20",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 4,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": {
+                      "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/CloseIcon.vue",
+                      "__name": "CloseIcon",
+                      "props": {
+                        "fill": {
+                          "default": "none",
+                          "required": false,
+                          "type": [Function],
+                        },
+                        "size": {
+                          "default": "20",
+                          "required": false,
+                          "type": [Function],
+                        },
+                        "stroke": {
+                          "default": "#98A2B3",
+                          "required": false,
+                          "type": [Function],
+                        },
+                      },
+                      "render": [Function],
+                      "setup": [Function],
+                    },
+                  },
                 ],
-                "el": <svg
-                  fill="#D0D5DD"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  width="20"
-                  xmlns="http://www.w3.org/2000/svg"
+                "dynamicProps": null,
+                "el": <div
+                  class="siren-sdk-delete-button"
+                  data-testid="delete-notification-button"
                 >
-                  <path
-                    d="M5 15L15 5M5 5L15 15"
-                    stroke="#98A2B3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                  />
-                </svg>,
-                "key": null,
-                "patchFlag": 8,
+                  <svg
+                    fill="#D0D5DD"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 15L15 5M5 5L15 15"
+                      stroke="#98A2B3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </div>,
+                "key": 1,
+                "patchFlag": 32,
                 "props": {
-                  "fill": "#D0D5DD",
-                  "size": "20",
+                  "class": "siren-sdk-delete-button",
+                  "data-testid": "delete-notification-button",
+                  "key": 1,
+                  "onClick": [Function],
+                  "onKeydown": [Function],
                 },
                 "ref": null,
                 "scopeId": null,
-                "shapeFlag": 4,
+                "shapeFlag": 17,
                 "slotScopeIds": null,
                 "ssContent": null,
                 "ssFallback": null,
@@ -4300,29 +5261,7 @@ VueWrapper {
                 "target": null,
                 "targetAnchor": null,
                 "transition": null,
-                "type": {
-                  "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/CloseIcon.vue",
-                  "__name": "CloseIcon",
-                  "props": {
-                    "fill": {
-                      "default": "none",
-                      "required": false,
-                      "type": [Function],
-                    },
-                    "size": {
-                      "default": "20",
-                      "required": false,
-                      "type": [Function],
-                    },
-                    "stroke": {
-                      "default": "#98A2B3",
-                      "required": false,
-                      "type": [Function],
-                    },
-                  },
-                  "render": [Function],
-                  "setup": [Function],
-                },
+                "type": "div",
               },
             ],
             "dynamicProps": null,
@@ -4339,13 +5278,13 @@ VueWrapper {
                 class="siren-sdk-card-content-wrapper"
               >
                 <div
-                  class="siren-sdk-card-text-break"
+                  class="siren-sdk-card-title"
                   style="color: #FFFFFF; font-size: 14px; font-weight: 600;"
                 >
                   New Message
                 </div>
                 <div
-                  class="siren-sdk-card-text-break"
+                  class="siren-sdk-card-subtitle"
                   style="color: #FFFFFF; font-size: 14px; font-weight: 500;"
                 >
                   New post
@@ -4491,13 +5430,13 @@ VueWrapper {
             class="siren-sdk-card-content-wrapper"
           >
             <div
-              class="siren-sdk-card-text-break"
+              class="siren-sdk-card-title"
               style="color: #FFFFFF; font-size: 14px; font-weight: 600;"
             >
               New Message
             </div>
             <div
-              class="siren-sdk-card-text-break"
+              class="siren-sdk-card-subtitle"
               style="color: #FFFFFF; font-size: 14px; font-weight: 500;"
             >
               New post
@@ -4818,13 +5757,13 @@ VueWrapper {
             class="siren-sdk-card-content-wrapper"
           >
             <div
-              class="siren-sdk-card-text-break"
+              class="siren-sdk-card-title"
               style="color: #FFFFFF; font-size: 14px; font-weight: 600;"
             >
               New Message
             </div>
             <div
-              class="siren-sdk-card-text-break"
+              class="siren-sdk-card-subtitle"
               style="color: #FFFFFF; font-size: 14px; font-weight: 500;"
             >
               New post
@@ -5119,13 +6058,13 @@ VueWrapper {
       class="siren-sdk-card-content-wrapper"
     >
       <div
-        class="siren-sdk-card-text-break"
+        class="siren-sdk-card-title"
         style="color: #FFFFFF; font-size: 14px; font-weight: 600;"
       >
         New Message
       </div>
       <div
-        class="siren-sdk-card-text-break"
+        class="siren-sdk-card-subtitle"
         style="color: #FFFFFF; font-size: 14px; font-weight: 500;"
       >
         New post

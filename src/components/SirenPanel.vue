@@ -320,7 +320,7 @@ onMounted(() => {
 onBeforeUnmount(() => {
   cleanUp();
   notificationsContent.value = [];
-  restartNotificationCountFetch();
+  if (!props.hideBadge) restartNotificationCountFetch();
   handleMarkNotificationsAsViewed(new Date().toISOString());
 });
 
@@ -356,7 +356,7 @@ watch(
   [() => siren.value, () => verificationStatus.value],
   () => {
     if (siren.value && verificationStatus.value !== VerificationStatus.PENDING) {
-      siren.value?.stopRealTimeFetch(EventType.UNVIEWED_COUNT);
+      if (!props.hideBadge) siren.value?.stopRealTimeFetch(EventType.UNVIEWED_COUNT);
       fetchNotifications(true);
     }
     if (!siren.value && isLoading.value) {

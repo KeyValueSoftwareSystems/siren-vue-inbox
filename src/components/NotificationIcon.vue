@@ -5,11 +5,16 @@
     data-testid="notification-icon-container"
   >
     <slot name="notification-icon">
-      <BellIcon :stroke=" darkMode
-              ? COLORS.dark.notificationIcon
-              : COLORS.light.notificationIcon" />
+      <BellIcon
+        :stroke="
+          darkMode
+            ? COLORS.dark.notificationIcon
+            : COLORS.light.notificationIcon
+        "
+      />
     </slot>
     <div
+      v-if="!hideBadge"
       class="siren-sdk-notificationIcon-badge-container"
       :style="
         badgeType === BadgeType.DEFAULT && unViewedCount > 0
@@ -17,7 +22,7 @@
           : {
               width: 0,
               height: 0,
-              overflow: 'hidden'
+              overflow: 'hidden',
             }
       "
     >
@@ -29,8 +34,7 @@
 </template>
 
 <script setup lang="ts">
-import type {
-Ref } from 'vue';
+import type { Ref } from 'vue';
 import {
   defineProps,
   inject,
@@ -39,20 +43,27 @@ import {
   ref,
   watch
 } from 'vue';
-import PubSub from 'pubsub-js';
 import type { Siren } from 'test_notification';
+import PubSub from 'pubsub-js';
 
 import type { SirenStyleProps } from '../types';
-import { BadgeType, EventType, eventTypes, events, COLORS } from '../utils/constants';
+import {
+  BadgeType,
+  EventType,
+  eventTypes,
+  events,
+  COLORS
+} from '../utils/constants';
 import BellIcon from './BellIcon.vue';
 
 import '../styles/icon.css';
 
-defineProps<{
+const props = defineProps<{
   handleNotification: (event: any) => void;
   badgeType: BadgeType;
   darkMode: boolean;
   styles: SirenStyleProps;
+  hideBadge: boolean;
 }>();
 
 const siren: Ref<Siren> = inject('siren') as Ref<Siren>;
@@ -93,20 +104,21 @@ const getUnViewedCount = async (): Promise<void> => {
 };
 
 onMounted(() => {
-  PubSub.subscribe(
-    events.NOTIFICATION_COUNT_EVENT,
-    notificationCountSubscriber
-  );
+  if (!props.hideBadge)
+    PubSub.subscribe(
+      events.NOTIFICATION_COUNT_EVENT,
+      notificationCountSubscriber
+    );
 });
 
 onMounted(() => {
-  startRealTimeDataFetch();
+  if (!props.hideBadge) startRealTimeDataFetch();
 });
 
 watch(
   () => siren.value,
   () => {
-    getUnViewedCount();
+    if (!props.hideBadge) getUnViewedCount();
   },
   { immediate: true }
 );
