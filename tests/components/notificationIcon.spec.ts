@@ -29,7 +29,8 @@ test('matches snapshot', () => {
       handleNotification: mockIconClick,
       badgeType: BadgeType.DEFAULT,
       darkMode: false,
-      styles: applyTheme({}, ThemeMode.DARK, {})
+      styles: applyTheme({}, ThemeMode.DARK, {}),
+      hideBadge: false
     },
     global: {
       provide: {

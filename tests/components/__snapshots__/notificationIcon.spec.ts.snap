@@ -142,7 +142,7 @@ VueWrapper {
       "directives": null,
       "ec": null,
       "effect": ReactiveEffect {
-        "_depsLength": 7,
+        "_depsLength": 8,
         "_dirtyLevel": 0,
         "_runnings": 0,
         "_shouldSchedule": false,
@@ -150,6 +150,9 @@ VueWrapper {
         "active": true,
         "allowRecurse": true,
         "deps": [
+          Map {
+            [Circular] => 1,
+          },
           Map {
             [Circular] => 1,
           },
@@ -214,7 +217,7 @@ VueWrapper {
         "detached": true,
         "effects": [
           ReactiveEffect {
-            "_depsLength": 7,
+            "_depsLength": 8,
             "_dirtyLevel": 0,
             "_runnings": 0,
             "_shouldSchedule": false,
@@ -222,6 +225,9 @@ VueWrapper {
             "active": true,
             "allowRecurse": true,
             "deps": [
+              Map {
+                [Circular] => 1,
+              },
               Map {
                 [Circular] => 1,
               },
@@ -2683,6 +2689,7 @@ VueWrapper {
           "badgeType": "default",
           "darkMode": false,
           "handleNotification": [MockFunction spy],
+          "hideBadge": false,
           "ref": "VTU_COMPONENT",
           "styles": {
             "activeCardMarker": {
