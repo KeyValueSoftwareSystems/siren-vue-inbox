@@ -1,5 +1,5 @@
 <template>
-  <div class="siren-sdk-load-more-container">
+  <div class="siren-sdk-load-more-container" data-testid="load-more-container">
     <div
       :class="
         paginationLoading
@@ -9,6 +9,7 @@
       :style="paginationLoading ? styles.infiniteLoader : styles.loadMoreButton"
       @click="onLoadMore"
       @keydown="onLoadMore"
+      data-testid="on-load-more"
     >
       <slot name="loadMoreComponent">{{
         !paginationLoading ? "Load more" : ""
