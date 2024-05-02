@@ -1,5 +1,5 @@
 <template>
-  <div class="siren-sdk-error-window-container">
+  <div class="siren-sdk-error-window-container" data-testid="error-window">
     <div :style="containerStyle" class="siren-sdk-error-icon-container">
       <img
         src="../assets/errorIcon.svg"

@@ -1,6 +1,6 @@
 <template>
-    <div :class="!windowViewOnly && 'siren-sdk-inbox-container'" ref="notificationRef">
-      <div v-if="!windowViewOnly" ref="iconRef">
+    <div :class="!windowViewOnly && 'siren-sdk-inbox-container'" ref="notificationRef" data-testid="siren-inbox-container">
+      <div v-if="!windowViewOnly" ref="iconRef" data-testid="siren-inbox-icon">
         <NotificationIcon :handleNotification="handleNotification"
           :badgeType="showNotifications ? BadgeType.NONE : BadgeType.DEFAULT"
           :darkMode="darkMode" :styles="styles" />

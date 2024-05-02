@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-testid="provider-container">
     <slot />
   </div>
 </template>

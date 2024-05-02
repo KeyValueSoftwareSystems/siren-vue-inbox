@@ -1,12 +1,13 @@
 <template>
   <div :class="windowViewOnly ? 'siren-sdk-panel-container' : 'siren-sdk-panel-modal'
-    " :style="panelStyle">
-    <slot name="customHeader" v-if="!headerProps.hideHeader">
-      <HeaderComponent :title="headerProps.title ?? DEFAULT_WINDOW_TITLE"
+    " :style="panelStyle"
+    data-testid="siren-panel-container">
+    <slot name="customHeader" v-if="!headerProps?.hideHeader">
+      <HeaderComponent :title="headerProps?.title ?? DEFAULT_WINDOW_TITLE"
         :enableClearAll="!isEmptyArray(notificationsContent) && !isLoading"
         :handleClearAllNotification="handleClearAllNotification"
         :styles="styles" :windowViewOnly="windowViewOnly"
-        :hideClearAll="headerProps.hideClearAll ?? false" />
+        :hideClearAll="headerProps?.hideClearAll ?? false" />
     </slot>
     <div :style="{
     ...(!windowViewOnly && styles.windowBottomBorder),
