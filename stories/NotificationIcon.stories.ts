@@ -26,7 +26,8 @@ const meta = {
     badgeType: BadgeType.DEFAULT,
     darkMode: false,
     handleNotification: () => {},
-    styles: applyTheme({}, ThemeMode.LIGHT, {})
+    styles: applyTheme({}, ThemeMode.LIGHT, {}),
+    hideBadge: false
   }
 } satisfies Meta<typeof NotificationIcon>;
 

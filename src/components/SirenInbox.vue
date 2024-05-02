@@ -3,7 +3,7 @@
       <div v-if="!windowViewOnly" ref="iconRef" data-testid="siren-inbox-icon">
         <NotificationIcon :handleNotification="handleNotification"
           :badgeType="showNotifications ? BadgeType.NONE : BadgeType.DEFAULT"
-          :darkMode="darkMode" :styles="styles" />
+          :darkMode="darkMode" :styles="styles" :hideBadge="hideBadge" />
       </div>
       <div v-if="showNotifications || windowViewOnly" :style="{
     ...styles.container,
