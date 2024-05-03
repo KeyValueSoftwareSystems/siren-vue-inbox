@@ -457,6 +457,10 @@ VueWrapper {
                   "required": true,
                   "type": [Function],
                 },
+                "hideBadge": {
+                  "required": true,
+                  "type": [Function],
+                },
                 "styles": {
                   "required": true,
                   "type": [Function],
@@ -772,7 +776,7 @@ VueWrapper {
                   "trigger": [Function],
                 } => 1,
                 ReactiveEffect {
-                  "_depsLength": 5,
+                  "_depsLength": 6,
                   "_dirtyLevel": 0,
                   "_runnings": 0,
                   "_shouldSchedule": false,
@@ -996,6 +1000,9 @@ VueWrapper {
                     Map {
                       [Circular] => 1,
                     },
+                    Map {
+                      [Circular] => 1,
+                    },
                   ],
                   "fn": [Function],
                   "onTrack": undefined,
@@ -1131,7 +1138,7 @@ VueWrapper {
               },
               "dep": Map {
                 ReactiveEffect {
-                  "_depsLength": 5,
+                  "_depsLength": 6,
                   "_dirtyLevel": 0,
                   "_runnings": 0,
                   "_shouldSchedule": false,
@@ -1243,6 +1250,9 @@ VueWrapper {
                     Map {
                       [Circular] => 1,
                     },
+                    Map {
+                      [Circular] => 1,
+                    },
                   ],
                   "fn": [Function],
                   "onTrack": undefined,
@@ -1263,7 +1273,7 @@ VueWrapper {
                   Map {
                     [Circular] => 1,
                     ReactiveEffect {
-                      "_depsLength": 5,
+                      "_depsLength": 6,
                       "_dirtyLevel": 0,
                       "_runnings": 0,
                       "_shouldSchedule": false,
@@ -1294,6 +1304,9 @@ VueWrapper {
                           [Circular] => 1,
                         },
                         [Circular],
+                        Map {
+                          [Circular] => 1,
+                        },
                         Map {
                           [Circular] => 1,
                         },
@@ -1387,7 +1400,7 @@ VueWrapper {
           "directives": null,
           "ec": null,
           "effect": ReactiveEffect {
-            "_depsLength": 5,
+            "_depsLength": 6,
             "_dirtyLevel": 0,
             "_runnings": 0,
             "_shouldSchedule": false,
@@ -1621,6 +1634,9 @@ VueWrapper {
                   "scheduler": undefined,
                   "trigger": [Function],
                 } => 1,
+                [Circular] => 1,
+              },
+              Map {
                 [Circular] => 1,
               },
               Map {
@@ -2016,7 +2032,7 @@ VueWrapper {
                   },
                   "dep": Map {
                     ReactiveEffect {
-                      "_depsLength": 5,
+                      "_depsLength": 6,
                       "_dirtyLevel": 0,
                       "_runnings": 0,
                       "_shouldSchedule": false,
@@ -2051,6 +2067,9 @@ VueWrapper {
                           [Circular] => 1,
                         },
                         [Circular],
+                        Map {
+                          [Circular] => 1,
+                        },
                         Map {
                           [Circular] => 1,
                         },
@@ -2069,7 +2088,7 @@ VueWrapper {
                   Map {
                     [Circular] => 1,
                     ReactiveEffect {
-                      "_depsLength": 5,
+                      "_depsLength": 6,
                       "_dirtyLevel": 0,
                       "_runnings": 0,
                       "_shouldSchedule": false,
@@ -2100,6 +2119,9 @@ VueWrapper {
                           [Circular] => 1,
                         },
                         [Circular],
+                        Map {
+                          [Circular] => 1,
+                        },
                         Map {
                           [Circular] => 1,
                         },
@@ -2190,7 +2212,7 @@ VueWrapper {
                   Map {
                     [Circular] => 1,
                     ReactiveEffect {
-                      "_depsLength": 5,
+                      "_depsLength": 6,
                       "_dirtyLevel": 0,
                       "_runnings": 0,
                       "_shouldSchedule": false,
@@ -2414,6 +2436,9 @@ VueWrapper {
                         Map {
                           [Circular] => 1,
                         },
+                        Map {
+                          [Circular] => 1,
+                        },
                       ],
                       "fn": [Function],
                       "onTrack": undefined,
@@ -2430,7 +2455,7 @@ VueWrapper {
                 "trigger": [Function],
               },
               ReactiveEffect {
-                "_depsLength": 5,
+                "_depsLength": 6,
                 "_dirtyLevel": 0,
                 "_runnings": 0,
                 "_shouldSchedule": false,
@@ -2672,6 +2697,9 @@ VueWrapper {
                   Map {
                     [Circular] => 1,
                   },
+                  Map {
+                    [Circular] => 1,
+                  },
                 ],
                 "fn": [Function],
                 "onTrack": undefined,
@@ -2721,6 +2749,10 @@ VueWrapper {
                   "type": [Function],
                 },
                 "handleNotification": {
+                  "required": true,
+                  "type": [Function],
+                },
+                "hideBadge": {
                   "required": true,
                   "type": [Function],
                 },
@@ -3114,6 +3146,7 @@ VueWrapper {
                         "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
+                        "hideBadge": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -3306,6 +3339,130 @@ VueWrapper {
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
+                        "props": {
+                          "badgeType": "default",
+                          "darkMode": true,
+                          "handleNotification": [Function],
+                          "hideBadge": false,
+                          "styles": {
+                            "activeCardMarker": {
+                              "backgroundColor": "#2E2D30",
+                              "border": "#FFFFFF",
+                            },
+                            "badgeStyle": {
+                              "backgroundColor": "#FF0000",
+                              "borderRadius": "15px",
+                              "height": "15px",
+                              "left": "undefinedpx",
+                              "minWidth": "15px",
+                              "top": "undefinedpx",
+                            },
+                            "badgeTextStyle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "10px",
+                            },
+                            "body": {
+                              "height": "700px",
+                            },
+                            "cardDescription": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                            },
+                            "cardIconRound": {
+                              "backgroundColor": "#344054",
+                              "borderRadius": "20px",
+                              "height": "40px",
+                              "width": "40px",
+                            },
+                            "cardSubTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "500",
+                            },
+                            "cardTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "clearIcon": {
+                              "color": "#D0D5DD",
+                              "size": 24,
+                            },
+                            "container": {
+                              "maxWidth": "100",
+                            },
+                            "contentContainer": {
+                              "backgroundColor": "#232326",
+                              "borderRadius": "0 0 10px 10px",
+                              "padding": "0px",
+                            },
+                            "dateStyle": {
+                              "color": "#98A2B3",
+                              "fontSize": "12px",
+                            },
+                            "defaultCardContainer": {
+                              "backgroundColor": "transparent",
+                              "borderBottom": "0.5px solid",
+                              "borderColor": "#344054",
+                              "padding": "12px 24px",
+                            },
+                            "deleteIcon": {
+                              "color": "#D0D5DD",
+                              "size": 20,
+                            },
+                            "emptyText": {
+                              "color": "#FFFFFF",
+                            },
+                            "errorText": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerAction": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerContainer": {
+                              "backgroundColor": "#232326",
+                              "borderBottom": "0.5px solid #344054",
+                              "height": "64px",
+                            },
+                            "headerTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "20px",
+                              "fontWeight": "600",
+                              "paddingLeft": "0px",
+                            },
+                            "infiniteLoader": {
+                              "border": "3px solid #FFFFFF",
+                            },
+                            "loadMoreButton": {
+                              "backgroundColor": "#232326",
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "loader": {
+                              "backgroundImage": "linear-gradient(to right, #49494A 0%, #535354 50%, #49494A 100%)",
+                              "borderColor": "#FFFFFF",
+                            },
+                            "notificationIcon": {
+                              "size": 30,
+                            },
+                            "timerIcon": {
+                              "color": "#98A2B3",
+                              "size": 14,
+                            },
+                            "windowBottomBorder": {
+                              "borderBottomLeftRadius": "10px",
+                              "borderBottomRightRadius": "10px",
+                            },
+                            "windowShadow": {
+                              "boxShadow": "#232326 0px 8px 24px",
+                            },
+                            "windowTopBorder": {
+                              "borderTopLeftRadius": "10px",
+                              "borderTopRightRadius": "10px",
+                            },
+                          },
+                        },
                         "siren": [MockFunction spy],
                         "startRealTimeDataFetch": [Function],
                         "unViewedCount": RefImpl {
@@ -3315,7 +3472,7 @@ VueWrapper {
                           "_value": 0,
                           "dep": Map {
                             ReactiveEffect {
-                              "_depsLength": 6,
+                              "_depsLength": 7,
                               "_dirtyLevel": 0,
                               "_runnings": 0,
                               "_shouldSchedule": false,
@@ -3323,6 +3480,9 @@ VueWrapper {
                               "active": true,
                               "allowRecurse": true,
                               "deps": [
+                                Map {
+                                  [Circular] => 1,
+                                },
                                 Map {
                                   [Circular] => 1,
                                 },
@@ -3352,7 +3512,7 @@ VueWrapper {
                       "directives": null,
                       "ec": null,
                       "effect": ReactiveEffect {
-                        "_depsLength": 6,
+                        "_depsLength": 7,
                         "_dirtyLevel": 0,
                         "_runnings": 0,
                         "_shouldSchedule": false,
@@ -3360,6 +3520,9 @@ VueWrapper {
                         "active": true,
                         "allowRecurse": true,
                         "deps": [
+                          Map {
+                            [Circular] => 1,
+                          },
                           Map {
                             [Circular] => 1,
                           },
@@ -3404,6 +3567,7 @@ VueWrapper {
                         "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
+                        "hideBadge": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -3544,6 +3708,12 @@ VueWrapper {
                             "required": true,
                             "type": [Function],
                           },
+                          "hideBadge": {
+                            "0": true,
+                            "1": true,
+                            "required": true,
+                            "type": [Function],
+                          },
                           "styles": {
                             "0": false,
                             "1": true,
@@ -3553,6 +3723,7 @@ VueWrapper {
                         },
                         [
                           "darkMode",
+                          "hideBadge",
                         ],
                       ],
                       "provides": {},
@@ -3560,6 +3731,7 @@ VueWrapper {
                         "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
+                        "hideBadge": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -3705,7 +3877,7 @@ VueWrapper {
                             "trigger": [Function],
                           },
                           ReactiveEffect {
-                            "_depsLength": 6,
+                            "_depsLength": 7,
                             "_dirtyLevel": 0,
                             "_runnings": 0,
                             "_shouldSchedule": false,
@@ -3713,6 +3885,9 @@ VueWrapper {
                             "active": true,
                             "allowRecurse": true,
                             "deps": [
+                              Map {
+                                [Circular] => 1,
+                              },
                               Map {
                                 [Circular] => 1,
                               },
@@ -3818,6 +3993,130 @@ VueWrapper {
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
+                        "props": {
+                          "badgeType": "default",
+                          "darkMode": true,
+                          "handleNotification": [Function],
+                          "hideBadge": false,
+                          "styles": {
+                            "activeCardMarker": {
+                              "backgroundColor": "#2E2D30",
+                              "border": "#FFFFFF",
+                            },
+                            "badgeStyle": {
+                              "backgroundColor": "#FF0000",
+                              "borderRadius": "15px",
+                              "height": "15px",
+                              "left": "undefinedpx",
+                              "minWidth": "15px",
+                              "top": "undefinedpx",
+                            },
+                            "badgeTextStyle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "10px",
+                            },
+                            "body": {
+                              "height": "700px",
+                            },
+                            "cardDescription": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                            },
+                            "cardIconRound": {
+                              "backgroundColor": "#344054",
+                              "borderRadius": "20px",
+                              "height": "40px",
+                              "width": "40px",
+                            },
+                            "cardSubTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "500",
+                            },
+                            "cardTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "clearIcon": {
+                              "color": "#D0D5DD",
+                              "size": 24,
+                            },
+                            "container": {
+                              "maxWidth": "100",
+                            },
+                            "contentContainer": {
+                              "backgroundColor": "#232326",
+                              "borderRadius": "0 0 10px 10px",
+                              "padding": "0px",
+                            },
+                            "dateStyle": {
+                              "color": "#98A2B3",
+                              "fontSize": "12px",
+                            },
+                            "defaultCardContainer": {
+                              "backgroundColor": "transparent",
+                              "borderBottom": "0.5px solid",
+                              "borderColor": "#344054",
+                              "padding": "12px 24px",
+                            },
+                            "deleteIcon": {
+                              "color": "#D0D5DD",
+                              "size": 20,
+                            },
+                            "emptyText": {
+                              "color": "#FFFFFF",
+                            },
+                            "errorText": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerAction": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerContainer": {
+                              "backgroundColor": "#232326",
+                              "borderBottom": "0.5px solid #344054",
+                              "height": "64px",
+                            },
+                            "headerTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "20px",
+                              "fontWeight": "600",
+                              "paddingLeft": "0px",
+                            },
+                            "infiniteLoader": {
+                              "border": "3px solid #FFFFFF",
+                            },
+                            "loadMoreButton": {
+                              "backgroundColor": "#232326",
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "loader": {
+                              "backgroundImage": "linear-gradient(to right, #49494A 0%, #535354 50%, #49494A 100%)",
+                              "borderColor": "#FFFFFF",
+                            },
+                            "notificationIcon": {
+                              "size": 30,
+                            },
+                            "timerIcon": {
+                              "color": "#98A2B3",
+                              "size": 14,
+                            },
+                            "windowBottomBorder": {
+                              "borderBottomLeftRadius": "10px",
+                              "borderBottomRightRadius": "10px",
+                            },
+                            "windowShadow": {
+                              "boxShadow": "#232326 0px 8px 24px",
+                            },
+                            "windowTopBorder": {
+                              "borderTopLeftRadius": "10px",
+                              "borderTopRightRadius": "10px",
+                            },
+                          },
+                        },
                         "siren": [MockFunction spy],
                         "startRealTimeDataFetch": [Function],
                         "unViewedCount": 0,
@@ -4354,7 +4653,45 @@ VueWrapper {
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": null,
+                            "dynamicChildren": [
+                              {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": "0",
+                                "component": null,
+                                "ctx": [Circular],
+                                "dirs": null,
+                                "dynamicChildren": null,
+                                "dynamicProps": null,
+                                "el": <div
+                                  style="color: #FFFFFF; font-size: 10px;"
+                                >
+                                  0
+                                </div>,
+                                "key": null,
+                                "patchFlag": 5,
+                                "props": {
+                                  "style": {
+                                    "color": "#FFFFFF",
+                                    "fontSize": "10px",
+                                  },
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 9,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "div",
+                              },
+                            ],
                             "dynamicProps": null,
                             "el": <div
                               class="siren-sdk-notificationIcon-badge-container"
@@ -4366,10 +4703,11 @@ VueWrapper {
                                 0
                               </div>
                             </div>,
-                            "key": null,
+                            "key": 0,
                             "patchFlag": 4,
                             "props": {
                               "class": "siren-sdk-notificationIcon-badge-container",
+                              "key": 0,
                               "style": {
                                 "height": 0,
                                 "overflow": "hidden",
@@ -4888,43 +5226,6 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": "0",
-                            "component": null,
-                            "ctx": [Circular],
-                            "dirs": null,
-                            "dynamicChildren": null,
-                            "dynamicProps": null,
-                            "el": <div
-                              style="color: #FFFFFF; font-size: 10px;"
-                            >
-                              0
-                            </div>,
-                            "key": null,
-                            "patchFlag": 5,
-                            "props": {
-                              "style": {
-                                "color": "#FFFFFF",
-                                "fontSize": "10px",
-                              },
-                            },
-                            "ref": null,
-                            "scopeId": null,
-                            "shapeFlag": 9,
-                            "slotScopeIds": null,
-                            "ssContent": null,
-                            "ssFallback": null,
-                            "staticCount": 0,
-                            "suspense": null,
-                            "target": null,
-                            "targetAnchor": null,
-                            "transition": null,
-                            "type": "div",
-                          },
-                          {
-                            "__v_isVNode": true,
-                            "__v_skip": true,
-                            "anchor": null,
-                            "appContext": null,
                             "children": [
                               {
                                 "__v_isVNode": true,
@@ -4967,7 +5268,45 @@ VueWrapper {
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": null,
+                            "dynamicChildren": [
+                              {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": "0",
+                                "component": null,
+                                "ctx": [Circular],
+                                "dirs": null,
+                                "dynamicChildren": null,
+                                "dynamicProps": null,
+                                "el": <div
+                                  style="color: #FFFFFF; font-size: 10px;"
+                                >
+                                  0
+                                </div>,
+                                "key": null,
+                                "patchFlag": 5,
+                                "props": {
+                                  "style": {
+                                    "color": "#FFFFFF",
+                                    "fontSize": "10px",
+                                  },
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 9,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "div",
+                              },
+                            ],
                             "dynamicProps": null,
                             "el": <div
                               class="siren-sdk-notificationIcon-badge-container"
@@ -4979,10 +5318,11 @@ VueWrapper {
                                 0
                               </div>
                             </div>,
-                            "key": null,
+                            "key": 0,
                             "patchFlag": 4,
                             "props": {
                               "class": "siren-sdk-notificationIcon-badge-container",
+                              "key": 0,
                               "style": {
                                 "height": 0,
                                 "overflow": "hidden",
@@ -5076,6 +5416,10 @@ VueWrapper {
                             "required": true,
                             "type": [Function],
                           },
+                          "hideBadge": {
+                            "required": true,
+                            "type": [Function],
+                          },
                           "styles": {
                             "required": true,
                             "type": [Function],
@@ -5098,6 +5442,7 @@ VueWrapper {
                       "badgeType",
                       "darkMode",
                       "styles",
+                      "hideBadge",
                     ],
                     "el": <div
                       class="siren-sdk-notification-icon-container"
@@ -5137,6 +5482,7 @@ VueWrapper {
                       "badgeType": "default",
                       "darkMode": true,
                       "handleNotification": [Function],
+                      "hideBadge": false,
                       "styles": {
                         "activeCardMarker": {
                           "backgroundColor": "#2E2D30",
@@ -5283,6 +5629,10 @@ VueWrapper {
                           "required": true,
                           "type": [Function],
                         },
+                        "hideBadge": {
+                          "required": true,
+                          "type": [Function],
+                        },
                         "styles": {
                           "required": true,
                           "type": [Function],
@@ -5313,6 +5663,7 @@ VueWrapper {
                         "darkMode": 3,
                         "handleNotification": 3,
                         "hasAttribute": 0,
+                        "hideBadge": 3,
                         "nodeType": 0,
                         "styles": 3,
                         "tagName": 0,
@@ -5369,6 +5720,7 @@ VueWrapper {
                         "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
+                        "hideBadge": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -5561,6 +5913,130 @@ VueWrapper {
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
+                        "props": {
+                          "badgeType": "default",
+                          "darkMode": true,
+                          "handleNotification": [Function],
+                          "hideBadge": false,
+                          "styles": {
+                            "activeCardMarker": {
+                              "backgroundColor": "#2E2D30",
+                              "border": "#FFFFFF",
+                            },
+                            "badgeStyle": {
+                              "backgroundColor": "#FF0000",
+                              "borderRadius": "15px",
+                              "height": "15px",
+                              "left": "undefinedpx",
+                              "minWidth": "15px",
+                              "top": "undefinedpx",
+                            },
+                            "badgeTextStyle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "10px",
+                            },
+                            "body": {
+                              "height": "700px",
+                            },
+                            "cardDescription": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                            },
+                            "cardIconRound": {
+                              "backgroundColor": "#344054",
+                              "borderRadius": "20px",
+                              "height": "40px",
+                              "width": "40px",
+                            },
+                            "cardSubTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "500",
+                            },
+                            "cardTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "clearIcon": {
+                              "color": "#D0D5DD",
+                              "size": 24,
+                            },
+                            "container": {
+                              "maxWidth": "100",
+                            },
+                            "contentContainer": {
+                              "backgroundColor": "#232326",
+                              "borderRadius": "0 0 10px 10px",
+                              "padding": "0px",
+                            },
+                            "dateStyle": {
+                              "color": "#98A2B3",
+                              "fontSize": "12px",
+                            },
+                            "defaultCardContainer": {
+                              "backgroundColor": "transparent",
+                              "borderBottom": "0.5px solid",
+                              "borderColor": "#344054",
+                              "padding": "12px 24px",
+                            },
+                            "deleteIcon": {
+                              "color": "#D0D5DD",
+                              "size": 20,
+                            },
+                            "emptyText": {
+                              "color": "#FFFFFF",
+                            },
+                            "errorText": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerAction": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerContainer": {
+                              "backgroundColor": "#232326",
+                              "borderBottom": "0.5px solid #344054",
+                              "height": "64px",
+                            },
+                            "headerTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "20px",
+                              "fontWeight": "600",
+                              "paddingLeft": "0px",
+                            },
+                            "infiniteLoader": {
+                              "border": "3px solid #FFFFFF",
+                            },
+                            "loadMoreButton": {
+                              "backgroundColor": "#232326",
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "loader": {
+                              "backgroundImage": "linear-gradient(to right, #49494A 0%, #535354 50%, #49494A 100%)",
+                              "borderColor": "#FFFFFF",
+                            },
+                            "notificationIcon": {
+                              "size": 30,
+                            },
+                            "timerIcon": {
+                              "color": "#98A2B3",
+                              "size": 14,
+                            },
+                            "windowBottomBorder": {
+                              "borderBottomLeftRadius": "10px",
+                              "borderBottomRightRadius": "10px",
+                            },
+                            "windowShadow": {
+                              "boxShadow": "#232326 0px 8px 24px",
+                            },
+                            "windowTopBorder": {
+                              "borderTopLeftRadius": "10px",
+                              "borderTopRightRadius": "10px",
+                            },
+                          },
+                        },
                         "siren": [MockFunction spy],
                         "startRealTimeDataFetch": [Function],
                         "unViewedCount": RefImpl {
@@ -5570,7 +6046,7 @@ VueWrapper {
                           "_value": 0,
                           "dep": Map {
                             ReactiveEffect {
-                              "_depsLength": 6,
+                              "_depsLength": 7,
                               "_dirtyLevel": 0,
                               "_runnings": 0,
                               "_shouldSchedule": false,
@@ -5578,6 +6054,9 @@ VueWrapper {
                               "active": true,
                               "allowRecurse": true,
                               "deps": [
+                                Map {
+                                  [Circular] => 1,
+                                },
                                 Map {
                                   [Circular] => 1,
                                 },
@@ -5607,7 +6086,7 @@ VueWrapper {
                       "directives": null,
                       "ec": null,
                       "effect": ReactiveEffect {
-                        "_depsLength": 6,
+                        "_depsLength": 7,
                         "_dirtyLevel": 0,
                         "_runnings": 0,
                         "_shouldSchedule": false,
@@ -5615,6 +6094,9 @@ VueWrapper {
                         "active": true,
                         "allowRecurse": true,
                         "deps": [
+                          Map {
+                            [Circular] => 1,
+                          },
                           Map {
                             [Circular] => 1,
                           },
@@ -5659,6 +6141,7 @@ VueWrapper {
                         "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
+                        "hideBadge": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -5799,6 +6282,12 @@ VueWrapper {
                             "required": true,
                             "type": [Function],
                           },
+                          "hideBadge": {
+                            "0": true,
+                            "1": true,
+                            "required": true,
+                            "type": [Function],
+                          },
                           "styles": {
                             "0": false,
                             "1": true,
@@ -5808,6 +6297,7 @@ VueWrapper {
                         },
                         [
                           "darkMode",
+                          "hideBadge",
                         ],
                       ],
                       "provides": {},
@@ -5815,6 +6305,7 @@ VueWrapper {
                         "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
+                        "hideBadge": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -5960,7 +6451,7 @@ VueWrapper {
                             "trigger": [Function],
                           },
                           ReactiveEffect {
-                            "_depsLength": 6,
+                            "_depsLength": 7,
                             "_dirtyLevel": 0,
                             "_runnings": 0,
                             "_shouldSchedule": false,
@@ -5968,6 +6459,9 @@ VueWrapper {
                             "active": true,
                             "allowRecurse": true,
                             "deps": [
+                              Map {
+                                [Circular] => 1,
+                              },
                               Map {
                                 [Circular] => 1,
                               },
@@ -6073,6 +6567,130 @@ VueWrapper {
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
+                        "props": {
+                          "badgeType": "default",
+                          "darkMode": true,
+                          "handleNotification": [Function],
+                          "hideBadge": false,
+                          "styles": {
+                            "activeCardMarker": {
+                              "backgroundColor": "#2E2D30",
+                              "border": "#FFFFFF",
+                            },
+                            "badgeStyle": {
+                              "backgroundColor": "#FF0000",
+                              "borderRadius": "15px",
+                              "height": "15px",
+                              "left": "undefinedpx",
+                              "minWidth": "15px",
+                              "top": "undefinedpx",
+                            },
+                            "badgeTextStyle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "10px",
+                            },
+                            "body": {
+                              "height": "700px",
+                            },
+                            "cardDescription": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                            },
+                            "cardIconRound": {
+                              "backgroundColor": "#344054",
+                              "borderRadius": "20px",
+                              "height": "40px",
+                              "width": "40px",
+                            },
+                            "cardSubTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "500",
+                            },
+                            "cardTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "clearIcon": {
+                              "color": "#D0D5DD",
+                              "size": 24,
+                            },
+                            "container": {
+                              "maxWidth": "100",
+                            },
+                            "contentContainer": {
+                              "backgroundColor": "#232326",
+                              "borderRadius": "0 0 10px 10px",
+                              "padding": "0px",
+                            },
+                            "dateStyle": {
+                              "color": "#98A2B3",
+                              "fontSize": "12px",
+                            },
+                            "defaultCardContainer": {
+                              "backgroundColor": "transparent",
+                              "borderBottom": "0.5px solid",
+                              "borderColor": "#344054",
+                              "padding": "12px 24px",
+                            },
+                            "deleteIcon": {
+                              "color": "#D0D5DD",
+                              "size": 20,
+                            },
+                            "emptyText": {
+                              "color": "#FFFFFF",
+                            },
+                            "errorText": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerAction": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerContainer": {
+                              "backgroundColor": "#232326",
+                              "borderBottom": "0.5px solid #344054",
+                              "height": "64px",
+                            },
+                            "headerTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "20px",
+                              "fontWeight": "600",
+                              "paddingLeft": "0px",
+                            },
+                            "infiniteLoader": {
+                              "border": "3px solid #FFFFFF",
+                            },
+                            "loadMoreButton": {
+                              "backgroundColor": "#232326",
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "loader": {
+                              "backgroundImage": "linear-gradient(to right, #49494A 0%, #535354 50%, #49494A 100%)",
+                              "borderColor": "#FFFFFF",
+                            },
+                            "notificationIcon": {
+                              "size": 30,
+                            },
+                            "timerIcon": {
+                              "color": "#98A2B3",
+                              "size": 14,
+                            },
+                            "windowBottomBorder": {
+                              "borderBottomLeftRadius": "10px",
+                              "borderBottomRightRadius": "10px",
+                            },
+                            "windowShadow": {
+                              "boxShadow": "#232326 0px 8px 24px",
+                            },
+                            "windowTopBorder": {
+                              "borderTopLeftRadius": "10px",
+                              "borderTopRightRadius": "10px",
+                            },
+                          },
+                        },
                         "siren": [MockFunction spy],
                         "startRealTimeDataFetch": [Function],
                         "unViewedCount": 0,
@@ -6622,7 +7240,45 @@ VueWrapper {
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": null,
+                            "dynamicChildren": [
+                              {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": "0",
+                                "component": null,
+                                "ctx": [Circular],
+                                "dirs": null,
+                                "dynamicChildren": null,
+                                "dynamicProps": null,
+                                "el": <div
+                                  style="color: #FFFFFF; font-size: 10px;"
+                                >
+                                  0
+                                </div>,
+                                "key": null,
+                                "patchFlag": 5,
+                                "props": {
+                                  "style": {
+                                    "color": "#FFFFFF",
+                                    "fontSize": "10px",
+                                  },
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 9,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "div",
+                              },
+                            ],
                             "dynamicProps": null,
                             "el": <div
                               class="siren-sdk-notificationIcon-badge-container"
@@ -6634,10 +7290,11 @@ VueWrapper {
                                 0
                               </div>
                             </div>,
-                            "key": null,
+                            "key": 0,
                             "patchFlag": 4,
                             "props": {
                               "class": "siren-sdk-notificationIcon-badge-container",
+                              "key": 0,
                               "style": {
                                 "height": 0,
                                 "overflow": "hidden",
@@ -7156,43 +7813,6 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": "0",
-                            "component": null,
-                            "ctx": [Circular],
-                            "dirs": null,
-                            "dynamicChildren": null,
-                            "dynamicProps": null,
-                            "el": <div
-                              style="color: #FFFFFF; font-size: 10px;"
-                            >
-                              0
-                            </div>,
-                            "key": null,
-                            "patchFlag": 5,
-                            "props": {
-                              "style": {
-                                "color": "#FFFFFF",
-                                "fontSize": "10px",
-                              },
-                            },
-                            "ref": null,
-                            "scopeId": null,
-                            "shapeFlag": 9,
-                            "slotScopeIds": null,
-                            "ssContent": null,
-                            "ssFallback": null,
-                            "staticCount": 0,
-                            "suspense": null,
-                            "target": null,
-                            "targetAnchor": null,
-                            "transition": null,
-                            "type": "div",
-                          },
-                          {
-                            "__v_isVNode": true,
-                            "__v_skip": true,
-                            "anchor": null,
-                            "appContext": null,
                             "children": [
                               {
                                 "__v_isVNode": true,
@@ -7235,7 +7855,45 @@ VueWrapper {
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": null,
+                            "dynamicChildren": [
+                              {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": "0",
+                                "component": null,
+                                "ctx": [Circular],
+                                "dirs": null,
+                                "dynamicChildren": null,
+                                "dynamicProps": null,
+                                "el": <div
+                                  style="color: #FFFFFF; font-size: 10px;"
+                                >
+                                  0
+                                </div>,
+                                "key": null,
+                                "patchFlag": 5,
+                                "props": {
+                                  "style": {
+                                    "color": "#FFFFFF",
+                                    "fontSize": "10px",
+                                  },
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 9,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "div",
+                              },
+                            ],
                             "dynamicProps": null,
                             "el": <div
                               class="siren-sdk-notificationIcon-badge-container"
@@ -7247,10 +7905,11 @@ VueWrapper {
                                 0
                               </div>
                             </div>,
-                            "key": null,
+                            "key": 0,
                             "patchFlag": 4,
                             "props": {
                               "class": "siren-sdk-notificationIcon-badge-container",
+                              "key": 0,
                               "style": {
                                 "height": 0,
                                 "overflow": "hidden",
@@ -7344,6 +8003,10 @@ VueWrapper {
                             "required": true,
                             "type": [Function],
                           },
+                          "hideBadge": {
+                            "required": true,
+                            "type": [Function],
+                          },
                           "styles": {
                             "required": true,
                             "type": [Function],
@@ -7366,6 +8029,7 @@ VueWrapper {
                       "badgeType",
                       "darkMode",
                       "styles",
+                      "hideBadge",
                     ],
                     "el": <div
                       class="siren-sdk-notification-icon-container"
@@ -7405,6 +8069,7 @@ VueWrapper {
                       "badgeType": "default",
                       "darkMode": true,
                       "handleNotification": [Function],
+                      "hideBadge": false,
                       "styles": {
                         "activeCardMarker": {
                           "backgroundColor": "#2E2D30",
@@ -7548,6 +8213,10 @@ VueWrapper {
                           "type": [Function],
                         },
                         "handleNotification": {
+                          "required": true,
+                          "type": [Function],
+                        },
+                        "hideBadge": {
                           "required": true,
                           "type": [Function],
                         },
@@ -7678,6 +8347,7 @@ VueWrapper {
                         "darkMode": 3,
                         "handleNotification": 3,
                         "hasAttribute": 0,
+                        "hideBadge": 3,
                         "nodeType": 0,
                         "styles": 3,
                         "tagName": 0,
@@ -7734,6 +8404,7 @@ VueWrapper {
                         "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
+                        "hideBadge": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -7926,6 +8597,130 @@ VueWrapper {
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
+                        "props": {
+                          "badgeType": "default",
+                          "darkMode": true,
+                          "handleNotification": [Function],
+                          "hideBadge": false,
+                          "styles": {
+                            "activeCardMarker": {
+                              "backgroundColor": "#2E2D30",
+                              "border": "#FFFFFF",
+                            },
+                            "badgeStyle": {
+                              "backgroundColor": "#FF0000",
+                              "borderRadius": "15px",
+                              "height": "15px",
+                              "left": "undefinedpx",
+                              "minWidth": "15px",
+                              "top": "undefinedpx",
+                            },
+                            "badgeTextStyle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "10px",
+                            },
+                            "body": {
+                              "height": "700px",
+                            },
+                            "cardDescription": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                            },
+                            "cardIconRound": {
+                              "backgroundColor": "#344054",
+                              "borderRadius": "20px",
+                              "height": "40px",
+                              "width": "40px",
+                            },
+                            "cardSubTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "500",
+                            },
+                            "cardTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "clearIcon": {
+                              "color": "#D0D5DD",
+                              "size": 24,
+                            },
+                            "container": {
+                              "maxWidth": "100",
+                            },
+                            "contentContainer": {
+                              "backgroundColor": "#232326",
+                              "borderRadius": "0 0 10px 10px",
+                              "padding": "0px",
+                            },
+                            "dateStyle": {
+                              "color": "#98A2B3",
+                              "fontSize": "12px",
+                            },
+                            "defaultCardContainer": {
+                              "backgroundColor": "transparent",
+                              "borderBottom": "0.5px solid",
+                              "borderColor": "#344054",
+                              "padding": "12px 24px",
+                            },
+                            "deleteIcon": {
+                              "color": "#D0D5DD",
+                              "size": 20,
+                            },
+                            "emptyText": {
+                              "color": "#FFFFFF",
+                            },
+                            "errorText": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerAction": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerContainer": {
+                              "backgroundColor": "#232326",
+                              "borderBottom": "0.5px solid #344054",
+                              "height": "64px",
+                            },
+                            "headerTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "20px",
+                              "fontWeight": "600",
+                              "paddingLeft": "0px",
+                            },
+                            "infiniteLoader": {
+                              "border": "3px solid #FFFFFF",
+                            },
+                            "loadMoreButton": {
+                              "backgroundColor": "#232326",
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "loader": {
+                              "backgroundImage": "linear-gradient(to right, #49494A 0%, #535354 50%, #49494A 100%)",
+                              "borderColor": "#FFFFFF",
+                            },
+                            "notificationIcon": {
+                              "size": 30,
+                            },
+                            "timerIcon": {
+                              "color": "#98A2B3",
+                              "size": 14,
+                            },
+                            "windowBottomBorder": {
+                              "borderBottomLeftRadius": "10px",
+                              "borderBottomRightRadius": "10px",
+                            },
+                            "windowShadow": {
+                              "boxShadow": "#232326 0px 8px 24px",
+                            },
+                            "windowTopBorder": {
+                              "borderTopLeftRadius": "10px",
+                              "borderTopRightRadius": "10px",
+                            },
+                          },
+                        },
                         "siren": [MockFunction spy],
                         "startRealTimeDataFetch": [Function],
                         "unViewedCount": RefImpl {
@@ -7935,7 +8730,7 @@ VueWrapper {
                           "_value": 0,
                           "dep": Map {
                             ReactiveEffect {
-                              "_depsLength": 6,
+                              "_depsLength": 7,
                               "_dirtyLevel": 0,
                               "_runnings": 0,
                               "_shouldSchedule": false,
@@ -7943,6 +8738,9 @@ VueWrapper {
                               "active": true,
                               "allowRecurse": true,
                               "deps": [
+                                Map {
+                                  [Circular] => 1,
+                                },
                                 Map {
                                   [Circular] => 1,
                                 },
@@ -7972,7 +8770,7 @@ VueWrapper {
                       "directives": null,
                       "ec": null,
                       "effect": ReactiveEffect {
-                        "_depsLength": 6,
+                        "_depsLength": 7,
                         "_dirtyLevel": 0,
                         "_runnings": 0,
                         "_shouldSchedule": false,
@@ -7980,6 +8778,9 @@ VueWrapper {
                         "active": true,
                         "allowRecurse": true,
                         "deps": [
+                          Map {
+                            [Circular] => 1,
+                          },
                           Map {
                             [Circular] => 1,
                           },
@@ -8024,6 +8825,7 @@ VueWrapper {
                         "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
+                        "hideBadge": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -8164,6 +8966,12 @@ VueWrapper {
                             "required": true,
                             "type": [Function],
                           },
+                          "hideBadge": {
+                            "0": true,
+                            "1": true,
+                            "required": true,
+                            "type": [Function],
+                          },
                           "styles": {
                             "0": false,
                             "1": true,
@@ -8173,6 +8981,7 @@ VueWrapper {
                         },
                         [
                           "darkMode",
+                          "hideBadge",
                         ],
                       ],
                       "provides": {},
@@ -8180,6 +8989,7 @@ VueWrapper {
                         "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
+                        "hideBadge": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -8325,7 +9135,7 @@ VueWrapper {
                             "trigger": [Function],
                           },
                           ReactiveEffect {
-                            "_depsLength": 6,
+                            "_depsLength": 7,
                             "_dirtyLevel": 0,
                             "_runnings": 0,
                             "_shouldSchedule": false,
@@ -8333,6 +9143,9 @@ VueWrapper {
                             "active": true,
                             "allowRecurse": true,
                             "deps": [
+                              Map {
+                                [Circular] => 1,
+                              },
                               Map {
                                 [Circular] => 1,
                               },
@@ -8438,6 +9251,130 @@ VueWrapper {
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
+                        "props": {
+                          "badgeType": "default",
+                          "darkMode": true,
+                          "handleNotification": [Function],
+                          "hideBadge": false,
+                          "styles": {
+                            "activeCardMarker": {
+                              "backgroundColor": "#2E2D30",
+                              "border": "#FFFFFF",
+                            },
+                            "badgeStyle": {
+                              "backgroundColor": "#FF0000",
+                              "borderRadius": "15px",
+                              "height": "15px",
+                              "left": "undefinedpx",
+                              "minWidth": "15px",
+                              "top": "undefinedpx",
+                            },
+                            "badgeTextStyle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "10px",
+                            },
+                            "body": {
+                              "height": "700px",
+                            },
+                            "cardDescription": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                            },
+                            "cardIconRound": {
+                              "backgroundColor": "#344054",
+                              "borderRadius": "20px",
+                              "height": "40px",
+                              "width": "40px",
+                            },
+                            "cardSubTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "500",
+                            },
+                            "cardTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "clearIcon": {
+                              "color": "#D0D5DD",
+                              "size": 24,
+                            },
+                            "container": {
+                              "maxWidth": "100",
+                            },
+                            "contentContainer": {
+                              "backgroundColor": "#232326",
+                              "borderRadius": "0 0 10px 10px",
+                              "padding": "0px",
+                            },
+                            "dateStyle": {
+                              "color": "#98A2B3",
+                              "fontSize": "12px",
+                            },
+                            "defaultCardContainer": {
+                              "backgroundColor": "transparent",
+                              "borderBottom": "0.5px solid",
+                              "borderColor": "#344054",
+                              "padding": "12px 24px",
+                            },
+                            "deleteIcon": {
+                              "color": "#D0D5DD",
+                              "size": 20,
+                            },
+                            "emptyText": {
+                              "color": "#FFFFFF",
+                            },
+                            "errorText": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerAction": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerContainer": {
+                              "backgroundColor": "#232326",
+                              "borderBottom": "0.5px solid #344054",
+                              "height": "64px",
+                            },
+                            "headerTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "20px",
+                              "fontWeight": "600",
+                              "paddingLeft": "0px",
+                            },
+                            "infiniteLoader": {
+                              "border": "3px solid #FFFFFF",
+                            },
+                            "loadMoreButton": {
+                              "backgroundColor": "#232326",
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "loader": {
+                              "backgroundImage": "linear-gradient(to right, #49494A 0%, #535354 50%, #49494A 100%)",
+                              "borderColor": "#FFFFFF",
+                            },
+                            "notificationIcon": {
+                              "size": 30,
+                            },
+                            "timerIcon": {
+                              "color": "#98A2B3",
+                              "size": 14,
+                            },
+                            "windowBottomBorder": {
+                              "borderBottomLeftRadius": "10px",
+                              "borderBottomRightRadius": "10px",
+                            },
+                            "windowShadow": {
+                              "boxShadow": "#232326 0px 8px 24px",
+                            },
+                            "windowTopBorder": {
+                              "borderTopLeftRadius": "10px",
+                              "borderTopRightRadius": "10px",
+                            },
+                          },
+                        },
                         "siren": [MockFunction spy],
                         "startRealTimeDataFetch": [Function],
                         "unViewedCount": 0,
@@ -8987,7 +9924,45 @@ VueWrapper {
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": null,
+                            "dynamicChildren": [
+                              {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": "0",
+                                "component": null,
+                                "ctx": [Circular],
+                                "dirs": null,
+                                "dynamicChildren": null,
+                                "dynamicProps": null,
+                                "el": <div
+                                  style="color: #FFFFFF; font-size: 10px;"
+                                >
+                                  0
+                                </div>,
+                                "key": null,
+                                "patchFlag": 5,
+                                "props": {
+                                  "style": {
+                                    "color": "#FFFFFF",
+                                    "fontSize": "10px",
+                                  },
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 9,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "div",
+                              },
+                            ],
                             "dynamicProps": null,
                             "el": <div
                               class="siren-sdk-notificationIcon-badge-container"
@@ -8999,10 +9974,11 @@ VueWrapper {
                                 0
                               </div>
                             </div>,
-                            "key": null,
+                            "key": 0,
                             "patchFlag": 4,
                             "props": {
                               "class": "siren-sdk-notificationIcon-badge-container",
+                              "key": 0,
                               "style": {
                                 "height": 0,
                                 "overflow": "hidden",
@@ -9521,43 +10497,6 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": "0",
-                            "component": null,
-                            "ctx": [Circular],
-                            "dirs": null,
-                            "dynamicChildren": null,
-                            "dynamicProps": null,
-                            "el": <div
-                              style="color: #FFFFFF; font-size: 10px;"
-                            >
-                              0
-                            </div>,
-                            "key": null,
-                            "patchFlag": 5,
-                            "props": {
-                              "style": {
-                                "color": "#FFFFFF",
-                                "fontSize": "10px",
-                              },
-                            },
-                            "ref": null,
-                            "scopeId": null,
-                            "shapeFlag": 9,
-                            "slotScopeIds": null,
-                            "ssContent": null,
-                            "ssFallback": null,
-                            "staticCount": 0,
-                            "suspense": null,
-                            "target": null,
-                            "targetAnchor": null,
-                            "transition": null,
-                            "type": "div",
-                          },
-                          {
-                            "__v_isVNode": true,
-                            "__v_skip": true,
-                            "anchor": null,
-                            "appContext": null,
                             "children": [
                               {
                                 "__v_isVNode": true,
@@ -9600,7 +10539,45 @@ VueWrapper {
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": null,
+                            "dynamicChildren": [
+                              {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": "0",
+                                "component": null,
+                                "ctx": [Circular],
+                                "dirs": null,
+                                "dynamicChildren": null,
+                                "dynamicProps": null,
+                                "el": <div
+                                  style="color: #FFFFFF; font-size: 10px;"
+                                >
+                                  0
+                                </div>,
+                                "key": null,
+                                "patchFlag": 5,
+                                "props": {
+                                  "style": {
+                                    "color": "#FFFFFF",
+                                    "fontSize": "10px",
+                                  },
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 9,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "div",
+                              },
+                            ],
                             "dynamicProps": null,
                             "el": <div
                               class="siren-sdk-notificationIcon-badge-container"
@@ -9612,10 +10589,11 @@ VueWrapper {
                                 0
                               </div>
                             </div>,
-                            "key": null,
+                            "key": 0,
                             "patchFlag": 4,
                             "props": {
                               "class": "siren-sdk-notificationIcon-badge-container",
+                              "key": 0,
                               "style": {
                                 "height": 0,
                                 "overflow": "hidden",
@@ -9709,6 +10687,10 @@ VueWrapper {
                             "required": true,
                             "type": [Function],
                           },
+                          "hideBadge": {
+                            "required": true,
+                            "type": [Function],
+                          },
                           "styles": {
                             "required": true,
                             "type": [Function],
@@ -9731,6 +10713,7 @@ VueWrapper {
                       "badgeType",
                       "darkMode",
                       "styles",
+                      "hideBadge",
                     ],
                     "el": <div
                       class="siren-sdk-notification-icon-container"
@@ -9770,6 +10753,7 @@ VueWrapper {
                       "badgeType": "default",
                       "darkMode": true,
                       "handleNotification": [Function],
+                      "hideBadge": false,
                       "styles": {
                         "activeCardMarker": {
                           "backgroundColor": "#2E2D30",
@@ -9913,6 +10897,10 @@ VueWrapper {
                           "type": [Function],
                         },
                         "handleNotification": {
+                          "required": true,
+                          "type": [Function],
+                        },
+                        "hideBadge": {
                           "required": true,
                           "type": [Function],
                         },
@@ -9946,6 +10934,7 @@ VueWrapper {
                         "darkMode": 3,
                         "handleNotification": 3,
                         "hasAttribute": 0,
+                        "hideBadge": 3,
                         "nodeType": 0,
                         "styles": 3,
                         "tagName": 0,
@@ -10002,6 +10991,7 @@ VueWrapper {
                         "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
+                        "hideBadge": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -10194,6 +11184,130 @@ VueWrapper {
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
+                        "props": {
+                          "badgeType": "default",
+                          "darkMode": true,
+                          "handleNotification": [Function],
+                          "hideBadge": false,
+                          "styles": {
+                            "activeCardMarker": {
+                              "backgroundColor": "#2E2D30",
+                              "border": "#FFFFFF",
+                            },
+                            "badgeStyle": {
+                              "backgroundColor": "#FF0000",
+                              "borderRadius": "15px",
+                              "height": "15px",
+                              "left": "undefinedpx",
+                              "minWidth": "15px",
+                              "top": "undefinedpx",
+                            },
+                            "badgeTextStyle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "10px",
+                            },
+                            "body": {
+                              "height": "700px",
+                            },
+                            "cardDescription": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                            },
+                            "cardIconRound": {
+                              "backgroundColor": "#344054",
+                              "borderRadius": "20px",
+                              "height": "40px",
+                              "width": "40px",
+                            },
+                            "cardSubTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "500",
+                            },
+                            "cardTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "clearIcon": {
+                              "color": "#D0D5DD",
+                              "size": 24,
+                            },
+                            "container": {
+                              "maxWidth": "100",
+                            },
+                            "contentContainer": {
+                              "backgroundColor": "#232326",
+                              "borderRadius": "0 0 10px 10px",
+                              "padding": "0px",
+                            },
+                            "dateStyle": {
+                              "color": "#98A2B3",
+                              "fontSize": "12px",
+                            },
+                            "defaultCardContainer": {
+                              "backgroundColor": "transparent",
+                              "borderBottom": "0.5px solid",
+                              "borderColor": "#344054",
+                              "padding": "12px 24px",
+                            },
+                            "deleteIcon": {
+                              "color": "#D0D5DD",
+                              "size": 20,
+                            },
+                            "emptyText": {
+                              "color": "#FFFFFF",
+                            },
+                            "errorText": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerAction": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerContainer": {
+                              "backgroundColor": "#232326",
+                              "borderBottom": "0.5px solid #344054",
+                              "height": "64px",
+                            },
+                            "headerTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "20px",
+                              "fontWeight": "600",
+                              "paddingLeft": "0px",
+                            },
+                            "infiniteLoader": {
+                              "border": "3px solid #FFFFFF",
+                            },
+                            "loadMoreButton": {
+                              "backgroundColor": "#232326",
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "loader": {
+                              "backgroundImage": "linear-gradient(to right, #49494A 0%, #535354 50%, #49494A 100%)",
+                              "borderColor": "#FFFFFF",
+                            },
+                            "notificationIcon": {
+                              "size": 30,
+                            },
+                            "timerIcon": {
+                              "color": "#98A2B3",
+                              "size": 14,
+                            },
+                            "windowBottomBorder": {
+                              "borderBottomLeftRadius": "10px",
+                              "borderBottomRightRadius": "10px",
+                            },
+                            "windowShadow": {
+                              "boxShadow": "#232326 0px 8px 24px",
+                            },
+                            "windowTopBorder": {
+                              "borderTopLeftRadius": "10px",
+                              "borderTopRightRadius": "10px",
+                            },
+                          },
+                        },
                         "siren": [MockFunction spy],
                         "startRealTimeDataFetch": [Function],
                         "unViewedCount": RefImpl {
@@ -10203,7 +11317,7 @@ VueWrapper {
                           "_value": 0,
                           "dep": Map {
                             ReactiveEffect {
-                              "_depsLength": 6,
+                              "_depsLength": 7,
                               "_dirtyLevel": 0,
                               "_runnings": 0,
                               "_shouldSchedule": false,
@@ -10211,6 +11325,9 @@ VueWrapper {
                               "active": true,
                               "allowRecurse": true,
                               "deps": [
+                                Map {
+                                  [Circular] => 1,
+                                },
                                 Map {
                                   [Circular] => 1,
                                 },
@@ -10240,7 +11357,7 @@ VueWrapper {
                       "directives": null,
                       "ec": null,
                       "effect": ReactiveEffect {
-                        "_depsLength": 6,
+                        "_depsLength": 7,
                         "_dirtyLevel": 0,
                         "_runnings": 0,
                         "_shouldSchedule": false,
@@ -10248,6 +11365,9 @@ VueWrapper {
                         "active": true,
                         "allowRecurse": true,
                         "deps": [
+                          Map {
+                            [Circular] => 1,
+                          },
                           Map {
                             [Circular] => 1,
                           },
@@ -10292,6 +11412,7 @@ VueWrapper {
                         "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
+                        "hideBadge": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -10432,6 +11553,12 @@ VueWrapper {
                             "required": true,
                             "type": [Function],
                           },
+                          "hideBadge": {
+                            "0": true,
+                            "1": true,
+                            "required": true,
+                            "type": [Function],
+                          },
                           "styles": {
                             "0": false,
                             "1": true,
@@ -10441,6 +11568,7 @@ VueWrapper {
                         },
                         [
                           "darkMode",
+                          "hideBadge",
                         ],
                       ],
                       "provides": {},
@@ -10448,6 +11576,7 @@ VueWrapper {
                         "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
+                        "hideBadge": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -10593,7 +11722,7 @@ VueWrapper {
                             "trigger": [Function],
                           },
                           ReactiveEffect {
-                            "_depsLength": 6,
+                            "_depsLength": 7,
                             "_dirtyLevel": 0,
                             "_runnings": 0,
                             "_shouldSchedule": false,
@@ -10601,6 +11730,9 @@ VueWrapper {
                             "active": true,
                             "allowRecurse": true,
                             "deps": [
+                              Map {
+                                [Circular] => 1,
+                              },
                               Map {
                                 [Circular] => 1,
                               },
@@ -10706,6 +11838,130 @@ VueWrapper {
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
+                        "props": {
+                          "badgeType": "default",
+                          "darkMode": true,
+                          "handleNotification": [Function],
+                          "hideBadge": false,
+                          "styles": {
+                            "activeCardMarker": {
+                              "backgroundColor": "#2E2D30",
+                              "border": "#FFFFFF",
+                            },
+                            "badgeStyle": {
+                              "backgroundColor": "#FF0000",
+                              "borderRadius": "15px",
+                              "height": "15px",
+                              "left": "undefinedpx",
+                              "minWidth": "15px",
+                              "top": "undefinedpx",
+                            },
+                            "badgeTextStyle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "10px",
+                            },
+                            "body": {
+                              "height": "700px",
+                            },
+                            "cardDescription": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                            },
+                            "cardIconRound": {
+                              "backgroundColor": "#344054",
+                              "borderRadius": "20px",
+                              "height": "40px",
+                              "width": "40px",
+                            },
+                            "cardSubTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "500",
+                            },
+                            "cardTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "clearIcon": {
+                              "color": "#D0D5DD",
+                              "size": 24,
+                            },
+                            "container": {
+                              "maxWidth": "100",
+                            },
+                            "contentContainer": {
+                              "backgroundColor": "#232326",
+                              "borderRadius": "0 0 10px 10px",
+                              "padding": "0px",
+                            },
+                            "dateStyle": {
+                              "color": "#98A2B3",
+                              "fontSize": "12px",
+                            },
+                            "defaultCardContainer": {
+                              "backgroundColor": "transparent",
+                              "borderBottom": "0.5px solid",
+                              "borderColor": "#344054",
+                              "padding": "12px 24px",
+                            },
+                            "deleteIcon": {
+                              "color": "#D0D5DD",
+                              "size": 20,
+                            },
+                            "emptyText": {
+                              "color": "#FFFFFF",
+                            },
+                            "errorText": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerAction": {
+                              "color": "#FFFFFF",
+                            },
+                            "headerContainer": {
+                              "backgroundColor": "#232326",
+                              "borderBottom": "0.5px solid #344054",
+                              "height": "64px",
+                            },
+                            "headerTitle": {
+                              "color": "#FFFFFF",
+                              "fontSize": "20px",
+                              "fontWeight": "600",
+                              "paddingLeft": "0px",
+                            },
+                            "infiniteLoader": {
+                              "border": "3px solid #FFFFFF",
+                            },
+                            "loadMoreButton": {
+                              "backgroundColor": "#232326",
+                              "color": "#FFFFFF",
+                              "fontSize": "14px",
+                              "fontWeight": "600",
+                            },
+                            "loader": {
+                              "backgroundImage": "linear-gradient(to right, #49494A 0%, #535354 50%, #49494A 100%)",
+                              "borderColor": "#FFFFFF",
+                            },
+                            "notificationIcon": {
+                              "size": 30,
+                            },
+                            "timerIcon": {
+                              "color": "#98A2B3",
+                              "size": 14,
+                            },
+                            "windowBottomBorder": {
+                              "borderBottomLeftRadius": "10px",
+                              "borderBottomRightRadius": "10px",
+                            },
+                            "windowShadow": {
+                              "boxShadow": "#232326 0px 8px 24px",
+                            },
+                            "windowTopBorder": {
+                              "borderTopLeftRadius": "10px",
+                              "borderTopRightRadius": "10px",
+                            },
+                          },
+                        },
                         "siren": [MockFunction spy],
                         "startRealTimeDataFetch": [Function],
                         "unViewedCount": 0,
@@ -11255,7 +12511,45 @@ VueWrapper {
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": null,
+                            "dynamicChildren": [
+                              {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": "0",
+                                "component": null,
+                                "ctx": [Circular],
+                                "dirs": null,
+                                "dynamicChildren": null,
+                                "dynamicProps": null,
+                                "el": <div
+                                  style="color: #FFFFFF; font-size: 10px;"
+                                >
+                                  0
+                                </div>,
+                                "key": null,
+                                "patchFlag": 5,
+                                "props": {
+                                  "style": {
+                                    "color": "#FFFFFF",
+                                    "fontSize": "10px",
+                                  },
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 9,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "div",
+                              },
+                            ],
                             "dynamicProps": null,
                             "el": <div
                               class="siren-sdk-notificationIcon-badge-container"
@@ -11267,10 +12561,11 @@ VueWrapper {
                                 0
                               </div>
                             </div>,
-                            "key": null,
+                            "key": 0,
                             "patchFlag": 4,
                             "props": {
                               "class": "siren-sdk-notificationIcon-badge-container",
+                              "key": 0,
                               "style": {
                                 "height": 0,
                                 "overflow": "hidden",
@@ -11789,43 +13084,6 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": "0",
-                            "component": null,
-                            "ctx": [Circular],
-                            "dirs": null,
-                            "dynamicChildren": null,
-                            "dynamicProps": null,
-                            "el": <div
-                              style="color: #FFFFFF; font-size: 10px;"
-                            >
-                              0
-                            </div>,
-                            "key": null,
-                            "patchFlag": 5,
-                            "props": {
-                              "style": {
-                                "color": "#FFFFFF",
-                                "fontSize": "10px",
-                              },
-                            },
-                            "ref": null,
-                            "scopeId": null,
-                            "shapeFlag": 9,
-                            "slotScopeIds": null,
-                            "ssContent": null,
-                            "ssFallback": null,
-                            "staticCount": 0,
-                            "suspense": null,
-                            "target": null,
-                            "targetAnchor": null,
-                            "transition": null,
-                            "type": "div",
-                          },
-                          {
-                            "__v_isVNode": true,
-                            "__v_skip": true,
-                            "anchor": null,
-                            "appContext": null,
                             "children": [
                               {
                                 "__v_isVNode": true,
@@ -11868,7 +13126,45 @@ VueWrapper {
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": null,
+                            "dynamicChildren": [
+                              {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": "0",
+                                "component": null,
+                                "ctx": [Circular],
+                                "dirs": null,
+                                "dynamicChildren": null,
+                                "dynamicProps": null,
+                                "el": <div
+                                  style="color: #FFFFFF; font-size: 10px;"
+                                >
+                                  0
+                                </div>,
+                                "key": null,
+                                "patchFlag": 5,
+                                "props": {
+                                  "style": {
+                                    "color": "#FFFFFF",
+                                    "fontSize": "10px",
+                                  },
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 9,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "div",
+                              },
+                            ],
                             "dynamicProps": null,
                             "el": <div
                               class="siren-sdk-notificationIcon-badge-container"
@@ -11880,10 +13176,11 @@ VueWrapper {
                                 0
                               </div>
                             </div>,
-                            "key": null,
+                            "key": 0,
                             "patchFlag": 4,
                             "props": {
                               "class": "siren-sdk-notificationIcon-badge-container",
+                              "key": 0,
                               "style": {
                                 "height": 0,
                                 "overflow": "hidden",
@@ -11977,6 +13274,10 @@ VueWrapper {
                             "required": true,
                             "type": [Function],
                           },
+                          "hideBadge": {
+                            "required": true,
+                            "type": [Function],
+                          },
                           "styles": {
                             "required": true,
                             "type": [Function],
@@ -11999,6 +13300,7 @@ VueWrapper {
                       "badgeType",
                       "darkMode",
                       "styles",
+                      "hideBadge",
                     ],
                     "el": <div
                       class="siren-sdk-notification-icon-container"
@@ -12038,6 +13340,7 @@ VueWrapper {
                       "badgeType": "default",
                       "darkMode": true,
                       "handleNotification": [Function],
+                      "hideBadge": false,
                       "styles": {
                         "activeCardMarker": {
                           "backgroundColor": "#2E2D30",
@@ -12181,6 +13484,10 @@ VueWrapper {
                           "type": [Function],
                         },
                         "handleNotification": {
+                          "required": true,
+                          "type": [Function],
+                        },
+                        "hideBadge": {
                           "required": true,
                           "type": [Function],
                         },
