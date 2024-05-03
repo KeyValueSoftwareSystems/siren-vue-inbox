@@ -2,6 +2,7 @@
   <div
     class="siren-sdk-notification-icon-container"
     :onClick="handleNotification"
+    data-testid="notification-icon-container"
   >
     <slot name="notification-icon">
       <BellIcon

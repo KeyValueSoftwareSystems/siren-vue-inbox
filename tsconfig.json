@@ -14,10 +14,11 @@
       "strict": true,
       "noUnusedLocals": true,
       "noUnusedParameters": true,
-      "noFallthroughCasesInSwitch": true
+      "noFallthroughCasesInSwitch": true,
+      "types": ["vitest/globals"]
     },
     "include": ["src", "custom.d.ts"],
-    "exclude": ["node_modules", "stories"],
+    "exclude": ["node_modules", "stories", "tests"],
     "references": [{ "path": "./tsconfig.node.json" }]
   }
   

@@ -5,10 +5,12 @@
       ...styles.headerContainer,
     }"
     class="siren-sdk-header-container"
+    data-testid="header-container"
   >
     <p :style="styles.headerTitle" class="siren-sdk-text-break">{{ title }}</p>
     <div
       v-if="!hideClearAll"
+      data-testid="clear-all"
       @click="handleClearAllNotification"
       @keydown="handleClearAllNotification"
       :style="{

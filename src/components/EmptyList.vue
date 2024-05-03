@@ -1,5 +1,5 @@
 <template>
-  <div class="siren-sdk-empty-container">
+  <div class="siren-sdk-empty-container" data-testid="empty-container">
     <div :style="containerStyle" class="siren-sdk-empty-icon-container">
       <img
         :src="darkMode ? darkIcon : lightIcon"
