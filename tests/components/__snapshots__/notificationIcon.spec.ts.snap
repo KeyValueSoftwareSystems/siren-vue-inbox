@@ -18,9 +18,9 @@ VueWrapper {
         
         <svg
           fill="none"
-          height="24"
+          height="30"
           viewBox="0 0 24 24"
-          width="24"
+          width="30"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -651,7 +651,7 @@ VueWrapper {
               "_value": 0,
               "dep": Map {
                 ReactiveEffect {
-                  "_depsLength": 11,
+                  "_depsLength": 13,
                   "_dirtyLevel": 0,
                   "_runnings": 0,
                   "_shouldSchedule": false,
@@ -659,6 +659,15 @@ VueWrapper {
                   "active": true,
                   "allowRecurse": true,
                   "deps": [
+                    Map {
+                      [Circular] => 1,
+                    },
+                    Map {
+                      [Circular] => 1,
+                    },
+                    Map {
+                      [Circular] => 1,
+                    },
                     Map {
                       [Circular] => 1,
                     },
@@ -687,9 +696,6 @@ VueWrapper {
                     Map {
                       [Circular] => 1,
                     },
-                    Map {
-                      [Circular] => 1,
-                    },
                   ],
                   "fn": [Function],
                   "onTrack": undefined,
@@ -703,7 +709,7 @@ VueWrapper {
           "directives": null,
           "ec": null,
           "effect": ReactiveEffect {
-            "_depsLength": 11,
+            "_depsLength": 13,
             "_dirtyLevel": 0,
             "_runnings": 0,
             "_shouldSchedule": false,
@@ -711,6 +717,12 @@ VueWrapper {
             "active": true,
             "allowRecurse": true,
             "deps": [
+              Map {
+                [Circular] => 1,
+              },
+              Map {
+                [Circular] => 1,
+              },
               Map {
                 [Circular] => 1,
               },
@@ -1080,7 +1092,7 @@ VueWrapper {
                 "trigger": [Function],
               },
               ReactiveEffect {
-                "_depsLength": 11,
+                "_depsLength": 13,
                 "_dirtyLevel": 0,
                 "_runnings": 0,
                 "_shouldSchedule": false,
@@ -1088,6 +1100,12 @@ VueWrapper {
                 "active": true,
                 "allowRecurse": true,
                 "deps": [
+                  Map {
+                    [Circular] => 1,
+                  },
+                  Map {
+                    [Circular] => 1,
+                  },
                   Map {
                     [Circular] => 1,
                   },
@@ -1407,7 +1425,7 @@ VueWrapper {
                       "ctx": {
                         "className": "",
                         "fill": "none",
-                        "size": "24",
+                        "size": "30",
                         "stroke": "#232326",
                       },
                       "da": null,
@@ -1455,7 +1473,7 @@ VueWrapper {
                       "props": {
                         "className": "",
                         "fill": "none",
-                        "size": "24",
+                        "size": "30",
                         "stroke": "#232326",
                       },
                       "propsDefaults": {},
@@ -1501,7 +1519,7 @@ VueWrapper {
                       "proxy": {
                         "className": "",
                         "fill": "none",
-                        "size": "24",
+                        "size": "30",
                         "stroke": "#232326",
                       },
                       "refs": {},
@@ -1656,9 +1674,9 @@ VueWrapper {
                         ],
                         "el": <svg
                           fill="none"
-                          height="24"
+                          height="30"
                           viewBox="0 0 24 24"
-                          width="24"
+                          width="30"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -1673,9 +1691,9 @@ VueWrapper {
                         "patchFlag": 8,
                         "props": {
                           "fill": "none",
-                          "height": "24",
+                          "height": "30",
                           "viewBox": "0 0 24 24",
-                          "width": "24",
+                          "width": "30",
                           "xmlns": "http://www.w3.org/2000/svg",
                         },
                         "ref": null,
@@ -1732,13 +1750,14 @@ VueWrapper {
                     "dirs": null,
                     "dynamicChildren": null,
                     "dynamicProps": [
+                      "size",
                       "stroke",
                     ],
                     "el": <svg
                       fill="none"
-                      height="24"
+                      height="30"
                       viewBox="0 0 24 24"
-                      width="24"
+                      width="30"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -1752,6 +1771,7 @@ VueWrapper {
                     "key": null,
                     "patchFlag": 8,
                     "props": {
+                      "size": "30",
                       "stroke": "#232326",
                     },
                     "ref": null,
@@ -2020,7 +2040,7 @@ VueWrapper {
                       "ctx": {
                         "className": "",
                         "fill": "none",
-                        "size": "24",
+                        "size": "30",
                         "stroke": "#232326",
                       },
                       "da": null,
@@ -2068,7 +2088,7 @@ VueWrapper {
                       "props": {
                         "className": "",
                         "fill": "none",
-                        "size": "24",
+                        "size": "30",
                         "stroke": "#232326",
                       },
                       "propsDefaults": {},
@@ -2114,7 +2134,7 @@ VueWrapper {
                       "proxy": {
                         "className": "",
                         "fill": "none",
-                        "size": "24",
+                        "size": "30",
                         "stroke": "#232326",
                       },
                       "refs": {},
@@ -2269,9 +2289,9 @@ VueWrapper {
                         ],
                         "el": <svg
                           fill="none"
-                          height="24"
+                          height="30"
                           viewBox="0 0 24 24"
-                          width="24"
+                          width="30"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -2286,9 +2306,9 @@ VueWrapper {
                         "patchFlag": 8,
                         "props": {
                           "fill": "none",
-                          "height": "24",
+                          "height": "30",
                           "viewBox": "0 0 24 24",
-                          "width": "24",
+                          "width": "30",
                           "xmlns": "http://www.w3.org/2000/svg",
                         },
                         "ref": null,
@@ -2345,13 +2365,14 @@ VueWrapper {
                     "dirs": null,
                     "dynamicChildren": null,
                     "dynamicProps": [
+                      "size",
                       "stroke",
                     ],
                     "el": <svg
                       fill="none"
-                      height="24"
+                      height="30"
                       viewBox="0 0 24 24"
-                      width="24"
+                      width="30"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -2365,6 +2386,7 @@ VueWrapper {
                     "key": null,
                     "patchFlag": 8,
                     "props": {
+                      "size": "30",
                       "stroke": "#232326",
                     },
                     "ref": null,
@@ -2564,9 +2586,9 @@ VueWrapper {
               
               <svg
                 fill="none"
-                height="24"
+                height="30"
                 viewBox="0 0 24 24"
-                width="24"
+                width="30"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -2658,9 +2680,9 @@ VueWrapper {
           
           <svg
             fill="none"
-            height="24"
+            height="30"
             viewBox="0 0 24 24"
-            width="24"
+            width="30"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -2918,9 +2940,9 @@ VueWrapper {
           
           <svg
             fill="none"
-            height="24"
+            height="30"
             viewBox="0 0 24 24"
-            width="24"
+            width="30"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -3173,9 +3195,9 @@ VueWrapper {
     
     <svg
       fill="none"
-      height="24"
+      height="30"
       viewBox="0 0 24 24"
-      width="24"
+      width="30"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

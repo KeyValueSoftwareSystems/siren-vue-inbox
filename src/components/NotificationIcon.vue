@@ -6,12 +6,10 @@
   >
     <slot name="notification-icon">
       <BellIcon
-        :stroke="
-          darkMode
-            ? COLORS.dark.notificationIcon
-            : COLORS.light.notificationIcon
-        "
-      />
+      :size="String(styles.notificationIcon.size)"
+      :stroke=" darkMode
+              ? COLORS.dark.notificationIcon
+              : COLORS.light.notificationIcon" />
     </slot>
     <div
       v-if="!hideBadge"
