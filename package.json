@@ -1,8 +1,8 @@
 {
-  "name": "@siren/vue-inbox",
+  "name": "@sirenapp/vue-inbox",
   "version": "1.0.0",
   "description": "Vue SDK for in-app notification inbox",
-  "types": "./dist/@siren/index.d.ts",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "module": "./dist/siren-vue-inbox.js",
   "scripts": {
