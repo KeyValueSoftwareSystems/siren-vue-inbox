@@ -20,7 +20,7 @@ yarn add @sirenapp/vue-inbox
 
 #### Prerequisites
 
-- Vue3 v3.0.0
+- Vue3 (v3.0.0+)
 
 ## 2. Configuration
 
@@ -169,7 +169,7 @@ Please note that the badgeStyle, window shadow and border props are only applica
     titleFontWeight?:TextStyle["fontWeight"],
     titleSize?: number,
     titlePadding?: number,
-    borderWidth?: string;
+    borderWidth?: string,
   },
   windowContainer?: {
     padding?: number,
@@ -181,33 +181,33 @@ Please note that the badgeStyle, window shadow and border props are only applica
     avatarSize?: number,
     titleFontWeight?: TextStyle["fontWeight"],
     titleSize?: number,
-    subtitleFontWeight?: TextStyle['fontWeight'];
+    subtitleFontWeight?: TextStyle['fontWeight'],
     subtitleSize?: number
-    descriptionFontWeight?: TextStyle['fontWeight'];
+    descriptionFontWeight?: TextStyle['fontWeight'],
     descriptionSize?: number,
     dateSize?: number,
   },
   loadMoreButton?: {
     fontSize?: number,
-    fontWeight?: TextStyle["fontWeight"]
+    fontWeight?: TextStyle["fontWeight"],
   },
   badgeStyle?: {
     size?: number,
     textSize?: number,
-    top?: number;
-    right?: number
+    top?: number,
+    right?: number,
   },
   deleteIcon?:{
-    size?: number
+    size?: number,
   }
   dateIcon?:{
-    size?: number
+    size?: number,
   }
    timerIcon?: {
-    size?: number;
+    size?: number,
   },
   clearAllIcon?:{
-    size?: number
+    size?: number,
   }
 }
 ```
@@ -223,7 +223,7 @@ Please note that the badgeStyle, window shadow and border props are only applica
     };
 ```
 
-#### InboxHeaderProps
+#### HeaderProps
 
 ```js
     type HeaderProps = {
