@@ -40,13 +40,13 @@
           <template #customErrorWindow>
             <slot name="customErrorWindow" />
           </template>
-          <template #emptyList>
+          <template #listEmptyComponent>
             <slot name="listEmptyComponent" />
           </template>
           <template #customCard="{ item }">
             <slot name="customCard" :item="item" />
           </template>
-          <template #footer>
+          <template #customFooter>
             <slot name="customFooter" />
           </template>
         </SirenPanel>

@@ -13,7 +13,8 @@ const defaultStyles = {
     titleFontWeight: '600',
     titleSize: '20px',
     closeIconSize: 20,
-    titlePadding: '0px'
+    titlePadding: '0px',
+    borderWidth: '0.5px'
   },
   windowContainer: {
     padding: '0px',
