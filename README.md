@@ -79,6 +79,28 @@ Below are optional props available for the inbox component:
 | onCardClick    | Custom click handler for notification cards | (notification)=> void | ()=>null  |
 | onError        | Callback for handling errors | (error: SirenErrorType)=> void | ()=>null  |
 
+#### CardProps
+
+```js
+    type CardProps = {
+      hideDelete?: boolean;
+      hideAvatar?: boolean,
+      onAvatarClick?: (notification: NotificationDataType) => void,
+      disableAutoMarkAsRead?: boolean;
+    };
+```
+
+#### HeaderProps
+
+```js
+    type HeaderProps = {
+      title?: string;
+      hideHeader?: boolean,
+      hideClearAll?: boolean
+    };
+```
+
+
 #### Slots for the notification inbox
 
 Below are optional slots available for the inbox component:
@@ -210,27 +232,6 @@ Please note that the badgeStyle, window shadow and border props are only applica
     size?: number,
   }
 }
-```
-
-#### CardProps
-
-```js
-    type CardProps = {
-      hideDelete?: boolean;
-      hideAvatar?: boolean,
-      onAvatarClick?: (notification: NotificationDataType) => void,
-      disableAutoMarkAsRead?: boolean;
-    };
-```
-
-#### HeaderProps
-
-```js
-    type HeaderProps = {
-      title?: string;
-      hideHeader?: boolean,
-      hideClearAll?: boolean
-    };
 ```
 
 ## 4. Hooks
