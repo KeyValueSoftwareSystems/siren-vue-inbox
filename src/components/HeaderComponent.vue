@@ -33,13 +33,13 @@
 <script setup lang="ts">
 import { withDefaults, defineProps } from 'vue';
 
-import type { HeaderProps } from '../types';
+import type { HeaderComponentProps } from '../types';
 import { CLEAR_ALL_LABEL } from '../utils/constants';
 import ClearIcon from './ClearAllIcon.vue';
 
 import '../styles/header.css';
 
-withDefaults(defineProps<HeaderProps>(), {
+withDefaults(defineProps<HeaderComponentProps>(), {
   enableClearAll: true
 });
 </script>

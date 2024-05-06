@@ -135,7 +135,7 @@ export const applyTheme = (
         theme.windowHeader?.background ||
         theme.colors?.neutralColor ||
         defaultTheme[mode].windowHeader.background,
-      borderBottom: `0.5px solid ${
+      borderBottom: `${customStyle.windowHeader?.borderWidth || defaultStyles.windowHeader.borderWidth} solid ${
         theme.colors?.borderColor || defaultTheme[mode].colors.borderColor
       }`,
       height:

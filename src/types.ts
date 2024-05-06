@@ -122,6 +122,7 @@ export type CustomStyle = {
     titleFontWeight?: TextStyle['fontWeight'];
     titleSize?: number;
     titlePadding?: number;
+    borderWidth?: string;
   };
   windowContainer?: {
     padding?: number;
@@ -162,21 +163,22 @@ export type CustomStyle = {
 
 export type CardProps = {
   hideAvatar?: boolean;
-  showMedia?: boolean;
   hideDelete?: boolean;
   disableAutoMarkAsRead?: boolean;
   onAvatarClick?: (notification: NotificationDataType) => void;
+};
+
+export type HeaderProps = {
+  title?: string;
+  hideHeader?: boolean;
+  hideClearAll?: boolean;
 };
 
 export type SirenInboxProps = {
   theme?: Theme;
   customStyle?: CustomStyle;
   loadMoreLabel?: string;
-  headerProps?: {
-    title?: string;
-    hideHeader?: boolean;
-    hideClearAll?: boolean;
-  };
+  headerProps?: HeaderProps;
   hideBadge?: boolean;
   darkMode?: boolean;
   itemsPerFetch?: number;
@@ -187,7 +189,6 @@ export type SirenInboxProps = {
 
 export type SirenNotificationIconProps = {
   theme?: Theme;
-  realTimeUnViewedCountEnabled?: boolean;
   onError?: (error: SirenErrorType) => void;
   darkMode?: boolean;
 };
@@ -242,7 +243,7 @@ export type ErrorWindowProps = {
   error: string;
 };
 
-export type HeaderProps = {
+export type HeaderComponentProps = {
   title: string;
   enableClearAll?: boolean;
   handleClearAllNotification: () => void;
