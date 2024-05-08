@@ -51,7 +51,7 @@ const useSiren = () => {
       if (id?.length > 0) {
         const response = await siren.value?.deleteById(id);
 
-        if (response && response.data && shouldUpdateList) {
+        if (response?.data && shouldUpdateList) {
           const payload = { id, action: eventTypes.DELETE_ITEM };
 
           PubSub.publish(
