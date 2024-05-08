@@ -2,3 +2,7 @@
   width: fit-content;
   position: relative;
 }
+
+.siren-sdk-window-container {
+  width: 100%;
+}

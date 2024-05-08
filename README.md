@@ -69,6 +69,7 @@ Below are optional props available for the inbox component:
 | Prop | Description | Type  | Default value |
 |------|-------------|-------|---------------|
 | theme | Object for custom themes | Theme | {} |
+| customStyles | Object for custom styling | CustomStyle | {} |
 | loadMoreLabel  | Text shown on the load more component | string | "Load More" |
 | hideBadge      | Toggle to hide or show the badge  | boolean | false |
 | darkMode       | Toggle to enable dark mode    | boolean   | false  |
@@ -114,6 +115,7 @@ Below are optional slots available for the inbox component:
 | listEmptyComponent | Custom Empty list component        |
 | customCard         | Custom notification card component |
 | customFooter       | Custom footer component            |
+| notificationIcon   | Custom notification icon component |
 
 ## 3. Customization
 
@@ -145,14 +147,10 @@ type ThemeProps = {
     color?: string,
     textColor?: string,
   },
-  window?: {
-    borderColor?: string,
-  },
   windowHeader?: {
     background?: string,
     titleColor?: string,
     headerActionColor?: string,
-    borderColor?: string,
   },
   windowContainer?: {
     background?: string,
@@ -204,7 +202,7 @@ Please note that the badgeStyle, window shadow and border props are only applica
     titleFontWeight?: TextStyle["fontWeight"],
     titleSize?: number,
     subtitleFontWeight?: TextStyle['fontWeight'],
-    subtitleSize?: number
+    subtitleSize?: number,
     descriptionFontWeight?: TextStyle['fontWeight'],
     descriptionSize?: number,
     dateSize?: number,
@@ -221,10 +219,7 @@ Please note that the badgeStyle, window shadow and border props are only applica
   },
   deleteIcon?:{
     size?: number,
-  }
-  dateIcon?:{
-    size?: number,
-  }
+  },
    timerIcon?: {
     size?: number,
   },

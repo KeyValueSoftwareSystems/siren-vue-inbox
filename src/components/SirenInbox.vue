@@ -1,11 +1,16 @@
 <template>
-    <div :class="!windowViewOnly && 'siren-sdk-inbox-container'" ref="notificationRef" data-testid="siren-inbox-container">
-      <div v-if="!windowViewOnly" ref="iconRef" data-testid="siren-inbox-icon">
-        <NotificationIcon :handleNotification="handleNotification"
-          :badgeType="showNotifications ? BadgeType.NONE : BadgeType.DEFAULT"
-          :darkMode="darkMode" :styles="styles" :hideBadge="hideBadge" />
-      </div>
-      <div v-if="showNotifications || windowViewOnly" :style="{
+  <div :class="windowViewOnly ? 'siren-sdk-window-container' : 'siren-sdk-inbox-container'" ref="notificationRef"
+    data-testid="siren-inbox-container">
+    <div v-if="!windowViewOnly" ref="iconRef" data-testid="siren-inbox-icon">
+      <NotificationIcon :handleNotification="handleNotification"
+        :darkMode="darkMode" :styles="styles"
+        :hideBadge="hideBadge" :isModalOpen="isModalOpen">
+        <template #notificationIcon>
+          <slot name="notificationIcon" />
+        </template>
+      </NotificationIcon>
+    </div>
+    <div v-if="isModalOpen || windowViewOnly" :style="{
     ...styles.container,
     ...(!windowViewOnly && styles.windowShadow),
     width:
@@ -15,48 +20,41 @@
     position: windowViewOnly ? 'initial' : 'absolute',
     ...modalPosition,
   }">
-        <SirenPanel :styles="styles"
-          :itemsPerFetch="itemsPerFetch"
-          :hideBadge="hideBadge"
-          :headerProps="headerProps ?? defaultHeaderProps"
-          :onCardClick="onCardClick"
-          :onError="onError"
-          :darkMode="darkMode"
-          :windowViewOnly="windowViewOnly"
-          :showNotifications="showNotifications"
-          :hideClearAll="headerProps?.hideClearAll ?? false"
-          :loadMoreLabel="loadMoreLabel"
-          :cardProps="cardProps ?? defaultCardProps"
-          :modalWidth="updatedModalWidth">
-          <template #loadMoreComponent>
-            <slot name="loadMoreComponent" />
-          </template>
-          <template #customHeader>
-            <slot name="customHeader" />
-          </template>
-          <template #customLoader>
-            <slot name="customLoader" />
-          </template>
-          <template #customErrorWindow>
-            <slot name="customErrorWindow" />
-          </template>
-          <template #listEmptyComponent>
-            <slot name="listEmptyComponent" />
-          </template>
-          <template #customCard="{ item }">
-            <slot name="customCard" :item="item" />
-          </template>
-          <template #customFooter>
-            <slot name="customFooter" />
-          </template>
-        </SirenPanel>
-      </div>
+      <SirenPanel :styles="styles" :itemsPerFetch="itemsPerFetch" :hideBadge="hideBadge"
+        :headerProps="headerProps ?? defaultHeaderProps"
+        :onCardClick="onCardClick" :onError="onError"
+        :darkMode="darkMode" :windowViewOnly="windowViewOnly" :isModalOpen="isModalOpen"
+        :hideClearAll="headerProps?.hideClearAll ?? false" :loadMoreLabel="loadMoreLabel"
+        :cardProps="cardProps ?? defaultCardProps" :modalWidth="updatedModalWidth">
+        <template #loadMoreComponent>
+          <slot name="loadMoreComponent" />
+        </template>
+        <template #customHeader>
+          <slot name="customHeader" />
+        </template>
+        <template #customLoader>
+          <slot name="customLoader" />
+        </template>
+        <template #customErrorWindow>
+          <slot name="customErrorWindow" />
+        </template>
+        <template #listEmptyComponent>
+          <slot name="listEmptyComponent" />
+        </template>
+        <template #customCard="{ item }">
+          <slot name="customCard" :item="item" />
+        </template>
+        <template #customFooter>
+          <slot name="customFooter" />
+        </template>
+      </SirenPanel>
     </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 import type {
-Ref
+  Ref
 } from 'vue';
 import {
   ref,
@@ -74,10 +72,9 @@ import type { SirenProps } from '../types';
 import { applyTheme, calculateModalPosition, calculateModalWidth, debounce } from '../utils/commonUtils';
 import {
   ThemeMode,
-  BadgeType,
   DEFAULT_WINDOW_TITLE,
   DEFAULT_NOTIFICATION_FETCH_COUNT,
-EventType
+  EventType
 } from '../utils/constants';
 import SirenPanel from './SirenPanel.vue';
 import NotificationIcon from './NotificationIcon.vue';
@@ -103,7 +100,7 @@ const defaultCardProps = { hideAvatar: false, showMedia: false };
 
 const notificationRef = ref<HTMLElement | null>(null);
 const iconRef = ref<HTMLElement | null>(null);
-const showNotifications = ref<boolean>(false);
+const isModalOpen = ref<boolean>(false);
 const modalPosition = ref<{
   right?: string;
   left?: string;
@@ -126,11 +123,11 @@ const styles = computed(() =>
 
 const handleNotification = (event: any) => {
   event.preventDefault();
-  showNotifications.value = !showNotifications.value;
+  isModalOpen.value = !isModalOpen.value;
 };
 
 const closeNotification = () => {
-  showNotifications.value = false;
+  isModalOpen.value = false;
 };
 
 const handleOutsideClick = (event: MouseEvent) => {
@@ -168,8 +165,8 @@ onMounted(() => {
   window.addEventListener('resize', debouncedUpdate);
 });
 
-watch(showNotifications, () => {
-  if (showNotifications.value)
+watch(isModalOpen, () => {
+  if (isModalOpen.value)
     document.addEventListener('click', handleOutsideClick);
   else document.removeEventListener('click', handleOutsideClick);
 });

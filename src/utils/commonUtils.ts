@@ -93,8 +93,7 @@ export const applyTheme = (
   mode: ThemeMode = ThemeMode.DARK,
   customStyle: CustomStyle = {}
 ): SirenStyleProps => {
-  const windowBorderRadius =
-    customStyle.window?.borderRadius || defaultStyles.window.borderRadius;
+  const windowBorderRadius = `${customStyle.window?.borderRadius || defaultStyles.window.borderRadius}px`;
 
   return {
     container: {
@@ -118,43 +117,45 @@ export const applyTheme = (
         theme.windowContainer?.background ||
         theme.colors?.neutralColor ||
         defaultTheme[mode].windowContainer.background,
-      padding:
+      padding: `${
         customStyle.windowContainer?.padding ||
-        defaultStyles.windowContainer.padding,
+        defaultStyles.windowContainer.padding
+      }px`,
       borderRadius: `0 0 ${
         customStyle.window?.borderRadius || defaultStyles.window.borderRadius
-      } ${
+      }px ${
         customStyle.window?.borderRadius || defaultStyles.window.borderRadius
-      }`
+      }px`
     },
     body: {
-      height: customStyle.windowContainer?.contentHeight || '700px'
+      height: `${customStyle.windowContainer?.contentHeight || 700}px`
     },
     headerContainer: {
       backgroundColor:
         theme.windowHeader?.background ||
         theme.colors?.neutralColor ||
         defaultTheme[mode].windowHeader.background,
-      borderBottom: `${customStyle.windowHeader?.borderWidth || defaultStyles.windowHeader.borderWidth} solid ${
+      borderBottom: `${customStyle.windowHeader?.borderWidth || defaultStyles.windowHeader.borderWidth}px solid ${
         theme.colors?.borderColor || defaultTheme[mode].colors.borderColor
       }`,
-      height:
-        customStyle.windowHeader?.height || defaultStyles.windowHeader.height
+      height: `${customStyle.windowHeader?.height || defaultStyles.windowHeader.height}px`
     },
     headerTitle: {
       color:
         theme.windowHeader?.titleColor ||
         theme.colors?.textColor ||
         defaultTheme[mode].windowHeader.titleColor,
-      fontSize:
+      fontSize: `${
         customStyle.windowHeader?.titleSize ||
-        defaultStyles.windowHeader.titleSize,
+        defaultStyles.windowHeader.titleSize
+      }px`,
       fontWeight:
         customStyle.windowHeader?.titleFontWeight ||
         defaultStyles.windowHeader.titleFontWeight,
-      paddingLeft:
+      paddingLeft: `${
         customStyle.windowHeader?.titlePadding ||
         defaultStyles.windowHeader.titlePadding
+      }px`
     },
     headerAction: {
       color:
@@ -166,9 +167,7 @@ export const applyTheme = (
       backgroundColor:
         theme.customCard?.background ||
         defaultTheme[mode].customCard.background,
-      padding:
-        customStyle.customCard?.padding ||
-        defaultStyles.customCard.padding,
+      padding: `${customStyle.customCard?.padding || defaultStyles.customCard.padding}px`,
       borderBottom: `${
         customStyle.customCard?.borderWidth ||
         defaultStyles.customCard.borderWidth
@@ -199,9 +198,7 @@ export const applyTheme = (
         theme.customCard?.titleColor ||
         theme.colors?.textColor ||
         defaultTheme[mode].customCard.titleColor,
-      fontSize:
-        customStyle.customCard?.titleSize ||
-        defaultStyles.customCard.titleSize,
+      fontSize: `${customStyle.customCard?.titleSize || defaultStyles.customCard.titleSize}px`,
       fontWeight:
         customStyle.customCard?.titleFontWeight ||
         defaultStyles.customCard.titleFontWeight
@@ -211,8 +208,10 @@ export const applyTheme = (
         theme.customCard?.subtitleColor ||
         theme.colors?.textColor ||
         defaultTheme[mode].customCard.subtitleColor,
-      fontSize:
-        customStyle.customCard?.subtitleSize || defaultStyles.customCard.subtitleSize,
+      fontSize: `${
+        customStyle.customCard?.subtitleSize ||
+        defaultStyles.customCard.subtitleSize
+      }px`,
       fontWeight:
         customStyle.customCard?.subtitleFontWeight ||
         defaultStyles.customCard.subtitleFontWeight
@@ -229,15 +228,17 @@ export const applyTheme = (
         theme.customCard?.descriptionColor ||
         theme.colors?.textColor ||
         defaultTheme[mode].customCard.descriptionColor,
-      fontSize:
+      fontSize: `${
         customStyle.customCard?.descriptionSize ||
         defaultStyles.customCard.descriptionSize
+      }px`,
+      fontWeight:
+        customStyle.customCard?.descriptionFontWeight ||
+        defaultStyles.customCard.descriptionFontWeight
     },
     dateStyle: {
       color: theme.colors?.dateColor || defaultTheme[mode].colors.dateColor,
-      fontSize:
-        customStyle.customCard?.dateSize ||
-        defaultStyles.customCard.dateSize
+      fontSize: `${customStyle.customCard?.dateSize || defaultStyles.customCard.dateSize}px`
     },
     emptyText: {
       color: theme.colors?.textColor || defaultTheme[mode].colors.textColor
@@ -270,9 +271,10 @@ export const applyTheme = (
       backgroundColor:
         theme?.loadMoreButton?.background ||
         defaultTheme[mode]?.loadMoreButton?.background,
-      fontSize:
+      fontSize: `${
         customStyle?.loadMoreButton?.fontSize ||
-        defaultStyles?.loadMoreButton?.fontSize,
+        defaultStyles?.loadMoreButton?.fontSize
+      }px`,
       fontWeight:
         customStyle.loadMoreButton?.fontWeight ||
         defaultStyles.loadMoreButton.fontWeight
@@ -283,23 +285,28 @@ export const applyTheme = (
         theme.colors?.primaryColor || defaultTheme[mode].colors.primaryColor
     },
     badgeStyle: {
-      borderRadius: customStyle.badgeStyle?.size || defaultBadgeStyle.size,
-      minWidth: customStyle.badgeStyle?.size || defaultBadgeStyle.size,
-      height: customStyle.badgeStyle?.size || defaultBadgeStyle.size,
+      borderRadius: `${customStyle.badgeStyle?.size || defaultBadgeStyle.size}px`,
+      minWidth: `${customStyle.badgeStyle?.size || defaultBadgeStyle.size}px`,
+      height: `${customStyle.badgeStyle?.size || defaultBadgeStyle.size}px`,
       backgroundColor: theme.badgeStyle?.color || defaultBadgeStyle.color,
-      top: `${customStyle.badgeStyle?.top}px` || defaultBadgeStyle.top,
-      left: `${customStyle.badgeStyle?.left}px` || defaultBadgeStyle.left
+      top: customStyle.badgeStyle?.top
+        ? `${customStyle.badgeStyle?.top}px`
+        : defaultBadgeStyle.top,
+      right: customStyle.badgeStyle?.right
+        ? `${customStyle.badgeStyle?.right}px`
+        : defaultBadgeStyle.right
     },
     badgeTextStyle: {
       color: theme.badgeStyle?.textColor || defaultBadgeStyle.textColor,
-      fontSize: customStyle.badgeStyle?.textSize || defaultBadgeStyle.textSize
+      fontSize: `${customStyle.badgeStyle?.textSize || defaultBadgeStyle.textSize}px`
     },
     infiniteLoader: {
       border: `3px solid ${
         theme.colors?.infiniteLoader ||
         theme.colors?.primaryColor ||
         defaultTheme[mode].colors.primaryColor
-      }`
+      }`,
+      borderBottomColor: 'transparent'
     }
   };
 };
@@ -336,19 +343,19 @@ export const calculateModalPosition = (
       return {
         left: '0px'
       };
-     if (spaceLeft > modalWidth) {
+    if (spaceLeft > modalWidth) {
       const rightPosition = spaceRight < modalWidth ? '30px' : null;
 
       return {
         ...(rightPosition && { right: rightPosition })
       };
-  }
-  if (
-    spaceLeft < modalWidth &&
-    spaceRight < modalWidth &&
-    spaceLeft > spaceRight
-  )
-    return { right: '30px' };
+    }
+    if (
+      spaceLeft < modalWidth &&
+      spaceRight < modalWidth &&
+      spaceLeft > spaceRight
+    )
+      return { right: '30px' };
 
     return { left: `-${centerPosition - 40}px` };
   }

@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="siren-sdk-delete-button" @click="handleDelete" @keydown="handleDelete" data-testid="delete-notification-button" v-if="!cardProps?.hideDelete">
-      <CloseIcon :fill="styles?.deleteIcon?.color" :size="String(styles?.deleteIcon?.size)" />
+      <CloseIcon :stroke="styles?.deleteIcon?.color" :size="String(styles?.deleteIcon?.size)" />
     </div>
   </div>
 </template>

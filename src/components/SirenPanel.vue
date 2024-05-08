@@ -1,7 +1,6 @@
 <template>
   <div :class="windowViewOnly ? 'siren-sdk-panel-container' : 'siren-sdk-panel-modal'
-    " :style="panelStyle"
-    data-testid="siren-panel-container">
+    " :style="{ ...panelStyle, ...(!windowViewOnly && styles.windowShadow) }" data-testid="siren-panel-container">
     <slot name="customHeader" v-if="!headerProps?.hideHeader">
       <HeaderComponent :title="headerProps?.title ?? DEFAULT_WINDOW_TITLE"
         :enableClearAll="!isEmptyArray(notificationsContent) && !isLoading"
@@ -37,9 +36,8 @@
             <div v-for="notification in notificationsContent" :key="notification?.id">
               <slot name="customCard" :item="notification">
                 <NotificationCard :notification="notification"
-                  :cardProps="cardProps"
-                  :onCardClick="onCardClick" :deleteById="deleteNotificationById"
-                  :styles="styles" :darkMode="darkMode" />
+                  :cardProps="cardProps" :onCardClick="onCardClick"
+                  :deleteById="deleteNotificationById" :styles="styles" :darkMode="darkMode" />
               </slot>
             </div>
           </div>
@@ -63,7 +61,8 @@
 
 <script setup lang="ts">
 import type {
-Ref } from 'vue';
+  Ref
+} from 'vue';
 import {
   computed,
   defineProps,
@@ -323,12 +322,12 @@ onBeforeUnmount(() => {
 });
 
 watch(() => props.modalWidth, () => {
-   panelStyle = {
-  ...(!props.windowViewOnly && props.styles.windowTopBorder),
-  ...(!props.windowViewOnly && { width: `${props.modalWidth}` }),
-  ...(!props.windowViewOnly && props.styles.windowBottomBorder),
-  ...props.styles.container
-};
+  panelStyle = {
+    ...(!props.windowViewOnly && props.styles.windowTopBorder),
+    ...(!props.windowViewOnly && { width: `${props.modalWidth}` }),
+    ...(!props.windowViewOnly && props.styles.windowBottomBorder),
+    ...props.styles.container
+  };
 }, { immediate: true });
 
 watch(
@@ -353,11 +352,11 @@ watch(
 watch(
   [() => siren.value, () => verificationStatus.value],
   () => {
-    if (siren.value && verificationStatus.value !== VerificationStatus.PENDING) {
+    if (siren.value && verificationStatus.value === VerificationStatus.SUCCESS) {
       if (!props.hideBadge) siren.value?.stopRealTimeFetch(EventType.UNVIEWED_COUNT);
       fetchNotifications(true);
     }
-    if (!siren.value && isLoading.value) {
+    if (verificationStatus.value === VerificationStatus.FAILED) {
       isLoading.value = false;
       if (props.onError)
         props.onError(errorMap.INVALID_CREDENTIALS);
