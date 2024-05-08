@@ -51,7 +51,7 @@ test('matches snapshot', () => {
     }
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.element).toMatchSnapshot();
 });
 
 test('render notification card with basic content', () => {
