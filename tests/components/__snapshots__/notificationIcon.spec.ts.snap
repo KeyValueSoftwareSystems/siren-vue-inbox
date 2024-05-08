@@ -1892,7 +1892,7 @@ VueWrapper {
                       "asyncDep": null,
                       "asyncResolved": false,
                       "attrs": {},
-                      "attrsProxy": {},
+                      "attrsProxy": null,
                       "bc": null,
                       "bm": null,
                       "bu": null,
@@ -2754,7 +2754,7 @@ VueWrapper {
     "runWithContext": [Function],
     "unmount": [Function],
     "use": [Function],
-    "version": "3.4.21",
+    "version": "3.4.27",
   },
   "__setProps": [Function],
   "cleanUpCallbacks": [
