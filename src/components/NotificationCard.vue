@@ -37,16 +37,18 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue';
 import { defineProps, watch, ref } from 'vue';
+import PubSub from 'pubsub-js';
 
 import type { NotificationCardProps } from '../types';
 import { generateElapsedTimeText } from '../utils/commonUtils';
+import { eventTypes, events } from '../utils/constants';
 import CloseIcon from './CloseIcon.vue';
 import TimerIcon from './TimerIcon.vue';
+import useSiren from '../composables/useSiren';
 import defaultAvatarDark from '../assets/dark/defaultAvatarDark.png';
 import defaultAvatarLight from '../assets/light/defaultAvatarLight.png';
 
 import '../styles/card.css';
-import useSiren from '../composables/useSiren';
 
 const props = defineProps<NotificationCardProps>();
 
@@ -60,14 +62,19 @@ let cardContainerStyle: CSSProperties;
 
 const defaultAvatar: string = props?.darkMode ? defaultAvatarDark : defaultAvatarLight;
 
-const handleDelete = (event: MouseEvent | KeyboardEvent) => {
-  deleteAnimation.value = 'siren-sdk-delete-animation';
+const handleDelete = async (event: MouseEvent | KeyboardEvent): Promise<void> => {
+  event.stopPropagation();
+  const isSuccess = await props.deleteById(props.notification.id, false);
+
+  if (isSuccess) {
+    deleteAnimation.value = 'siren-sdk-delete-animation';
 
   setTimeout(() => {
-    props.deleteById(props.notification.id);
-  }, 200);
+    const payload = { id: props.notification.id, action: eventTypes.DELETE_ITEM };
 
-  event.stopPropagation();
+    PubSub.publish(events.NOTIFICATION_LIST_EVENT, JSON.stringify(payload));
+  }, 200);
+  }
 };
 
 const handleNotificationCardClick = () => {

@@ -141,15 +141,13 @@ const triggerOnError = computed(
     }
 );
 
-const deleteNotificationById = computed(() => async (id: string) => {
-  try {
-    const response = await deleteById(id);
+const deleteNotificationById = async (id: string, shouldUpdateList: boolean): Promise<boolean> => {
+    const response = await deleteById(id, shouldUpdateList);
 
     if (response) triggerOnError.value(response);
-  } catch (err) {
-    // TODO: handle error
-  }
-});
+
+  return !!response?.data;
+};
 
 const notificationSubscriber = async (_type: string, dataString: string) => {
   const data = await JSON.parse(dataString);

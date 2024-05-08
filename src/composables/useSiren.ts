@@ -46,12 +46,12 @@ const useSiren = () => {
     return { error: errorMap.SIREN_OBJECT_NOT_FOUND };
   };
 
-  const deleteById = async (id: string) => {
+  const deleteById = async (id: string, shouldUpdateList: boolean = true) => {
     if (siren.value)
       if (id?.length > 0) {
         const response = await siren.value?.deleteById(id);
 
-        if (response && response.data) {
+        if (response?.data && shouldUpdateList) {
           const payload = { id, action: eventTypes.DELETE_ITEM };
 
           PubSub.publish(

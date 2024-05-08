@@ -233,7 +233,7 @@ export type NotificationCardProps = {
   cardProps: SirenInboxProps['cardProps'];
   onCardClick?: SirenInboxProps['onCardClick'];
   styles: SirenStyleProps;
-  deleteById: (id: string) => void;
+  deleteById: (id: string, shouldUpdateList: boolean) => Promise<boolean>
   darkMode: boolean;
 };
 
