@@ -1,0 +1,81 @@
+.siren-sdk-card-common-container{
+  display: grid;
+  gap: 16px;
+}
+
+.siren-sdk-card-container {
+  grid-template-columns: max-content auto max-content;
+}
+.siren-sdk-hide-avatar-card-container {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: auto max-content;
+}
+.siren-sdk-card-time-icon {
+  width: 13px;
+  height: 13px;
+}
+.siren-sdk-card-transparent {
+  background-color: transparent;
+}
+.siren-sdk-delete-button {
+  cursor: pointer;
+  height: fit-content;
+}
+.siren-sdk-card-text-break {
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.siren-sdk-card-date-container {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 5px;
+  align-items: center;
+}
+.siren-sdk-card-content-wrapper {
+  display: grid;
+  grid-template-rows: auto;
+}
+.siren-sdk-card-msg-body {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+.siren-sdk-card-avatar{
+  overflow: 'hidden',
+}
+
+.siren-sdk-card-date-style{
+  line-height: 16px;
+}
+
+.siren-sdk-card-title{
+  line-height: 20px;
+  margin-bottom: 4px;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.siren-sdk-card-subtitle{
+  line-height: 20px;
+  margin-bottom: 6px;
+}
+
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.siren-sdk-delete-animation {
+  animation: fadeOut 0.5s ease forwards;
+}

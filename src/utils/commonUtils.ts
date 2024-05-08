@@ -1,0 +1,443 @@
+import type { Ref } from 'vue';
+
+import type {
+  ActionResponse,
+  NotificationDataType,
+  NotificationsApiResponse
+} from '@sirenapp/js-sdk/dist/esm/types';
+import type {
+  CustomStyle,
+  DimensionValue,
+  SirenStyleProps,
+  ThemeProps
+} from '../types';
+import {
+  LogLevel,
+  ThemeMode,
+  defaultBadgeStyle,
+  eventTypes
+} from './constants';
+import defaultStyles from './defaultStyles';
+import defaultTheme from './defaultTheme';
+
+type FetchParams = {
+  size: number;
+  start?: string;
+  end?: string;
+  sort?: 'createdAt' | 'updatedAt';
+};
+
+export const isEmptyArray = (array: Array<NotificationDataType> = []) =>
+  array && array?.length === 0;
+
+export const mergeArrays = (
+  array1: Array<NotificationDataType> = [],
+  array2: Array<NotificationDataType> = []
+) => {
+  if (array1 && array2) return [...array1, ...array2];
+  if (array1) return array1;
+
+  return array2;
+};
+
+export const filterDataProperty = (
+  response: NotificationsApiResponse
+): NotificationDataType[] | null => {
+  if (!response.data) return null;
+
+  return response.data;
+};
+
+export const generateFilterParams = (
+  data: NotificationDataType[],
+  fromStart: boolean,
+  itemsPerPage: number
+): FetchParams => {
+  let params: FetchParams = { size: itemsPerPage, sort: 'createdAt' };
+
+  if (data.length > 0)
+    if (fromStart) params = { ...params, start: data[0].createdAt };
+    else params = { ...params, end: data[data.length - 1].createdAt };
+
+  return params;
+};
+
+export const isValidResponse = (
+  response: NotificationsApiResponse | ActionResponse
+): boolean => !!response?.data;
+
+export const generateElapsedTimeText = (timeString: string) => {
+  const currentTime = new Date().getTime();
+  const targetTime = new Date(timeString).getTime();
+  const millisecondsDiff = currentTime - targetTime;
+
+  const seconds = Math.floor(millisecondsDiff / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+  const months = Math.floor(days / 30);
+  const years = Math.floor(days / 365);
+
+  if (millisecondsDiff < 60000) return 'Just now';
+  if (minutes < 60)
+    return minutes === 1 ? '1 minute ago' : `${minutes} minutes ago`;
+  if (hours < 24) return hours === 1 ? '1 hour ago' : `${hours} hours ago`;
+  if (days < 30) return days === 1 ? '1 day ago' : `${days} days ago`;
+  if (months < 12) return months === 1 ? '1 month ago' : `${months} months ago`;
+
+  return years === 1 ? '1 year ago' : `${years} years ago`;
+};
+
+export const applyTheme = (
+  theme: ThemeProps = {},
+  mode: ThemeMode = ThemeMode.DARK,
+  customStyle: CustomStyle = {}
+): SirenStyleProps => {
+  const windowBorderRadius = `${customStyle.window?.borderRadius || defaultStyles.window.borderRadius}px`;
+
+  return {
+    container: {
+      maxWidth: customStyle.window?.width || '100'
+    },
+    windowShadow: {
+      boxShadow: `${
+        theme.colors?.windowShadowColor || defaultTheme[mode].window.shadowColor
+      } 0px 8px 24px`
+    },
+    windowTopBorder: {
+      borderTopLeftRadius: windowBorderRadius,
+      borderTopRightRadius: windowBorderRadius
+    },
+    windowBottomBorder: {
+      borderBottomLeftRadius: windowBorderRadius,
+      borderBottomRightRadius: windowBorderRadius
+    },
+    contentContainer: {
+      backgroundColor:
+        theme.windowContainer?.background ||
+        theme.colors?.neutralColor ||
+        defaultTheme[mode].windowContainer.background,
+      padding: `${
+        customStyle.windowContainer?.padding ||
+        defaultStyles.windowContainer.padding
+      }px`,
+      borderRadius: `0 0 ${
+        customStyle.window?.borderRadius || defaultStyles.window.borderRadius
+      }px ${
+        customStyle.window?.borderRadius || defaultStyles.window.borderRadius
+      }px`
+    },
+    body: {
+      height: `${customStyle.windowContainer?.contentHeight || 700}px`
+    },
+    headerContainer: {
+      backgroundColor:
+        theme.windowHeader?.background ||
+        theme.colors?.neutralColor ||
+        defaultTheme[mode].windowHeader.background,
+      borderBottom: `${customStyle.windowHeader?.borderWidth || defaultStyles.windowHeader.borderWidth}px solid ${
+        theme.colors?.borderColor || defaultTheme[mode].colors.borderColor
+      }`,
+      height: `${customStyle.windowHeader?.height || defaultStyles.windowHeader.height}px`
+    },
+    headerTitle: {
+      color:
+        theme.windowHeader?.titleColor ||
+        theme.colors?.textColor ||
+        defaultTheme[mode].windowHeader.titleColor,
+      fontSize: `${
+        customStyle.windowHeader?.titleSize ||
+        defaultStyles.windowHeader.titleSize
+      }px`,
+      fontWeight:
+        customStyle.windowHeader?.titleFontWeight ||
+        defaultStyles.windowHeader.titleFontWeight,
+      paddingLeft: `${
+        customStyle.windowHeader?.titlePadding ||
+        defaultStyles.windowHeader.titlePadding
+      }px`
+    },
+    headerAction: {
+      color:
+        theme.windowHeader?.headerActionColor ||
+        theme.colors?.textColor ||
+        defaultTheme[mode].windowHeader.headerActionColor
+    },
+    defaultCardContainer: {
+      backgroundColor:
+        theme.customCard?.background ||
+        defaultTheme[mode].customCard.background,
+      padding: `${customStyle.customCard?.padding || defaultStyles.customCard.padding}px`,
+      borderBottom: `${
+        customStyle.customCard?.borderWidth ||
+        defaultStyles.customCard.borderWidth
+      }px solid`,
+      borderColor:
+        theme.customCard?.borderColor ||
+        theme.colors?.borderColor ||
+        defaultTheme[mode].customCard.borderColor
+    },
+    cardIconRound: {
+      width: `${
+        customStyle.customCard?.avatarSize ||
+        defaultStyles.customCard.avatarSize
+      }px`,
+      height: `${
+        customStyle.customCard?.avatarSize ||
+        defaultStyles.customCard.avatarSize
+      }px`,
+      borderRadius: `${
+        (parseInt(String(customStyle.customCard?.avatarSize), 10) ||
+          defaultStyles.customCard.avatarSize) / 2
+      }px`,
+      backgroundColor:
+        theme.colors?.borderColor || defaultTheme[mode].colors.borderColor
+    },
+    cardTitle: {
+      color:
+        theme.customCard?.titleColor ||
+        theme.colors?.textColor ||
+        defaultTheme[mode].customCard.titleColor,
+      fontSize: `${customStyle.customCard?.titleSize || defaultStyles.customCard.titleSize}px`,
+      fontWeight:
+        customStyle.customCard?.titleFontWeight ||
+        defaultStyles.customCard.titleFontWeight
+    },
+    cardSubTitle: {
+      color:
+        theme.customCard?.subtitleColor ||
+        theme.colors?.textColor ||
+        defaultTheme[mode].customCard.subtitleColor,
+      fontSize: `${
+        customStyle.customCard?.subtitleSize ||
+        defaultStyles.customCard.subtitleSize
+      }px`,
+      fontWeight:
+        customStyle.customCard?.subtitleFontWeight ||
+        defaultStyles.customCard.subtitleFontWeight
+    },
+    activeCardMarker: {
+      backgroundColor:
+        theme.colors?.highlightedCardColor ||
+        defaultTheme[mode].colors?.highlightedCardColor,
+      border:
+        theme.colors?.primaryColor || defaultTheme[mode].colors?.primaryColor
+    },
+    cardDescription: {
+      color:
+        theme.customCard?.descriptionColor ||
+        theme.colors?.textColor ||
+        defaultTheme[mode].customCard.descriptionColor,
+      fontSize: `${
+        customStyle.customCard?.descriptionSize ||
+        defaultStyles.customCard.descriptionSize
+      }px`,
+      fontWeight:
+        customStyle.customCard?.descriptionFontWeight ||
+        defaultStyles.customCard.descriptionFontWeight
+    },
+    dateStyle: {
+      color: theme.colors?.dateColor || defaultTheme[mode].colors.dateColor,
+      fontSize: `${customStyle.customCard?.dateSize || defaultStyles.customCard.dateSize}px`
+    },
+    emptyText: {
+      color: theme.colors?.textColor || defaultTheme[mode].colors.textColor
+    },
+    errorText: {
+      color: theme.colors?.textColor || defaultTheme[mode].colors.textColor
+    },
+    clearIcon: {
+      color: theme.colors?.clearAllIcon || defaultTheme[mode].clearIcon.color,
+      size: customStyle.clearAllIcon?.size || defaultStyles.clearAllIcon.size
+    },
+    timerIcon: {
+      color: theme.colors?.timerIcon || defaultTheme[mode].timerIcon.color,
+      size: customStyle.timerIcon?.size || defaultStyles.timerIcon.size
+    },
+    notificationIcon: {
+      size:
+        customStyle?.notificationIcon?.size ||
+        defaultStyles?.notificationIcon?.size
+    },
+    deleteIcon: {
+      color: theme.colors?.deleteIcon || defaultTheme[mode].colors.deleteIcon,
+      size: customStyle.deleteIcon?.size || defaultStyles.deleteIcon.size
+    },
+    loadMoreButton: {
+      color:
+        theme?.loadMoreButton?.color ||
+        theme.colors?.primaryColor ||
+        defaultTheme[mode]?.loadMoreButton?.color,
+      backgroundColor:
+        theme?.loadMoreButton?.background ||
+        defaultTheme[mode]?.loadMoreButton?.background,
+      fontSize: `${
+        customStyle?.loadMoreButton?.fontSize ||
+        defaultStyles?.loadMoreButton?.fontSize
+      }px`,
+      fontWeight:
+        customStyle.loadMoreButton?.fontWeight ||
+        defaultStyles.loadMoreButton.fontWeight
+    },
+    loader: {
+      backgroundImage: defaultTheme[mode].loader.backgroundImage,
+      borderColor:
+        theme.colors?.primaryColor || defaultTheme[mode].colors.primaryColor
+    },
+    badgeStyle: {
+      borderRadius: `${customStyle.badgeStyle?.size || defaultBadgeStyle.size}px`,
+      minWidth: `${customStyle.badgeStyle?.size || defaultBadgeStyle.size}px`,
+      height: `${customStyle.badgeStyle?.size || defaultBadgeStyle.size}px`,
+      backgroundColor: theme.badgeStyle?.color || defaultBadgeStyle.color,
+      top: customStyle.badgeStyle?.top
+        ? `${customStyle.badgeStyle?.top}px`
+        : defaultBadgeStyle.top,
+      right: customStyle.badgeStyle?.right
+        ? `${customStyle.badgeStyle?.right}px`
+        : defaultBadgeStyle.right
+    },
+    badgeTextStyle: {
+      color: theme.badgeStyle?.textColor || defaultBadgeStyle.textColor,
+      fontSize: `${customStyle.badgeStyle?.textSize || defaultBadgeStyle.textSize}px`
+    },
+    infiniteLoader: {
+      border: `3px solid ${
+        theme.colors?.infiniteLoader ||
+        theme.colors?.primaryColor ||
+        defaultTheme[mode].colors.primaryColor
+      }`,
+      borderBottomColor: 'transparent'
+    }
+  };
+};
+
+export const calculateModalWidth = (containerWidth: DimensionValue): number => {
+  let modalWidth = 500;
+
+  if (typeof containerWidth === 'string')
+    modalWidth = parseInt(containerWidth.slice(0, -2), 10) + 40;
+  else if (typeof containerWidth === 'number') modalWidth = containerWidth + 40;
+
+  return modalWidth;
+};
+
+export const calculateModalPosition = (
+  iconRef: Ref<HTMLElement | null>,
+  window: Window,
+  containerWidth: DimensionValue
+) => {
+  if (iconRef.value) {
+    const iconRect = iconRef.value.getBoundingClientRect();
+    const screenWidth = window.innerWidth;
+    const spaceRight = screenWidth - iconRect.x;
+    const spaceLeft = iconRect.x;
+
+    let modalWidth = calculateModalWidth(containerWidth);
+
+    const centerPosition =
+      Math.min(spaceLeft, spaceRight) + Math.abs(spaceLeft - spaceRight) / 2;
+
+    if (window.innerWidth <= modalWidth) modalWidth = window.innerWidth - 40;
+
+    if (spaceRight > modalWidth)
+      return {
+        left: '0px'
+      };
+    if (spaceLeft > modalWidth) {
+      const rightPosition = spaceRight < modalWidth ? '30px' : null;
+
+      return {
+        ...(rightPosition && { right: rightPosition })
+      };
+    }
+    if (
+      spaceLeft < modalWidth &&
+      spaceRight < modalWidth &&
+      spaceLeft > spaceRight
+    )
+      return { right: '30px' };
+
+    return { left: `-${centerPosition - 40}px` };
+  }
+
+  return { top: '0' };
+};
+
+export const updateNotifications = (
+  eventData: {
+    id?: string;
+    action: string;
+    newNotifications?: NotificationDataType[];
+    unreadCount?: number;
+  },
+  notifications: NotificationDataType[]
+): NotificationDataType[] => {
+  let updatedNotifications: NotificationDataType[] = [];
+
+  switch (eventData.action) {
+    case eventTypes.MARK_ITEM_AS_READ:
+      updatedNotifications = notifications.map((item) =>
+        item.id === eventData.id ? { ...item, isRead: true } : item
+      );
+      break;
+    case eventTypes.MARK_ALL_AS_READ:
+      updatedNotifications = notifications.map((item) => ({
+        ...item,
+        isRead: true
+      }));
+      break;
+    case eventTypes.DELETE_ITEM:
+      updatedNotifications = notifications.filter(
+        (item) => item.id !== eventData.id
+      );
+      break;
+    case eventTypes.DELETE_ALL_ITEM:
+      updatedNotifications = [];
+      break;
+    case eventTypes.NEW_NOTIFICATIONS: {
+      const newNotifications: NotificationDataType[] =
+        eventData?.newNotifications || [];
+
+      updatedNotifications = [...newNotifications, ...notifications];
+      break;
+    }
+    case eventTypes.RESET_NOTIFICATIONS: {
+      updatedNotifications = [];
+      break;
+    }
+    default:
+      break;
+  }
+
+  return updatedNotifications;
+};
+
+export const logger = {
+  log: async (level: LogLevel.INFO | LogLevel.ERROR, message: string) => {
+    const timestamp = new Date().toISOString();
+    const levelString = LogLevel[level].toUpperCase();
+
+    // eslint-disable-next-line no-console
+    console.log(`[${timestamp}] [${levelString}] ${message}`);
+  },
+  error(error: string) {
+    this.log(LogLevel.ERROR, error);
+  },
+  info(message: string) {
+    this.log(LogLevel.INFO, message);
+  }
+};
+
+export const debounce = <F extends (...args: any[]) => void>(
+  func: F,
+  delay: number
+) => {
+  let timerId: ReturnType<typeof setTimeout>;
+
+  return (...args: Parameters<F>): void => {
+    clearTimeout(timerId);
+    timerId = setTimeout(() => {
+      func(...args);
+    }, delay);
+  };
+};
