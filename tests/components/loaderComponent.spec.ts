@@ -14,7 +14,7 @@ test('matches snapshot', () => {
     }
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.element).toMatchSnapshot();
 });
 
 test('render loader component with basic content', () => {
