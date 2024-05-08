@@ -65,13 +65,18 @@ const initialize = async (): Promise<void> => {
   const sirenValue = new Siren(dataParams);
 
   siren.value = sirenValue;
+  // Reset verification status when token is changed
+  verificationStatus.value = VerificationStatus.PENDING;
 };
 
 const retryVerification = (error: SirenErrorType) => {
   if (error.Code === AUTHENTICATION_FAILED && retryCount < MAXIMUM_RETRY_COUNT)
     setTimeout(() => {
-      initialize();
-      retryCount++;
+      // To avoid retry verification in case of token or recipient id change
+      if (verificationStatus.value !== VerificationStatus.SUCCESS) {
+        initialize();
+        retryCount++;
+      }
     }, 5000);
 };
 
@@ -97,6 +102,8 @@ watch(() => props?.config, () => {
     stopRealTimeFetch();
     sendResetDataEvents();
     initialize();
+  } else {
+    verificationStatus.value = VerificationStatus.FAILED;
   }
   if (retryCount > MAXIMUM_RETRY_COUNT) stopRealTimeFetch();
 }, { immediate: true });

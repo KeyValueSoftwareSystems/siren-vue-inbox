@@ -148,7 +148,7 @@ export type CustomStyle = {
     size?: number;
     textSize?: number;
     top?: number;
-    left?: number;
+    right?: number;
   };
   deleteIcon?: {
     size?: number;
@@ -218,7 +218,7 @@ export type SirenPanelProps = {
   darkMode: boolean;
   styles: SirenStyleProps;
   windowViewOnly: boolean;
-  showNotifications: boolean;
+  isModalOpen: boolean;
   onError?: (error: SirenErrorType) => void;
   itemsPerFetch: number;
   hideBadge: boolean;

@@ -43,16 +43,7 @@ VueWrapper {
               />
             </svg>
             
-            <div
-              class="siren-sdk-notificationIcon-badge-container"
-              style="width: 0px; height: 0px; overflow: hidden;"
-            >
-              <div
-                style="color: #FFFFFF; font-size: 10px;"
-              >
-                0
-              </div>
-            </div>
+            <!--v-if-->
           </div>
         </div>
         <!--v-if-->
@@ -422,7 +413,6 @@ VueWrapper {
             "loadMoreLabel": "Load more",
             "onCardClick": undefined,
             "onError": [MockFunction spy],
-            "realTimeUnViewedCountEnabled": false,
             "theme": {
               "dark": {
                 "colors": {
@@ -436,19 +426,10 @@ VueWrapper {
           "da": null,
           "data": {},
           "devtoolsRawSetupState": {
-            "BadgeType": {
-              "DEFAULT": "default",
-              "DOT": "dot",
-              "NONE": "none",
-            },
             "NotificationIcon": {
               "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/NotificationIcon.vue",
               "__name": "NotificationIcon",
               "props": {
-                "badgeType": {
-                  "required": true,
-                  "type": [Function],
-                },
                 "darkMode": {
                   "required": true,
                   "type": [Function],
@@ -458,6 +439,10 @@ VueWrapper {
                   "type": [Function],
                 },
                 "hideBadge": {
+                  "required": true,
+                  "type": [Function],
+                },
+                "isModalOpen": {
                   "required": true,
                   "type": [Function],
                 },
@@ -489,6 +474,10 @@ VueWrapper {
                   "required": true,
                   "type": [Function],
                 },
+                "isModalOpen": {
+                  "required": true,
+                  "type": [Function],
+                },
                 "itemsPerFetch": {
                   "required": true,
                   "type": [Function],
@@ -510,10 +499,6 @@ VueWrapper {
                 },
                 "onError": {
                   "required": false,
-                  "type": [Function],
-                },
-                "showNotifications": {
-                  "required": true,
                   "type": [Function],
                 },
                 "styles": {
@@ -570,16 +555,7 @@ VueWrapper {
                     />
                   </svg>
                   
-                  <div
-                    class="siren-sdk-notificationIcon-badge-container"
-                    style="width: 0px; height: 0px; overflow: hidden;"
-                  >
-                    <div
-                      style="color: #FFFFFF; font-size: 10px;"
-                    >
-                      0
-                    </div>
-                  </div>
+                  <!--v-if-->
                 </div>
               </div>,
               "_value": <div
@@ -606,154 +582,13 @@ VueWrapper {
                     />
                   </svg>
                   
-                  <div
-                    class="siren-sdk-notificationIcon-badge-container"
-                    style="width: 0px; height: 0px; overflow: hidden;"
-                  >
-                    <div
-                      style="color: #FFFFFF; font-size: 10px;"
-                    >
-                      0
-                    </div>
-                  </div>
+                  <!--v-if-->
                 </div>
               </div>,
               "dep": undefined,
             },
             "initialModalWidth": "500px",
-            "modalPosition": RefImpl {
-              "__v_isRef": true,
-              "__v_isShallow": false,
-              "_rawValue": {
-                "left": "0px",
-              },
-              "_value": {
-                "left": "0px",
-              },
-              "dep": undefined,
-            },
-            "notificationRef": RefImpl {
-              "__v_isRef": true,
-              "__v_isShallow": false,
-              "_rawValue": <div
-                class="siren-sdk-inbox-container"
-                customstyles="[object Object]"
-                data-testid="siren-inbox-container"
-                hideheader="false"
-                noofnotificationsperfetch="10"
-                title="Notifications"
-              >
-                <div
-                  data-testid="siren-inbox-icon"
-                >
-                  <div
-                    class="siren-sdk-notification-icon-container"
-                    data-testid="notification-icon-container"
-                  >
-                    
-                    <svg
-                      fill="none"
-                      height="30"
-                      viewBox="0 0 24 24"
-                      width="30"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"
-                        stroke="#FFFFFF"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.2973"
-                      />
-                    </svg>
-                    
-                    <div
-                      class="siren-sdk-notificationIcon-badge-container"
-                      style="width: 0px; height: 0px; overflow: hidden;"
-                    >
-                      <div
-                        style="color: #FFFFFF; font-size: 10px;"
-                      >
-                        0
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--v-if-->
-              </div>,
-              "_value": <div
-                class="siren-sdk-inbox-container"
-                customstyles="[object Object]"
-                data-testid="siren-inbox-container"
-                hideheader="false"
-                noofnotificationsperfetch="10"
-                title="Notifications"
-              >
-                <div
-                  data-testid="siren-inbox-icon"
-                >
-                  <div
-                    class="siren-sdk-notification-icon-container"
-                    data-testid="notification-icon-container"
-                  >
-                    
-                    <svg
-                      fill="none"
-                      height="30"
-                      viewBox="0 0 24 24"
-                      width="30"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"
-                        stroke="#FFFFFF"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.2973"
-                      />
-                    </svg>
-                    
-                    <div
-                      class="siren-sdk-notificationIcon-badge-container"
-                      style="width: 0px; height: 0px; overflow: hidden;"
-                    >
-                      <div
-                        style="color: #FFFFFF; font-size: 10px;"
-                      >
-                        0
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--v-if-->
-              </div>,
-              "dep": undefined,
-            },
-            "props": {
-              "cardProps": {
-                "hideAvatar": false,
-                "showMedia": true,
-              },
-              "customStyle": undefined,
-              "darkMode": true,
-              "headerProps": undefined,
-              "hideBadge": false,
-              "itemsPerFetch": 20,
-              "loadMoreLabel": "Load more",
-              "onCardClick": undefined,
-              "onError": [MockFunction spy],
-              "realTimeUnViewedCountEnabled": false,
-              "theme": {
-                "dark": {
-                  "colors": {
-                    "primaryColor": "#FFFFFF",
-                  },
-                },
-                "light": {},
-              },
-              "windowViewOnly": false,
-            },
-            "showNotifications": RefImpl {
+            "isModalOpen": RefImpl {
               "__v_isRef": true,
               "__v_isShallow": false,
               "_rawValue": false,
@@ -787,7 +622,6 @@ VueWrapper {
                     Map {
                       [Circular] => 1,
                     },
-                    [Circular],
                     Map {
                       ReactiveEffect {
                         "_depsLength": 21,
@@ -810,9 +644,9 @@ VueWrapper {
                               "backgroundColor": "#FF0000",
                               "borderRadius": "15px",
                               "height": "15px",
-                              "left": "undefinedpx",
                               "minWidth": "15px",
-                              "top": "undefinedpx",
+                              "right": "inherit",
+                              "top": "inherit",
                             },
                             "badgeTextStyle": {
                               "color": "#FFFFFF",
@@ -824,6 +658,7 @@ VueWrapper {
                             "cardDescription": {
                               "color": "#FFFFFF",
                               "fontSize": "14px",
+                              "fontWeight": "400",
                             },
                             "cardIconRound": {
                               "backgroundColor": "#344054",
@@ -861,7 +696,7 @@ VueWrapper {
                               "backgroundColor": "transparent",
                               "borderBottom": "0.5px solid",
                               "borderColor": "#344054",
-                              "padding": "12px 24px",
+                              "padding": "12px",
                             },
                             "deleteIcon": {
                               "color": "#D0D5DD",
@@ -889,6 +724,7 @@ VueWrapper {
                             },
                             "infiniteLoader": {
                               "border": "3px solid #FFFFFF",
+                              "borderBottomColor": "transparent",
                             },
                             "loadMoreButton": {
                               "backgroundColor": "#232326",
@@ -1000,6 +836,7 @@ VueWrapper {
                     Map {
                       [Circular] => 1,
                     },
+                    [Circular],
                     Map {
                       [Circular] => 1,
                     },
@@ -1011,6 +848,119 @@ VueWrapper {
                   "trigger": [Function],
                 } => 1,
               },
+            },
+            "modalPosition": RefImpl {
+              "__v_isRef": true,
+              "__v_isShallow": false,
+              "_rawValue": {
+                "left": "0px",
+              },
+              "_value": {
+                "left": "0px",
+              },
+              "dep": undefined,
+            },
+            "notificationRef": RefImpl {
+              "__v_isRef": true,
+              "__v_isShallow": false,
+              "_rawValue": <div
+                class="siren-sdk-inbox-container"
+                customstyles="[object Object]"
+                data-testid="siren-inbox-container"
+                hideheader="false"
+                noofnotificationsperfetch="10"
+                title="Notifications"
+              >
+                <div
+                  data-testid="siren-inbox-icon"
+                >
+                  <div
+                    class="siren-sdk-notification-icon-container"
+                    data-testid="notification-icon-container"
+                  >
+                    
+                    <svg
+                      fill="none"
+                      height="30"
+                      viewBox="0 0 24 24"
+                      width="30"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"
+                        stroke="#FFFFFF"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.2973"
+                      />
+                    </svg>
+                    
+                    <!--v-if-->
+                  </div>
+                </div>
+                <!--v-if-->
+              </div>,
+              "_value": <div
+                class="siren-sdk-inbox-container"
+                customstyles="[object Object]"
+                data-testid="siren-inbox-container"
+                hideheader="false"
+                noofnotificationsperfetch="10"
+                title="Notifications"
+              >
+                <div
+                  data-testid="siren-inbox-icon"
+                >
+                  <div
+                    class="siren-sdk-notification-icon-container"
+                    data-testid="notification-icon-container"
+                  >
+                    
+                    <svg
+                      fill="none"
+                      height="30"
+                      viewBox="0 0 24 24"
+                      width="30"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"
+                        stroke="#FFFFFF"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.2973"
+                      />
+                    </svg>
+                    
+                    <!--v-if-->
+                  </div>
+                </div>
+                <!--v-if-->
+              </div>,
+              "dep": undefined,
+            },
+            "props": {
+              "cardProps": {
+                "hideAvatar": false,
+                "showMedia": true,
+              },
+              "customStyle": undefined,
+              "darkMode": true,
+              "headerProps": undefined,
+              "hideBadge": false,
+              "itemsPerFetch": 20,
+              "loadMoreLabel": "Load more",
+              "onCardClick": undefined,
+              "onError": [MockFunction spy],
+              "theme": {
+                "dark": {
+                  "colors": {
+                    "primaryColor": "#FFFFFF",
+                  },
+                },
+                "light": {},
+              },
+              "windowViewOnly": false,
             },
             "siren": [MockFunction spy],
             "styles": ComputedRefImpl {
@@ -1027,9 +977,9 @@ VueWrapper {
                   "backgroundColor": "#FF0000",
                   "borderRadius": "15px",
                   "height": "15px",
-                  "left": "undefinedpx",
                   "minWidth": "15px",
-                  "top": "undefinedpx",
+                  "right": "inherit",
+                  "top": "inherit",
                 },
                 "badgeTextStyle": {
                   "color": "#FFFFFF",
@@ -1041,6 +991,7 @@ VueWrapper {
                 "cardDescription": {
                   "color": "#FFFFFF",
                   "fontSize": "14px",
+                  "fontWeight": "400",
                 },
                 "cardIconRound": {
                   "backgroundColor": "#344054",
@@ -1078,7 +1029,7 @@ VueWrapper {
                   "backgroundColor": "transparent",
                   "borderBottom": "0.5px solid",
                   "borderColor": "#344054",
-                  "padding": "12px 24px",
+                  "padding": "12px",
                 },
                 "deleteIcon": {
                   "color": "#D0D5DD",
@@ -1106,6 +1057,7 @@ VueWrapper {
                 },
                 "infiniteLoader": {
                   "border": "3px solid #FFFFFF",
+                  "borderBottomColor": "transparent",
                 },
                 "loadMoreButton": {
                   "backgroundColor": "#232326",
@@ -1147,25 +1099,6 @@ VueWrapper {
                   "allowRecurse": true,
                   "deps": [
                     Map {
-                      [Circular] => 1,
-                    },
-                    Map {
-                      ReactiveEffect {
-                        "_depsLength": 1,
-                        "_dirtyLevel": 0,
-                        "_runnings": 0,
-                        "_shouldSchedule": false,
-                        "_trackId": 1,
-                        "active": true,
-                        "deps": [
-                          [Circular],
-                        ],
-                        "fn": [Function],
-                        "onTrack": undefined,
-                        "onTrigger": undefined,
-                        "scheduler": [Function],
-                        "trigger": [Function],
-                      } => 1,
                       [Circular] => 1,
                     },
                     Map {
@@ -1251,6 +1184,25 @@ VueWrapper {
                       [Circular] => 1,
                     },
                     Map {
+                      ReactiveEffect {
+                        "_depsLength": 1,
+                        "_dirtyLevel": 0,
+                        "_runnings": 0,
+                        "_shouldSchedule": false,
+                        "_trackId": 1,
+                        "active": true,
+                        "deps": [
+                          [Circular],
+                        ],
+                        "fn": [Function],
+                        "onTrack": undefined,
+                        "onTrigger": undefined,
+                        "scheduler": [Function],
+                        "trigger": [Function],
+                      } => 1,
+                      [Circular] => 1,
+                    },
+                    Map {
                       [Circular] => 1,
                     },
                   ],
@@ -1284,6 +1236,13 @@ VueWrapper {
                         Map {
                           [Circular] => 1,
                         },
+                        [Circular],
+                        Map {
+                          [Circular] => 1,
+                        },
+                        Map {
+                          [Circular] => 1,
+                        },
                         Map {
                           ReactiveEffect {
                             "_depsLength": 1,
@@ -1301,13 +1260,6 @@ VueWrapper {
                             "scheduler": [Function],
                             "trigger": [Function],
                           } => 1,
-                          [Circular] => 1,
-                        },
-                        [Circular],
-                        Map {
-                          [Circular] => 1,
-                        },
-                        Map {
                           [Circular] => 1,
                         },
                         Map {
@@ -1413,25 +1365,6 @@ VueWrapper {
               },
               Map {
                 ReactiveEffect {
-                  "_depsLength": 1,
-                  "_dirtyLevel": 0,
-                  "_runnings": 0,
-                  "_shouldSchedule": false,
-                  "_trackId": 1,
-                  "active": true,
-                  "deps": [
-                    [Circular],
-                  ],
-                  "fn": [Function],
-                  "onTrack": undefined,
-                  "onTrigger": undefined,
-                  "scheduler": [Function],
-                  "trigger": [Function],
-                } => 1,
-                [Circular] => 1,
-              },
-              Map {
-                ReactiveEffect {
                   "_depsLength": 21,
                   "_dirtyLevel": 0,
                   "_runnings": 0,
@@ -1452,9 +1385,9 @@ VueWrapper {
                         "backgroundColor": "#FF0000",
                         "borderRadius": "15px",
                         "height": "15px",
-                        "left": "undefinedpx",
                         "minWidth": "15px",
-                        "top": "undefinedpx",
+                        "right": "inherit",
+                        "top": "inherit",
                       },
                       "badgeTextStyle": {
                         "color": "#FFFFFF",
@@ -1466,6 +1399,7 @@ VueWrapper {
                       "cardDescription": {
                         "color": "#FFFFFF",
                         "fontSize": "14px",
+                        "fontWeight": "400",
                       },
                       "cardIconRound": {
                         "backgroundColor": "#344054",
@@ -1503,7 +1437,7 @@ VueWrapper {
                         "backgroundColor": "transparent",
                         "borderBottom": "0.5px solid",
                         "borderColor": "#344054",
-                        "padding": "12px 24px",
+                        "padding": "12px",
                       },
                       "deleteIcon": {
                         "color": "#D0D5DD",
@@ -1531,6 +1465,7 @@ VueWrapper {
                       },
                       "infiniteLoader": {
                         "border": "3px solid #FFFFFF",
+                        "borderBottomColor": "transparent",
                       },
                       "loadMoreButton": {
                         "backgroundColor": "#232326",
@@ -1643,6 +1578,25 @@ VueWrapper {
                 [Circular] => 1,
               },
               Map {
+                ReactiveEffect {
+                  "_depsLength": 1,
+                  "_dirtyLevel": 0,
+                  "_runnings": 0,
+                  "_shouldSchedule": false,
+                  "_trackId": 1,
+                  "active": true,
+                  "deps": [
+                    [Circular],
+                  ],
+                  "fn": [Function],
+                  "onTrack": undefined,
+                  "onTrigger": undefined,
+                  "scheduler": [Function],
+                  "trigger": [Function],
+                } => 1,
+                [Circular] => 1,
+              },
+              Map {
                 [Circular] => 1,
               },
             ],
@@ -1680,7 +1634,6 @@ VueWrapper {
             "loadMoreLabel": "Load more",
             "onCardClick": undefined,
             "onError": [MockFunction spy],
-            "realTimeUnViewedCountEnabled": false,
             "theme": {
               "dark": {
                 "colors": {
@@ -1752,12 +1705,6 @@ VueWrapper {
                 "required": false,
                 "type": [Function],
               },
-              "realTimeUnViewedCountEnabled": {
-                "0": true,
-                "1": true,
-                "required": false,
-                "type": [Function],
-              },
               "theme": {
                 "0": false,
                 "1": true,
@@ -1777,7 +1724,6 @@ VueWrapper {
               "hideBadge",
               "darkMode",
               "itemsPerFetch",
-              "realTimeUnViewedCountEnabled",
               "windowViewOnly",
             ],
           ],
@@ -1795,7 +1741,6 @@ VueWrapper {
             "loadMoreLabel": "Load more",
             "onCardClick": undefined,
             "onError": [MockFunction spy],
-            "realTimeUnViewedCountEnabled": false,
             "theme": {
               "dark": {
                 "colors": {
@@ -1831,16 +1776,7 @@ VueWrapper {
                   />
                 </svg>
                 
-                <div
-                  class="siren-sdk-notificationIcon-badge-container"
-                  style="width: 0px; height: 0px; overflow: hidden;"
-                >
-                  <div
-                    style="color: #FFFFFF; font-size: 10px;"
-                  >
-                    0
-                  </div>
-                </div>
+                <!--v-if-->
               </div>
             </div>,
             "notificationRef": <div
@@ -1875,16 +1811,7 @@ VueWrapper {
                     />
                   </svg>
                   
-                  <div
-                    class="siren-sdk-notificationIcon-badge-container"
-                    style="width: 0px; height: 0px; overflow: hidden;"
-                  >
-                    <div
-                      style="color: #FFFFFF; font-size: 10px;"
-                    >
-                      0
-                    </div>
-                  </div>
+                  <!--v-if-->
                 </div>
               </div>
               <!--v-if-->
@@ -1921,9 +1848,9 @@ VueWrapper {
                       "backgroundColor": "#FF0000",
                       "borderRadius": "15px",
                       "height": "15px",
-                      "left": "undefinedpx",
                       "minWidth": "15px",
-                      "top": "undefinedpx",
+                      "right": "inherit",
+                      "top": "inherit",
                     },
                     "badgeTextStyle": {
                       "color": "#FFFFFF",
@@ -1935,6 +1862,7 @@ VueWrapper {
                     "cardDescription": {
                       "color": "#FFFFFF",
                       "fontSize": "14px",
+                      "fontWeight": "400",
                     },
                     "cardIconRound": {
                       "backgroundColor": "#344054",
@@ -1972,7 +1900,7 @@ VueWrapper {
                       "backgroundColor": "transparent",
                       "borderBottom": "0.5px solid",
                       "borderColor": "#344054",
-                      "padding": "12px 24px",
+                      "padding": "12px",
                     },
                     "deleteIcon": {
                       "color": "#D0D5DD",
@@ -2000,6 +1928,7 @@ VueWrapper {
                     },
                     "infiniteLoader": {
                       "border": "3px solid #FFFFFF",
+                      "borderBottomColor": "transparent",
                     },
                     "loadMoreButton": {
                       "backgroundColor": "#232326",
@@ -2044,6 +1973,14 @@ VueWrapper {
                           [Circular] => 1,
                         },
                         Map {
+                          [Circular] => 1,
+                          [Circular] => 1,
+                        },
+                        [Circular],
+                        Map {
+                          [Circular] => 1,
+                        },
+                        Map {
                           ReactiveEffect {
                             "_depsLength": 1,
                             "_dirtyLevel": 0,
@@ -2060,14 +1997,6 @@ VueWrapper {
                             "scheduler": [Function],
                             "trigger": [Function],
                           } => 1,
-                          [Circular] => 1,
-                        },
-                        Map {
-                          [Circular] => 1,
-                          [Circular] => 1,
-                        },
-                        [Circular],
-                        Map {
                           [Circular] => 1,
                         },
                         Map {
@@ -2099,6 +2028,13 @@ VueWrapper {
                         Map {
                           [Circular] => 1,
                         },
+                        [Circular],
+                        Map {
+                          [Circular] => 1,
+                        },
+                        Map {
+                          [Circular] => 1,
+                        },
                         Map {
                           ReactiveEffect {
                             "_depsLength": 1,
@@ -2116,13 +2052,6 @@ VueWrapper {
                             "scheduler": [Function],
                             "trigger": [Function],
                           } => 1,
-                          [Circular] => 1,
-                        },
-                        [Circular],
-                        Map {
-                          [Circular] => 1,
-                        },
-                        Map {
                           [Circular] => 1,
                         },
                         Map {
@@ -2223,7 +2152,6 @@ VueWrapper {
                         Map {
                           [Circular] => 1,
                         },
-                        [Circular],
                         Map {
                           ReactiveEffect {
                             "_depsLength": 21,
@@ -2246,9 +2174,9 @@ VueWrapper {
                                   "backgroundColor": "#FF0000",
                                   "borderRadius": "15px",
                                   "height": "15px",
-                                  "left": "undefinedpx",
                                   "minWidth": "15px",
-                                  "top": "undefinedpx",
+                                  "right": "inherit",
+                                  "top": "inherit",
                                 },
                                 "badgeTextStyle": {
                                   "color": "#FFFFFF",
@@ -2260,6 +2188,7 @@ VueWrapper {
                                 "cardDescription": {
                                   "color": "#FFFFFF",
                                   "fontSize": "14px",
+                                  "fontWeight": "400",
                                 },
                                 "cardIconRound": {
                                   "backgroundColor": "#344054",
@@ -2297,7 +2226,7 @@ VueWrapper {
                                   "backgroundColor": "transparent",
                                   "borderBottom": "0.5px solid",
                                   "borderColor": "#344054",
-                                  "padding": "12px 24px",
+                                  "padding": "12px",
                                 },
                                 "deleteIcon": {
                                   "color": "#D0D5DD",
@@ -2325,6 +2254,7 @@ VueWrapper {
                                 },
                                 "infiniteLoader": {
                                   "border": "3px solid #FFFFFF",
+                                  "borderBottomColor": "transparent",
                                 },
                                 "loadMoreButton": {
                                   "backgroundColor": "#232326",
@@ -2436,6 +2366,7 @@ VueWrapper {
                         Map {
                           [Circular] => 1,
                         },
+                        [Circular],
                         Map {
                           [Circular] => 1,
                         },
@@ -2468,25 +2399,6 @@ VueWrapper {
                   },
                   Map {
                     ReactiveEffect {
-                      "_depsLength": 1,
-                      "_dirtyLevel": 0,
-                      "_runnings": 0,
-                      "_shouldSchedule": false,
-                      "_trackId": 1,
-                      "active": true,
-                      "deps": [
-                        [Circular],
-                      ],
-                      "fn": [Function],
-                      "onTrack": undefined,
-                      "onTrigger": undefined,
-                      "scheduler": [Function],
-                      "trigger": [Function],
-                    } => 1,
-                    [Circular] => 1,
-                  },
-                  Map {
-                    ReactiveEffect {
                       "_depsLength": 21,
                       "_dirtyLevel": 0,
                       "_runnings": 0,
@@ -2507,9 +2419,9 @@ VueWrapper {
                             "backgroundColor": "#FF0000",
                             "borderRadius": "15px",
                             "height": "15px",
-                            "left": "undefinedpx",
                             "minWidth": "15px",
-                            "top": "undefinedpx",
+                            "right": "inherit",
+                            "top": "inherit",
                           },
                           "badgeTextStyle": {
                             "color": "#FFFFFF",
@@ -2521,6 +2433,7 @@ VueWrapper {
                           "cardDescription": {
                             "color": "#FFFFFF",
                             "fontSize": "14px",
+                            "fontWeight": "400",
                           },
                           "cardIconRound": {
                             "backgroundColor": "#344054",
@@ -2558,7 +2471,7 @@ VueWrapper {
                             "backgroundColor": "transparent",
                             "borderBottom": "0.5px solid",
                             "borderColor": "#344054",
-                            "padding": "12px 24px",
+                            "padding": "12px",
                           },
                           "deleteIcon": {
                             "color": "#D0D5DD",
@@ -2586,6 +2499,7 @@ VueWrapper {
                           },
                           "infiniteLoader": {
                             "border": "3px solid #FFFFFF",
+                            "borderBottomColor": "transparent",
                           },
                           "loadMoreButton": {
                             "backgroundColor": "#232326",
@@ -2698,6 +2612,25 @@ VueWrapper {
                     [Circular] => 1,
                   },
                   Map {
+                    ReactiveEffect {
+                      "_depsLength": 1,
+                      "_dirtyLevel": 0,
+                      "_runnings": 0,
+                      "_shouldSchedule": false,
+                      "_trackId": 1,
+                      "active": true,
+                      "deps": [
+                        [Circular],
+                      ],
+                      "fn": [Function],
+                      "onTrack": undefined,
+                      "onTrigger": undefined,
+                      "scheduler": [Function],
+                      "trigger": [Function],
+                    } => 1,
+                    [Circular] => 1,
+                  },
+                  Map {
                     [Circular] => 1,
                   },
                 ],
@@ -2731,19 +2664,10 @@ VueWrapper {
             "slots": {},
           },
           "setupState": {
-            "BadgeType": {
-              "DEFAULT": "default",
-              "DOT": "dot",
-              "NONE": "none",
-            },
             "NotificationIcon": {
               "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/NotificationIcon.vue",
               "__name": "NotificationIcon",
               "props": {
-                "badgeType": {
-                  "required": true,
-                  "type": [Function],
-                },
                 "darkMode": {
                   "required": true,
                   "type": [Function],
@@ -2753,6 +2677,10 @@ VueWrapper {
                   "type": [Function],
                 },
                 "hideBadge": {
+                  "required": true,
+                  "type": [Function],
+                },
+                "isModalOpen": {
                   "required": true,
                   "type": [Function],
                 },
@@ -2784,6 +2712,10 @@ VueWrapper {
                   "required": true,
                   "type": [Function],
                 },
+                "isModalOpen": {
+                  "required": true,
+                  "type": [Function],
+                },
                 "itemsPerFetch": {
                   "required": true,
                   "type": [Function],
@@ -2805,10 +2737,6 @@ VueWrapper {
                 },
                 "onError": {
                   "required": false,
-                  "type": [Function],
-                },
-                "showNotifications": {
-                  "required": true,
                   "type": [Function],
                 },
                 "styles": {
@@ -2862,19 +2790,11 @@ VueWrapper {
                   />
                 </svg>
                 
-                <div
-                  class="siren-sdk-notificationIcon-badge-container"
-                  style="width: 0px; height: 0px; overflow: hidden;"
-                >
-                  <div
-                    style="color: #FFFFFF; font-size: 10px;"
-                  >
-                    0
-                  </div>
-                </div>
+                <!--v-if-->
               </div>
             </div>,
             "initialModalWidth": "500px",
+            "isModalOpen": false,
             "modalPosition": {
               "left": "0px",
             },
@@ -2910,16 +2830,7 @@ VueWrapper {
                     />
                   </svg>
                   
-                  <div
-                    class="siren-sdk-notificationIcon-badge-container"
-                    style="width: 0px; height: 0px; overflow: hidden;"
-                  >
-                    <div
-                      style="color: #FFFFFF; font-size: 10px;"
-                    >
-                      0
-                    </div>
-                  </div>
+                  <!--v-if-->
                 </div>
               </div>
               <!--v-if-->
@@ -2937,7 +2848,6 @@ VueWrapper {
               "loadMoreLabel": "Load more",
               "onCardClick": undefined,
               "onError": [MockFunction spy],
-              "realTimeUnViewedCountEnabled": false,
               "theme": {
                 "dark": {
                   "colors": {
@@ -2948,7 +2858,6 @@ VueWrapper {
               },
               "windowViewOnly": false,
             },
-            "showNotifications": false,
             "siren": [MockFunction spy],
             "styles": {
               "activeCardMarker": {
@@ -2959,9 +2868,9 @@ VueWrapper {
                 "backgroundColor": "#FF0000",
                 "borderRadius": "15px",
                 "height": "15px",
-                "left": "undefinedpx",
                 "minWidth": "15px",
-                "top": "undefinedpx",
+                "right": "inherit",
+                "top": "inherit",
               },
               "badgeTextStyle": {
                 "color": "#FFFFFF",
@@ -2973,6 +2882,7 @@ VueWrapper {
               "cardDescription": {
                 "color": "#FFFFFF",
                 "fontSize": "14px",
+                "fontWeight": "400",
               },
               "cardIconRound": {
                 "backgroundColor": "#344054",
@@ -3010,7 +2920,7 @@ VueWrapper {
                 "backgroundColor": "transparent",
                 "borderBottom": "0.5px solid",
                 "borderColor": "#344054",
-                "padding": "12px 24px",
+                "padding": "12px",
               },
               "deleteIcon": {
                 "color": "#D0D5DD",
@@ -3038,6 +2948,7 @@ VueWrapper {
               },
               "infiniteLoader": {
                 "border": "3px solid #FFFFFF",
+                "borderBottomColor": "transparent",
               },
               "loadMoreButton": {
                 "backgroundColor": "#232326",
@@ -3092,7 +3003,9 @@ VueWrapper {
                     "__v_skip": true,
                     "anchor": null,
                     "appContext": null,
-                    "children": null,
+                    "children": {
+                      "notificationIcon": [Function],
+                    },
                     "component": {
                       "a": null,
                       "accessCache": {},
@@ -3143,10 +3056,10 @@ VueWrapper {
                       "c": null,
                       "components": null,
                       "ctx": {
-                        "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
                         "hideBadge": false,
+                        "isModalOpen": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -3156,9 +3069,9 @@ VueWrapper {
                             "backgroundColor": "#FF0000",
                             "borderRadius": "15px",
                             "height": "15px",
-                            "left": "undefinedpx",
                             "minWidth": "15px",
-                            "top": "undefinedpx",
+                            "right": "inherit",
+                            "top": "inherit",
                           },
                           "badgeTextStyle": {
                             "color": "#FFFFFF",
@@ -3170,6 +3083,7 @@ VueWrapper {
                           "cardDescription": {
                             "color": "#FFFFFF",
                             "fontSize": "14px",
+                            "fontWeight": "400",
                           },
                           "cardIconRound": {
                             "backgroundColor": "#344054",
@@ -3207,7 +3121,7 @@ VueWrapper {
                             "backgroundColor": "transparent",
                             "borderBottom": "0.5px solid",
                             "borderColor": "#344054",
-                            "padding": "12px 24px",
+                            "padding": "12px",
                           },
                           "deleteIcon": {
                             "color": "#D0D5DD",
@@ -3235,6 +3149,7 @@ VueWrapper {
                           },
                           "infiniteLoader": {
                             "border": "3px solid #FFFFFF",
+                            "borderBottomColor": "transparent",
                           },
                           "loadMoreButton": {
                             "backgroundColor": "#232326",
@@ -3269,11 +3184,6 @@ VueWrapper {
                       "da": null,
                       "data": {},
                       "devtoolsRawSetupState": {
-                        "BadgeType": {
-                          "DEFAULT": "default",
-                          "DOT": "dot",
-                          "NONE": "none",
-                        },
                         "BellIcon": {
                           "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/BellIcon.vue",
                           "__name": "BellIcon",
@@ -3336,14 +3246,15 @@ VueWrapper {
                             "windowShadowColor": "#D0D5DD",
                           },
                         },
+                        "MAXIMUM_UNVIEWED_COUNT_SHOWN": 99,
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
                         "props": {
-                          "badgeType": "default",
                           "darkMode": true,
                           "handleNotification": [Function],
                           "hideBadge": false,
+                          "isModalOpen": false,
                           "styles": {
                             "activeCardMarker": {
                               "backgroundColor": "#2E2D30",
@@ -3353,9 +3264,9 @@ VueWrapper {
                               "backgroundColor": "#FF0000",
                               "borderRadius": "15px",
                               "height": "15px",
-                              "left": "undefinedpx",
                               "minWidth": "15px",
-                              "top": "undefinedpx",
+                              "right": "inherit",
+                              "top": "inherit",
                             },
                             "badgeTextStyle": {
                               "color": "#FFFFFF",
@@ -3367,6 +3278,7 @@ VueWrapper {
                             "cardDescription": {
                               "color": "#FFFFFF",
                               "fontSize": "14px",
+                              "fontWeight": "400",
                             },
                             "cardIconRound": {
                               "backgroundColor": "#344054",
@@ -3404,7 +3316,7 @@ VueWrapper {
                               "backgroundColor": "transparent",
                               "borderBottom": "0.5px solid",
                               "borderColor": "#344054",
-                              "padding": "12px 24px",
+                              "padding": "12px",
                             },
                             "deleteIcon": {
                               "color": "#D0D5DD",
@@ -3432,6 +3344,7 @@ VueWrapper {
                             },
                             "infiniteLoader": {
                               "border": "3px solid #FFFFFF",
+                              "borderBottomColor": "transparent",
                             },
                             "loadMoreButton": {
                               "backgroundColor": "#232326",
@@ -3564,10 +3477,10 @@ VueWrapper {
                       "next": null,
                       "parent": [Circular],
                       "props": {
-                        "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
                         "hideBadge": false,
+                        "isModalOpen": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -3577,9 +3490,9 @@ VueWrapper {
                             "backgroundColor": "#FF0000",
                             "borderRadius": "15px",
                             "height": "15px",
-                            "left": "undefinedpx",
                             "minWidth": "15px",
-                            "top": "undefinedpx",
+                            "right": "inherit",
+                            "top": "inherit",
                           },
                           "badgeTextStyle": {
                             "color": "#FFFFFF",
@@ -3591,6 +3504,7 @@ VueWrapper {
                           "cardDescription": {
                             "color": "#FFFFFF",
                             "fontSize": "14px",
+                            "fontWeight": "400",
                           },
                           "cardIconRound": {
                             "backgroundColor": "#344054",
@@ -3628,7 +3542,7 @@ VueWrapper {
                             "backgroundColor": "transparent",
                             "borderBottom": "0.5px solid",
                             "borderColor": "#344054",
-                            "padding": "12px 24px",
+                            "padding": "12px",
                           },
                           "deleteIcon": {
                             "color": "#D0D5DD",
@@ -3656,6 +3570,7 @@ VueWrapper {
                           },
                           "infiniteLoader": {
                             "border": "3px solid #FFFFFF",
+                            "borderBottomColor": "transparent",
                           },
                           "loadMoreButton": {
                             "backgroundColor": "#232326",
@@ -3690,12 +3605,6 @@ VueWrapper {
                       "propsDefaults": {},
                       "propsOptions": [
                         {
-                          "badgeType": {
-                            "0": false,
-                            "1": true,
-                            "required": true,
-                            "type": [Function],
-                          },
                           "darkMode": {
                             "0": true,
                             "1": true,
@@ -3714,6 +3623,12 @@ VueWrapper {
                             "required": true,
                             "type": [Function],
                           },
+                          "isModalOpen": {
+                            "0": true,
+                            "1": true,
+                            "required": true,
+                            "type": [Function],
+                          },
                           "styles": {
                             "0": false,
                             "1": true,
@@ -3724,14 +3639,15 @@ VueWrapper {
                         [
                           "darkMode",
                           "hideBadge",
+                          "isModalOpen",
                         ],
                       ],
                       "provides": {},
                       "proxy": {
-                        "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
                         "hideBadge": false,
+                        "isModalOpen": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -3741,9 +3657,9 @@ VueWrapper {
                             "backgroundColor": "#FF0000",
                             "borderRadius": "15px",
                             "height": "15px",
-                            "left": "undefinedpx",
                             "minWidth": "15px",
-                            "top": "undefinedpx",
+                            "right": "inherit",
+                            "top": "inherit",
                           },
                           "badgeTextStyle": {
                             "color": "#FFFFFF",
@@ -3755,6 +3671,7 @@ VueWrapper {
                           "cardDescription": {
                             "color": "#FFFFFF",
                             "fontSize": "14px",
+                            "fontWeight": "400",
                           },
                           "cardIconRound": {
                             "backgroundColor": "#344054",
@@ -3792,7 +3709,7 @@ VueWrapper {
                             "backgroundColor": "transparent",
                             "borderBottom": "0.5px solid",
                             "borderColor": "#344054",
-                            "padding": "12px 24px",
+                            "padding": "12px",
                           },
                           "deleteIcon": {
                             "color": "#D0D5DD",
@@ -3820,6 +3737,7 @@ VueWrapper {
                           },
                           "infiniteLoader": {
                             "border": "3px solid #FFFFFF",
+                            "borderBottomColor": "transparent",
                           },
                           "loadMoreButton": {
                             "backgroundColor": "#232326",
@@ -3920,14 +3838,11 @@ VueWrapper {
                         "attrs": {},
                         "emit": [Function],
                         "expose": [Function],
-                        "slots": {},
+                        "slots": {
+                          "notificationIcon": [Function],
+                        },
                       },
                       "setupState": {
-                        "BadgeType": {
-                          "DEFAULT": "default",
-                          "DOT": "dot",
-                          "NONE": "none",
-                        },
                         "BellIcon": {
                           "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/BellIcon.vue",
                           "__name": "BellIcon",
@@ -3990,14 +3905,15 @@ VueWrapper {
                             "windowShadowColor": "#D0D5DD",
                           },
                         },
+                        "MAXIMUM_UNVIEWED_COUNT_SHOWN": 99,
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
                         "props": {
-                          "badgeType": "default",
                           "darkMode": true,
                           "handleNotification": [Function],
                           "hideBadge": false,
+                          "isModalOpen": false,
                           "styles": {
                             "activeCardMarker": {
                               "backgroundColor": "#2E2D30",
@@ -4007,9 +3923,9 @@ VueWrapper {
                               "backgroundColor": "#FF0000",
                               "borderRadius": "15px",
                               "height": "15px",
-                              "left": "undefinedpx",
                               "minWidth": "15px",
-                              "top": "undefinedpx",
+                              "right": "inherit",
+                              "top": "inherit",
                             },
                             "badgeTextStyle": {
                               "color": "#FFFFFF",
@@ -4021,6 +3937,7 @@ VueWrapper {
                             "cardDescription": {
                               "color": "#FFFFFF",
                               "fontSize": "14px",
+                              "fontWeight": "400",
                             },
                             "cardIconRound": {
                               "backgroundColor": "#344054",
@@ -4058,7 +3975,7 @@ VueWrapper {
                               "backgroundColor": "transparent",
                               "borderBottom": "0.5px solid",
                               "borderColor": "#344054",
-                              "padding": "12px 24px",
+                              "padding": "12px",
                             },
                             "deleteIcon": {
                               "color": "#D0D5DD",
@@ -4086,6 +4003,7 @@ VueWrapper {
                             },
                             "infiniteLoader": {
                               "border": "3px solid #FFFFFF",
+                              "borderBottomColor": "transparent",
                             },
                             "loadMoreButton": {
                               "backgroundColor": "#232326",
@@ -4121,8 +4039,12 @@ VueWrapper {
                         "startRealTimeDataFetch": [Function],
                         "unViewedCount": 0,
                       },
-                      "slots": {},
-                      "slotsProxy": {},
+                      "slots": {
+                        "notificationIcon": [Function],
+                      },
+                      "slotsProxy": {
+                        "notificationIcon": [Function],
+                      },
                       "sp": null,
                       "subTree": {
                         "__v_isVNode": true,
@@ -4588,10 +4510,10 @@ VueWrapper {
                             "dynamicChildren": null,
                             "dynamicProps": null,
                             "el": ,
-                            "key": "_notification-icon",
+                            "key": "_notificationIcon",
                             "patchFlag": -2,
                             "props": {
-                              "key": "_notification-icon",
+                              "key": "_notificationIcon",
                             },
                             "ref": null,
                             "scopeId": null,
@@ -4611,112 +4533,19 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "children": "v-if",
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "dynamicChildren": [],
                             "dynamicProps": null,
-                            "el": <div
-                              class="siren-sdk-notificationIcon-badge-container"
-                              style="width: 0px; height: 0px; overflow: hidden;"
-                            >
-                              <div
-                                style="color: #FFFFFF; font-size: 10px;"
-                              >
-                                0
-                              </div>
-                            </div>,
-                            "key": 0,
-                            "patchFlag": 4,
-                            "props": {
-                              "class": "siren-sdk-notificationIcon-badge-container",
-                              "key": 0,
-                              "style": {
-                                "height": 0,
-                                "overflow": "hidden",
-                                "width": 0,
-                              },
-                            },
+                            "el": <!--v-if-->,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": null,
                             "ref": null,
                             "scopeId": null,
-                            "shapeFlag": 17,
+                            "shapeFlag": 8,
                             "slotScopeIds": null,
                             "ssContent": null,
                             "ssFallback": null,
@@ -4725,7 +4554,7 @@ VueWrapper {
                             "target": null,
                             "targetAnchor": null,
                             "transition": null,
-                            "type": "div",
+                            "type": Symbol(v-cmt),
                           },
                         ],
                         "component": null,
@@ -5203,10 +5032,10 @@ VueWrapper {
                             "dynamicChildren": null,
                             "dynamicProps": null,
                             "el": ,
-                            "key": "_notification-icon",
+                            "key": "_notificationIcon",
                             "patchFlag": -2,
                             "props": {
-                              "key": "_notification-icon",
+                              "key": "_notificationIcon",
                             },
                             "ref": null,
                             "scopeId": null,
@@ -5226,112 +5055,19 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "children": "v-if",
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "dynamicChildren": [],
                             "dynamicProps": null,
-                            "el": <div
-                              class="siren-sdk-notificationIcon-badge-container"
-                              style="width: 0px; height: 0px; overflow: hidden;"
-                            >
-                              <div
-                                style="color: #FFFFFF; font-size: 10px;"
-                              >
-                                0
-                              </div>
-                            </div>,
-                            "key": 0,
-                            "patchFlag": 4,
-                            "props": {
-                              "class": "siren-sdk-notificationIcon-badge-container",
-                              "key": 0,
-                              "style": {
-                                "height": 0,
-                                "overflow": "hidden",
-                                "width": 0,
-                              },
-                            },
+                            "el": <!--v-if-->,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": null,
                             "ref": null,
                             "scopeId": null,
-                            "shapeFlag": 17,
+                            "shapeFlag": 8,
                             "slotScopeIds": null,
                             "ssContent": null,
                             "ssFallback": null,
@@ -5340,7 +5076,7 @@ VueWrapper {
                             "target": null,
                             "targetAnchor": null,
                             "transition": null,
-                            "type": "div",
+                            "type": Symbol(v-cmt),
                           },
                         ],
                         "dynamicProps": [
@@ -5367,16 +5103,7 @@ VueWrapper {
                             />
                           </svg>
                           
-                          <div
-                            class="siren-sdk-notificationIcon-badge-container"
-                            style="width: 0px; height: 0px; overflow: hidden;"
-                          >
-                            <div
-                              style="color: #FFFFFF; font-size: 10px;"
-                            >
-                              0
-                            </div>
-                          </div>
+                          <!--v-if-->
                         </div>,
                         "key": null,
                         "patchFlag": 8,
@@ -5404,10 +5131,6 @@ VueWrapper {
                         "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/NotificationIcon.vue",
                         "__name": "NotificationIcon",
                         "props": {
-                          "badgeType": {
-                            "required": true,
-                            "type": [Function],
-                          },
                           "darkMode": {
                             "required": true,
                             "type": [Function],
@@ -5417,6 +5140,10 @@ VueWrapper {
                             "type": [Function],
                           },
                           "hideBadge": {
+                            "required": true,
+                            "type": [Function],
+                          },
+                          "isModalOpen": {
                             "required": true,
                             "type": [Function],
                           },
@@ -5439,10 +5166,10 @@ VueWrapper {
                     "dirs": null,
                     "dynamicChildren": null,
                     "dynamicProps": [
-                      "badgeType",
                       "darkMode",
                       "styles",
                       "hideBadge",
+                      "isModalOpen",
                     ],
                     "el": <div
                       class="siren-sdk-notification-icon-container"
@@ -5465,24 +5192,15 @@ VueWrapper {
                         />
                       </svg>
                       
-                      <div
-                        class="siren-sdk-notificationIcon-badge-container"
-                        style="width: 0px; height: 0px; overflow: hidden;"
-                      >
-                        <div
-                          style="color: #FFFFFF; font-size: 10px;"
-                        >
-                          0
-                        </div>
-                      </div>
+                      <!--v-if-->
                     </div>,
                     "key": null,
-                    "patchFlag": 8,
+                    "patchFlag": 1032,
                     "props": {
-                      "badgeType": "default",
                       "darkMode": true,
                       "handleNotification": [Function],
                       "hideBadge": false,
+                      "isModalOpen": false,
                       "styles": {
                         "activeCardMarker": {
                           "backgroundColor": "#2E2D30",
@@ -5492,9 +5210,9 @@ VueWrapper {
                           "backgroundColor": "#FF0000",
                           "borderRadius": "15px",
                           "height": "15px",
-                          "left": "undefinedpx",
                           "minWidth": "15px",
-                          "top": "undefinedpx",
+                          "right": "inherit",
+                          "top": "inherit",
                         },
                         "badgeTextStyle": {
                           "color": "#FFFFFF",
@@ -5506,6 +5224,7 @@ VueWrapper {
                         "cardDescription": {
                           "color": "#FFFFFF",
                           "fontSize": "14px",
+                          "fontWeight": "400",
                         },
                         "cardIconRound": {
                           "backgroundColor": "#344054",
@@ -5543,7 +5262,7 @@ VueWrapper {
                           "backgroundColor": "transparent",
                           "borderBottom": "0.5px solid",
                           "borderColor": "#344054",
-                          "padding": "12px 24px",
+                          "padding": "12px",
                         },
                         "deleteIcon": {
                           "color": "#D0D5DD",
@@ -5571,6 +5290,7 @@ VueWrapper {
                         },
                         "infiniteLoader": {
                           "border": "3px solid #FFFFFF",
+                          "borderBottomColor": "transparent",
                         },
                         "loadMoreButton": {
                           "backgroundColor": "#232326",
@@ -5604,7 +5324,7 @@ VueWrapper {
                     },
                     "ref": null,
                     "scopeId": null,
-                    "shapeFlag": 4,
+                    "shapeFlag": 36,
                     "slotScopeIds": null,
                     "ssContent": null,
                     "ssFallback": null,
@@ -5617,10 +5337,6 @@ VueWrapper {
                       "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/NotificationIcon.vue",
                       "__name": "NotificationIcon",
                       "props": {
-                        "badgeType": {
-                          "required": true,
-                          "type": [Function],
-                        },
                         "darkMode": {
                           "required": true,
                           "type": [Function],
@@ -5630,6 +5346,10 @@ VueWrapper {
                           "type": [Function],
                         },
                         "hideBadge": {
+                          "required": true,
+                          "type": [Function],
+                        },
+                        "isModalOpen": {
                           "required": true,
                           "type": [Function],
                         },
@@ -5652,18 +5372,20 @@ VueWrapper {
                     "__v_skip": true,
                     "anchor": null,
                     "appContext": null,
-                    "children": null,
+                    "children": {
+                      "notificationIcon": [Function],
+                    },
                     "component": {
                       "a": null,
                       "accessCache": {
                         "@@__IMMUTABLE_ITERABLE__@@": 0,
                         "@@__IMMUTABLE_RECORD__@@": 0,
                         "_isMockFunction": 0,
-                        "badgeType": 3,
                         "darkMode": 3,
                         "handleNotification": 3,
                         "hasAttribute": 0,
                         "hideBadge": 3,
+                        "isModalOpen": 3,
                         "nodeType": 0,
                         "styles": 3,
                         "tagName": 0,
@@ -5717,10 +5439,10 @@ VueWrapper {
                       "c": null,
                       "components": null,
                       "ctx": {
-                        "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
                         "hideBadge": false,
+                        "isModalOpen": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -5730,9 +5452,9 @@ VueWrapper {
                             "backgroundColor": "#FF0000",
                             "borderRadius": "15px",
                             "height": "15px",
-                            "left": "undefinedpx",
                             "minWidth": "15px",
-                            "top": "undefinedpx",
+                            "right": "inherit",
+                            "top": "inherit",
                           },
                           "badgeTextStyle": {
                             "color": "#FFFFFF",
@@ -5744,6 +5466,7 @@ VueWrapper {
                           "cardDescription": {
                             "color": "#FFFFFF",
                             "fontSize": "14px",
+                            "fontWeight": "400",
                           },
                           "cardIconRound": {
                             "backgroundColor": "#344054",
@@ -5781,7 +5504,7 @@ VueWrapper {
                             "backgroundColor": "transparent",
                             "borderBottom": "0.5px solid",
                             "borderColor": "#344054",
-                            "padding": "12px 24px",
+                            "padding": "12px",
                           },
                           "deleteIcon": {
                             "color": "#D0D5DD",
@@ -5809,6 +5532,7 @@ VueWrapper {
                           },
                           "infiniteLoader": {
                             "border": "3px solid #FFFFFF",
+                            "borderBottomColor": "transparent",
                           },
                           "loadMoreButton": {
                             "backgroundColor": "#232326",
@@ -5843,11 +5567,6 @@ VueWrapper {
                       "da": null,
                       "data": {},
                       "devtoolsRawSetupState": {
-                        "BadgeType": {
-                          "DEFAULT": "default",
-                          "DOT": "dot",
-                          "NONE": "none",
-                        },
                         "BellIcon": {
                           "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/BellIcon.vue",
                           "__name": "BellIcon",
@@ -5910,14 +5629,15 @@ VueWrapper {
                             "windowShadowColor": "#D0D5DD",
                           },
                         },
+                        "MAXIMUM_UNVIEWED_COUNT_SHOWN": 99,
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
                         "props": {
-                          "badgeType": "default",
                           "darkMode": true,
                           "handleNotification": [Function],
                           "hideBadge": false,
+                          "isModalOpen": false,
                           "styles": {
                             "activeCardMarker": {
                               "backgroundColor": "#2E2D30",
@@ -5927,9 +5647,9 @@ VueWrapper {
                               "backgroundColor": "#FF0000",
                               "borderRadius": "15px",
                               "height": "15px",
-                              "left": "undefinedpx",
                               "minWidth": "15px",
-                              "top": "undefinedpx",
+                              "right": "inherit",
+                              "top": "inherit",
                             },
                             "badgeTextStyle": {
                               "color": "#FFFFFF",
@@ -5941,6 +5661,7 @@ VueWrapper {
                             "cardDescription": {
                               "color": "#FFFFFF",
                               "fontSize": "14px",
+                              "fontWeight": "400",
                             },
                             "cardIconRound": {
                               "backgroundColor": "#344054",
@@ -5978,7 +5699,7 @@ VueWrapper {
                               "backgroundColor": "transparent",
                               "borderBottom": "0.5px solid",
                               "borderColor": "#344054",
-                              "padding": "12px 24px",
+                              "padding": "12px",
                             },
                             "deleteIcon": {
                               "color": "#D0D5DD",
@@ -6006,6 +5727,7 @@ VueWrapper {
                             },
                             "infiniteLoader": {
                               "border": "3px solid #FFFFFF",
+                              "borderBottomColor": "transparent",
                             },
                             "loadMoreButton": {
                               "backgroundColor": "#232326",
@@ -6138,10 +5860,10 @@ VueWrapper {
                       "next": null,
                       "parent": [Circular],
                       "props": {
-                        "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
                         "hideBadge": false,
+                        "isModalOpen": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -6151,9 +5873,9 @@ VueWrapper {
                             "backgroundColor": "#FF0000",
                             "borderRadius": "15px",
                             "height": "15px",
-                            "left": "undefinedpx",
                             "minWidth": "15px",
-                            "top": "undefinedpx",
+                            "right": "inherit",
+                            "top": "inherit",
                           },
                           "badgeTextStyle": {
                             "color": "#FFFFFF",
@@ -6165,6 +5887,7 @@ VueWrapper {
                           "cardDescription": {
                             "color": "#FFFFFF",
                             "fontSize": "14px",
+                            "fontWeight": "400",
                           },
                           "cardIconRound": {
                             "backgroundColor": "#344054",
@@ -6202,7 +5925,7 @@ VueWrapper {
                             "backgroundColor": "transparent",
                             "borderBottom": "0.5px solid",
                             "borderColor": "#344054",
-                            "padding": "12px 24px",
+                            "padding": "12px",
                           },
                           "deleteIcon": {
                             "color": "#D0D5DD",
@@ -6230,6 +5953,7 @@ VueWrapper {
                           },
                           "infiniteLoader": {
                             "border": "3px solid #FFFFFF",
+                            "borderBottomColor": "transparent",
                           },
                           "loadMoreButton": {
                             "backgroundColor": "#232326",
@@ -6264,12 +5988,6 @@ VueWrapper {
                       "propsDefaults": {},
                       "propsOptions": [
                         {
-                          "badgeType": {
-                            "0": false,
-                            "1": true,
-                            "required": true,
-                            "type": [Function],
-                          },
                           "darkMode": {
                             "0": true,
                             "1": true,
@@ -6288,6 +6006,12 @@ VueWrapper {
                             "required": true,
                             "type": [Function],
                           },
+                          "isModalOpen": {
+                            "0": true,
+                            "1": true,
+                            "required": true,
+                            "type": [Function],
+                          },
                           "styles": {
                             "0": false,
                             "1": true,
@@ -6298,14 +6022,15 @@ VueWrapper {
                         [
                           "darkMode",
                           "hideBadge",
+                          "isModalOpen",
                         ],
                       ],
                       "provides": {},
                       "proxy": {
-                        "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
                         "hideBadge": false,
+                        "isModalOpen": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -6315,9 +6040,9 @@ VueWrapper {
                             "backgroundColor": "#FF0000",
                             "borderRadius": "15px",
                             "height": "15px",
-                            "left": "undefinedpx",
                             "minWidth": "15px",
-                            "top": "undefinedpx",
+                            "right": "inherit",
+                            "top": "inherit",
                           },
                           "badgeTextStyle": {
                             "color": "#FFFFFF",
@@ -6329,6 +6054,7 @@ VueWrapper {
                           "cardDescription": {
                             "color": "#FFFFFF",
                             "fontSize": "14px",
+                            "fontWeight": "400",
                           },
                           "cardIconRound": {
                             "backgroundColor": "#344054",
@@ -6366,7 +6092,7 @@ VueWrapper {
                             "backgroundColor": "transparent",
                             "borderBottom": "0.5px solid",
                             "borderColor": "#344054",
-                            "padding": "12px 24px",
+                            "padding": "12px",
                           },
                           "deleteIcon": {
                             "color": "#D0D5DD",
@@ -6394,6 +6120,7 @@ VueWrapper {
                           },
                           "infiniteLoader": {
                             "border": "3px solid #FFFFFF",
+                            "borderBottomColor": "transparent",
                           },
                           "loadMoreButton": {
                             "backgroundColor": "#232326",
@@ -6494,14 +6221,11 @@ VueWrapper {
                         "attrs": {},
                         "emit": [Function],
                         "expose": [Function],
-                        "slots": {},
+                        "slots": {
+                          "notificationIcon": [Function],
+                        },
                       },
                       "setupState": {
-                        "BadgeType": {
-                          "DEFAULT": "default",
-                          "DOT": "dot",
-                          "NONE": "none",
-                        },
                         "BellIcon": {
                           "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/BellIcon.vue",
                           "__name": "BellIcon",
@@ -6564,14 +6288,15 @@ VueWrapper {
                             "windowShadowColor": "#D0D5DD",
                           },
                         },
+                        "MAXIMUM_UNVIEWED_COUNT_SHOWN": 99,
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
                         "props": {
-                          "badgeType": "default",
                           "darkMode": true,
                           "handleNotification": [Function],
                           "hideBadge": false,
+                          "isModalOpen": false,
                           "styles": {
                             "activeCardMarker": {
                               "backgroundColor": "#2E2D30",
@@ -6581,9 +6306,9 @@ VueWrapper {
                               "backgroundColor": "#FF0000",
                               "borderRadius": "15px",
                               "height": "15px",
-                              "left": "undefinedpx",
                               "minWidth": "15px",
-                              "top": "undefinedpx",
+                              "right": "inherit",
+                              "top": "inherit",
                             },
                             "badgeTextStyle": {
                               "color": "#FFFFFF",
@@ -6595,6 +6320,7 @@ VueWrapper {
                             "cardDescription": {
                               "color": "#FFFFFF",
                               "fontSize": "14px",
+                              "fontWeight": "400",
                             },
                             "cardIconRound": {
                               "backgroundColor": "#344054",
@@ -6632,7 +6358,7 @@ VueWrapper {
                               "backgroundColor": "transparent",
                               "borderBottom": "0.5px solid",
                               "borderColor": "#344054",
-                              "padding": "12px 24px",
+                              "padding": "12px",
                             },
                             "deleteIcon": {
                               "color": "#D0D5DD",
@@ -6660,6 +6386,7 @@ VueWrapper {
                             },
                             "infiniteLoader": {
                               "border": "3px solid #FFFFFF",
+                              "borderBottomColor": "transparent",
                             },
                             "loadMoreButton": {
                               "backgroundColor": "#232326",
@@ -6695,8 +6422,12 @@ VueWrapper {
                         "startRealTimeDataFetch": [Function],
                         "unViewedCount": 0,
                       },
-                      "slots": {},
-                      "slotsProxy": {},
+                      "slots": {
+                        "notificationIcon": [Function],
+                      },
+                      "slotsProxy": {
+                        "notificationIcon": [Function],
+                      },
                       "sp": null,
                       "subTree": {
                         "__v_isVNode": true,
@@ -7175,10 +6906,10 @@ VueWrapper {
                             "dynamicChildren": null,
                             "dynamicProps": null,
                             "el": ,
-                            "key": "_notification-icon",
+                            "key": "_notificationIcon",
                             "patchFlag": -2,
                             "props": {
-                              "key": "_notification-icon",
+                              "key": "_notificationIcon",
                             },
                             "ref": null,
                             "scopeId": null,
@@ -7198,112 +6929,19 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "children": "v-if",
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "dynamicChildren": [],
                             "dynamicProps": null,
-                            "el": <div
-                              class="siren-sdk-notificationIcon-badge-container"
-                              style="width: 0px; height: 0px; overflow: hidden;"
-                            >
-                              <div
-                                style="color: #FFFFFF; font-size: 10px;"
-                              >
-                                0
-                              </div>
-                            </div>,
-                            "key": 0,
-                            "patchFlag": 4,
-                            "props": {
-                              "class": "siren-sdk-notificationIcon-badge-container",
-                              "key": 0,
-                              "style": {
-                                "height": 0,
-                                "overflow": "hidden",
-                                "width": 0,
-                              },
-                            },
+                            "el": <!--v-if-->,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": null,
                             "ref": null,
                             "scopeId": null,
-                            "shapeFlag": 17,
+                            "shapeFlag": 8,
                             "slotScopeIds": null,
                             "ssContent": null,
                             "ssFallback": null,
@@ -7312,7 +6950,7 @@ VueWrapper {
                             "target": null,
                             "targetAnchor": null,
                             "transition": null,
-                            "type": "div",
+                            "type": Symbol(v-cmt),
                           },
                         ],
                         "component": null,
@@ -7790,10 +7428,10 @@ VueWrapper {
                             "dynamicChildren": null,
                             "dynamicProps": null,
                             "el": ,
-                            "key": "_notification-icon",
+                            "key": "_notificationIcon",
                             "patchFlag": -2,
                             "props": {
-                              "key": "_notification-icon",
+                              "key": "_notificationIcon",
                             },
                             "ref": null,
                             "scopeId": null,
@@ -7813,112 +7451,19 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "children": "v-if",
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "dynamicChildren": [],
                             "dynamicProps": null,
-                            "el": <div
-                              class="siren-sdk-notificationIcon-badge-container"
-                              style="width: 0px; height: 0px; overflow: hidden;"
-                            >
-                              <div
-                                style="color: #FFFFFF; font-size: 10px;"
-                              >
-                                0
-                              </div>
-                            </div>,
-                            "key": 0,
-                            "patchFlag": 4,
-                            "props": {
-                              "class": "siren-sdk-notificationIcon-badge-container",
-                              "key": 0,
-                              "style": {
-                                "height": 0,
-                                "overflow": "hidden",
-                                "width": 0,
-                              },
-                            },
+                            "el": <!--v-if-->,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": null,
                             "ref": null,
                             "scopeId": null,
-                            "shapeFlag": 17,
+                            "shapeFlag": 8,
                             "slotScopeIds": null,
                             "ssContent": null,
                             "ssFallback": null,
@@ -7927,7 +7472,7 @@ VueWrapper {
                             "target": null,
                             "targetAnchor": null,
                             "transition": null,
-                            "type": "div",
+                            "type": Symbol(v-cmt),
                           },
                         ],
                         "dynamicProps": [
@@ -7954,16 +7499,7 @@ VueWrapper {
                             />
                           </svg>
                           
-                          <div
-                            class="siren-sdk-notificationIcon-badge-container"
-                            style="width: 0px; height: 0px; overflow: hidden;"
-                          >
-                            <div
-                              style="color: #FFFFFF; font-size: 10px;"
-                            >
-                              0
-                            </div>
-                          </div>
+                          <!--v-if-->
                         </div>,
                         "key": null,
                         "patchFlag": 8,
@@ -7991,10 +7527,6 @@ VueWrapper {
                         "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/NotificationIcon.vue",
                         "__name": "NotificationIcon",
                         "props": {
-                          "badgeType": {
-                            "required": true,
-                            "type": [Function],
-                          },
                           "darkMode": {
                             "required": true,
                             "type": [Function],
@@ -8004,6 +7536,10 @@ VueWrapper {
                             "type": [Function],
                           },
                           "hideBadge": {
+                            "required": true,
+                            "type": [Function],
+                          },
+                          "isModalOpen": {
                             "required": true,
                             "type": [Function],
                           },
@@ -8026,10 +7562,10 @@ VueWrapper {
                     "dirs": null,
                     "dynamicChildren": null,
                     "dynamicProps": [
-                      "badgeType",
                       "darkMode",
                       "styles",
                       "hideBadge",
+                      "isModalOpen",
                     ],
                     "el": <div
                       class="siren-sdk-notification-icon-container"
@@ -8052,24 +7588,15 @@ VueWrapper {
                         />
                       </svg>
                       
-                      <div
-                        class="siren-sdk-notificationIcon-badge-container"
-                        style="width: 0px; height: 0px; overflow: hidden;"
-                      >
-                        <div
-                          style="color: #FFFFFF; font-size: 10px;"
-                        >
-                          0
-                        </div>
-                      </div>
+                      <!--v-if-->
                     </div>,
                     "key": null,
-                    "patchFlag": 8,
+                    "patchFlag": 1032,
                     "props": {
-                      "badgeType": "default",
                       "darkMode": true,
                       "handleNotification": [Function],
                       "hideBadge": false,
+                      "isModalOpen": false,
                       "styles": {
                         "activeCardMarker": {
                           "backgroundColor": "#2E2D30",
@@ -8079,9 +7606,9 @@ VueWrapper {
                           "backgroundColor": "#FF0000",
                           "borderRadius": "15px",
                           "height": "15px",
-                          "left": "undefinedpx",
                           "minWidth": "15px",
-                          "top": "undefinedpx",
+                          "right": "inherit",
+                          "top": "inherit",
                         },
                         "badgeTextStyle": {
                           "color": "#FFFFFF",
@@ -8093,6 +7620,7 @@ VueWrapper {
                         "cardDescription": {
                           "color": "#FFFFFF",
                           "fontSize": "14px",
+                          "fontWeight": "400",
                         },
                         "cardIconRound": {
                           "backgroundColor": "#344054",
@@ -8130,7 +7658,7 @@ VueWrapper {
                           "backgroundColor": "transparent",
                           "borderBottom": "0.5px solid",
                           "borderColor": "#344054",
-                          "padding": "12px 24px",
+                          "padding": "12px",
                         },
                         "deleteIcon": {
                           "color": "#D0D5DD",
@@ -8158,6 +7686,7 @@ VueWrapper {
                         },
                         "infiniteLoader": {
                           "border": "3px solid #FFFFFF",
+                          "borderBottomColor": "transparent",
                         },
                         "loadMoreButton": {
                           "backgroundColor": "#232326",
@@ -8191,7 +7720,7 @@ VueWrapper {
                     },
                     "ref": null,
                     "scopeId": null,
-                    "shapeFlag": 4,
+                    "shapeFlag": 36,
                     "slotScopeIds": null,
                     "ssContent": null,
                     "ssFallback": null,
@@ -8204,10 +7733,6 @@ VueWrapper {
                       "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/NotificationIcon.vue",
                       "__name": "NotificationIcon",
                       "props": {
-                        "badgeType": {
-                          "required": true,
-                          "type": [Function],
-                        },
                         "darkMode": {
                           "required": true,
                           "type": [Function],
@@ -8217,6 +7742,10 @@ VueWrapper {
                           "type": [Function],
                         },
                         "hideBadge": {
+                          "required": true,
+                          "type": [Function],
+                        },
+                        "isModalOpen": {
                           "required": true,
                           "type": [Function],
                         },
@@ -8255,16 +7784,7 @@ VueWrapper {
                       />
                     </svg>
                     
-                    <div
-                      class="siren-sdk-notificationIcon-badge-container"
-                      style="width: 0px; height: 0px; overflow: hidden;"
-                    >
-                      <div
-                        style="color: #FFFFFF; font-size: 10px;"
-                      >
-                        0
-                      </div>
-                    </div>
+                    <!--v-if-->
                   </div>
                 </div>,
                 "key": 0,
@@ -8336,18 +7856,20 @@ VueWrapper {
                     "__v_skip": true,
                     "anchor": null,
                     "appContext": null,
-                    "children": null,
+                    "children": {
+                      "notificationIcon": [Function],
+                    },
                     "component": {
                       "a": null,
                       "accessCache": {
                         "@@__IMMUTABLE_ITERABLE__@@": 0,
                         "@@__IMMUTABLE_RECORD__@@": 0,
                         "_isMockFunction": 0,
-                        "badgeType": 3,
                         "darkMode": 3,
                         "handleNotification": 3,
                         "hasAttribute": 0,
                         "hideBadge": 3,
+                        "isModalOpen": 3,
                         "nodeType": 0,
                         "styles": 3,
                         "tagName": 0,
@@ -8401,10 +7923,10 @@ VueWrapper {
                       "c": null,
                       "components": null,
                       "ctx": {
-                        "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
                         "hideBadge": false,
+                        "isModalOpen": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -8414,9 +7936,9 @@ VueWrapper {
                             "backgroundColor": "#FF0000",
                             "borderRadius": "15px",
                             "height": "15px",
-                            "left": "undefinedpx",
                             "minWidth": "15px",
-                            "top": "undefinedpx",
+                            "right": "inherit",
+                            "top": "inherit",
                           },
                           "badgeTextStyle": {
                             "color": "#FFFFFF",
@@ -8428,6 +7950,7 @@ VueWrapper {
                           "cardDescription": {
                             "color": "#FFFFFF",
                             "fontSize": "14px",
+                            "fontWeight": "400",
                           },
                           "cardIconRound": {
                             "backgroundColor": "#344054",
@@ -8465,7 +7988,7 @@ VueWrapper {
                             "backgroundColor": "transparent",
                             "borderBottom": "0.5px solid",
                             "borderColor": "#344054",
-                            "padding": "12px 24px",
+                            "padding": "12px",
                           },
                           "deleteIcon": {
                             "color": "#D0D5DD",
@@ -8493,6 +8016,7 @@ VueWrapper {
                           },
                           "infiniteLoader": {
                             "border": "3px solid #FFFFFF",
+                            "borderBottomColor": "transparent",
                           },
                           "loadMoreButton": {
                             "backgroundColor": "#232326",
@@ -8527,11 +8051,6 @@ VueWrapper {
                       "da": null,
                       "data": {},
                       "devtoolsRawSetupState": {
-                        "BadgeType": {
-                          "DEFAULT": "default",
-                          "DOT": "dot",
-                          "NONE": "none",
-                        },
                         "BellIcon": {
                           "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/BellIcon.vue",
                           "__name": "BellIcon",
@@ -8594,14 +8113,15 @@ VueWrapper {
                             "windowShadowColor": "#D0D5DD",
                           },
                         },
+                        "MAXIMUM_UNVIEWED_COUNT_SHOWN": 99,
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
                         "props": {
-                          "badgeType": "default",
                           "darkMode": true,
                           "handleNotification": [Function],
                           "hideBadge": false,
+                          "isModalOpen": false,
                           "styles": {
                             "activeCardMarker": {
                               "backgroundColor": "#2E2D30",
@@ -8611,9 +8131,9 @@ VueWrapper {
                               "backgroundColor": "#FF0000",
                               "borderRadius": "15px",
                               "height": "15px",
-                              "left": "undefinedpx",
                               "minWidth": "15px",
-                              "top": "undefinedpx",
+                              "right": "inherit",
+                              "top": "inherit",
                             },
                             "badgeTextStyle": {
                               "color": "#FFFFFF",
@@ -8625,6 +8145,7 @@ VueWrapper {
                             "cardDescription": {
                               "color": "#FFFFFF",
                               "fontSize": "14px",
+                              "fontWeight": "400",
                             },
                             "cardIconRound": {
                               "backgroundColor": "#344054",
@@ -8662,7 +8183,7 @@ VueWrapper {
                               "backgroundColor": "transparent",
                               "borderBottom": "0.5px solid",
                               "borderColor": "#344054",
-                              "padding": "12px 24px",
+                              "padding": "12px",
                             },
                             "deleteIcon": {
                               "color": "#D0D5DD",
@@ -8690,6 +8211,7 @@ VueWrapper {
                             },
                             "infiniteLoader": {
                               "border": "3px solid #FFFFFF",
+                              "borderBottomColor": "transparent",
                             },
                             "loadMoreButton": {
                               "backgroundColor": "#232326",
@@ -8822,10 +8344,10 @@ VueWrapper {
                       "next": null,
                       "parent": [Circular],
                       "props": {
-                        "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
                         "hideBadge": false,
+                        "isModalOpen": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -8835,9 +8357,9 @@ VueWrapper {
                             "backgroundColor": "#FF0000",
                             "borderRadius": "15px",
                             "height": "15px",
-                            "left": "undefinedpx",
                             "minWidth": "15px",
-                            "top": "undefinedpx",
+                            "right": "inherit",
+                            "top": "inherit",
                           },
                           "badgeTextStyle": {
                             "color": "#FFFFFF",
@@ -8849,6 +8371,7 @@ VueWrapper {
                           "cardDescription": {
                             "color": "#FFFFFF",
                             "fontSize": "14px",
+                            "fontWeight": "400",
                           },
                           "cardIconRound": {
                             "backgroundColor": "#344054",
@@ -8886,7 +8409,7 @@ VueWrapper {
                             "backgroundColor": "transparent",
                             "borderBottom": "0.5px solid",
                             "borderColor": "#344054",
-                            "padding": "12px 24px",
+                            "padding": "12px",
                           },
                           "deleteIcon": {
                             "color": "#D0D5DD",
@@ -8914,6 +8437,7 @@ VueWrapper {
                           },
                           "infiniteLoader": {
                             "border": "3px solid #FFFFFF",
+                            "borderBottomColor": "transparent",
                           },
                           "loadMoreButton": {
                             "backgroundColor": "#232326",
@@ -8948,12 +8472,6 @@ VueWrapper {
                       "propsDefaults": {},
                       "propsOptions": [
                         {
-                          "badgeType": {
-                            "0": false,
-                            "1": true,
-                            "required": true,
-                            "type": [Function],
-                          },
                           "darkMode": {
                             "0": true,
                             "1": true,
@@ -8972,6 +8490,12 @@ VueWrapper {
                             "required": true,
                             "type": [Function],
                           },
+                          "isModalOpen": {
+                            "0": true,
+                            "1": true,
+                            "required": true,
+                            "type": [Function],
+                          },
                           "styles": {
                             "0": false,
                             "1": true,
@@ -8982,14 +8506,15 @@ VueWrapper {
                         [
                           "darkMode",
                           "hideBadge",
+                          "isModalOpen",
                         ],
                       ],
                       "provides": {},
                       "proxy": {
-                        "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
                         "hideBadge": false,
+                        "isModalOpen": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -8999,9 +8524,9 @@ VueWrapper {
                             "backgroundColor": "#FF0000",
                             "borderRadius": "15px",
                             "height": "15px",
-                            "left": "undefinedpx",
                             "minWidth": "15px",
-                            "top": "undefinedpx",
+                            "right": "inherit",
+                            "top": "inherit",
                           },
                           "badgeTextStyle": {
                             "color": "#FFFFFF",
@@ -9013,6 +8538,7 @@ VueWrapper {
                           "cardDescription": {
                             "color": "#FFFFFF",
                             "fontSize": "14px",
+                            "fontWeight": "400",
                           },
                           "cardIconRound": {
                             "backgroundColor": "#344054",
@@ -9050,7 +8576,7 @@ VueWrapper {
                             "backgroundColor": "transparent",
                             "borderBottom": "0.5px solid",
                             "borderColor": "#344054",
-                            "padding": "12px 24px",
+                            "padding": "12px",
                           },
                           "deleteIcon": {
                             "color": "#D0D5DD",
@@ -9078,6 +8604,7 @@ VueWrapper {
                           },
                           "infiniteLoader": {
                             "border": "3px solid #FFFFFF",
+                            "borderBottomColor": "transparent",
                           },
                           "loadMoreButton": {
                             "backgroundColor": "#232326",
@@ -9178,14 +8705,11 @@ VueWrapper {
                         "attrs": {},
                         "emit": [Function],
                         "expose": [Function],
-                        "slots": {},
+                        "slots": {
+                          "notificationIcon": [Function],
+                        },
                       },
                       "setupState": {
-                        "BadgeType": {
-                          "DEFAULT": "default",
-                          "DOT": "dot",
-                          "NONE": "none",
-                        },
                         "BellIcon": {
                           "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/BellIcon.vue",
                           "__name": "BellIcon",
@@ -9248,14 +8772,15 @@ VueWrapper {
                             "windowShadowColor": "#D0D5DD",
                           },
                         },
+                        "MAXIMUM_UNVIEWED_COUNT_SHOWN": 99,
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
                         "props": {
-                          "badgeType": "default",
                           "darkMode": true,
                           "handleNotification": [Function],
                           "hideBadge": false,
+                          "isModalOpen": false,
                           "styles": {
                             "activeCardMarker": {
                               "backgroundColor": "#2E2D30",
@@ -9265,9 +8790,9 @@ VueWrapper {
                               "backgroundColor": "#FF0000",
                               "borderRadius": "15px",
                               "height": "15px",
-                              "left": "undefinedpx",
                               "minWidth": "15px",
-                              "top": "undefinedpx",
+                              "right": "inherit",
+                              "top": "inherit",
                             },
                             "badgeTextStyle": {
                               "color": "#FFFFFF",
@@ -9279,6 +8804,7 @@ VueWrapper {
                             "cardDescription": {
                               "color": "#FFFFFF",
                               "fontSize": "14px",
+                              "fontWeight": "400",
                             },
                             "cardIconRound": {
                               "backgroundColor": "#344054",
@@ -9316,7 +8842,7 @@ VueWrapper {
                               "backgroundColor": "transparent",
                               "borderBottom": "0.5px solid",
                               "borderColor": "#344054",
-                              "padding": "12px 24px",
+                              "padding": "12px",
                             },
                             "deleteIcon": {
                               "color": "#D0D5DD",
@@ -9344,6 +8870,7 @@ VueWrapper {
                             },
                             "infiniteLoader": {
                               "border": "3px solid #FFFFFF",
+                              "borderBottomColor": "transparent",
                             },
                             "loadMoreButton": {
                               "backgroundColor": "#232326",
@@ -9379,8 +8906,12 @@ VueWrapper {
                         "startRealTimeDataFetch": [Function],
                         "unViewedCount": 0,
                       },
-                      "slots": {},
-                      "slotsProxy": {},
+                      "slots": {
+                        "notificationIcon": [Function],
+                      },
+                      "slotsProxy": {
+                        "notificationIcon": [Function],
+                      },
                       "sp": null,
                       "subTree": {
                         "__v_isVNode": true,
@@ -9859,10 +9390,10 @@ VueWrapper {
                             "dynamicChildren": null,
                             "dynamicProps": null,
                             "el": ,
-                            "key": "_notification-icon",
+                            "key": "_notificationIcon",
                             "patchFlag": -2,
                             "props": {
-                              "key": "_notification-icon",
+                              "key": "_notificationIcon",
                             },
                             "ref": null,
                             "scopeId": null,
@@ -9882,112 +9413,19 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "children": "v-if",
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "dynamicChildren": [],
                             "dynamicProps": null,
-                            "el": <div
-                              class="siren-sdk-notificationIcon-badge-container"
-                              style="width: 0px; height: 0px; overflow: hidden;"
-                            >
-                              <div
-                                style="color: #FFFFFF; font-size: 10px;"
-                              >
-                                0
-                              </div>
-                            </div>,
-                            "key": 0,
-                            "patchFlag": 4,
-                            "props": {
-                              "class": "siren-sdk-notificationIcon-badge-container",
-                              "key": 0,
-                              "style": {
-                                "height": 0,
-                                "overflow": "hidden",
-                                "width": 0,
-                              },
-                            },
+                            "el": <!--v-if-->,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": null,
                             "ref": null,
                             "scopeId": null,
-                            "shapeFlag": 17,
+                            "shapeFlag": 8,
                             "slotScopeIds": null,
                             "ssContent": null,
                             "ssFallback": null,
@@ -9996,7 +9434,7 @@ VueWrapper {
                             "target": null,
                             "targetAnchor": null,
                             "transition": null,
-                            "type": "div",
+                            "type": Symbol(v-cmt),
                           },
                         ],
                         "component": null,
@@ -10474,10 +9912,10 @@ VueWrapper {
                             "dynamicChildren": null,
                             "dynamicProps": null,
                             "el": ,
-                            "key": "_notification-icon",
+                            "key": "_notificationIcon",
                             "patchFlag": -2,
                             "props": {
-                              "key": "_notification-icon",
+                              "key": "_notificationIcon",
                             },
                             "ref": null,
                             "scopeId": null,
@@ -10497,112 +9935,19 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "children": "v-if",
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "dynamicChildren": [],
                             "dynamicProps": null,
-                            "el": <div
-                              class="siren-sdk-notificationIcon-badge-container"
-                              style="width: 0px; height: 0px; overflow: hidden;"
-                            >
-                              <div
-                                style="color: #FFFFFF; font-size: 10px;"
-                              >
-                                0
-                              </div>
-                            </div>,
-                            "key": 0,
-                            "patchFlag": 4,
-                            "props": {
-                              "class": "siren-sdk-notificationIcon-badge-container",
-                              "key": 0,
-                              "style": {
-                                "height": 0,
-                                "overflow": "hidden",
-                                "width": 0,
-                              },
-                            },
+                            "el": <!--v-if-->,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": null,
                             "ref": null,
                             "scopeId": null,
-                            "shapeFlag": 17,
+                            "shapeFlag": 8,
                             "slotScopeIds": null,
                             "ssContent": null,
                             "ssFallback": null,
@@ -10611,7 +9956,7 @@ VueWrapper {
                             "target": null,
                             "targetAnchor": null,
                             "transition": null,
-                            "type": "div",
+                            "type": Symbol(v-cmt),
                           },
                         ],
                         "dynamicProps": [
@@ -10638,16 +9983,7 @@ VueWrapper {
                             />
                           </svg>
                           
-                          <div
-                            class="siren-sdk-notificationIcon-badge-container"
-                            style="width: 0px; height: 0px; overflow: hidden;"
-                          >
-                            <div
-                              style="color: #FFFFFF; font-size: 10px;"
-                            >
-                              0
-                            </div>
-                          </div>
+                          <!--v-if-->
                         </div>,
                         "key": null,
                         "patchFlag": 8,
@@ -10675,10 +10011,6 @@ VueWrapper {
                         "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/NotificationIcon.vue",
                         "__name": "NotificationIcon",
                         "props": {
-                          "badgeType": {
-                            "required": true,
-                            "type": [Function],
-                          },
                           "darkMode": {
                             "required": true,
                             "type": [Function],
@@ -10688,6 +10020,10 @@ VueWrapper {
                             "type": [Function],
                           },
                           "hideBadge": {
+                            "required": true,
+                            "type": [Function],
+                          },
+                          "isModalOpen": {
                             "required": true,
                             "type": [Function],
                           },
@@ -10710,10 +10046,10 @@ VueWrapper {
                     "dirs": null,
                     "dynamicChildren": null,
                     "dynamicProps": [
-                      "badgeType",
                       "darkMode",
                       "styles",
                       "hideBadge",
+                      "isModalOpen",
                     ],
                     "el": <div
                       class="siren-sdk-notification-icon-container"
@@ -10736,24 +10072,15 @@ VueWrapper {
                         />
                       </svg>
                       
-                      <div
-                        class="siren-sdk-notificationIcon-badge-container"
-                        style="width: 0px; height: 0px; overflow: hidden;"
-                      >
-                        <div
-                          style="color: #FFFFFF; font-size: 10px;"
-                        >
-                          0
-                        </div>
-                      </div>
+                      <!--v-if-->
                     </div>,
                     "key": null,
-                    "patchFlag": 8,
+                    "patchFlag": 1032,
                     "props": {
-                      "badgeType": "default",
                       "darkMode": true,
                       "handleNotification": [Function],
                       "hideBadge": false,
+                      "isModalOpen": false,
                       "styles": {
                         "activeCardMarker": {
                           "backgroundColor": "#2E2D30",
@@ -10763,9 +10090,9 @@ VueWrapper {
                           "backgroundColor": "#FF0000",
                           "borderRadius": "15px",
                           "height": "15px",
-                          "left": "undefinedpx",
                           "minWidth": "15px",
-                          "top": "undefinedpx",
+                          "right": "inherit",
+                          "top": "inherit",
                         },
                         "badgeTextStyle": {
                           "color": "#FFFFFF",
@@ -10777,6 +10104,7 @@ VueWrapper {
                         "cardDescription": {
                           "color": "#FFFFFF",
                           "fontSize": "14px",
+                          "fontWeight": "400",
                         },
                         "cardIconRound": {
                           "backgroundColor": "#344054",
@@ -10814,7 +10142,7 @@ VueWrapper {
                           "backgroundColor": "transparent",
                           "borderBottom": "0.5px solid",
                           "borderColor": "#344054",
-                          "padding": "12px 24px",
+                          "padding": "12px",
                         },
                         "deleteIcon": {
                           "color": "#D0D5DD",
@@ -10842,6 +10170,7 @@ VueWrapper {
                         },
                         "infiniteLoader": {
                           "border": "3px solid #FFFFFF",
+                          "borderBottomColor": "transparent",
                         },
                         "loadMoreButton": {
                           "backgroundColor": "#232326",
@@ -10875,7 +10204,7 @@ VueWrapper {
                     },
                     "ref": null,
                     "scopeId": null,
-                    "shapeFlag": 4,
+                    "shapeFlag": 36,
                     "slotScopeIds": null,
                     "ssContent": null,
                     "ssFallback": null,
@@ -10888,10 +10217,6 @@ VueWrapper {
                       "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/NotificationIcon.vue",
                       "__name": "NotificationIcon",
                       "props": {
-                        "badgeType": {
-                          "required": true,
-                          "type": [Function],
-                        },
                         "darkMode": {
                           "required": true,
                           "type": [Function],
@@ -10901,6 +10226,10 @@ VueWrapper {
                           "type": [Function],
                         },
                         "hideBadge": {
+                          "required": true,
+                          "type": [Function],
+                        },
+                        "isModalOpen": {
                           "required": true,
                           "type": [Function],
                         },
@@ -10923,18 +10252,20 @@ VueWrapper {
                     "__v_skip": true,
                     "anchor": null,
                     "appContext": null,
-                    "children": null,
+                    "children": {
+                      "notificationIcon": [Function],
+                    },
                     "component": {
                       "a": null,
                       "accessCache": {
                         "@@__IMMUTABLE_ITERABLE__@@": 0,
                         "@@__IMMUTABLE_RECORD__@@": 0,
                         "_isMockFunction": 0,
-                        "badgeType": 3,
                         "darkMode": 3,
                         "handleNotification": 3,
                         "hasAttribute": 0,
                         "hideBadge": 3,
+                        "isModalOpen": 3,
                         "nodeType": 0,
                         "styles": 3,
                         "tagName": 0,
@@ -10988,10 +10319,10 @@ VueWrapper {
                       "c": null,
                       "components": null,
                       "ctx": {
-                        "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
                         "hideBadge": false,
+                        "isModalOpen": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -11001,9 +10332,9 @@ VueWrapper {
                             "backgroundColor": "#FF0000",
                             "borderRadius": "15px",
                             "height": "15px",
-                            "left": "undefinedpx",
                             "minWidth": "15px",
-                            "top": "undefinedpx",
+                            "right": "inherit",
+                            "top": "inherit",
                           },
                           "badgeTextStyle": {
                             "color": "#FFFFFF",
@@ -11015,6 +10346,7 @@ VueWrapper {
                           "cardDescription": {
                             "color": "#FFFFFF",
                             "fontSize": "14px",
+                            "fontWeight": "400",
                           },
                           "cardIconRound": {
                             "backgroundColor": "#344054",
@@ -11052,7 +10384,7 @@ VueWrapper {
                             "backgroundColor": "transparent",
                             "borderBottom": "0.5px solid",
                             "borderColor": "#344054",
-                            "padding": "12px 24px",
+                            "padding": "12px",
                           },
                           "deleteIcon": {
                             "color": "#D0D5DD",
@@ -11080,6 +10412,7 @@ VueWrapper {
                           },
                           "infiniteLoader": {
                             "border": "3px solid #FFFFFF",
+                            "borderBottomColor": "transparent",
                           },
                           "loadMoreButton": {
                             "backgroundColor": "#232326",
@@ -11114,11 +10447,6 @@ VueWrapper {
                       "da": null,
                       "data": {},
                       "devtoolsRawSetupState": {
-                        "BadgeType": {
-                          "DEFAULT": "default",
-                          "DOT": "dot",
-                          "NONE": "none",
-                        },
                         "BellIcon": {
                           "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/BellIcon.vue",
                           "__name": "BellIcon",
@@ -11181,14 +10509,15 @@ VueWrapper {
                             "windowShadowColor": "#D0D5DD",
                           },
                         },
+                        "MAXIMUM_UNVIEWED_COUNT_SHOWN": 99,
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
                         "props": {
-                          "badgeType": "default",
                           "darkMode": true,
                           "handleNotification": [Function],
                           "hideBadge": false,
+                          "isModalOpen": false,
                           "styles": {
                             "activeCardMarker": {
                               "backgroundColor": "#2E2D30",
@@ -11198,9 +10527,9 @@ VueWrapper {
                               "backgroundColor": "#FF0000",
                               "borderRadius": "15px",
                               "height": "15px",
-                              "left": "undefinedpx",
                               "minWidth": "15px",
-                              "top": "undefinedpx",
+                              "right": "inherit",
+                              "top": "inherit",
                             },
                             "badgeTextStyle": {
                               "color": "#FFFFFF",
@@ -11212,6 +10541,7 @@ VueWrapper {
                             "cardDescription": {
                               "color": "#FFFFFF",
                               "fontSize": "14px",
+                              "fontWeight": "400",
                             },
                             "cardIconRound": {
                               "backgroundColor": "#344054",
@@ -11249,7 +10579,7 @@ VueWrapper {
                               "backgroundColor": "transparent",
                               "borderBottom": "0.5px solid",
                               "borderColor": "#344054",
-                              "padding": "12px 24px",
+                              "padding": "12px",
                             },
                             "deleteIcon": {
                               "color": "#D0D5DD",
@@ -11277,6 +10607,7 @@ VueWrapper {
                             },
                             "infiniteLoader": {
                               "border": "3px solid #FFFFFF",
+                              "borderBottomColor": "transparent",
                             },
                             "loadMoreButton": {
                               "backgroundColor": "#232326",
@@ -11409,10 +10740,10 @@ VueWrapper {
                       "next": null,
                       "parent": [Circular],
                       "props": {
-                        "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
                         "hideBadge": false,
+                        "isModalOpen": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -11422,9 +10753,9 @@ VueWrapper {
                             "backgroundColor": "#FF0000",
                             "borderRadius": "15px",
                             "height": "15px",
-                            "left": "undefinedpx",
                             "minWidth": "15px",
-                            "top": "undefinedpx",
+                            "right": "inherit",
+                            "top": "inherit",
                           },
                           "badgeTextStyle": {
                             "color": "#FFFFFF",
@@ -11436,6 +10767,7 @@ VueWrapper {
                           "cardDescription": {
                             "color": "#FFFFFF",
                             "fontSize": "14px",
+                            "fontWeight": "400",
                           },
                           "cardIconRound": {
                             "backgroundColor": "#344054",
@@ -11473,7 +10805,7 @@ VueWrapper {
                             "backgroundColor": "transparent",
                             "borderBottom": "0.5px solid",
                             "borderColor": "#344054",
-                            "padding": "12px 24px",
+                            "padding": "12px",
                           },
                           "deleteIcon": {
                             "color": "#D0D5DD",
@@ -11501,6 +10833,7 @@ VueWrapper {
                           },
                           "infiniteLoader": {
                             "border": "3px solid #FFFFFF",
+                            "borderBottomColor": "transparent",
                           },
                           "loadMoreButton": {
                             "backgroundColor": "#232326",
@@ -11535,12 +10868,6 @@ VueWrapper {
                       "propsDefaults": {},
                       "propsOptions": [
                         {
-                          "badgeType": {
-                            "0": false,
-                            "1": true,
-                            "required": true,
-                            "type": [Function],
-                          },
                           "darkMode": {
                             "0": true,
                             "1": true,
@@ -11559,6 +10886,12 @@ VueWrapper {
                             "required": true,
                             "type": [Function],
                           },
+                          "isModalOpen": {
+                            "0": true,
+                            "1": true,
+                            "required": true,
+                            "type": [Function],
+                          },
                           "styles": {
                             "0": false,
                             "1": true,
@@ -11569,14 +10902,15 @@ VueWrapper {
                         [
                           "darkMode",
                           "hideBadge",
+                          "isModalOpen",
                         ],
                       ],
                       "provides": {},
                       "proxy": {
-                        "badgeType": "default",
                         "darkMode": true,
                         "handleNotification": [Function],
                         "hideBadge": false,
+                        "isModalOpen": false,
                         "styles": {
                           "activeCardMarker": {
                             "backgroundColor": "#2E2D30",
@@ -11586,9 +10920,9 @@ VueWrapper {
                             "backgroundColor": "#FF0000",
                             "borderRadius": "15px",
                             "height": "15px",
-                            "left": "undefinedpx",
                             "minWidth": "15px",
-                            "top": "undefinedpx",
+                            "right": "inherit",
+                            "top": "inherit",
                           },
                           "badgeTextStyle": {
                             "color": "#FFFFFF",
@@ -11600,6 +10934,7 @@ VueWrapper {
                           "cardDescription": {
                             "color": "#FFFFFF",
                             "fontSize": "14px",
+                            "fontWeight": "400",
                           },
                           "cardIconRound": {
                             "backgroundColor": "#344054",
@@ -11637,7 +10972,7 @@ VueWrapper {
                             "backgroundColor": "transparent",
                             "borderBottom": "0.5px solid",
                             "borderColor": "#344054",
-                            "padding": "12px 24px",
+                            "padding": "12px",
                           },
                           "deleteIcon": {
                             "color": "#D0D5DD",
@@ -11665,6 +11000,7 @@ VueWrapper {
                           },
                           "infiniteLoader": {
                             "border": "3px solid #FFFFFF",
+                            "borderBottomColor": "transparent",
                           },
                           "loadMoreButton": {
                             "backgroundColor": "#232326",
@@ -11765,14 +11101,11 @@ VueWrapper {
                         "attrs": {},
                         "emit": [Function],
                         "expose": [Function],
-                        "slots": {},
+                        "slots": {
+                          "notificationIcon": [Function],
+                        },
                       },
                       "setupState": {
-                        "BadgeType": {
-                          "DEFAULT": "default",
-                          "DOT": "dot",
-                          "NONE": "none",
-                        },
                         "BellIcon": {
                           "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/BellIcon.vue",
                           "__name": "BellIcon",
@@ -11835,14 +11168,15 @@ VueWrapper {
                             "windowShadowColor": "#D0D5DD",
                           },
                         },
+                        "MAXIMUM_UNVIEWED_COUNT_SHOWN": 99,
                         "cleanUp": [Function],
                         "getUnViewedCount": [Function],
                         "notificationCountSubscriber": [Function],
                         "props": {
-                          "badgeType": "default",
                           "darkMode": true,
                           "handleNotification": [Function],
                           "hideBadge": false,
+                          "isModalOpen": false,
                           "styles": {
                             "activeCardMarker": {
                               "backgroundColor": "#2E2D30",
@@ -11852,9 +11186,9 @@ VueWrapper {
                               "backgroundColor": "#FF0000",
                               "borderRadius": "15px",
                               "height": "15px",
-                              "left": "undefinedpx",
                               "minWidth": "15px",
-                              "top": "undefinedpx",
+                              "right": "inherit",
+                              "top": "inherit",
                             },
                             "badgeTextStyle": {
                               "color": "#FFFFFF",
@@ -11866,6 +11200,7 @@ VueWrapper {
                             "cardDescription": {
                               "color": "#FFFFFF",
                               "fontSize": "14px",
+                              "fontWeight": "400",
                             },
                             "cardIconRound": {
                               "backgroundColor": "#344054",
@@ -11903,7 +11238,7 @@ VueWrapper {
                               "backgroundColor": "transparent",
                               "borderBottom": "0.5px solid",
                               "borderColor": "#344054",
-                              "padding": "12px 24px",
+                              "padding": "12px",
                             },
                             "deleteIcon": {
                               "color": "#D0D5DD",
@@ -11931,6 +11266,7 @@ VueWrapper {
                             },
                             "infiniteLoader": {
                               "border": "3px solid #FFFFFF",
+                              "borderBottomColor": "transparent",
                             },
                             "loadMoreButton": {
                               "backgroundColor": "#232326",
@@ -11966,8 +11302,12 @@ VueWrapper {
                         "startRealTimeDataFetch": [Function],
                         "unViewedCount": 0,
                       },
-                      "slots": {},
-                      "slotsProxy": {},
+                      "slots": {
+                        "notificationIcon": [Function],
+                      },
+                      "slotsProxy": {
+                        "notificationIcon": [Function],
+                      },
                       "sp": null,
                       "subTree": {
                         "__v_isVNode": true,
@@ -12446,10 +11786,10 @@ VueWrapper {
                             "dynamicChildren": null,
                             "dynamicProps": null,
                             "el": ,
-                            "key": "_notification-icon",
+                            "key": "_notificationIcon",
                             "patchFlag": -2,
                             "props": {
-                              "key": "_notification-icon",
+                              "key": "_notificationIcon",
                             },
                             "ref": null,
                             "scopeId": null,
@@ -12469,112 +11809,19 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "children": "v-if",
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "dynamicChildren": [],
                             "dynamicProps": null,
-                            "el": <div
-                              class="siren-sdk-notificationIcon-badge-container"
-                              style="width: 0px; height: 0px; overflow: hidden;"
-                            >
-                              <div
-                                style="color: #FFFFFF; font-size: 10px;"
-                              >
-                                0
-                              </div>
-                            </div>,
-                            "key": 0,
-                            "patchFlag": 4,
-                            "props": {
-                              "class": "siren-sdk-notificationIcon-badge-container",
-                              "key": 0,
-                              "style": {
-                                "height": 0,
-                                "overflow": "hidden",
-                                "width": 0,
-                              },
-                            },
+                            "el": <!--v-if-->,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": null,
                             "ref": null,
                             "scopeId": null,
-                            "shapeFlag": 17,
+                            "shapeFlag": 8,
                             "slotScopeIds": null,
                             "ssContent": null,
                             "ssFallback": null,
@@ -12583,7 +11830,7 @@ VueWrapper {
                             "target": null,
                             "targetAnchor": null,
                             "transition": null,
-                            "type": "div",
+                            "type": Symbol(v-cmt),
                           },
                         ],
                         "component": null,
@@ -13061,10 +12308,10 @@ VueWrapper {
                             "dynamicChildren": null,
                             "dynamicProps": null,
                             "el": ,
-                            "key": "_notification-icon",
+                            "key": "_notificationIcon",
                             "patchFlag": -2,
                             "props": {
-                              "key": "_notification-icon",
+                              "key": "_notificationIcon",
                             },
                             "ref": null,
                             "scopeId": null,
@@ -13084,112 +12331,19 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "children": "v-if",
                             "component": null,
                             "ctx": [Circular],
                             "dirs": null,
-                            "dynamicChildren": [
-                              {
-                                "__v_isVNode": true,
-                                "__v_skip": true,
-                                "anchor": null,
-                                "appContext": null,
-                                "children": "0",
-                                "component": null,
-                                "ctx": [Circular],
-                                "dirs": null,
-                                "dynamicChildren": null,
-                                "dynamicProps": null,
-                                "el": <div
-                                  style="color: #FFFFFF; font-size: 10px;"
-                                >
-                                  0
-                                </div>,
-                                "key": null,
-                                "patchFlag": 5,
-                                "props": {
-                                  "style": {
-                                    "color": "#FFFFFF",
-                                    "fontSize": "10px",
-                                  },
-                                },
-                                "ref": null,
-                                "scopeId": null,
-                                "shapeFlag": 9,
-                                "slotScopeIds": null,
-                                "ssContent": null,
-                                "ssFallback": null,
-                                "staticCount": 0,
-                                "suspense": null,
-                                "target": null,
-                                "targetAnchor": null,
-                                "transition": null,
-                                "type": "div",
-                              },
-                            ],
+                            "dynamicChildren": [],
                             "dynamicProps": null,
-                            "el": <div
-                              class="siren-sdk-notificationIcon-badge-container"
-                              style="width: 0px; height: 0px; overflow: hidden;"
-                            >
-                              <div
-                                style="color: #FFFFFF; font-size: 10px;"
-                              >
-                                0
-                              </div>
-                            </div>,
-                            "key": 0,
-                            "patchFlag": 4,
-                            "props": {
-                              "class": "siren-sdk-notificationIcon-badge-container",
-                              "key": 0,
-                              "style": {
-                                "height": 0,
-                                "overflow": "hidden",
-                                "width": 0,
-                              },
-                            },
+                            "el": <!--v-if-->,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": null,
                             "ref": null,
                             "scopeId": null,
-                            "shapeFlag": 17,
+                            "shapeFlag": 8,
                             "slotScopeIds": null,
                             "ssContent": null,
                             "ssFallback": null,
@@ -13198,7 +12352,7 @@ VueWrapper {
                             "target": null,
                             "targetAnchor": null,
                             "transition": null,
-                            "type": "div",
+                            "type": Symbol(v-cmt),
                           },
                         ],
                         "dynamicProps": [
@@ -13225,16 +12379,7 @@ VueWrapper {
                             />
                           </svg>
                           
-                          <div
-                            class="siren-sdk-notificationIcon-badge-container"
-                            style="width: 0px; height: 0px; overflow: hidden;"
-                          >
-                            <div
-                              style="color: #FFFFFF; font-size: 10px;"
-                            >
-                              0
-                            </div>
-                          </div>
+                          <!--v-if-->
                         </div>,
                         "key": null,
                         "patchFlag": 8,
@@ -13262,10 +12407,6 @@ VueWrapper {
                         "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/NotificationIcon.vue",
                         "__name": "NotificationIcon",
                         "props": {
-                          "badgeType": {
-                            "required": true,
-                            "type": [Function],
-                          },
                           "darkMode": {
                             "required": true,
                             "type": [Function],
@@ -13275,6 +12416,10 @@ VueWrapper {
                             "type": [Function],
                           },
                           "hideBadge": {
+                            "required": true,
+                            "type": [Function],
+                          },
+                          "isModalOpen": {
                             "required": true,
                             "type": [Function],
                           },
@@ -13297,10 +12442,10 @@ VueWrapper {
                     "dirs": null,
                     "dynamicChildren": null,
                     "dynamicProps": [
-                      "badgeType",
                       "darkMode",
                       "styles",
                       "hideBadge",
+                      "isModalOpen",
                     ],
                     "el": <div
                       class="siren-sdk-notification-icon-container"
@@ -13323,24 +12468,15 @@ VueWrapper {
                         />
                       </svg>
                       
-                      <div
-                        class="siren-sdk-notificationIcon-badge-container"
-                        style="width: 0px; height: 0px; overflow: hidden;"
-                      >
-                        <div
-                          style="color: #FFFFFF; font-size: 10px;"
-                        >
-                          0
-                        </div>
-                      </div>
+                      <!--v-if-->
                     </div>,
                     "key": null,
-                    "patchFlag": 8,
+                    "patchFlag": 1032,
                     "props": {
-                      "badgeType": "default",
                       "darkMode": true,
                       "handleNotification": [Function],
                       "hideBadge": false,
+                      "isModalOpen": false,
                       "styles": {
                         "activeCardMarker": {
                           "backgroundColor": "#2E2D30",
@@ -13350,9 +12486,9 @@ VueWrapper {
                           "backgroundColor": "#FF0000",
                           "borderRadius": "15px",
                           "height": "15px",
-                          "left": "undefinedpx",
                           "minWidth": "15px",
-                          "top": "undefinedpx",
+                          "right": "inherit",
+                          "top": "inherit",
                         },
                         "badgeTextStyle": {
                           "color": "#FFFFFF",
@@ -13364,6 +12500,7 @@ VueWrapper {
                         "cardDescription": {
                           "color": "#FFFFFF",
                           "fontSize": "14px",
+                          "fontWeight": "400",
                         },
                         "cardIconRound": {
                           "backgroundColor": "#344054",
@@ -13401,7 +12538,7 @@ VueWrapper {
                           "backgroundColor": "transparent",
                           "borderBottom": "0.5px solid",
                           "borderColor": "#344054",
-                          "padding": "12px 24px",
+                          "padding": "12px",
                         },
                         "deleteIcon": {
                           "color": "#D0D5DD",
@@ -13429,6 +12566,7 @@ VueWrapper {
                         },
                         "infiniteLoader": {
                           "border": "3px solid #FFFFFF",
+                          "borderBottomColor": "transparent",
                         },
                         "loadMoreButton": {
                           "backgroundColor": "#232326",
@@ -13462,7 +12600,7 @@ VueWrapper {
                     },
                     "ref": null,
                     "scopeId": null,
-                    "shapeFlag": 4,
+                    "shapeFlag": 36,
                     "slotScopeIds": null,
                     "ssContent": null,
                     "ssFallback": null,
@@ -13475,10 +12613,6 @@ VueWrapper {
                       "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/NotificationIcon.vue",
                       "__name": "NotificationIcon",
                       "props": {
-                        "badgeType": {
-                          "required": true,
-                          "type": [Function],
-                        },
                         "darkMode": {
                           "required": true,
                           "type": [Function],
@@ -13488,6 +12622,10 @@ VueWrapper {
                           "type": [Function],
                         },
                         "hideBadge": {
+                          "required": true,
+                          "type": [Function],
+                        },
+                        "isModalOpen": {
                           "required": true,
                           "type": [Function],
                         },
@@ -13526,16 +12664,7 @@ VueWrapper {
                       />
                     </svg>
                     
-                    <div
-                      class="siren-sdk-notificationIcon-badge-container"
-                      style="width: 0px; height: 0px; overflow: hidden;"
-                    >
-                      <div
-                        style="color: #FFFFFF; font-size: 10px;"
-                      >
-                        0
-                      </div>
-                    </div>
+                    <!--v-if-->
                   </div>
                 </div>,
                 "key": 0,
@@ -13625,16 +12754,7 @@ VueWrapper {
                     />
                   </svg>
                   
-                  <div
-                    class="siren-sdk-notificationIcon-badge-container"
-                    style="width: 0px; height: 0px; overflow: hidden;"
-                  >
-                    <div
-                      style="color: #FFFFFF; font-size: 10px;"
-                    >
-                      0
-                    </div>
-                  </div>
+                  <!--v-if-->
                 </div>
               </div>
               <!--v-if-->
@@ -13724,10 +12844,6 @@ VueWrapper {
                 "required": false,
                 "type": [Function],
               },
-              "realTimeUnViewedCountEnabled": {
-                "required": false,
-                "type": [Function],
-              },
               "theme": {
                 "required": false,
                 "type": [Function],
@@ -13784,16 +12900,7 @@ VueWrapper {
                 />
               </svg>
               
-              <div
-                class="siren-sdk-notificationIcon-badge-container"
-                style="width: 0px; height: 0px; overflow: hidden;"
-              >
-                <div
-                  style="color: #FFFFFF; font-size: 10px;"
-                >
-                  0
-                </div>
-              </div>
+              <!--v-if-->
             </div>
           </div>
           <!--v-if-->
@@ -13890,10 +12997,6 @@ VueWrapper {
               "type": [Function],
             },
             "onError": {
-              "required": false,
-              "type": [Function],
-            },
-            "realTimeUnViewedCountEnabled": {
               "required": false,
               "type": [Function],
             },
@@ -13998,16 +13101,7 @@ VueWrapper {
                 />
               </svg>
               
-              <div
-                class="siren-sdk-notificationIcon-badge-container"
-                style="width: 0px; height: 0px; overflow: hidden;"
-              >
-                <div
-                  style="color: #FFFFFF; font-size: 10px;"
-                >
-                  0
-                </div>
-              </div>
+              <!--v-if-->
             </div>
           </div>
           <!--v-if-->
@@ -14267,16 +13361,7 @@ VueWrapper {
           />
         </svg>
         
-        <div
-          class="siren-sdk-notificationIcon-badge-container"
-          style="width: 0px; height: 0px; overflow: hidden;"
-        >
-          <div
-            style="color: #FFFFFF; font-size: 10px;"
-          >
-            0
-          </div>
-        </div>
+        <!--v-if-->
       </div>
     </div>
     <!--v-if-->

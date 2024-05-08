@@ -57,11 +57,11 @@ export const levelLogFns = {
 };
 
 export const defaultBadgeStyle = {
-  size: '15px',
+  size: 15,
   color: '#FF0000',
   textColor: '#FFFFFF',
-  textSize: '10px',
-  lineHeight: '14px',
+  textSize: 10,
+  lineHeight: 14,
   top: 'inherit',
   right: 'inherit',
   left: 'inherit'
@@ -97,6 +97,7 @@ export const TOKEN_VERIFICATION_PENDING = 'TOKEN_VERIFICATION_PENDING';
 export const MAXIMUM_RETRY_COUNT = 3;
 export const MAXIMUM_ITEMS_PER_FETCH = 50;
 export const DEFAULT_NOTIFICATION_FETCH_COUNT = 20;
+export const MAXIMUM_UNVIEWED_COUNT_SHOWN = 99;
 
 export const errorMap = {
   SIREN_OBJECT_NOT_FOUND: {
