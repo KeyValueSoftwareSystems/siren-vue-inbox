@@ -60,7 +60,7 @@ test('matches snapshot', () => {
     }
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.element).toMatchSnapshot();
 });
 
 test('render notification inbox with basic content', () => {
