@@ -3,12 +3,14 @@
     data-testid="siren-inbox-container">
     <div v-if="!windowViewOnly" ref="iconRef" data-testid="siren-inbox-icon">
       <NotificationIcon :handleNotification="handleNotification"
-        :badgeType="showNotifications ? BadgeType.NONE : BadgeType.DEFAULT"
         :darkMode="darkMode" :styles="styles"
-        :hideBadge="hideBadge"
-        :showNotifications="showNotifications" />
+        :hideBadge="hideBadge" :isModalOpen="isModalOpen">
+        <template #notificationIcon>
+          <slot name="notificationIcon" />
+        </template>
+      </NotificationIcon>
     </div>
-    <div v-if="showNotifications || windowViewOnly" :style="{
+    <div v-if="isModalOpen || windowViewOnly" :style="{
     ...styles.container,
     ...(!windowViewOnly && styles.windowShadow),
     width:
@@ -21,7 +23,7 @@
       <SirenPanel :styles="styles" :itemsPerFetch="itemsPerFetch" :hideBadge="hideBadge"
         :headerProps="headerProps ?? defaultHeaderProps"
         :onCardClick="onCardClick" :onError="onError"
-        :darkMode="darkMode" :windowViewOnly="windowViewOnly" :showNotifications="showNotifications"
+        :darkMode="darkMode" :windowViewOnly="windowViewOnly" :isModalOpen="isModalOpen"
         :hideClearAll="headerProps?.hideClearAll ?? false" :loadMoreLabel="loadMoreLabel"
         :cardProps="cardProps ?? defaultCardProps" :modalWidth="updatedModalWidth">
         <template #loadMoreComponent>
@@ -70,7 +72,6 @@ import type { SirenProps } from '../types';
 import { applyTheme, calculateModalPosition, calculateModalWidth, debounce } from '../utils/commonUtils';
 import {
   ThemeMode,
-  BadgeType,
   DEFAULT_WINDOW_TITLE,
   DEFAULT_NOTIFICATION_FETCH_COUNT,
   EventType
@@ -99,14 +100,14 @@ const defaultCardProps = { hideAvatar: false, showMedia: false };
 
 const notificationRef = ref<HTMLElement | null>(null);
 const iconRef = ref<HTMLElement | null>(null);
-const showNotifications = ref<boolean>(false);
+const isModalOpen = ref<boolean>(false);
 const modalPosition = ref<{
   right?: string;
   left?: string;
 }>();
 
 const initialModalWidth =
-props.customStyle?.window?.width || defaultStyles.window.width;
+  props.customStyle?.window?.width || defaultStyles.window.width;
 
 const updatedModalWidth = ref(initialModalWidth);
 
@@ -122,11 +123,11 @@ const styles = computed(() =>
 
 const handleNotification = (event: any) => {
   event.preventDefault();
-  showNotifications.value = !showNotifications.value;
+  isModalOpen.value = !isModalOpen.value;
 };
 
 const closeNotification = () => {
-  showNotifications.value = false;
+  isModalOpen.value = false;
 };
 
 const handleOutsideClick = (event: MouseEvent) => {
@@ -164,8 +165,8 @@ onMounted(() => {
   window.addEventListener('resize', debouncedUpdate);
 });
 
-watch(showNotifications, () => {
-  if (showNotifications.value)
+watch(isModalOpen, () => {
+  if (isModalOpen.value)
     document.addEventListener('click', handleOutsideClick);
   else document.removeEventListener('click', handleOutsideClick);
 });

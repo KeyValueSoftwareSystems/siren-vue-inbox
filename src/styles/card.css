@@ -20,6 +20,7 @@
 }
 .siren-sdk-delete-button {
   cursor: pointer;
+  height: fit-content;
 }
 .siren-sdk-card-text-break {
   word-break: break-word;

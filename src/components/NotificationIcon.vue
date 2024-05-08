@@ -1,21 +1,15 @@
 <template>
   <div class="siren-sdk-notification-icon-container" :onClick="handleNotification"
     data-testid="notification-icon-container">
-    <slot name="notification-icon">
+    <slot name="notificationIcon">
       <BellIcon :size="String(styles.notificationIcon.size)" :stroke="darkMode
     ? COLORS.dark.notificationIcon
     : COLORS.light.notificationIcon" />
     </slot>
-    <div v-if="!hideBadge" class="siren-sdk-notificationIcon-badge-container" :style="badgeType === BadgeType.DEFAULT && unViewedCount > 0
-      ? styles.badgeStyle
-      : {
-        width: 0,
-        height: 0,
-        overflow: 'hidden',
-      }
+    <div v-if="!hideBadge && unViewedCount > 0" class="siren-sdk-notificationIcon-badge-container" :style="!isModalOpen && styles.badgeStyle
     ">
       <div :style="styles.badgeTextStyle">
-        {{ unViewedCount > 99 ? "99+" : unViewedCount }}
+        {{ unViewedCount > MAXIMUM_UNVIEWED_COUNT_SHOWN ? `${MAXIMUM_UNVIEWED_COUNT_SHOWN}+` : unViewedCount }}
       </div>
     </div>
   </div>
@@ -36,11 +30,11 @@ import PubSub from 'pubsub-js';
 
 import type { SirenStyleProps } from '../types';
 import {
-  BadgeType,
   EventType,
   eventTypes,
   events,
-  COLORS
+  COLORS,
+  MAXIMUM_UNVIEWED_COUNT_SHOWN
 } from '../utils/constants';
 import BellIcon from './BellIcon.vue';
 
@@ -48,11 +42,10 @@ import '../styles/icon.css';
 
 const props = defineProps<{
   handleNotification: (event: any) => void;
-  badgeType: BadgeType;
   darkMode: boolean;
   styles: SirenStyleProps;
   hideBadge: boolean;
-  showNotifications: boolean;
+  isModalOpen: boolean;
 }>();
 
 const siren: Ref<Siren> = inject('siren') as Ref<Siren>;
@@ -107,8 +100,8 @@ onMounted(() => {
 watch(
   () => siren?.value,
   () => {
-    // Check showNotifications in case of multiple validations of token
-    if (!props.hideBadge && !props.showNotifications) getUnViewedCount();
+    // Check isModalOpen in case of multiple validations of token
+    if (!props.hideBadge && !props.isModalOpen) getUnViewedCount();
   },
   { immediate: true }
 );

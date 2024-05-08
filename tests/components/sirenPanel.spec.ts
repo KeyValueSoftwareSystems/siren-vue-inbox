@@ -27,7 +27,7 @@ const mockStatus = vitest.fn().mockReturnValue({
 const props = {
   darkMode: false,
   styles: applyTheme({}, ThemeMode.DARK, {}),
-  showNotifications: true,
+  isModalOpen: true,
   onError: mockErrorFn,
   itemsPerFetch: 10,
   hideBadge: false,

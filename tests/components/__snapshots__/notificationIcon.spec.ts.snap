@@ -12,6 +12,7 @@ VueWrapper {
       data-v-app=""
     >
       <div
+        badgetype="default"
         class="siren-sdk-notification-icon-container"
         data-testid="notification-icon-container"
       >
@@ -32,16 +33,7 @@ VueWrapper {
           />
         </svg>
         
-        <div
-          class="siren-sdk-notificationIcon-badge-container"
-          style="width: 0px; height: 0px; overflow: hidden;"
-        >
-          <div
-            style="color: #FFFFFF; font-size: 10px;"
-          >
-            0
-          </div>
-        </div>
+        <!--v-if-->
       </div>
     </div>,
     "_context": {
@@ -311,7 +303,9 @@ VueWrapper {
           },
           "asyncDep": null,
           "asyncResolved": false,
-          "attrs": {},
+          "attrs": {
+            "badgeType": "default",
+          },
           "attrsProxy": null,
           "bc": null,
           "bm": null,
@@ -322,11 +316,10 @@ VueWrapper {
           "c": null,
           "components": {},
           "ctx": {
-            "badgeType": "default",
             "darkMode": false,
             "handleNotification": [MockFunction spy],
             "hideBadge": false,
-            "showNotifications": false,
+            "isModalOpen": false,
             "styles": {
               "activeCardMarker": {
                 "backgroundColor": "#2E2D30",
@@ -451,11 +444,6 @@ VueWrapper {
           "da": null,
           "data": {},
           "devtoolsRawSetupState": {
-            "BadgeType": {
-              "DEFAULT": "default",
-              "DOT": "dot",
-              "NONE": "none",
-            },
             "BellIcon": {
               "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/BellIcon.vue",
               "__name": "BellIcon",
@@ -518,15 +506,15 @@ VueWrapper {
                 "windowShadowColor": "#D0D5DD",
               },
             },
+            "MAXIMUM_UNVIEWED_COUNT_SHOWN": 99,
             "cleanUp": [Function],
             "getUnViewedCount": [Function],
             "notificationCountSubscriber": [Function],
             "props": {
-              "badgeType": "default",
               "darkMode": false,
               "handleNotification": [MockFunction spy],
               "hideBadge": false,
-              "showNotifications": false,
+              "isModalOpen": false,
               "styles": {
                 "activeCardMarker": {
                   "backgroundColor": "#2E2D30",
@@ -657,7 +645,7 @@ VueWrapper {
               "_value": 0,
               "dep": Map {
                 ReactiveEffect {
-                  "_depsLength": 13,
+                  "_depsLength": 8,
                   "_dirtyLevel": 0,
                   "_runnings": 0,
                   "_shouldSchedule": false,
@@ -686,22 +674,7 @@ VueWrapper {
                     Map {
                       [Circular] => 1,
                     },
-                    Map {
-                      [Circular] => 1,
-                    },
                     [Circular],
-                    Map {
-                      [Circular] => 1,
-                    },
-                    Map {
-                      [Circular] => 1,
-                    },
-                    Map {
-                      [Circular] => 1,
-                    },
-                    Map {
-                      [Circular] => 1,
-                    },
                   ],
                   "fn": [Function],
                   "onTrack": undefined,
@@ -715,7 +688,7 @@ VueWrapper {
           "directives": null,
           "ec": null,
           "effect": ReactiveEffect {
-            "_depsLength": 13,
+            "_depsLength": 8,
             "_dirtyLevel": 0,
             "_runnings": 0,
             "_shouldSchedule": false,
@@ -723,21 +696,6 @@ VueWrapper {
             "active": true,
             "allowRecurse": true,
             "deps": [
-              Map {
-                [Circular] => 1,
-              },
-              Map {
-                [Circular] => 1,
-              },
-              Map {
-                [Circular] => 1,
-              },
-              Map {
-                [Circular] => 1,
-              },
-              Map {
-                [Circular] => 1,
-              },
               Map {
                 [Circular] => 1,
               },
@@ -785,11 +743,10 @@ VueWrapper {
           "next": null,
           "parent": [Circular],
           "props": {
-            "badgeType": "default",
             "darkMode": false,
             "handleNotification": [MockFunction spy],
             "hideBadge": false,
-            "showNotifications": false,
+            "isModalOpen": false,
             "styles": {
               "activeCardMarker": {
                 "backgroundColor": "#2E2D30",
@@ -914,12 +871,6 @@ VueWrapper {
           "propsDefaults": {},
           "propsOptions": [
             {
-              "badgeType": {
-                "0": false,
-                "1": true,
-                "required": true,
-                "type": [Function],
-              },
               "darkMode": {
                 "0": true,
                 "1": true,
@@ -938,7 +889,7 @@ VueWrapper {
                 "required": true,
                 "type": [Function],
               },
-              "showNotifications": {
+              "isModalOpen": {
                 "0": true,
                 "1": true,
                 "required": true,
@@ -954,16 +905,15 @@ VueWrapper {
             [
               "darkMode",
               "hideBadge",
-              "showNotifications",
+              "isModalOpen",
             ],
           ],
           "provides": {},
           "proxy": {
-            "badgeType": "default",
             "darkMode": false,
             "handleNotification": [MockFunction spy],
             "hideBadge": false,
-            "showNotifications": false,
+            "isModalOpen": false,
             "styles": {
               "activeCardMarker": {
                 "backgroundColor": "#2E2D30",
@@ -1111,7 +1061,7 @@ VueWrapper {
                 "trigger": [Function],
               },
               ReactiveEffect {
-                "_depsLength": 13,
+                "_depsLength": 8,
                 "_dirtyLevel": 0,
                 "_runnings": 0,
                 "_shouldSchedule": false,
@@ -1119,21 +1069,6 @@ VueWrapper {
                 "active": true,
                 "allowRecurse": true,
                 "deps": [
-                  Map {
-                    [Circular] => 1,
-                  },
-                  Map {
-                    [Circular] => 1,
-                  },
-                  Map {
-                    [Circular] => 1,
-                  },
-                  Map {
-                    [Circular] => 1,
-                  },
-                  Map {
-                    [Circular] => 1,
-                  },
                   Map {
                     [Circular] => 1,
                   },
@@ -1169,17 +1104,14 @@ VueWrapper {
             "parent": undefined,
           },
           "setupContext": {
-            "attrs": {},
+            "attrs": {
+              "badgeType": "default",
+            },
             "emit": [Function],
             "expose": [Function],
             "slots": {},
           },
           "setupState": {
-            "BadgeType": {
-              "DEFAULT": "default",
-              "DOT": "dot",
-              "NONE": "none",
-            },
             "BellIcon": {
               "__file": "/home/cizil/Projects/Vue/Notification-Service/siren-vue-inbox/src/components/BellIcon.vue",
               "__name": "BellIcon",
@@ -1242,15 +1174,15 @@ VueWrapper {
                 "windowShadowColor": "#D0D5DD",
               },
             },
+            "MAXIMUM_UNVIEWED_COUNT_SHOWN": 99,
             "cleanUp": [Function],
             "getUnViewedCount": [Function],
             "notificationCountSubscriber": [Function],
             "props": {
-              "badgeType": "default",
               "darkMode": false,
               "handleNotification": [MockFunction spy],
               "hideBadge": false,
-              "showNotifications": false,
+              "isModalOpen": false,
               "styles": {
                 "activeCardMarker": {
                   "backgroundColor": "#2E2D30",
@@ -1384,6 +1316,7 @@ VueWrapper {
             "__v_skip": true,
             "anchor": null,
             "appContext": null,
+            "ce": undefined,
             "children": [
               {
                 "__v_isVNode": true,
@@ -1843,10 +1776,10 @@ VueWrapper {
                 "dynamicChildren": null,
                 "dynamicProps": null,
                 "el": ,
-                "key": "_notification-icon",
+                "key": "_notificationIcon",
                 "patchFlag": -2,
                 "props": {
-                  "key": "_notification-icon",
+                  "key": "_notificationIcon",
                 },
                 "ref": null,
                 "scopeId": null,
@@ -1866,112 +1799,19 @@ VueWrapper {
                 "__v_skip": true,
                 "anchor": null,
                 "appContext": null,
-                "children": [
-                  {
-                    "__v_isVNode": true,
-                    "__v_skip": true,
-                    "anchor": null,
-                    "appContext": null,
-                    "children": "0",
-                    "component": null,
-                    "ctx": [Circular],
-                    "dirs": null,
-                    "dynamicChildren": null,
-                    "dynamicProps": null,
-                    "el": <div
-                      style="color: #FFFFFF; font-size: 10px;"
-                    >
-                      0
-                    </div>,
-                    "key": null,
-                    "patchFlag": 5,
-                    "props": {
-                      "style": {
-                        "color": "#FFFFFF",
-                        "fontSize": "10px",
-                      },
-                    },
-                    "ref": null,
-                    "scopeId": null,
-                    "shapeFlag": 9,
-                    "slotScopeIds": null,
-                    "ssContent": null,
-                    "ssFallback": null,
-                    "staticCount": 0,
-                    "suspense": null,
-                    "target": null,
-                    "targetAnchor": null,
-                    "transition": null,
-                    "type": "div",
-                  },
-                ],
+                "children": "v-if",
                 "component": null,
                 "ctx": [Circular],
                 "dirs": null,
-                "dynamicChildren": [
-                  {
-                    "__v_isVNode": true,
-                    "__v_skip": true,
-                    "anchor": null,
-                    "appContext": null,
-                    "children": "0",
-                    "component": null,
-                    "ctx": [Circular],
-                    "dirs": null,
-                    "dynamicChildren": null,
-                    "dynamicProps": null,
-                    "el": <div
-                      style="color: #FFFFFF; font-size: 10px;"
-                    >
-                      0
-                    </div>,
-                    "key": null,
-                    "patchFlag": 5,
-                    "props": {
-                      "style": {
-                        "color": "#FFFFFF",
-                        "fontSize": "10px",
-                      },
-                    },
-                    "ref": null,
-                    "scopeId": null,
-                    "shapeFlag": 9,
-                    "slotScopeIds": null,
-                    "ssContent": null,
-                    "ssFallback": null,
-                    "staticCount": 0,
-                    "suspense": null,
-                    "target": null,
-                    "targetAnchor": null,
-                    "transition": null,
-                    "type": "div",
-                  },
-                ],
+                "dynamicChildren": [],
                 "dynamicProps": null,
-                "el": <div
-                  class="siren-sdk-notificationIcon-badge-container"
-                  style="width: 0px; height: 0px; overflow: hidden;"
-                >
-                  <div
-                    style="color: #FFFFFF; font-size: 10px;"
-                  >
-                    0
-                  </div>
-                </div>,
-                "key": 0,
-                "patchFlag": 4,
-                "props": {
-                  "class": "siren-sdk-notificationIcon-badge-container",
-                  "key": 0,
-                  "style": {
-                    "height": 0,
-                    "overflow": "hidden",
-                    "width": 0,
-                  },
-                },
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
                 "ref": null,
                 "scopeId": null,
-                "shapeFlag": 17,
+                "shapeFlag": 8,
                 "slotScopeIds": null,
                 "ssContent": null,
                 "ssFallback": null,
@@ -1980,7 +1820,7 @@ VueWrapper {
                 "target": null,
                 "targetAnchor": null,
                 "transition": null,
-                "type": "div",
+                "type": Symbol(v-cmt),
               },
             ],
             "component": null,
@@ -2458,10 +2298,10 @@ VueWrapper {
                 "dynamicChildren": null,
                 "dynamicProps": null,
                 "el": ,
-                "key": "_notification-icon",
+                "key": "_notificationIcon",
                 "patchFlag": -2,
                 "props": {
-                  "key": "_notification-icon",
+                  "key": "_notificationIcon",
                 },
                 "ref": null,
                 "scopeId": null,
@@ -2481,112 +2321,19 @@ VueWrapper {
                 "__v_skip": true,
                 "anchor": null,
                 "appContext": null,
-                "children": [
-                  {
-                    "__v_isVNode": true,
-                    "__v_skip": true,
-                    "anchor": null,
-                    "appContext": null,
-                    "children": "0",
-                    "component": null,
-                    "ctx": [Circular],
-                    "dirs": null,
-                    "dynamicChildren": null,
-                    "dynamicProps": null,
-                    "el": <div
-                      style="color: #FFFFFF; font-size: 10px;"
-                    >
-                      0
-                    </div>,
-                    "key": null,
-                    "patchFlag": 5,
-                    "props": {
-                      "style": {
-                        "color": "#FFFFFF",
-                        "fontSize": "10px",
-                      },
-                    },
-                    "ref": null,
-                    "scopeId": null,
-                    "shapeFlag": 9,
-                    "slotScopeIds": null,
-                    "ssContent": null,
-                    "ssFallback": null,
-                    "staticCount": 0,
-                    "suspense": null,
-                    "target": null,
-                    "targetAnchor": null,
-                    "transition": null,
-                    "type": "div",
-                  },
-                ],
+                "children": "v-if",
                 "component": null,
                 "ctx": [Circular],
                 "dirs": null,
-                "dynamicChildren": [
-                  {
-                    "__v_isVNode": true,
-                    "__v_skip": true,
-                    "anchor": null,
-                    "appContext": null,
-                    "children": "0",
-                    "component": null,
-                    "ctx": [Circular],
-                    "dirs": null,
-                    "dynamicChildren": null,
-                    "dynamicProps": null,
-                    "el": <div
-                      style="color: #FFFFFF; font-size: 10px;"
-                    >
-                      0
-                    </div>,
-                    "key": null,
-                    "patchFlag": 5,
-                    "props": {
-                      "style": {
-                        "color": "#FFFFFF",
-                        "fontSize": "10px",
-                      },
-                    },
-                    "ref": null,
-                    "scopeId": null,
-                    "shapeFlag": 9,
-                    "slotScopeIds": null,
-                    "ssContent": null,
-                    "ssFallback": null,
-                    "staticCount": 0,
-                    "suspense": null,
-                    "target": null,
-                    "targetAnchor": null,
-                    "transition": null,
-                    "type": "div",
-                  },
-                ],
+                "dynamicChildren": [],
                 "dynamicProps": null,
-                "el": <div
-                  class="siren-sdk-notificationIcon-badge-container"
-                  style="width: 0px; height: 0px; overflow: hidden;"
-                >
-                  <div
-                    style="color: #FFFFFF; font-size: 10px;"
-                  >
-                    0
-                  </div>
-                </div>,
-                "key": 0,
-                "patchFlag": 4,
-                "props": {
-                  "class": "siren-sdk-notificationIcon-badge-container",
-                  "key": 0,
-                  "style": {
-                    "height": 0,
-                    "overflow": "hidden",
-                    "width": 0,
-                  },
-                },
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
                 "ref": null,
                 "scopeId": null,
-                "shapeFlag": 17,
+                "shapeFlag": 8,
                 "slotScopeIds": null,
                 "ssContent": null,
                 "ssFallback": null,
@@ -2595,13 +2342,14 @@ VueWrapper {
                 "target": null,
                 "targetAnchor": null,
                 "transition": null,
-                "type": "div",
+                "type": Symbol(v-cmt),
               },
             ],
             "dynamicProps": [
               "onClick",
             ],
             "el": <div
+              badgetype="default"
               class="siren-sdk-notification-icon-container"
               data-testid="notification-icon-container"
             >
@@ -2622,20 +2370,12 @@ VueWrapper {
                 />
               </svg>
               
-              <div
-                class="siren-sdk-notificationIcon-badge-container"
-                style="width: 0px; height: 0px; overflow: hidden;"
-              >
-                <div
-                  style="color: #FFFFFF; font-size: 10px;"
-                >
-                  0
-                </div>
-              </div>
+              <!--v-if-->
             </div>,
             "key": null,
-            "patchFlag": 8,
+            "patchFlag": 24,
             "props": {
+              "badgeType": "default",
               "class": "siren-sdk-notification-icon-container",
               "data-testid": "notification-icon-container",
               "onClick": [MockFunction spy],
@@ -2660,10 +2400,6 @@ VueWrapper {
             "__name": "NotificationIcon",
             "components": {},
             "props": {
-              "badgeType": {
-                "required": true,
-                "type": [Function],
-              },
               "darkMode": {
                 "required": true,
                 "type": [Function],
@@ -2676,7 +2412,7 @@ VueWrapper {
                 "required": true,
                 "type": [Function],
               },
-              "showNotifications": {
+              "isModalOpen": {
                 "required": true,
                 "type": [Function],
               },
@@ -2700,6 +2436,7 @@ VueWrapper {
         "dynamicChildren": null,
         "dynamicProps": null,
         "el": <div
+          badgetype="default"
           class="siren-sdk-notification-icon-container"
           data-testid="notification-icon-container"
         >
@@ -2720,16 +2457,7 @@ VueWrapper {
             />
           </svg>
           
-          <div
-            class="siren-sdk-notificationIcon-badge-container"
-            style="width: 0px; height: 0px; overflow: hidden;"
-          >
-            <div
-              style="color: #FFFFFF; font-size: 10px;"
-            >
-              0
-            </div>
-          </div>
+          <!--v-if-->
         </div>,
         "key": null,
         "patchFlag": 0,
@@ -2881,10 +2609,6 @@ VueWrapper {
           "__name": "NotificationIcon",
           "components": {},
           "props": {
-            "badgeType": {
-              "required": true,
-              "type": [Function],
-            },
             "darkMode": {
               "required": true,
               "type": [Function],
@@ -2897,7 +2621,7 @@ VueWrapper {
               "required": true,
               "type": [Function],
             },
-            "showNotifications": {
+            "isModalOpen": {
               "required": true,
               "type": [Function],
             },
@@ -2966,6 +2690,7 @@ VueWrapper {
         "dynamicChildren": null,
         "dynamicProps": null,
         "el": <div
+          badgetype="default"
           class="siren-sdk-notification-icon-container"
           data-testid="notification-icon-container"
         >
@@ -2986,16 +2711,7 @@ VueWrapper {
             />
           </svg>
           
-          <div
-            class="siren-sdk-notificationIcon-badge-container"
-            style="width: 0px; height: 0px; overflow: hidden;"
-          >
-            <div
-              style="color: #FFFFFF; font-size: 10px;"
-            >
-              0
-            </div>
-          </div>
+          <!--v-if-->
         </div>,
         "key": null,
         "patchFlag": 0,
@@ -3221,6 +2937,7 @@ VueWrapper {
     "VTU_COMPONENT": {},
   },
   "wrapperElement": <div
+    badgetype="default"
     class="siren-sdk-notification-icon-container"
     data-testid="notification-icon-container"
   >
@@ -3241,16 +2958,7 @@ VueWrapper {
       />
     </svg>
     
-    <div
-      class="siren-sdk-notificationIcon-badge-container"
-      style="width: 0px; height: 0px; overflow: hidden;"
-    >
-      <div
-        style="color: #FFFFFF; font-size: 10px;"
-      >
-        0
-      </div>
-    </div>
+    <!--v-if-->
   </div>,
 }
 `;

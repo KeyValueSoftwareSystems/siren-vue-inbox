@@ -601,12 +601,12 @@ VueWrapper {
               "hideHeader": false,
             },
             "hideBadge": false,
+            "isModalOpen": true,
             "itemsPerFetch": 10,
             "loadMoreLabel": "Load more",
             "modalWidth": 500,
             "onCardClick": undefined,
             "onError": [MockFunction spy],
-            "showNotifications": true,
             "styles": {
               "activeCardMarker": {
                 "backgroundColor": "#2E2D30",
@@ -1270,12 +1270,12 @@ VueWrapper {
                 "hideHeader": false,
               },
               "hideBadge": false,
+              "isModalOpen": true,
               "itemsPerFetch": 10,
               "loadMoreLabel": "Load more",
               "modalWidth": 500,
               "onCardClick": undefined,
               "onError": [MockFunction spy],
-              "showNotifications": true,
               "styles": {
                 "activeCardMarker": {
                   "backgroundColor": "#2E2D30",
@@ -1559,12 +1559,12 @@ VueWrapper {
               "hideHeader": false,
             },
             "hideBadge": false,
+            "isModalOpen": true,
             "itemsPerFetch": 10,
             "loadMoreLabel": "Load more",
             "modalWidth": 500,
             "onCardClick": undefined,
             "onError": [MockFunction spy],
-            "showNotifications": true,
             "styles": {
               "activeCardMarker": {
                 "backgroundColor": "#2E2D30",
@@ -1714,6 +1714,12 @@ VueWrapper {
                 "required": true,
                 "type": [Function],
               },
+              "isModalOpen": {
+                "0": true,
+                "1": true,
+                "required": true,
+                "type": [Function],
+              },
               "itemsPerFetch": {
                 "0": false,
                 "1": true,
@@ -1747,12 +1753,6 @@ VueWrapper {
                 "required": false,
                 "type": [Function],
               },
-              "showNotifications": {
-                "0": true,
-                "1": true,
-                "required": true,
-                "type": [Function],
-              },
               "styles": {
                 "0": false,
                 "1": true,
@@ -1769,7 +1769,7 @@ VueWrapper {
             [
               "darkMode",
               "windowViewOnly",
-              "showNotifications",
+              "isModalOpen",
               "hideBadge",
             ],
           ],
@@ -1784,12 +1784,12 @@ VueWrapper {
               "hideHeader": false,
             },
             "hideBadge": false,
+            "isModalOpen": true,
             "itemsPerFetch": 10,
             "loadMoreLabel": "Load more",
             "modalWidth": 500,
             "onCardClick": undefined,
             "onError": [MockFunction spy],
-            "showNotifications": true,
             "styles": {
               "activeCardMarker": {
                 "backgroundColor": "#2E2D30",
@@ -2299,12 +2299,12 @@ VueWrapper {
                 "hideHeader": false,
               },
               "hideBadge": false,
+              "isModalOpen": true,
               "itemsPerFetch": 10,
               "loadMoreLabel": "Load more",
               "modalWidth": 500,
               "onCardClick": undefined,
               "onError": [MockFunction spy],
-              "showNotifications": true,
               "styles": {
                 "activeCardMarker": {
                   "backgroundColor": "#2E2D30",
@@ -54713,6 +54713,10 @@ VueWrapper {
                 "required": true,
                 "type": [Function],
               },
+              "isModalOpen": {
+                "required": true,
+                "type": [Function],
+              },
               "itemsPerFetch": {
                 "required": true,
                 "type": [Function],
@@ -54734,10 +54738,6 @@ VueWrapper {
               },
               "onError": {
                 "required": false,
-                "type": [Function],
-              },
-              "showNotifications": {
-                "required": true,
                 "type": [Function],
               },
               "styles": {
@@ -55041,12 +55041,12 @@ VueWrapper {
             "hideHeader": false,
           },
           "hideBadge": false,
+          "isModalOpen": true,
           "itemsPerFetch": 10,
           "loadMoreLabel": "Load more",
           "modalWidth": 500,
           "onError": [MockFunction spy],
           "ref": "VTU_COMPONENT",
-          "showNotifications": true,
           "styles": {
             "activeCardMarker": {
               "backgroundColor": "#2E2D30",
@@ -55206,6 +55206,10 @@ VueWrapper {
               "required": true,
               "type": [Function],
             },
+            "isModalOpen": {
+              "required": true,
+              "type": [Function],
+            },
             "itemsPerFetch": {
               "required": true,
               "type": [Function],
@@ -55227,10 +55231,6 @@ VueWrapper {
             },
             "onError": {
               "required": false,
-              "type": [Function],
-            },
-            "showNotifications": {
-              "required": true,
               "type": [Function],
             },
             "styles": {

@@ -115,6 +115,7 @@ Below are optional slots available for the inbox component:
 | listEmptyComponent | Custom Empty list component        |
 | customCard         | Custom notification card component |
 | customFooter       | Custom footer component            |
+| notificationIcon   | Custom notification icon component |
 
 ## 3. Customization
 
