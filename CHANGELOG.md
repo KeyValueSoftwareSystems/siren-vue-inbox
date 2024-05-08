@@ -6,4 +6,4 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- React UI kit for managing and displaying in-app notification
+- Vue UI kit for managing and displaying in-app notification
