@@ -72,13 +72,13 @@ import {
   ref,
   watch
 } from 'vue';
-import type { Siren } from 'test_notification';
+import type { Siren } from '@sirenapp/js-sdk';
 import type {
   ActionResponse,
   MarkAsViewedResponse,
   NotificationDataType,
   NotificationsApiResponse
-} from 'test_notification/dist/esm/types';
+} from '@sirenapp/js-sdk/dist/esm/types';
 import PubSub from 'pubsub-js';
 
 import {

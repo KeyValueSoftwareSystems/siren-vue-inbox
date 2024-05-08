@@ -1,4 +1,4 @@
-import type { Siren } from 'test_notification';
+import type { Siren } from '@sirenapp/js-sdk';
 import type { Ref } from 'vue';
 import { inject } from 'vue';
 import PubSub from 'pubsub-js';

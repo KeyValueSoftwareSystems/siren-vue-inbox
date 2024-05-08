@@ -1,6 +1,6 @@
 <template>
   <SirenProvider
-    :config="{ userToken: 'sample-token', recipientId: 'sample-recipientId' }">
+    :config="{ userToken: 'your_user_token', recipientId: 'your_recipient_id' }">
     <HomePage />
   </SirenProvider>
 </template>

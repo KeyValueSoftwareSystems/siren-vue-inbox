@@ -25,7 +25,7 @@ import {
   ref,
   watch
 } from 'vue';
-import type { Siren } from 'test_notification';
+import type { Siren } from '@sirenapp/js-sdk';
 import PubSub from 'pubsub-js';
 
 import type { SirenStyleProps } from '../types';

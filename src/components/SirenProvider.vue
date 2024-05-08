@@ -7,8 +7,8 @@
 <script setup lang="ts">
 import type { Ref } from 'vue';
 import { provide, ref, defineProps, watch } from 'vue';
-import { Siren } from 'test_notification';
-import type { InitConfigType, NotificationsApiResponse, SirenErrorType, UnviewedCountApiResponse } from 'test_notification/dist/esm/types';
+import { Siren } from '@sirenapp/js-sdk';
+import type { InitConfigType, NotificationsApiResponse, SirenErrorType, UnviewedCountApiResponse } from '@sirenapp/js-sdk/dist/esm/types';
 import PubSub from 'pubsub-js';
 
 import type { SirenProviderConfigProps } from '../types';

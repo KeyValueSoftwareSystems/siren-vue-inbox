@@ -13,8 +13,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "test_notification2": "^1.0.2",
-    "vue": "^3.4.21"
+    "vue": "^3.4.21",
+    "@sirenapp/vue-inbox": "1.0.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
