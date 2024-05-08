@@ -57,11 +57,11 @@ export const levelLogFns = {
 };
 
 export const defaultBadgeStyle = {
-  size: '15px',
+  size: 15,
   color: '#FF0000',
   textColor: '#FFFFFF',
-  textSize: '10px',
-  lineHeight: '14px',
+  textSize: 10,
+  lineHeight: 14,
   top: 'inherit',
   right: 'inherit',
   left: 'inherit'

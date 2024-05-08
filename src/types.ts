@@ -148,7 +148,7 @@ export type CustomStyle = {
     size?: number;
     textSize?: number;
     top?: number;
-    left?: number;
+    right?: number;
   };
   deleteIcon?: {
     size?: number;

@@ -37,7 +37,6 @@
 .siren-sdk-card-content-wrapper {
   display: grid;
   grid-template-rows: auto;
-  gap: 8px;
 }
 .siren-sdk-card-msg-body {
   margin-top: 5px;
@@ -55,6 +54,11 @@
 .siren-sdk-card-title{
   line-height: 20px;
   margin-bottom: 4px;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .siren-sdk-card-subtitle{
   line-height: 20px;

@@ -326,6 +326,7 @@ VueWrapper {
             "darkMode": false,
             "handleNotification": [MockFunction spy],
             "hideBadge": false,
+            "showNotifications": false,
             "styles": {
               "activeCardMarker": {
                 "backgroundColor": "#2E2D30",
@@ -335,9 +336,9 @@ VueWrapper {
                 "backgroundColor": "#FF0000",
                 "borderRadius": "15px",
                 "height": "15px",
-                "left": "undefinedpx",
                 "minWidth": "15px",
-                "top": "undefinedpx",
+                "right": "inherit",
+                "top": "inherit",
               },
               "badgeTextStyle": {
                 "color": "#FFFFFF",
@@ -349,6 +350,7 @@ VueWrapper {
               "cardDescription": {
                 "color": "#FFFFFF",
                 "fontSize": "14px",
+                "fontWeight": "400",
               },
               "cardIconRound": {
                 "backgroundColor": "#344054",
@@ -386,7 +388,7 @@ VueWrapper {
                 "backgroundColor": "transparent",
                 "borderBottom": "0.5px solid",
                 "borderColor": "#344054",
-                "padding": "12px 24px",
+                "padding": "12px",
               },
               "deleteIcon": {
                 "color": "#D0D5DD",
@@ -414,6 +416,7 @@ VueWrapper {
               },
               "infiniteLoader": {
                 "border": "3px solid #FA9874",
+                "borderBottomColor": "transparent",
               },
               "loadMoreButton": {
                 "backgroundColor": "#232326",
@@ -523,6 +526,7 @@ VueWrapper {
               "darkMode": false,
               "handleNotification": [MockFunction spy],
               "hideBadge": false,
+              "showNotifications": false,
               "styles": {
                 "activeCardMarker": {
                   "backgroundColor": "#2E2D30",
@@ -532,9 +536,9 @@ VueWrapper {
                   "backgroundColor": "#FF0000",
                   "borderRadius": "15px",
                   "height": "15px",
-                  "left": "undefinedpx",
                   "minWidth": "15px",
-                  "top": "undefinedpx",
+                  "right": "inherit",
+                  "top": "inherit",
                 },
                 "badgeTextStyle": {
                   "color": "#FFFFFF",
@@ -546,6 +550,7 @@ VueWrapper {
                 "cardDescription": {
                   "color": "#FFFFFF",
                   "fontSize": "14px",
+                  "fontWeight": "400",
                 },
                 "cardIconRound": {
                   "backgroundColor": "#344054",
@@ -583,7 +588,7 @@ VueWrapper {
                   "backgroundColor": "transparent",
                   "borderBottom": "0.5px solid",
                   "borderColor": "#344054",
-                  "padding": "12px 24px",
+                  "padding": "12px",
                 },
                 "deleteIcon": {
                   "color": "#D0D5DD",
@@ -611,6 +616,7 @@ VueWrapper {
                 },
                 "infiniteLoader": {
                   "border": "3px solid #FA9874",
+                  "borderBottomColor": "transparent",
                 },
                 "loadMoreButton": {
                   "backgroundColor": "#232326",
@@ -783,6 +789,7 @@ VueWrapper {
             "darkMode": false,
             "handleNotification": [MockFunction spy],
             "hideBadge": false,
+            "showNotifications": false,
             "styles": {
               "activeCardMarker": {
                 "backgroundColor": "#2E2D30",
@@ -792,9 +799,9 @@ VueWrapper {
                 "backgroundColor": "#FF0000",
                 "borderRadius": "15px",
                 "height": "15px",
-                "left": "undefinedpx",
                 "minWidth": "15px",
-                "top": "undefinedpx",
+                "right": "inherit",
+                "top": "inherit",
               },
               "badgeTextStyle": {
                 "color": "#FFFFFF",
@@ -806,6 +813,7 @@ VueWrapper {
               "cardDescription": {
                 "color": "#FFFFFF",
                 "fontSize": "14px",
+                "fontWeight": "400",
               },
               "cardIconRound": {
                 "backgroundColor": "#344054",
@@ -843,7 +851,7 @@ VueWrapper {
                 "backgroundColor": "transparent",
                 "borderBottom": "0.5px solid",
                 "borderColor": "#344054",
-                "padding": "12px 24px",
+                "padding": "12px",
               },
               "deleteIcon": {
                 "color": "#D0D5DD",
@@ -871,6 +879,7 @@ VueWrapper {
               },
               "infiniteLoader": {
                 "border": "3px solid #FA9874",
+                "borderBottomColor": "transparent",
               },
               "loadMoreButton": {
                 "backgroundColor": "#232326",
@@ -929,6 +938,12 @@ VueWrapper {
                 "required": true,
                 "type": [Function],
               },
+              "showNotifications": {
+                "0": true,
+                "1": true,
+                "required": true,
+                "type": [Function],
+              },
               "styles": {
                 "0": false,
                 "1": true,
@@ -939,6 +954,7 @@ VueWrapper {
             [
               "darkMode",
               "hideBadge",
+              "showNotifications",
             ],
           ],
           "provides": {},
@@ -947,6 +963,7 @@ VueWrapper {
             "darkMode": false,
             "handleNotification": [MockFunction spy],
             "hideBadge": false,
+            "showNotifications": false,
             "styles": {
               "activeCardMarker": {
                 "backgroundColor": "#2E2D30",
@@ -956,9 +973,9 @@ VueWrapper {
                 "backgroundColor": "#FF0000",
                 "borderRadius": "15px",
                 "height": "15px",
-                "left": "undefinedpx",
                 "minWidth": "15px",
-                "top": "undefinedpx",
+                "right": "inherit",
+                "top": "inherit",
               },
               "badgeTextStyle": {
                 "color": "#FFFFFF",
@@ -970,6 +987,7 @@ VueWrapper {
               "cardDescription": {
                 "color": "#FFFFFF",
                 "fontSize": "14px",
+                "fontWeight": "400",
               },
               "cardIconRound": {
                 "backgroundColor": "#344054",
@@ -1007,7 +1025,7 @@ VueWrapper {
                 "backgroundColor": "transparent",
                 "borderBottom": "0.5px solid",
                 "borderColor": "#344054",
-                "padding": "12px 24px",
+                "padding": "12px",
               },
               "deleteIcon": {
                 "color": "#D0D5DD",
@@ -1035,6 +1053,7 @@ VueWrapper {
               },
               "infiniteLoader": {
                 "border": "3px solid #FA9874",
+                "borderBottomColor": "transparent",
               },
               "loadMoreButton": {
                 "backgroundColor": "#232326",
@@ -1231,6 +1250,7 @@ VueWrapper {
               "darkMode": false,
               "handleNotification": [MockFunction spy],
               "hideBadge": false,
+              "showNotifications": false,
               "styles": {
                 "activeCardMarker": {
                   "backgroundColor": "#2E2D30",
@@ -1240,9 +1260,9 @@ VueWrapper {
                   "backgroundColor": "#FF0000",
                   "borderRadius": "15px",
                   "height": "15px",
-                  "left": "undefinedpx",
                   "minWidth": "15px",
-                  "top": "undefinedpx",
+                  "right": "inherit",
+                  "top": "inherit",
                 },
                 "badgeTextStyle": {
                   "color": "#FFFFFF",
@@ -1254,6 +1274,7 @@ VueWrapper {
                 "cardDescription": {
                   "color": "#FFFFFF",
                   "fontSize": "14px",
+                  "fontWeight": "400",
                 },
                 "cardIconRound": {
                   "backgroundColor": "#344054",
@@ -1291,7 +1312,7 @@ VueWrapper {
                   "backgroundColor": "transparent",
                   "borderBottom": "0.5px solid",
                   "borderColor": "#344054",
-                  "padding": "12px 24px",
+                  "padding": "12px",
                 },
                 "deleteIcon": {
                   "color": "#D0D5DD",
@@ -1319,6 +1340,7 @@ VueWrapper {
                 },
                 "infiniteLoader": {
                   "border": "3px solid #FA9874",
+                  "borderBottomColor": "transparent",
                 },
                 "loadMoreButton": {
                   "backgroundColor": "#232326",
@@ -2654,6 +2676,10 @@ VueWrapper {
                 "required": true,
                 "type": [Function],
               },
+              "showNotifications": {
+                "required": true,
+                "type": [Function],
+              },
               "styles": {
                 "required": true,
                 "type": [Function],
@@ -2722,9 +2748,9 @@ VueWrapper {
               "backgroundColor": "#FF0000",
               "borderRadius": "15px",
               "height": "15px",
-              "left": "undefinedpx",
               "minWidth": "15px",
-              "top": "undefinedpx",
+              "right": "inherit",
+              "top": "inherit",
             },
             "badgeTextStyle": {
               "color": "#FFFFFF",
@@ -2736,6 +2762,7 @@ VueWrapper {
             "cardDescription": {
               "color": "#FFFFFF",
               "fontSize": "14px",
+              "fontWeight": "400",
             },
             "cardIconRound": {
               "backgroundColor": "#344054",
@@ -2773,7 +2800,7 @@ VueWrapper {
               "backgroundColor": "transparent",
               "borderBottom": "0.5px solid",
               "borderColor": "#344054",
-              "padding": "12px 24px",
+              "padding": "12px",
             },
             "deleteIcon": {
               "color": "#D0D5DD",
@@ -2801,6 +2828,7 @@ VueWrapper {
             },
             "infiniteLoader": {
               "border": "3px solid #FA9874",
+              "borderBottomColor": "transparent",
             },
             "loadMoreButton": {
               "backgroundColor": "#232326",
@@ -2866,6 +2894,10 @@ VueWrapper {
               "type": [Function],
             },
             "hideBadge": {
+              "required": true,
+              "type": [Function],
+            },
+            "showNotifications": {
               "required": true,
               "type": [Function],
             },
