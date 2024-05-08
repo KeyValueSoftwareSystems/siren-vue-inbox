@@ -422,7 +422,6 @@ VueWrapper {
             "loadMoreLabel": "Load more",
             "onCardClick": undefined,
             "onError": [MockFunction spy],
-            "realTimeUnViewedCountEnabled": false,
             "theme": {
               "dark": {
                 "colors": {
@@ -742,7 +741,6 @@ VueWrapper {
               "loadMoreLabel": "Load more",
               "onCardClick": undefined,
               "onError": [MockFunction spy],
-              "realTimeUnViewedCountEnabled": false,
               "theme": {
                 "dark": {
                   "colors": {
@@ -1680,7 +1678,6 @@ VueWrapper {
             "loadMoreLabel": "Load more",
             "onCardClick": undefined,
             "onError": [MockFunction spy],
-            "realTimeUnViewedCountEnabled": false,
             "theme": {
               "dark": {
                 "colors": {
@@ -1752,12 +1749,6 @@ VueWrapper {
                 "required": false,
                 "type": [Function],
               },
-              "realTimeUnViewedCountEnabled": {
-                "0": true,
-                "1": true,
-                "required": false,
-                "type": [Function],
-              },
               "theme": {
                 "0": false,
                 "1": true,
@@ -1777,7 +1768,6 @@ VueWrapper {
               "hideBadge",
               "darkMode",
               "itemsPerFetch",
-              "realTimeUnViewedCountEnabled",
               "windowViewOnly",
             ],
           ],
@@ -1795,7 +1785,6 @@ VueWrapper {
             "loadMoreLabel": "Load more",
             "onCardClick": undefined,
             "onError": [MockFunction spy],
-            "realTimeUnViewedCountEnabled": false,
             "theme": {
               "dark": {
                 "colors": {
@@ -2937,7 +2926,6 @@ VueWrapper {
               "loadMoreLabel": "Load more",
               "onCardClick": undefined,
               "onError": [MockFunction spy],
-              "realTimeUnViewedCountEnabled": false,
               "theme": {
                 "dark": {
                   "colors": {
@@ -13724,10 +13712,6 @@ VueWrapper {
                 "required": false,
                 "type": [Function],
               },
-              "realTimeUnViewedCountEnabled": {
-                "required": false,
-                "type": [Function],
-              },
               "theme": {
                 "required": false,
                 "type": [Function],
@@ -13890,10 +13874,6 @@ VueWrapper {
               "type": [Function],
             },
             "onError": {
-              "required": false,
-              "type": [Function],
-            },
-            "realTimeUnViewedCountEnabled": {
               "required": false,
               "type": [Function],
             },
