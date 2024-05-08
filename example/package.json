@@ -13,7 +13,6 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "test_notification2": "^1.0.2",
     "vue": "^3.4.21"
   },
   "devDependencies": {

@@ -4,7 +4,7 @@ import type {
   ActionResponse,
   NotificationDataType,
   NotificationsApiResponse
-} from 'test_notification/dist/esm/types';
+} from '@sirenapp/js-sdk/dist/esm/types';
 import type {
   CustomStyle,
   DimensionValue,

@@ -73,7 +73,7 @@
     "license"
   ],
   "dependencies": {
-    "jsdom": "^24.0.0",
-    "test_notification": "1.1.0"
+    "@sirenapp/js-sdk": "^1.1.0",
+    "jsdom": "^24.0.0"
   }
 }

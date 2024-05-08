@@ -2,7 +2,7 @@ import type { CSSProperties } from 'vue';
 import type {
   NotificationDataType,
   SirenErrorType
-} from 'test_notification/dist/esm/types';
+} from '@sirenapp/js-sdk/dist/esm/types';
 
 type WindowProps = {
   borderColor?: string;

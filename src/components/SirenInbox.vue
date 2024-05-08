@@ -66,7 +66,7 @@ import {
   onBeforeUnmount,
   inject
 } from 'vue';
-import type { Siren } from 'test_notification';
+import type { Siren } from '@sirenapp/js-sdk';
 
 import type { SirenProps } from '../types';
 import { applyTheme, calculateModalPosition, calculateModalWidth, debounce } from '../utils/commonUtils';
