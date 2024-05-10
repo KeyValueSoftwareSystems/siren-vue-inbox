@@ -2,11 +2,13 @@
 
 exports[`matches snapshot 1`] = `
 <div
+  aria-label="siren-notification-card-1"
   class="siren-sdk-card-container siren-sdk-card-common-container"
   data-testid="notification-card-container"
   style="background-color: #2E2D30; padding: 12px; border-bottom-width: 0.5px; border-bottom-style: solid; border-color: #344054 #344054 #344054 #FA9874; border-left-width: 4px; border-left-style: solid;"
 >
   <div
+    aria-label="siren-notification-avatar-1"
     data-testid="avatar-container"
     style="width: 40px; height: 40px; border-radius: 20px; background-color: #344054; background-image: url("/src/assets/light/defaultAvatarLight.png"); background-size: cover; background-position: center center;"
   />
@@ -59,6 +61,7 @@ exports[`matches snapshot 1`] = `
     </div>
   </div>
   <div
+    aria-label="siren-notification-delete-1"
     class="siren-sdk-delete-button"
     data-testid="delete-notification-button"
   >

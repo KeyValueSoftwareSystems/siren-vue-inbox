@@ -13,6 +13,7 @@ exports[`matches snapshot 1`] = `
     data-testid="siren-inbox-icon"
   >
     <div
+      aria-label="siren-notification-icon"
       class="siren-sdk-notification-icon-container"
       data-testid="notification-icon-container"
     >
