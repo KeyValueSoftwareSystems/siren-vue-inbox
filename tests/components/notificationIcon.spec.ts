@@ -30,7 +30,8 @@ test('matches snapshot', () => {
       badgeType: BadgeType.DEFAULT,
       darkMode: false,
       styles: applyTheme({}, ThemeMode.DARK, {}),
-      hideBadge: false
+      hideBadge: false,
+      isModalOpen: true
     },
     global: {
       provide: {
@@ -49,7 +50,9 @@ test('render notification icon with basic content', () => {
       handleNotification: mockIconClick,
       badgeType: BadgeType.DEFAULT,
       darkMode: false,
-      styles: applyTheme({}, ThemeMode.DARK, {})
+      styles: applyTheme({}, ThemeMode.DARK, {}),
+      isModalOpen: true,
+      hideBadge: false,
     },
     global: {
       provide: {
@@ -68,7 +71,9 @@ test('trigger on click function when notification icon is clicked', () => {
       handleNotification: mockIconClick,
       badgeType: BadgeType.DOT,
       darkMode: false,
-      styles: applyTheme({}, ThemeMode.DARK, {})
+      styles: applyTheme({}, ThemeMode.DARK, {}),
+      isModalOpen: true,
+      hideBadge: false,
     },
     global: {
       provide: {

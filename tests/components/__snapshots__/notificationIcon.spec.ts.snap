@@ -2,6 +2,7 @@
 
 exports[`matches snapshot 1`] = `
 <div
+  aria-label="siren-notification-icon"
   badgetype="default"
   class="siren-sdk-notification-icon-container"
   data-testid="notification-icon-container"

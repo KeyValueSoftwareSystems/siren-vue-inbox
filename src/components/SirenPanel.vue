@@ -11,7 +11,7 @@
     <div :style="{
     ...(!windowViewOnly && styles.windowBottomBorder),
     ...styles.contentContainer,
-  }">
+  }" aria-label="siren-notification-list">
       <div :style="{
     ...(!windowViewOnly && styles.windowBottomBorder),
     ...styles.body,
@@ -23,11 +23,12 @@
           <LoaderComponent :styles="styles" :hideAvatar="cardProps.hideAvatar ?? false" />
         </slot>
 
-        <slot name="customErrorWindow" v-if="error && error.length > 0 && !isLoading">
+        <slot name="customErrorWindow" v-if="error && error.length > 0 && !isLoading" aria-label="siren-error-state">
           <ErrorWindow :styles="styles" :darkMode="darkMode" :error="error" />
         </slot>
 
-        <slot name="listEmptyComponent" v-if="isEmptyArray(notificationsContent) && !isLoading && !error && reachedEnd">
+        <slot name="listEmptyComponent" v-if="isEmptyArray(notificationsContent) && !isLoading && !error && reachedEnd"
+          aria-label="siren-empty-state">
           <EmptyList :styles="styles" :darkMode="darkMode" />
         </slot>
 
@@ -36,13 +37,13 @@
             <div v-for="notification in notificationsContent" :key="notification?.id">
               <slot name="customCard" :item="notification">
                 <NotificationCard :notification="notification"
-                  :cardProps="cardProps" :onCardClick="onCardClick"
+                :cardProps="cardProps" :onCardClick="onCardClick"
                   :deleteById="deleteNotificationById" :styles="styles" :darkMode="darkMode" />
               </slot>
             </div>
           </div>
           <LoadMore :onLoadMore="onLoadMore" :paginationLoading="paginationLoading"
-            v-if="!reachedEnd && !isLoading"
+          v-if="!reachedEnd && !isLoading"
             :styles="styles">
             <template #loadMoreComponent>
               <slot name="loadMoreComponent" />
@@ -142,9 +143,9 @@ const triggerOnError = computed(
 );
 
 const deleteNotificationById = async (id: string, shouldUpdateList: boolean): Promise<boolean> => {
-    const response = await deleteById(id, shouldUpdateList);
+  const response = await deleteById(id, shouldUpdateList);
 
-    if (response) triggerOnError.value(response);
+  if (response) triggerOnError.value(response);
 
   return !!response?.data;
 };
