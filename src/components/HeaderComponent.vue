@@ -18,6 +18,7 @@
         cursor: enableClearAll ? 'pointer' : 'not-allowed',
       }"
       class="siren-sdk-header-right-container"
+      aria-label="siren-header-clear-all"
     >
       <ClearIcon
         :fill="styles.clearIcon?.color"

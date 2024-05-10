@@ -3,14 +3,15 @@
     ? 'siren-sdk-hide-avatar-card-container'
     : 'siren-sdk-card-container'} siren-sdk-card-common-container ${deleteAnimation}`"
     @click="handleNotificationCardClick" @keydown="handleNotificationCardClick"
-    data-testid="notification-card-container">
+    data-testid="notification-card-container" :aria-label="`siren-notification-card-${notification.id}`">
     <div :style="{
     ...styles.cardIconRound,
     backgroundImage: `url(${props?.notification?.message?.avatar?.imageUrl || defaultAvatar})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     ...(props?.cardProps?.onAvatarClick && { cursor: 'pointer' }),
-  }" @click="handleAvatarClick" @keydown="handleAvatarClick" v-if="!cardProps?.hideAvatar" data-testid="avatar-container" />
+  }" @click="handleAvatarClick" @keydown="handleAvatarClick" v-if="!cardProps?.hideAvatar"
+      data-testid="avatar-container" :aria-label="`siren-notification-avatar-${notification.id}`" />
     <div class="siren-sdk-card-content-wrapper">
       <div :style="styles.cardTitle" class="siren-sdk-card-title">
         {{ props.notification?.message?.header }}
@@ -28,7 +29,9 @@
         </div>
       </div>
     </div>
-    <div class="siren-sdk-delete-button" @click="handleDelete" @keydown="handleDelete" data-testid="delete-notification-button" v-if="!cardProps?.hideDelete">
+    <div class="siren-sdk-delete-button" @click="handleDelete" @keydown="handleDelete"
+      data-testid="delete-notification-button" v-if="!cardProps?.hideDelete"
+      :aria-label="`siren-notification-delete-${notification.id}`">
       <CloseIcon :stroke="styles?.deleteIcon?.color" :size="String(styles?.deleteIcon?.size)" />
     </div>
   </div>
@@ -69,11 +72,11 @@ const handleDelete = async (event: MouseEvent | KeyboardEvent): Promise<void> =>
   if (isSuccess) {
     deleteAnimation.value = 'siren-sdk-delete-animation';
 
-  setTimeout(() => {
-    const payload = { id: props.notification.id, action: eventTypes.DELETE_ITEM };
+    setTimeout(() => {
+      const payload = { id: props.notification.id, action: eventTypes.DELETE_ITEM };
 
-    PubSub.publish(events.NOTIFICATION_LIST_EVENT, JSON.stringify(payload));
-  }, 200);
+      PubSub.publish(events.NOTIFICATION_LIST_EVENT, JSON.stringify(payload));
+    }, 200);
   }
 };
 
