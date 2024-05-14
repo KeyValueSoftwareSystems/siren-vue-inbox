@@ -37,7 +37,12 @@
               <slot name="customCard" :item="notification">
                 <NotificationCard :notification="notification"
                   :cardProps="cardProps" :onCardClick="onCardClick"
-                  :deleteById="deleteNotificationById" :styles="styles" :darkMode="darkMode" />
+                  :deleteById="deleteNotificationById" :styles="styles" :darkMode="darkMode">
+                  <template #deleteIcon>
+                    <slot name="deleteIcon" />
+                  </template>
+                </NotificationCard>
+
               </slot>
             </div>
           </div>
@@ -142,9 +147,9 @@ const triggerOnError = computed(
 );
 
 const deleteNotificationById = async (id: string, shouldUpdateList: boolean): Promise<boolean> => {
-    const response = await deleteById(id, shouldUpdateList);
+  const response = await deleteById(id, shouldUpdateList);
 
-    if (response) triggerOnError.value(response);
+  if (response) triggerOnError.value(response);
 
   return !!response?.data;
 };

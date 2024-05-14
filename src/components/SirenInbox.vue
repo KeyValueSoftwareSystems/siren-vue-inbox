@@ -47,6 +47,9 @@
         <template #customFooter>
           <slot name="customFooter" />
         </template>
+        <template #deleteIcon>
+          <slot name="deleteIcon" />
+        </template>
       </SirenPanel>
     </div>
   </div>
