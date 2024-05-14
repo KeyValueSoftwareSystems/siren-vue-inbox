@@ -3,7 +3,7 @@
     ? 'siren-sdk-hide-avatar-card-container'
     : 'siren-sdk-card-container'} siren-sdk-card-common-container ${deleteAnimation}`"
     @click="handleNotificationCardClick" @keydown="handleNotificationCardClick"
-    data-testid="notification-card-container">
+    data-testid="notification-card-container" :aria-label="`siren-notification-card-${notification.id}`">
     <div :style="{
     ...styles.cardIconRound,
     backgroundImage: `url(${props?.notification?.message?.avatar?.imageUrl || defaultAvatar})`,
@@ -11,7 +11,7 @@
     backgroundPosition: 'center',
     ...(props?.cardProps?.onAvatarClick && { cursor: 'pointer' }),
   }" @click="handleAvatarClick" @keydown="handleAvatarClick" v-if="!cardProps?.hideAvatar"
-      data-testid="avatar-container" />
+      data-testid="avatar-container" :aria-label="`siren-notification-avatar-${notification.id}`" />
     <div class="siren-sdk-card-content-wrapper">
       <div :style="styles.cardTitle" class="siren-sdk-card-title">
         {{ props.notification?.message?.header }}
@@ -40,7 +40,8 @@
       </div>
     </div>
     <div class="siren-sdk-delete-button" @click="handleDelete" @keydown="handleDelete"
-      data-testid="delete-notification-button" v-if="!cardProps?.hideDelete">
+      data-testid="delete-notification-button" v-if="!cardProps?.hideDelete"
+      :aria-label="`siren-notification-delete-${notification.id}`">
       <slot name="deleteIcon">
         <CloseIcon :stroke="styles?.deleteIcon?.color" :size="String(styles?.deleteIcon?.size)" />
       </slot>

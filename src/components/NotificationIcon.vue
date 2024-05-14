@@ -1,6 +1,6 @@
 <template>
   <div class="siren-sdk-notification-icon-container" :onClick="handleNotification"
-    data-testid="notification-icon-container">
+    data-testid="notification-icon-container" aria-label="siren-notification-icon">
     <slot name="notificationIcon">
       <BellIcon :size="String(styles.notificationIcon.size)" :stroke="darkMode
     ? COLORS.dark.notificationIcon

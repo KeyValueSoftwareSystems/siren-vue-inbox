@@ -1,5 +1,5 @@
 <template>
-  <div class="siren-sdk-load-more-container" data-testid="load-more-container">
+  <div class="siren-sdk-load-more-container" data-testid="load-more-container" aria-label="siren-load-more">
     <div
       :class="
         paginationLoading
