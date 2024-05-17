@@ -3,7 +3,7 @@ const defaultStyles = {
     size: 30
   },
   window: {
-    width: '500px',
+    width: 500,
     borderRadius: 10,
     borderStyle: 'solid'
   },

@@ -181,7 +181,7 @@ Please note that the badgeStyle, window shadow and border props are only applica
     size?: number,
   },
   window?: {
-    width?: DimensionValue,
+    width?: number,
     borderRadius?: number,
   },
   windowHeader?: {
@@ -193,7 +193,7 @@ Please note that the badgeStyle, window shadow and border props are only applica
   },
   windowContainer?: {
     padding?: number,
-    contentHeight?: DimensionValue,
+    contentHeight?: number,
   },
   customCard?: {
     padding?: number,
