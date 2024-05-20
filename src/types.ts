@@ -114,7 +114,7 @@ export type CustomStyle = {
     size?: number;
   };
   window?: {
-    width?: DimensionValue;
+    width: number;
     borderRadius?: number;
   };
   windowHeader?: {
@@ -225,7 +225,7 @@ export type SirenPanelProps = {
   headerProps: { title?: string; hideHeader?: boolean; hideClearAll?: boolean };
   loadMoreLabel: string;
   cardProps: CardProps;
-  modalWidth: DimensionValue;
+  modalWidth: string;
 };
 
 export type NotificationCardProps = {

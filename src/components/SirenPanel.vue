@@ -10,11 +10,12 @@
     </slot>
     <div :style="{
     ...(!windowViewOnly && styles.windowBottomBorder),
-    ...styles.contentContainer,
+    ...(windowViewOnly && { overflow: 'auto' }),
+    ...{ ...styles.contentContainer, ...(windowViewOnly && { borderRadius: '0px' }) },
   }" aria-label="siren-notification-list">
       <div :style="{
     ...(!windowViewOnly && styles.windowBottomBorder),
-    ...styles.body,
+    ...(!windowViewOnly && styles.body),
     ...(isLoading &&
       isEmptyArray(notificationsContent) &&
       !error && { overflow: 'hidden' }),

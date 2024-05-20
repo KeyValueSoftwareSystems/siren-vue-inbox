@@ -15,7 +15,7 @@ const defaultTheme = {
     },
     window: {
       borderColor: COLORS[ThemeMode.LIGHT].borderColor,
-      shadowColor: COLORS[ThemeMode.DARK].windowShadowColor
+      shadowColor: COLORS[ThemeMode.LIGHT].windowShadowColor
     },
     windowHeader: {
       background: COLORS[ThemeMode.LIGHT].neutralColor,

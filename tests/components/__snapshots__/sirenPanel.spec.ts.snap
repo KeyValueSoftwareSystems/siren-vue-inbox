@@ -259,6 +259,46 @@ exports[`matches snapshot 1`] = `
             style="border-color: #FA9874;"
           />
         </div>
+        <div
+          class="siren-sdk-card-loader-container"
+        >
+          <div
+            class="siren-sdk-card-loader-avatar"
+            style="border-color: #FA9874;"
+          />
+          <div
+            class="siren-sdk-card-loader-details siren-sdk-card-show-avatar"
+          >
+            <div
+              class="siren-sdk-card-loader-header"
+              style="border-color: #FA9874;"
+            />
+            <div
+              class="siren-sdk-card-loader-header"
+              style="border-color: #FA9874;"
+            />
+            <div
+              class="siren-sdk-card-loader-body"
+              style="border-color: #FA9874;"
+            />
+            <div
+              class="siren-sdk-card-loader-time-container"
+            >
+              <div
+                class="siren-sdk-card-loader-time-icon"
+                style="border-color: #FA9874;"
+              />
+              <div
+                class="siren-sdk-card-loader-time"
+                style="border-color: #FA9874;"
+              />
+            </div>
+          </div>
+          <div
+            class="siren-sdk-card-loader-delete-icon"
+            style="border-color: #FA9874;"
+          />
+        </div>
         
       </div>
       

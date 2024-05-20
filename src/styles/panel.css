@@ -5,7 +5,6 @@
   position: absolute;
   box-shadow: rgb(0 0 0 / 30%) 0px 8px 24px;
   border-radius: 20px;
-  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13,11 +12,10 @@
 }
 .siren-sdk-panel-container {
   width: 100% !important;
-  border-radius: 20px;
+  height: 100%;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 .siren-sdk-panel-footer {
   bottom: 0;
@@ -26,8 +24,8 @@
 .siren-sdk-content-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   overflow: auto;
+  height: 100%;
 }
 .siren-sdk-panel-no-border {
   border-radius: 0px !important;

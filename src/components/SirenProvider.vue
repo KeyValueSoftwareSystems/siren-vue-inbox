@@ -1,5 +1,5 @@
 <template>
-  <div data-testid="provider-container">
+  <div data-testid="provider-container" :style="{ height: '100%' } ">
     <slot />
   </div>
 </template>
