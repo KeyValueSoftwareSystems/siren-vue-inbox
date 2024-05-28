@@ -38,8 +38,13 @@
             <div v-for="notification in notificationsContent" :key="notification?.id">
               <slot name="customCard" :item="notification">
                 <NotificationCard :notification="notification"
-                :cardProps="cardProps" :onCardClick="onCardClick"
-                  :deleteById="deleteNotificationById" :styles="styles" :darkMode="darkMode" />
+                  :cardProps="cardProps" :onCardClick="onCardClick"
+                  :deleteById="deleteNotificationById" :styles="styles" :darkMode="darkMode">
+                  <template #deleteIcon>
+                    <slot name="deleteIcon" />
+                  </template>
+                </NotificationCard>
+
               </slot>
             </div>
           </div>

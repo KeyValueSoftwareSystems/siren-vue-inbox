@@ -166,6 +166,8 @@ export type CardProps = {
   hideDelete?: boolean;
   disableAutoMarkAsRead?: boolean;
   onAvatarClick?: (notification: NotificationDataType) => void;
+  hideMediaThumbnail?: boolean;
+  onMediaThumbnailClick?: (notification: NotificationDataType) => void;
 };
 
 export type HeaderProps = {
