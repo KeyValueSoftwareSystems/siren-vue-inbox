@@ -76,7 +76,7 @@ Below are optional props available for the inbox component:
 | itemsPerFetch  | Number of notifications fetch per api request (have a max cap of 50) | number | 20 |
 | windowViewOnly | Toggle to enable fit-to-screen window or modal view | boolean | false |
 | headerProps    | Props for customizing the header.<br> title - Title of the notification inbox<br> hideHeader - Toggle to hide or show the header section.<br> hideClearAll - Toggle to hide or show the clear all button. | HeaderProps  | { title: 'Notifications', <br>hideHeader: false,<br> hideClearAll: false } |
-| cardProps      | Props for customizing the notification cards. <br>hideDelete - Toggle to hide or show delete icon<br> hideAvatar - Toggle to hide or show the avatar. <br> disableAutoMarkAsRead - Toggle to disable or enable the markAsReadById functionality on card click. <br> onAvatarClick - Custom click handler for avatar | CardProps | { hideDelete: false,<br> hideAvatar: false,<br> disableAutoMarkAsRead: false, <br> onAvatarClick: ()=>null } |
+| cardProps      | Props for customizing the notification cards. <br>hideDelete - Toggle to hide or show delete icon<br> hideAvatar - Toggle to hide or show the avatar. <br> disableAutoMarkAsRead - Toggle to disable or enable the markAsReadById functionality on card click. <br> onAvatarClick - Custom click handler for avatar <br> hideMediaThumbnail - Toggle to hide or show thumbnail image <br> onMediaThumbnailClick - Custom click handler for media thumbnail | CardProps | { hideDelete: false,<br> hideAvatar: false,<br> disableAutoMarkAsRead: false, <br> onAvatarClick: ()=>null, <br> hideMediaThumbnail: false, <br> onMediaThumbnailClick: () => null  } |
 | onCardClick    | Custom click handler for notification cards | (notification)=> void | ()=>null  |
 | onError        | Callback for handling errors | (error: SirenErrorType)=> void | ()=>null  |
 
@@ -86,8 +86,10 @@ Below are optional props available for the inbox component:
     type CardProps = {
       hideDelete?: boolean;
       hideAvatar?: boolean,
-      onAvatarClick?: (notification: NotificationDataType) => void,
       disableAutoMarkAsRead?: boolean;
+      onAvatarClick?: (notification: NotificationDataType) => void,
+      hideMediaThumbnail?: boolean,
+      onMediaThumbnailClick?: () => void,
     };
 ```
 
@@ -116,6 +118,7 @@ Below are optional slots available for the inbox component:
 | customCard         | Custom notification card component |
 | customFooter       | Custom footer component            |
 | notificationIcon   | Custom notification icon component |
+| deleteIcon         | Custom delete icon                 |
 
 ## 3. Customization
 
@@ -181,7 +184,7 @@ Please note that the badgeStyle, window shadow and border props are only applica
     size?: number,
   },
   window?: {
-    width?: DimensionValue,
+    width?: number,
     borderRadius?: number,
   },
   windowHeader?: {
@@ -193,7 +196,7 @@ Please note that the badgeStyle, window shadow and border props are only applica
   },
   windowContainer?: {
     padding?: number,
-    contentHeight?: DimensionValue,
+    contentHeight?: number,
   },
   customCard?: {
     padding?: number,

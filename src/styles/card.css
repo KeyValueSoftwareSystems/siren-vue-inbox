@@ -1,4 +1,4 @@
-.siren-sdk-card-common-container{
+.siren-sdk-card-common-container {
   display: grid;
   gap: 16px;
 }
@@ -44,15 +44,15 @@
   margin-bottom: 5px;
   font-weight: 400;
 }
-.siren-sdk-card-avatar{
-  overflow: 'hidden',
+.siren-sdk-card-avatar {
+  overflow: "hidden";
 }
 
-.siren-sdk-card-date-style{
+.siren-sdk-card-date-style {
   line-height: 16px;
 }
 
-.siren-sdk-card-title{
+.siren-sdk-card-title {
   line-height: 20px;
   margin-bottom: 4px;
   word-break: break-word;
@@ -61,11 +61,29 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.siren-sdk-card-subtitle{
+.siren-sdk-card-subtitle {
   line-height: 20px;
   margin-bottom: 6px;
 }
+.siren-sdk-card-thumbnail-container {
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
 
+.siren-sdk-card-thumbnail-image {
+  border-radius: 6px;
+}
+
+.siren-sdk-card-thumbnail-with-image {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
 
 @keyframes fadeOut {
   0% {

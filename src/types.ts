@@ -114,7 +114,7 @@ export type CustomStyle = {
     size?: number;
   };
   window?: {
-    width?: DimensionValue;
+    width: number;
     borderRadius?: number;
   };
   windowHeader?: {
@@ -166,6 +166,8 @@ export type CardProps = {
   hideDelete?: boolean;
   disableAutoMarkAsRead?: boolean;
   onAvatarClick?: (notification: NotificationDataType) => void;
+  hideMediaThumbnail?: boolean;
+  onMediaThumbnailClick?: (notification: NotificationDataType) => void;
 };
 
 export type HeaderProps = {
@@ -225,7 +227,7 @@ export type SirenPanelProps = {
   headerProps: { title?: string; hideHeader?: boolean; hideClearAll?: boolean };
   loadMoreLabel: string;
   cardProps: CardProps;
-  modalWidth: DimensionValue;
+  modalWidth: string;
 };
 
 export type NotificationCardProps = {

@@ -1,7 +1,7 @@
 <template>
   <div class="siren-sdk-loader-container" data-testid="loader-container">
     <div
-      v-for="number in 5"
+      v-for="number in 6"
       :key="number"
       class="siren-sdk-card-loader-container"
     >

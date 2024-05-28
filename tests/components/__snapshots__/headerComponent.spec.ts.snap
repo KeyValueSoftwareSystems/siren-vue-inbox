@@ -13,6 +13,7 @@ exports[`matches snapshot 1`] = `
     Sample Header
   </p>
   <div
+    aria-label="siren-header-clear-all"
     class="siren-sdk-header-right-container"
     data-testid="clear-all"
     style="opacity: 1; cursor: pointer;"

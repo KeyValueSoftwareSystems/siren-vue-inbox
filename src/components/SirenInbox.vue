@@ -3,7 +3,7 @@
     data-testid="siren-inbox-container">
     <div v-if="!windowViewOnly" ref="iconRef" data-testid="siren-inbox-icon">
       <NotificationIcon :handleNotification="handleNotification"
-        :darkMode="darkMode" :styles="styles"
+      :darkMode="darkMode" :styles="styles"
         :hideBadge="hideBadge" :isModalOpen="isModalOpen">
         <template #notificationIcon>
           <slot name="notificationIcon" />
@@ -12,11 +12,11 @@
     </div>
     <div v-if="isModalOpen || windowViewOnly" :style="{
     ...styles.container,
-    ...(!windowViewOnly && styles.windowShadow),
     width:
       windowViewOnly
         ? '100%'
-        : updatedModalWidth,
+        : `${updatedModalWidth}px`,
+    ...(windowViewOnly && { height: '100%', }),
     position: windowViewOnly ? 'initial' : 'absolute',
     ...modalPosition,
   }">
@@ -25,7 +25,7 @@
         :onCardClick="onCardClick" :onError="onError"
         :darkMode="darkMode" :windowViewOnly="windowViewOnly" :isModalOpen="isModalOpen"
         :hideClearAll="headerProps?.hideClearAll ?? false" :loadMoreLabel="loadMoreLabel"
-        :cardProps="cardProps ?? defaultCardProps" :modalWidth="updatedModalWidth">
+        :cardProps="cardProps ?? defaultCardProps" :modalWidth="`${updatedModalWidth}px`">
         <template #loadMoreComponent>
           <slot name="loadMoreComponent" />
         </template>
@@ -46,6 +46,9 @@
         </template>
         <template #customFooter>
           <slot name="customFooter" />
+        </template>
+        <template #deleteIcon>
+          <slot name="deleteIcon" />
         </template>
       </SirenPanel>
     </div>
@@ -76,11 +79,11 @@ import {
   DEFAULT_NOTIFICATION_FETCH_COUNT,
   EventType
 } from '../utils/constants';
+import defaultStyles from '../utils/defaultStyles';
 import SirenPanel from './SirenPanel.vue';
 import NotificationIcon from './NotificationIcon.vue';
 
 import '../styles/inbox.css';
-import defaultStyles from '../utils/defaultStyles';
 
 const props = withDefaults(defineProps<SirenProps>(), {
   windowViewOnly: false,
@@ -109,7 +112,7 @@ const modalPosition = ref<{
 const initialModalWidth =
   props.customStyle?.window?.width || defaultStyles.window.width;
 
-const updatedModalWidth = ref(initialModalWidth);
+const updatedModalWidth = ref<number>(initialModalWidth);
 
 const siren: Ref<Siren> = inject('siren') as Ref<Siren>;
 
@@ -142,7 +145,7 @@ const calculateUpdatedModalWidth = () => {
   const modalWidth = calculateModalWidth(initialModalWidth);
 
   if (window.innerWidth <= modalWidth)
-    updatedModalWidth.value = `${window.innerWidth - 40}px`;
+    updatedModalWidth.value = window.innerWidth - 40;
   else
     updatedModalWidth.value = initialModalWidth;
 };

@@ -19,6 +19,7 @@ exports[`matches snapshot 1`] = `
       Notifications
     </p>
     <div
+      aria-label="siren-header-clear-all"
       class="siren-sdk-header-right-container"
       data-testid="clear-all"
       style="opacity: 0.4; cursor: not-allowed;"
@@ -45,6 +46,7 @@ exports[`matches snapshot 1`] = `
   </div>
   
   <div
+    aria-label="siren-notification-list"
     style="background-color: #232326; padding: 0px; border-radius: 0px 0px 10px 10px;"
   >
     <div
@@ -57,6 +59,46 @@ exports[`matches snapshot 1`] = `
         data-testid="loader-container"
       >
         
+        <div
+          class="siren-sdk-card-loader-container"
+        >
+          <div
+            class="siren-sdk-card-loader-avatar"
+            style="border-color: #FA9874;"
+          />
+          <div
+            class="siren-sdk-card-loader-details siren-sdk-card-show-avatar"
+          >
+            <div
+              class="siren-sdk-card-loader-header"
+              style="border-color: #FA9874;"
+            />
+            <div
+              class="siren-sdk-card-loader-header"
+              style="border-color: #FA9874;"
+            />
+            <div
+              class="siren-sdk-card-loader-body"
+              style="border-color: #FA9874;"
+            />
+            <div
+              class="siren-sdk-card-loader-time-container"
+            >
+              <div
+                class="siren-sdk-card-loader-time-icon"
+                style="border-color: #FA9874;"
+              />
+              <div
+                class="siren-sdk-card-loader-time"
+                style="border-color: #FA9874;"
+              />
+            </div>
+          </div>
+          <div
+            class="siren-sdk-card-loader-delete-icon"
+            style="border-color: #FA9874;"
+          />
+        </div>
         <div
           class="siren-sdk-card-loader-container"
         >
